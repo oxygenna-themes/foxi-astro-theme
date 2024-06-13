@@ -1,7 +1,60 @@
 ---
+interface NavLink {
+  name: string;
+  url: string;
+  children?: NavLink[];
+}
 
+const links: NavLink[] = [
+  { name: "Home", url: "/" },
+  { name: "About", url: "/about" },
+  // { name: 'Services', url: '/services', children: [
+  //     { name: 'Service 1', url: '/services/service1' },
+  //     { name: 'Service 2', url: '/services/service2' },
+  // ]},
+  { name: "Contact", url: "/contact" },
+];
 ---
 
-<a href="#">
-    Sample link
-</a>
+<header>
+  <div>
+    <nav aria-label="main navigation">
+      <!-- Brand logo -->
+      <a id="WindUI" aria-label="WindUI logo" aria-current="page"> Brand </a>
+      <!-- Mobile trigger -->
+      <button>
+        <div>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </button>
+      <!-- Navigation links -->
+      <ul role="menubar" aria-label="Select page">
+        {
+          links.map((link) => (
+            <li role="none">
+              <a role="menuitem" aria-haspopup="false" href={link.url}>
+                <span>{link.name}</span>
+              </a>
+              {link.children && (
+                <ul>
+                  {link.children.map((child) => (
+                    <li>
+                      <a href={child.url}>{child.name}</a>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </li>
+          ))
+        }
+      </ul>
+      <div>
+        <button>
+          <span>Try it free</span>
+        </button>
+      </div>
+    </nav>
+  </div>
+</header>
