@@ -3,6 +3,7 @@ interface NavLink {
   name: string;
   url: string;
   children?: NavLink[];
+  button?: boolean;
 }
 
 const links: NavLink[] = [
@@ -13,14 +14,18 @@ const links: NavLink[] = [
   //     { name: 'Service 2', url: '/services/service2' },
   // ]},
   { name: "Contact", url: "/contact" },
+  { name: "Try it free", url: "/try-it-free", button: true },
 ];
+
+let currentUrl = Astro.url.pathname;
+console.log(currentUrl);
 ---
 
 <header>
   <div>
     <nav aria-label="main navigation">
       <!-- Brand logo -->
-      <a id="WindUI" aria-label="WindUI logo" aria-current="page"> Brand </a>
+      <a id="WindUI" aria-label="WindUI logo" aria-current="page" href="/"> Brand </a>
       <!-- Mobile trigger -->
       <button>
         <div>
@@ -32,29 +37,43 @@ const links: NavLink[] = [
       <!-- Navigation links -->
       <ul role="menubar" aria-label="Select page">
         {
-          links.map((link) => (
-            <li role="none">
-              <a role="menuitem" aria-haspopup="false" href={link.url}>
-                <span>{link.name}</span>
-              </a>
-              {link.children && (
-                <ul>
-                  {link.children.map((child) => (
-                    <li>
-                      <a href={child.url}>{child.name}</a>
-                    </li>
-                  ))}
-                </ul>
-              )}
-            </li>
-          ))
+          links
+            .filter((link) => !link.button)
+            .map((link) => (
+              <li role="none">
+                <a role="menuitem" aria-haspopup="false" href={link.url} class={link.url === currentUrl ? "text-emerald-600" : ""}>
+                  <span>{link.name}</span>
+                </a>
+                {link.children && (
+                  <ul>
+                    {link.children.map((child) => (
+                      <li>
+                        <a href={child.url}>{child.name}</a>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </li>
+            ))
         }
       </ul>
-      <div>
-        <button>
-          <span>Try it free</span>
-        </button>
-      </div>
+      {
+        links
+          .filter((link) => link.button)
+          .map((link) => (
+            <div>
+              <button>
+                <span>{link.name}</span>
+              </button>
+            </div>
+          ))
+      }
     </nav>
   </div>
 </header>
+
+<style>
+  header {
+    @apply relative z-20 w-full border-b shadow-lg  border-slate-200 bg-white/90 shadow-slate-700/5 after:absolute after:top-full after:left-0 after:z-10 after:block after:h-px after:w-full after:bg-slate-200 lg:border-slate-200 lg:backdrop-blur-sm lg:after:hidden;
+  }
+</style>
