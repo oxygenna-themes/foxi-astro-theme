@@ -1,0 +1,13 @@
+---
+const { image } = Astro.props;
+---
+
+<a href="/" class="header__logo">
+  <img src={image.src} alt={image.alt} />
+</a>
+
+<style>
+  .header__logo {
+    @apply flex items-center gap-2 py-3 text-lg whitespace-nowrap focus:outline-none lg:flex-1;
+  }
+</style>

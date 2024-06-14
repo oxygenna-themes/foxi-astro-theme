@@ -1,79 +1,45 @@
 ---
-interface NavLink {
-  name: string;
-  url: string;
-  children?: NavLink[];
-  button?: boolean;
-}
+import Logo from "./header/HeaderLogo.astro";
+import NavLinks from "./header/HeaderNav.astro";
+import ActionButtons from "./header/HeaderActions.astro";
+import MenuToggle from "./header/HeaderMenuToggle.astro";
 
-const links: NavLink[] = [
-  { name: "Home", url: "/" },
-  { name: "About", url: "/about" },
-  // { name: 'Services', url: '/services', children: [
-  //     { name: 'Service 1', url: '/services/service1' },
-  //     { name: 'Service 2', url: '/services/service2' },
-  // ]},
-  { name: "Contact", url: "/contact" },
-  { name: "Try it free", url: "/try-it-free", button: true },
+// Logo
+const logo = { src: "logo.svg", alt: "wind ui" };
+
+// Navigation links
+const navItems = [
+  { name: "Home", link: "/" },
+  { name: "About", link: "/about" },
+  { name: "Services", link: "/services" },
+  { name: "Contact", link: "/contact" },
 ];
 
-let currentUrl = Astro.url.pathname;
-console.log(currentUrl);
+// Navigation action buttons
+const actionButtons = [{ text: "Sign In", link: "/signin" }];
+
+let isExpanded = true;
 ---
 
-<header>
-  <div>
-    <nav aria-label="main navigation">
-      <!-- Brand logo -->
-      <a id="WindUI" aria-label="WindUI logo" aria-current="page" href="/"> Brand </a>
-      <!-- Mobile trigger -->
-      <button>
-        <div>
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-      </button>
-      <!-- Navigation links -->
-      <ul role="menubar" aria-label="Select page">
-        {
-          links
-            .filter((link) => !link.button)
-            .map((link) => (
-              <li role="none">
-                <a role="menuitem" aria-haspopup="false" href={link.url} class={link.url === currentUrl ? "text-emerald-600" : ""}>
-                  <span>{link.name}</span>
-                </a>
-                {link.children && (
-                  <ul>
-                    {link.children.map((child) => (
-                      <li>
-                        <a href={child.url}>{child.name}</a>
-                      </li>
-                    ))}
-                  </ul>
-                )}
-              </li>
-            ))
-        }
-      </ul>
-      {
-        links
-          .filter((link) => link.button)
-          .map((link) => (
-            <div>
-              <button>
-                <span>{link.name}</span>
-              </button>
-            </div>
-          ))
-      }
+<header class="header">
+  <div class="header__container">
+    <nav aria-label="main navigation" role="navigation" class="header__nav">
+      <Logo image={logo} />
+      <MenuToggle isExpanded={isExpanded} />
+      <NavLinks navItems={navItems} isExpanded={isExpanded} />
+      <ActionButtons />
     </nav>
   </div>
 </header>
 
 <style>
-  header {
-    @apply relative z-20 w-full border-b shadow-lg  border-slate-200 bg-white/90 shadow-slate-700/5 after:absolute after:top-full after:left-0 after:z-10 after:block after:h-px after:w-full after:bg-slate-200 lg:border-slate-200 lg:backdrop-blur-sm lg:after:hidden;
+  .header {
+    @apply relative z-20 w-full border-b shadow-lg border-slate-200 bg-white/90 shadow-slate-700/5 after:absolute after:top-full after:left-0 after:z-10 after:block after:h-px after:w-full after:bg-slate-200 lg:border-slate-200 lg:backdrop-blur-sm lg:after:hidden;
+  }
+  .header__container {
+    @apply relative mx-auto max-w-full px-6 lg:max-w-5xl xl:max-w-7xl 2xl:max-w-[96rem];
+  }
+  .header__nav {
+    @apply flex h-[5.5rem] items-stretch justify-between font-medium text-slate-700;
   }
 </style>
