@@ -1,67 +1,60 @@
 ---
 interface Props {
-  size: "lg" | "base" | "sm";
-  name: string;
-  link: string;
-  style: "primary" | "secondary" | "neutral";
-  elevated?: boolean;
-  variation?: "outline" | "link";
-  icon?: { src: string; alt: string };
-  iconType?: "lead" | "trail" | "button";
+	size: 'lg' | 'base' | 'sm'
+	name: string
+	link: string
+	style: 'primary' | 'secondary' | 'neutral'
+	elevated?: boolean
+	variation?: 'outline' | 'link'
+	icon?: { src: string; alt: string }
+	iconType?: 'lead' | 'trail' | 'button'
 }
 
-const { link, size, name, style, variation, elevated, icon, iconType } =
-  Astro.props;
-
-console.log("kids", icon);
+const { link, size, name, style, variation, elevated, icon, iconType } = Astro.props
 ---
 
 <a
-  class={`button button--${size} button--${style} ${variation && `button--${variation}`} ${elevated && "button--elevated"}`}
-  href={link}
+	class={`button button--${size} button--${style} ${variation && `button--${variation}`} ${elevated && 'button--elevated'}`}
+	href={link}
 >
-  {
-    iconType !== "button" && (
-      <span class={`${iconType === "lead" ? "order-2" : ""}`}>{name}</span>
-    )
-  }
+	{iconType !== 'button' && <span class={`${iconType === 'lead' ? 'order-2' : ''}`}>{name}</span>}
 
-  {
-    icon && (
-      <span class="button__icon">
-        {/* !Create image component that will render images and svgs */}
-        <img src={icon.src} alt={icon.alt} />
-      </span>
-    )
-  }
+	{
+		icon && (
+			<span class="button__icon">
+				{/* !Create image component that will render images and svgs */}
+				<img src={icon.src} alt={icon.alt} />
+			</span>
+		)
+	}
 </a>
 
 <style>
-  .button {
-    @apply inline-flex items-center justify-center gap-2 font-medium tracking-wide transition duration-300 rounded focus-visible:outline-none whitespace-nowrap disabled:cursor-not-allowed disabled:shadow-none [&_.button\_\_icon]:relative;
-  }
+	.button {
+		@apply inline-flex items-center justify-center gap-2 whitespace-nowrap rounded font-medium tracking-wide transition duration-300 focus-visible:outline-none disabled:cursor-not-allowed disabled:shadow-none [&_.button\_\_icon]:relative;
+	}
 
-  .button--lg {
-    @apply h-12 px-6 text-sm [&.button--elevated]:shadow-lg [&.button--elevated]:hover:shadow-md [&.button--elevated]:focus:shadow-md only:[&_.button\_\_icon]:-mx-6 [&_.button\_\_icon_img]:!w-5 [&_.button\_\_icon_img]:!h-5;
-  }
+	.button--lg {
+		@apply h-12 px-6 text-sm [&.button--elevated]:shadow-lg [&.button--elevated]:hover:shadow-md [&.button--elevated]:focus:shadow-md only:[&_.button\_\_icon]:-mx-6 [&_.button\_\_icon_img]:!h-5 [&_.button\_\_icon_img]:!w-5;
+	}
 
-  .button--base {
-    @apply h-10 px-5 text-sm [&.button--elevated]:shadow-md [&.button--elevated]:hover:shadow-sm [&.button--elevated]:focus:shadow-sm only:[&_.button\_\_icon]:-mx-5 [&_.button\_\_icon_img]:!w-5 [&_.button\_\_icon_img]:!h-5;
-  }
+	.button--base {
+		@apply h-10 px-5 text-sm [&.button--elevated]:shadow-md [&.button--elevated]:hover:shadow-sm [&.button--elevated]:focus:shadow-sm only:[&_.button\_\_icon]:-mx-5 [&_.button\_\_icon_img]:!h-5 [&_.button\_\_icon_img]:!w-5;
+	}
 
-  .button--sm {
-    @apply h-8 px-4 text-xs [&.button--elevated]:shadow-md [&.button--elevated]:hover:shadow-sm [&.button--elevated]:focus:shadow-sm only:[&_.button\_\_icon]:-mx-4 [&_.button\_\_icon_img]:!w-4 [&_.button\_\_icon_img]:!h-4;
-  }
+	.button--sm {
+		@apply h-8 px-4 text-xs [&.button--elevated]:shadow-md [&.button--elevated]:hover:shadow-sm [&.button--elevated]:focus:shadow-sm only:[&_.button\_\_icon]:-mx-4 [&_.button\_\_icon_img]:!h-4 [&_.button\_\_icon_img]:!w-4;
+	}
 
-  .button--primary {
-    @apply text-white bg-primary-500 hover:bg-primary-600 focus:bg-primary-700 disabled:border-primary-300 disabled:bg-primary-300 [&.button--elevated]:shadow-primary-200 [&.button--elevated]:hover:shadow-primary-200 [&.button--elevated]:focus:shadow-primary-200;
-  }
+	.button--primary {
+		@apply bg-primary-500 text-white hover:bg-primary-600 focus:bg-primary-700 disabled:border-primary-300 disabled:bg-primary-300 [&.button--elevated]:shadow-primary-200 [&.button--elevated]:hover:shadow-primary-200 [&.button--elevated]:focus:shadow-primary-200;
+	}
 
-  .button--secondary {
-    @apply bg-primary-50 text-primary-500 hover:bg-primary-100 hover:text-primary-600 focus:bg-primary-200 focus:text-primary-700 disabled:border-primary-300 disabled:bg-primary-100 disabled:text-primary-400 [&.button--elevated]:shadow-primary-100 [&.button--elevated]:hover:shadow-primary-100 [&.button--elevated]:focus:shadow-primary-100;
-  }
+	.button--secondary {
+		@apply bg-primary-50 text-primary-500 hover:bg-primary-100 hover:text-primary-600 focus:bg-primary-200 focus:text-primary-700 disabled:border-primary-300 disabled:bg-primary-100 disabled:text-primary-400 [&.button--elevated]:shadow-primary-100 [&.button--elevated]:hover:shadow-primary-100 [&.button--elevated]:focus:shadow-primary-100;
+	}
 
-  .button--neutral {
-    @apply text-white bg-neutral-500 hover:bg-neutral-600 focus:bg-neutral-700 disabled:border-neutral-300 disabled:bg-neutral-300 [&.button--elevated]:shadow-neutral-200 [&.button--elevated]:hover:shadow-neutral-200 [&.button--elevated]:focus:shadow-neutral-200;
-  }
+	.button--neutral {
+		@apply bg-neutral-500 text-white hover:bg-neutral-600 focus:bg-neutral-700 disabled:border-neutral-300 disabled:bg-neutral-300 [&.button--elevated]:shadow-neutral-200 [&.button--elevated]:hover:shadow-neutral-200 [&.button--elevated]:focus:shadow-neutral-200;
+	}
 </style>

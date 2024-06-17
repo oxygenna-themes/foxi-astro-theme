@@ -1,4 +1,6 @@
 ---
+import Button from './Button.astro'
+
 // Logo
 const logo = { src: 'logo.svg', alt: 'wind ui' }
 
@@ -13,6 +15,8 @@ type navItem = {
 	link: string
 	name: string
 }
+// Action buttons
+const navActions = [{ name: 'Try it now', link: '/', style: 'primary' as const, size: 'lg' }]
 ---
 
 <header class="header">
@@ -49,6 +53,15 @@ type navItem = {
 					))
 				}
 			</ul>
+
+			<!-- Navigation action buttons -->
+			<div class="header__actions">
+				{
+					navActions.map((action) => (
+						<Button link={action.link} name={action.name} style={action.style} size={action.size} />
+					))
+				}
+			</div>
 		</nav>
 	</div>
 </header>
@@ -107,5 +120,8 @@ type navItem = {
 	}
 	.header__toggle-inner span:nth-child(3) {
 		@apply w-1/2 origin-top-left translate-y-2 [.header\_\_toggle--open_&]:w-0;
+	}
+	.header__actions {
+		@apply ml-auto flex items-center gap-4 px-6 lg:ml-0 lg:p-0;
 	}
 </style>
