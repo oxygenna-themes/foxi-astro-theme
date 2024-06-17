@@ -1,27 +1,46 @@
 ---
-import Header from "../components/Header.astro"
-import Footer from "../components/Footer.astro"
+import Header from '../components/Header.astro'
+import Footer from '../components/Footer.astro'
 
-interface Props {
-	title: string;
+export interface Props {
+	title?: string
+	description?: string
+	image?: string
 }
 
-const { title } = Astro.props;
+const {
+	title = 'Oxygenna',
+	description = 'Oxygenna is a design and development agency that specializes in creating beautiful and functional websites.',
+	image = '/favicon.svg'
+} = Astro.props
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="icon" type="image/png" href="/heartbeat.png" />
+		<link rel="sitemap" href="/sitemap-index.xml" />
 		<meta name="generator" content={Astro.generator} />
+		<meta name="description" content={description} />
+		<meta name="theme-color" content="#134e4a" />
+		<link rel="canonical" href={Astro.url} />
 		<title>{title}</title>
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content={Astro.url} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content={image} />
+		<meta property="twitter:card" content="summary_large_image" />
+		<meta property="twitter:url" content={Astro.url} />
+		<meta property="twitter:title" content={title} />
+		<meta property="twitter:description" content={description} />
+		<meta property="twitter:image" content={image} />
 	</head>
 	<body>
 		<Header />
-        <slot />
+		<slot />
 		<Footer />
 	</body>
 </html>
