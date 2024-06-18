@@ -1,4 +1,6 @@
 ---
+import { Icon } from 'astro-icon/components'
+
 interface Props {
 	size: 'lg' | 'base' | 'sm'
 	name: string
@@ -6,11 +8,11 @@ interface Props {
 	style: 'primary' | 'secondary' | 'neutral'
 	elevated?: boolean
 	variation?: 'outline' | 'link'
-	icon?: { src: string; alt: string }
+	iconName?: string
 	iconType?: 'lead' | 'trail' | 'button'
 }
 
-const { link, size, name, style, variation, elevated, icon, iconType } = Astro.props
+const { link, size, name, style, variation, elevated, iconName, iconType } = Astro.props
 ---
 
 <a
@@ -20,10 +22,9 @@ const { link, size, name, style, variation, elevated, icon, iconType } = Astro.p
 	{iconType !== 'button' && <span class={`${iconType === 'lead' ? 'order-2' : ''}`}>{name}</span>}
 
 	{
-		icon && (
+		iconName && (
 			<span class="button__icon">
-				{/* !Create image component that will render images and svgs */}
-				<img src={icon.src} alt={icon.alt} />
+				<Icon name={iconName} />
 			</span>
 		)
 	}
