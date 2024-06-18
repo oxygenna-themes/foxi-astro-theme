@@ -1,0 +1,25 @@
+---
+interface Props {
+	layout: string
+	type: string
+}
+
+const { layout, type } = Astro.props
+---
+
+<section>
+	<div class="container">
+		<div class="row">
+			<slot />
+		</div>
+	</div>
+</section>
+
+<style>
+	.container {
+		@apply mx-auto px-6;
+	}
+	.row {
+		@apply grid grid-cols-4 gap-6 md:grid-cols-8 lg:grid-cols-12;
+	}
+</style>

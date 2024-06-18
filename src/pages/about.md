@@ -1,5 +1,5 @@
 ---
-layout: ../layouts/Layout.astro
+layout: ../layouts/Layout-test.astro
 title: 'Hello, World!'
 ---
 

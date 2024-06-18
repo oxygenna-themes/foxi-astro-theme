@@ -1,5 +1,6 @@
 ---
 import Header from '../components/Header.astro'
+import Main from '../components/Main.astro'
 import Footer from '../components/Footer.astro'
 
 export interface Props {
@@ -40,7 +41,9 @@ const {
 	</head>
 	<body>
 		<Header />
-		<slot />
+		<Main>
+			<slot />
+		</Main>
 		<Footer />
 	</body>
 </html>
