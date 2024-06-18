@@ -1,13 +1,13 @@
 ---
 interface Props {
 	layout: string
-	type: string
+	id: string
 }
 
-const { layout, type } = Astro.props
+const { layout, id } = Astro.props
 ---
 
-<section>
+<section id={id}>
 	<div class="container">
 		<div class="row">
 			<slot />
@@ -16,6 +16,9 @@ const { layout, type } = Astro.props
 </section>
 
 <style>
+	section {
+		@apply py-24;
+	}
 	.container {
 		@apply mx-auto px-6;
 	}

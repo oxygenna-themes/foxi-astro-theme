@@ -82,7 +82,7 @@ const navActions = [
 </script>
 <style>
 	.header {
-		@apply relative z-20 w-full border-b border-neutral-200 bg-white/90 shadow-lg shadow-neutral-700/5 after:absolute after:left-0 after:top-full after:z-10 after:block after:h-px after:w-full after:bg-neutral-200 lg:border-neutral-200 lg:backdrop-blur-sm lg:after:hidden dark:border-neutral-900 dark:bg-slate-900/90;
+		@apply dark:shadow-neutral-950/50 relative z-20 w-full bg-white/90 shadow-lg shadow-neutral-700/5 after:absolute after:left-0 after:top-full after:z-10 after:block after:h-px after:w-full after:bg-neutral-200 lg:border-neutral-200 lg:backdrop-blur-sm lg:after:hidden dark:bg-neutral-900/5;
 	}
 	.header__container {
 		@apply relative mx-auto max-w-full px-6 lg:max-w-5xl xl:max-w-7xl 2xl:max-w-[96rem];
@@ -91,10 +91,10 @@ const navActions = [
 		@apply flex items-center gap-2 whitespace-nowrap py-3 text-lg focus:outline-none lg:flex-1;
 	}
 	.header__nav {
-		@apply flex h-[5.5rem] items-stretch justify-between font-medium text-neutral-700;
+		@apply flex h-[5.5rem] items-stretch justify-between font-medium text-neutral-700 dark:text-neutral-50;
 	}
 	.header__menu {
-		@apply invisible absolute left-0 top-0 z-[-1] ml-auto h-screen w-full justify-center overflow-hidden overflow-y-auto overscroll-contain bg-white/90 px-8 pb-12 pt-28 font-medium opacity-0 transition-[opacity,visibility] duration-300 lg:visible lg:relative lg:top-0 lg:z-0 lg:flex lg:h-full lg:w-auto lg:items-stretch lg:overflow-visible lg:bg-white/0 lg:px-0 lg:py-0 lg:pt-0 lg:opacity-100;
+		@apply invisible absolute left-0 top-0 z-[-1] ml-auto h-screen w-full justify-center overflow-hidden overflow-y-auto overscroll-contain bg-white/90 px-8 pb-12 pt-28 font-medium opacity-0 transition-[opacity,visibility] duration-300 lg:visible lg:relative lg:top-0 lg:z-0 lg:flex lg:h-full lg:w-auto lg:items-stretch lg:overflow-visible lg:bg-white/0 lg:px-0 lg:py-0 lg:pt-0 lg:opacity-100 dark:bg-neutral-900/90;
 	}
 	.header__menu--open {
 		@apply visible opacity-100 backdrop-blur-sm;
