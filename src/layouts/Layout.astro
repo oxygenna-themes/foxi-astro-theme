@@ -2,6 +2,7 @@
 import Header from '../components/Header.astro'
 import Main from '../components/Main.astro'
 import Footer from '../components/Footer.astro'
+import '../styles/global.css'
 
 export interface Props {
 	title?: string
@@ -39,7 +40,7 @@ const {
 		<meta property="twitter:description" content={description} />
 		<meta property="twitter:image" content={image} />
 	</head>
-	<body class="bg-white dark:bg-slate-900">
+	<body>
 		<Header />
 		<Main>
 			<slot />

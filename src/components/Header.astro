@@ -82,7 +82,7 @@ const navActions = [
 </script>
 <style>
 	.header {
-		@apply dark:shadow-neutral-950/50 relative z-20 w-full bg-white/90 shadow-lg shadow-neutral-700/5 after:absolute after:left-0 after:top-full after:z-10 after:block after:h-px after:w-full after:bg-neutral-200 lg:border-neutral-200 lg:backdrop-blur-sm lg:after:hidden dark:bg-neutral-900/5;
+		@apply dark:shadow-neutral-950/50 relative z-20 w-full bg-white/90 shadow-lg shadow-neutral-700/5 after:absolute after:left-0 after:top-full after:z-10 after:block after:h-px after:w-full lg:backdrop-blur-sm lg:after:hidden dark:bg-neutral-900/90;
 	}
 	.header__container {
 		@apply relative mx-auto max-w-full px-6 lg:max-w-5xl xl:max-w-7xl 2xl:max-w-[96rem];
@@ -112,7 +112,7 @@ const navActions = [
 		@apply absolute left-1/2 top-1/2 w-6 -translate-x-1/2 -translate-y-1/2 transform;
 	}
 	.header__toggle-inner span {
-		@apply absolute block h-0.5 transform rounded-full bg-neutral-900 transition-all duration-300;
+		@apply absolute block h-0.5 transform rounded-full bg-neutral-900 transition-all duration-300 dark:bg-white;
 	}
 	.header__toggle-inner span:nth-child(1) {
 		@apply w-9/12 -translate-y-2 [.header\_\_toggle--open_&]:w-6 [.header\_\_toggle--open_&]:translate-y-0 [.header\_\_toggle--open_&]:rotate-45;
