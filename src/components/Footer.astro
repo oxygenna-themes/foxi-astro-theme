@@ -1,34 +1,6 @@
 ---
 import { Icon } from 'astro-icon/components'
-
-interface FooterAbout {
-	title: string
-	aboutText: string
-	logo: {
-		src: string
-		alt: string
-	}
-}
-
-interface SubCategory {
-	subCategory: string
-	subCategoryLink: string
-}
-
-interface FooterColumn {
-	category: string
-	subCategories: SubCategory[]
-}
-
-interface SocialLink {
-	link: string
-	icon: string
-}
-
-interface SubFooter {
-	copywriteText: string
-	socials: SocialLink[]
-}
+import type { FooterAbout, FooterColumn, SubFooter } from '../interfaces/footer'
 
 const footerAbout: FooterAbout = {
 	title: 'oxygenna',
