@@ -38,11 +38,6 @@ export default {
           900: "#0f172a",
           950: "##020617",
         },
-        contrast: {
-          high: "#334155",
-          base: "#64748b",
-          low: "#94a3b8",
-        },
       },
       cursor: {
         fancy: "url(https://www.svgrepo.com/show/269/color-picker.svg)",
