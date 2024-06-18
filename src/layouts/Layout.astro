@@ -17,7 +17,7 @@ const {
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" class="dark:bg-slate-500">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -39,11 +39,31 @@ const {
 		<meta property="twitter:description" content={description} />
 		<meta property="twitter:image" content={image} />
 	</head>
-	<body>
+	<body class="bg-white dark:bg-black">
 		<Header />
 		<Main>
 			<slot />
 		</Main>
 		<Footer />
+
+		<script>
+			if (
+				localStorage.theme === 'dark' ||
+				(!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
+			) {
+				document.documentElement.classList.add('dark')
+			} else {
+				document.documentElement.classList.remove('dark')
+			}
+
+			// Whenever the user explicitly chooses light mode
+			// localStorage.theme = 'light'
+
+			// Whenever the user explicitly chooses dark mode
+			localStorage.theme = 'dark'
+
+			// Whenever the user explicitly chooses to respect the OS preference
+			// localStorage.removeItem('theme')
+		</script>
 	</body>
 </html>
