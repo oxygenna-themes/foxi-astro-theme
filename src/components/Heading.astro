@@ -1,0 +1,16 @@
+---
+interface Props {
+	level: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
+}
+const { level } = Astro.props
+const Tag = level
+---
+
+<Tag>
+	<slot />
+</Tag>
+<style>
+	h1 {
+		@apply text-3xl lg:text-5xl;
+	}
+</style>

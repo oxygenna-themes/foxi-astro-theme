@@ -1,9 +1,13 @@
 ---
 import Section from '../Section.astro'
 import Col from '../Col.astro'
+import Heading from '../Heading.astro'
 ---
 
 <Section layout="someLayout" type="someType">
+	<Col size="col-span-12">
+		<Heading level="h1">Welcome to Wind UI</Heading>
+	</Col>
 	<Col size="col-span-3 lg:col-span-6 ">
 		<h1>Test</h1>
 		<p>This is a test.</p>
