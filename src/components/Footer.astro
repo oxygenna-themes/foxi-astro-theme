@@ -88,12 +88,7 @@ const subFooter: SubFooter = {
 		<div class="footer__container">
 			<div class="footer__cols">
 				<div class="footer__col" aria-labelledby="footer-header">
-					<a
-						aria-label="webiste logo"
-						aria-current="page"
-						class="mb-6 flex items-center gap-2 whitespace-nowrap text-base font-medium leading-6 text-slate-700 focus:outline-none"
-						href="/"
-					>
+					<a aria-label="webiste logo" aria-current="page" class="footer__main-brand" href="/">
 						<img src={footerAbout.logo.src} alt={footerAbout.logo.alt} width="32" height="32" />
 						{footerAbout.title}
 					</a>
@@ -103,8 +98,8 @@ const subFooter: SubFooter = {
 				</div>
 				{
 					footerColumns.map((column) => (
-						<nav class="footer__col" aria-labelledby="footer-product-5-log">
-							<h3 id="footer-product-5-logo1">{column.category}</h3>
+						<nav class="footer__col" aria-labelledby="footer-columns">
+							<h3>{column.category}</h3>
 							<ul>
 								{column.subCategories.map((subCategory) => (
 									<li>
@@ -144,16 +139,19 @@ const subFooter: SubFooter = {
 
 <style>
 	.footer {
-		@apply text-neutral-500;
+		@apply text-neutral-500 dark:text-neutral-300;
 	}
 	.footer a {
 		@apply transition-colors duration-300 hover:text-primary-500 focus:text-primary-600;
 	}
 	.footer__main {
-		@apply border-t border-neutral-200 bg-neutral-50 pb-12 pt-16 text-sm [&_li]:mb-2 [&_li]:leading-6;
+		@apply border-t border-neutral-200 bg-neutral-100 pb-12 pt-16 text-sm dark:border-neutral-900 dark:bg-neutral-700 [&_li]:mb-2 [&_li]:leading-6;
 	}
 	.footer__main h3 {
-		@apply mb-6 text-base font-medium text-slate-700;
+		@apply mb-6 text-base font-medium text-neutral-700 dark:text-neutral-50;
+	}
+	.footer__main-brand {
+		@apply mb-6 flex items-center gap-2 whitespace-nowrap text-base font-medium leading-6 text-neutral-700 focus:outline-none dark:text-neutral-50;
 	}
 	.footer__container {
 		@apply container mx-auto px-6;
@@ -171,7 +169,7 @@ const subFooter: SubFooter = {
 	}
 
 	.footer__sub {
-		@apply border-t border-slate-200 bg-slate-100/80 py-4 text-sm;
+		@apply border-t border-neutral-200 bg-neutral-100 py-4 text-sm dark:border-neutral-900 dark:bg-neutral-800/50;
 	}
 	.footer__sub ul {
 		@apply flex items-center justify-end gap-4;
