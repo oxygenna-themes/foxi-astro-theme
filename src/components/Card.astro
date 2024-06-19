@@ -1,21 +1,46 @@
 ---
-interface Props {
-	title: string;
-	body: string;
-	href: string;
+import Button from './Button.astro'
+
+type Props = {
+	title: string
+	body: string
+	href?: string
 }
 
-const { href, title, body } = Astro.props;
+const { href, title, body } = Astro.props
 ---
 
-<li class="link-card">
-	<a href={href}>
-		<h2>
-			{title}
-			<span>&rarr;</span>
-		</h2>
-		<p>
+<div class="card">
+	<div class="card__body">
+		<h3 class="card__body--heading">{title}</h3>
+		<p class="card__body--text">
 			{body}
 		</p>
-	</a>
-</li>
+	</div>
+	{
+		href && (
+			<div class="card__actions">
+				<Button link={href} name="Read more" style="primary" size="base" variation="link" />
+			</div>
+		)
+	}
+</div>
+
+<style>
+	.card {
+		@apply overflow-hidden rounded bg-white text-slate-500 shadow-md shadow-slate-700/10 dark:bg-neutral-800;
+	}
+	.card__body {
+		@apply p-6;
+	}
+	.card__body--heading {
+		@apply mb-4 text-xl font-medium text-slate-700 dark:text-slate-50;
+	}
+	.card__body--text {
+		@apply dark:text-slate-300;
+	}
+
+	.card__actions {
+		@apply flex justify-end gap-2 p-2 px-5 pt-0;
+	}
+</style>
