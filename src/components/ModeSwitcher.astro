@@ -1,0 +1,27 @@
+---
+import { Image } from 'astro:assets'
+import sun from '../icons/sun.svg'
+import moon from '../icons/moon.svg'
+---
+
+<div id="theme-selector">
+	<Image src={sun} alt="light theme" class="dark:hidden" />
+	<Image src={moon} alt="dark theme" class="hidden dark:block" />
+</div>
+<style>
+	#theme-selector {
+		@apply cursor-pointer;
+	}
+</style>
+<script>
+	document.getElementById('theme-selector')?.addEventListener('click', () => {
+		if (localStorage.theme === 'dark') {
+			localStorage.theme = 'light'
+			document.documentElement.classList.remove('dark')
+		} else {
+			localStorage.theme = 'dark'
+			document.documentElement.classList.add('dark')
+		}
+	})
+</script>
+<style></style>
