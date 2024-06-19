@@ -1,3 +1,14 @@
 body {
 	@apply bg-white text-neutral-500 dark:bg-slate-900 dark:text-neutral-300;
 }
+p {
+	@apply text-neutral-500 dark:text-neutral-300;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	@apply text-neutral-700 dark:text-neutral-50;
+}

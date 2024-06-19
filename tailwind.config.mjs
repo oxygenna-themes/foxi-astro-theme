@@ -47,5 +47,10 @@ export default {
       },
     },
   },
-  plugins: [require("@tailwindcss/typography")],
+  plugins: [
+    require("@tailwindcss/typography"),
+    require("tailwindcss/plugin")(function ({ addVariant }) {
+      addVariant("dark-me", ".dark_&");
+    }),
+  ],
 };

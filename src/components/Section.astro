@@ -2,12 +2,15 @@
 interface Props {
 	layout: string
 	id: string
+	mode: string
 }
 
-const { layout, id } = Astro.props
+const { layout, id = '', mode = 'dark' } = Astro.props
+const classes =
+	(layout.includes('fullwidth') ? 'section--fullwidth ' : '') + (mode === 'dark' ? 'dark' : '')
 ---
 
-<section id={id}>
+<section id={id} class={classes}>
 	<div class="container">
 		<div class="row">
 			<slot />
@@ -17,10 +20,10 @@ const { layout, id } = Astro.props
 
 <style>
 	section {
-		@apply py-24;
+		@apply py-24 dark:bg-neutral-900;
 	}
 	.container {
-		@apply mx-auto px-6;
+		@apply mx-auto px-6 [.section--fullwidth_&]:max-w-full;
 	}
 	.row {
 		@apply grid grid-cols-4 gap-6 md:grid-cols-8 lg:grid-cols-12;
