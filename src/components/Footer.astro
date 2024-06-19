@@ -1,14 +1,15 @@
 ---
 import { Icon } from 'astro-icon/components'
+import type { FooterAbout, FooterColumn, SubFooter } from '../interfaces/footer'
 
-const footerAbout = {
+const footerAbout: FooterAbout = {
 	title: 'oxygenna',
 	aboutText:
 		'Expertly made, responsive, accessible components in React and HTML ready to be used on your website or app. Just copy and paste them on your Tailwind CSS project.',
 	logo: { src: 'logo.svg', alt: 'wind ui' }
 }
 
-const footerColumns = [
+const footerColumns: FooterColumn[] = [
 	{
 		category: 'Product',
 		subCategories: [
@@ -62,7 +63,7 @@ const footerColumns = [
 	}
 ]
 
-const subFooter = {
+const subFooter: SubFooter = {
 	copywriteText: '© Oxygenna 2024.',
 	socials: [
 		{
