@@ -1,29 +1,28 @@
 ---
 import { Icon } from 'astro-icon/components'
-import type { FooterAbout, FooterColumn, SubFooter } from '../interfaces/footer'
 
-const footerAbout: FooterAbout = {
+const footerAbout = {
 	title: 'oxygenna',
 	aboutText:
 		'Expertly made, responsive, accessible components in React and HTML ready to be used on your website or app. Just copy and paste them on your Tailwind CSS project.',
 	logo: { src: 'logo.svg', alt: 'wind ui' }
 }
 
-const footerColumns: FooterColumn[] = [
+const footerColumns = [
 	{
 		category: 'Product',
 		subCategories: [
 			{
 				subCategory: 'Features',
-				subCategoryLink: 'javascript:void(0)'
+				subCategoryLink: '/'
 			},
 			{
 				subCategory: 'Customers',
-				subCategoryLink: 'javascript:void(0)'
+				subCategoryLink: '/'
 			},
 			{
 				subCategory: 'Pricing',
-				subCategoryLink: 'javascript:void(0)'
+				subCategoryLink: '/'
 			}
 		]
 	},
@@ -32,15 +31,15 @@ const footerColumns: FooterColumn[] = [
 		subCategories: [
 			{
 				subCategory: 'About us',
-				subCategoryLink: 'javascript:void(0)'
+				subCategoryLink: '/'
 			},
 			{
 				subCategory: 'Events',
-				subCategoryLink: 'javascript:void(0)'
+				subCategoryLink: '/'
 			},
 			{
 				subCategory: 'Careers',
-				subCategoryLink: 'javascript:void(0)'
+				subCategoryLink: '/'
 			}
 		]
 	},
@@ -49,33 +48,33 @@ const footerColumns: FooterColumn[] = [
 		subCategories: [
 			{
 				subCategory: 'Contact',
-				subCategoryLink: 'javascript:void(0)'
+				subCategoryLink: '/'
 			},
 			{
 				subCategory: 'Support',
-				subCategoryLink: 'javascript:void(0)'
+				subCategoryLink: '/'
 			},
 			{
 				subCategory: 'Join us',
-				subCategoryLink: 'javascript:void(0)'
+				subCategoryLink: '/'
 			}
 		]
 	}
 ]
 
-const subFooter: SubFooter = {
+const subFooter = {
 	copywriteText: '© Oxygenna 2024.',
 	socials: [
 		{
-			link: 'javascript:void(0)',
+			link: '/',
 			icon: 'fb-icon'
 		},
 		{
-			link: 'javascript:void(0)',
+			link: '/',
 			icon: 'twitter-icon'
 		},
 		{
-			link: 'javascript:void(0)',
+			link: '/',
 			icon: 'discord-icon'
 		}
 	]
@@ -87,7 +86,7 @@ const subFooter: SubFooter = {
 	<div class="footer__main">
 		<div class="footer__container">
 			<div class="footer__cols">
-				<div class="footer__col" aria-labelledby="footer-header">
+				<div class="footer__col">
 					<a aria-label="webiste logo" aria-current="page" class="footer__main-brand" href="/">
 						<img src={footerAbout.logo.src} alt={footerAbout.logo.alt} width="32" height="32" />
 						{footerAbout.title}
@@ -98,7 +97,7 @@ const subFooter: SubFooter = {
 				</div>
 				{
 					footerColumns.map((column) => (
-						<nav class="footer__col" aria-labelledby="footer-columns">
+						<div class="footer__col">
 							<h3>{column.category}</h3>
 							<ul>
 								{column.subCategories.map((subCategory) => (
@@ -107,7 +106,7 @@ const subFooter: SubFooter = {
 									</li>
 								))}
 							</ul>
-						</nav>
+						</div>
 					))
 				}
 			</div>
@@ -158,21 +157,17 @@ const subFooter: SubFooter = {
 	}
 
 	.footer__cols {
-		@apply grid grid-cols-4 gap-6 md:grid-cols-8 lg:grid-cols-12 [&_.footer\_\_col:nth-child(2)]:lg:col-start-7;
+		@apply grid grid-cols-4 gap-6 md:grid-cols-8 lg:grid-cols-12;
 	}
 
 	.footer__col {
-		@apply col-span-2 md:col-span-4 lg:col-span-2;
+		@apply col-span-2 first:col-span-4 md:col-span-4 md:first:col-span-8 lg:col-span-2 lg:first:col-span-4 lg:[&:nth-child(2)]:col-start-7;
 	}
-	div.footer__col {
-		@apply col-span-4 md:col-span-8 lg:col-span-4;
-	}
-
 	.footer__sub {
 		@apply border-t border-neutral-200 bg-neutral-100 py-4 text-sm dark:border-neutral-900 dark:bg-neutral-800/50;
 	}
 	.footer__sub ul {
-		@apply flex items-center justify-end gap-4;
+		@apply flex items-center justify-end gap-6;
 	}
 	.footer__sub a {
 		@apply [&_svg]:h-4 [&_svg]:w-4 [&_svg]:shrink-0;

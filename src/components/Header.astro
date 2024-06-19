@@ -1,5 +1,6 @@
 ---
 import Button from './Button.astro'
+import Switcher from './ModeSwitcher.astro'
 
 // Logo
 const logo = { src: 'logo.svg', alt: 'wind ui' }
@@ -56,6 +57,8 @@ const navActions = [
 				}
 			</ul>
 
+			<!-- Theme Switcher -->
+			<Switcher />
 			<!-- Navigation action buttons -->
 			<div class="header__actions">
 				{
