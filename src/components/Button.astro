@@ -36,26 +36,26 @@ const { link, size, name, style, variation, elevated, iconName, iconType } = Ast
 	}
 
 	.button--lg {
-		@apply h-12 px-6 text-sm [&.button--elevated]:shadow-lg [&.button--elevated]:hover:shadow-md [&.button--elevated]:focus:shadow-md only:[&_.button\_\_icon]:-mx-6 [&_.button\_\_icon_img]:!h-5 [&_.button\_\_icon_img]:!w-5;
+		@apply h-12 px-6 text-sm [&.button--elevated]:shadow-lg [&.button--elevated]:hover:shadow-md [&.button--elevated]:focus:shadow-md only:[&_.button\_\_icon]:-mx-6 [&_.button\_\_icon_svg]:h-5 [&_.button\_\_icon_svg]:w-5;
 	}
 
 	.button--base {
-		@apply h-10 px-5 text-sm [&.button--elevated]:shadow-md [&.button--elevated]:hover:shadow-sm [&.button--elevated]:focus:shadow-sm only:[&_.button\_\_icon]:-mx-5 [&_.button\_\_icon_img]:!h-5 [&_.button\_\_icon_img]:!w-5;
+		@apply h-10 px-5 text-sm [&.button--elevated]:shadow-md [&.button--elevated]:hover:shadow-sm [&.button--elevated]:focus:shadow-sm only:[&_.button\_\_icon]:-mx-5 [&_.button\_\_icon_svg]:h-5 [&_.button\_\_icon_svg]:w-5;
 	}
 
 	.button--sm {
-		@apply h-8 px-4 text-xs [&.button--elevated]:shadow-md [&.button--elevated]:hover:shadow-sm [&.button--elevated]:focus:shadow-sm only:[&_.button\_\_icon]:-mx-4 [&_.button\_\_icon_img]:!h-4 [&_.button\_\_icon_img]:!w-4;
+		@apply h-8 px-4 text-xs [&.button--elevated]:shadow-md [&.button--elevated]:hover:shadow-sm [&.button--elevated]:focus:shadow-sm only:[&_.button\_\_icon]:-mx-4 [&_.button\_\_icon_svg]:h-4 [&_.button\_\_icon_svg]:w-4;
 	}
 
 	.button--primary {
-		@apply bg-primary-500 text-white hover:bg-primary-600 focus:bg-primary-700 disabled:border-primary-300 disabled:bg-primary-300 [&.button--elevated]:shadow-primary-200 [&.button--elevated]:hover:shadow-primary-200 [&.button--elevated]:focus:shadow-primary-200;
+		@apply bg-primary-500 text-white hover:bg-primary-600 focus:bg-primary-700 disabled:border-primary-300 disabled:bg-primary-300 [&.button--elevated]:shadow-primary-500/30 [&.button--elevated]:hover:shadow-primary-500/30 [&.button--elevated]:focus:shadow-primary-500/30;
 	}
 
 	.button--secondary {
-		@apply bg-primary-50 text-primary-500 hover:bg-primary-100 hover:text-primary-600 focus:bg-primary-200 focus:text-primary-700 disabled:border-primary-300 disabled:bg-primary-100 disabled:text-primary-400 [&.button--elevated]:shadow-primary-100 [&.button--elevated]:hover:shadow-primary-100 [&.button--elevated]:focus:shadow-primary-100;
+		@apply bg-primary-50 text-primary-500 hover:bg-primary-100 hover:text-primary-600 focus:bg-primary-200 focus:text-primary-700 disabled:border-primary-300 disabled:bg-primary-100 disabled:text-primary-400 [&.button--elevated]:shadow-primary-500/30 [&.button--elevated]:hover:shadow-primary-500/30 [&.button--elevated]:focus:shadow-primary-500/30;
 	}
 
 	.button--neutral {
-		@apply bg-neutral-500 text-white hover:bg-neutral-600 focus:bg-neutral-700 disabled:border-neutral-300 disabled:bg-neutral-300 [&.button--elevated]:shadow-neutral-200 [&.button--elevated]:hover:shadow-neutral-200 [&.button--elevated]:focus:shadow-neutral-200;
+		@apply bg-neutral-500 text-white hover:bg-neutral-600 focus:bg-neutral-700 disabled:border-neutral-300 disabled:bg-neutral-300 [&.button--elevated]:shadow-neutral-500/30 [&.button--elevated]:hover:shadow-neutral-500/30 [&.button--elevated]:focus:shadow-neutral-500/30;
 	}
 </style>
