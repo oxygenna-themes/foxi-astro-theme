@@ -1,0 +1,19 @@
+[
+	{
+		"category": "Product",
+		"subCategories": [
+			{
+				"subCategory": "Features",
+				"subCategoryLink": "/"
+			},
+			{
+				"subCategory": "Customers",
+				"subCategoryLink": "/"
+			},
+			{
+				"subCategory": "Pricing",
+				"subCategoryLink": "/"
+			}
+		]
+	}
+]
