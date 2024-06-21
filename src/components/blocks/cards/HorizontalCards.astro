@@ -1,0 +1,23 @@
+---
+import Section from '../../ui/Section.astro'
+import Col from '../../ui/Col.astro'
+import Card from '../../ui/Card.astro'
+
+import testImage from '../../../assets/test.jpg'
+
+const cardImage = { src: testImage.src, alt: 'I am alt description' }
+---
+
+<Section layout="someLayout" id="something" mode="">
+	<Col size="col-span-3 lg:col-span-12">
+		<Card
+			link="https://astro.build/chat/"
+			title="Community"
+			subtitle="My title is clickable"
+			body="Following the journey of history and culture, is a journey through the beautiful green rice paddies, and endless golden fields! Dotted amongst the countryside are bustling towns, with a vibrant atmosphere and great cafe culture."
+			image={cardImage}
+			linkType="cardTitle"
+			variation="horizontal"
+		/>
+	</Col>
+</Section>

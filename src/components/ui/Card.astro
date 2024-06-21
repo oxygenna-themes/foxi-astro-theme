@@ -1,46 +1,171 @@
 ---
+import { string } from 'astro/zod'
 import Button from './Button.astro'
+import { Icon } from 'astro-icon/components'
 
 type Props = {
 	title: string
+	subtitle?: string
 	body: string
-	href?: string
+	link?: string
+	image?: any
+	iconName?: string
+	align?: 'left' | 'center'
+	avatarImage?: any
+	avatarLink?: string
+	linkType?: 'button' | 'linkableCard' | 'cardTitle'
+	variation?: 'vertical' | 'horizontal'
 }
 
-const { href, title, body } = Astro.props
+const {
+	link,
+	title,
+	subtitle,
+	body,
+	image,
+	iconName,
+	align,
+	avatarImage,
+	avatarLink,
+	linkType,
+	variation
+} = Astro.props
 ---
 
-<div class="card">
-	<div class="card__body">
-		<h3 class="card__body--heading">{title}</h3>
-		<p class="card__body--text">
-			{body}
-		</p>
-	</div>
-	{
-		href && (
-			<div class="card__actions">
-				<Button link={href} name="Read more" style="primary" size="base" variation="link" />
+{
+	linkType === 'linkableCard' ? (
+		<a
+			href={link}
+			class={`card ${align === 'center' ? 'text-center' : ''} inline-block cursor-pointer ${variation === 'horizontal' ? 'flex flex-col sm:flex-row' : ''}`}
+		>
+			{image && (
+				<figure class={`${variation === 'horizontal' ? 'flex-1' : ''}`}>
+					<img
+						src={image.src}
+						alt={image.alt}
+						class={` ${variation === 'horizontal' ? 'aspect-auto min-h-full object-cover' : 'aspect-video w-full'}`}
+					/>
+				</figure>
+			)}
+			{iconName && (
+				<figure class={`card__icon ${align === 'center' ? '[&_svg]:mx-auto' : ''}`}>
+					<Icon name={iconName} />
+				</figure>
+			)}
+			<div class={`card__body ${variation === 'horizontal' ? 'flex-1 sm:mx-6 sm:px-0' : ''}`}>
+				<header class={`card__header ${avatarImage ? 'flex gap-4' : ''}`}>
+					{avatarImage && (
+						<figure class="relative inline-flex h-12 w-12 items-center justify-center rounded-full text-white">
+							<img
+								src={avatarImage.src}
+								alt={avatarImage.alt}
+								title={avatarImage.alt}
+								width="48"
+								height="48"
+								class="max-w-full rounded-full"
+							/>
+						</figure>
+					)}
+					<div>
+						<h3 class="card__header--heading">{title}</h3>
+						{subtitle && <p class="card__header--subheading">{subtitle}</p>}
+					</div>
+				</header>
+				<p class="card__body--text">{body}</p>
 			</div>
-		)
-	}
-</div>
+		</a>
+	) : (
+		<div
+			class={`card ${align === 'center' ? 'text-center' : ''} ${variation === 'horizontal' ? 'flex flex-col sm:flex-row' : ''}`}
+		>
+			{image && (
+				<figure class={`${variation === 'horizontal' ? 'flex-1' : ''}`}>
+					<img
+						src={image.src}
+						alt={image.alt}
+						class={` ${variation === 'horizontal' ? 'aspect-auto min-h-full object-cover' : 'aspect-video w-full'}`}
+					/>
+				</figure>
+			)}
+			{iconName && (
+				<figure class={`card__icon ${align === 'center' && '[&_svg]:mx-auto'}`}>
+					<Icon name={iconName} />
+				</figure>
+			)}
+			<div class={`card__body ${variation === 'horizontal' ? 'flex-1 sm:mx-6 sm:px-0' : ''}`}>
+				<header class={`card__header ${avatarImage ? 'flex gap-4' : ''}`}>
+					{avatarImage &&
+						(avatarLink ? (
+							<a
+								href={avatarLink}
+								class="relative inline-flex h-12 w-12 items-center justify-center rounded-full text-white"
+							>
+								<img
+									src={avatarImage.src}
+									alt={avatarImage.alt}
+									title={avatarImage.alt}
+									width="48"
+									height="48"
+									class="max-w-full rounded-full"
+								/>
+							</a>
+						) : (
+							<img
+								src={avatarImage.src}
+								alt={avatarImage.alt}
+								title={avatarImage.alt}
+								width="48"
+								height="48"
+								class="max-w-full rounded-full"
+							/>
+						))}
+					<div>
+						{linkType === 'cardTitle' ? (
+							<a href={link} class="card__header--heading cursor-pointer">
+								{title}
+							</a>
+						) : (
+							<h3 class="card__header--heading">{title}</h3>
+						)}
+
+						{subtitle && <p class="card__header--subheading">{subtitle}</p>}
+					</div>
+				</header>
+				<p class="card__body--text">{body}</p>
+			</div>
+			{linkType === 'button' && link && (
+				<div class={`card__actions ${align === 'center' ? 'justify-center' : 'justify-end'}`}>
+					<Button link={link} name="Read more" style="primary" size="base" variation="link" />
+				</div>
+			)}
+		</div>
+	)
+}
 
 <style>
 	.card {
 		@apply overflow-hidden rounded bg-white text-slate-500 shadow-md shadow-slate-700/10 dark:bg-neutral-800;
 	}
+	.card__icon {
+		@apply p-6 pb-0 text-primary-500 [&_svg]:h-12 [&_svg]:w-12;
+	}
 	.card__body {
 		@apply p-6;
 	}
-	.card__body--heading {
-		@apply mb-4 text-xl font-medium text-slate-700 dark:text-slate-50;
+	.card__header {
+		@apply mb-4;
+	}
+	.card__header--heading {
+		@apply text-xl font-medium text-slate-700 dark:text-slate-50;
+	}
+	.card__header--subheading {
+		@apply text-sm text-slate-400;
 	}
 	.card__body--text {
 		@apply dark:text-slate-300;
 	}
 
 	.card__actions {
-		@apply flex justify-end gap-2 p-2 px-5 pt-0;
+		@apply flex gap-2 p-2 px-5 pt-0;
 	}
 </style>
