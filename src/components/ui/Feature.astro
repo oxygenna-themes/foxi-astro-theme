@@ -1,0 +1,59 @@
+---
+import { Icon } from 'astro-icon/components'
+
+type Props = {
+	type: 'oneLine' | 'titleText'
+	title: string
+	iconName?: string
+	align?: 'left' | 'center'
+	iconPosition?: 'left' | 'top'
+}
+
+const { type, title, iconName, iconPosition, align } = Astro.props
+
+const flexDirection =
+	iconPosition === 'top'
+		? 'flex-col'
+		: (iconPosition === 'left' || !iconPosition) && align === 'center'
+			? 'flex-col '
+			: 'flex-col md:flex-row'
+
+const alignment = align === 'center' ? 'items-center text-center' : 'items-start'
+
+const extraClasses = `${flexDirection} ${alignment}`
+---
+
+<div class={`feature ${extraClasses} `}>
+	{
+		iconName && (
+			<div class="feature__icon">
+				<Icon name={iconName} />
+			</div>
+		)
+	}
+	<div class={`feature__main ${align === 'center' ? 'items-center' : 'items-start'}`}>
+		{type === 'titleText' && <h3 class="feature__title">{title}</h3>}
+		<p class="feature__body">
+			{type === 'oneLine' && <strong>{title}</strong>}
+			<slot />
+		</p>
+	</div>
+</div>
+
+<style>
+	.feature {
+		@apply flex gap-4;
+	}
+	.feature__icon {
+		@apply flex items-center text-primary-500 [&_svg]:h-6 [&_svg]:w-6;
+	}
+	.feature__main {
+		@apply inline-flex w-full min-w-0 flex-col justify-center gap-0 text-base;
+	}
+	.feature__title {
+		@apply mb-4 text-lg leading-6 text-slate-700 dark:text-slate-50;
+	}
+	.feature__body {
+		@apply text-slate-500 dark:text-slate-300 [&_strong]:font-medium [&_strong]:text-slate-700 [&_strong]:dark:text-slate-50;
+	}
+</style>
