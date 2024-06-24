@@ -74,18 +74,19 @@ const navActions = [
 <script>
 	const headerToggle = document.querySelector('.header__toggle')
 	const headerMenu = document.querySelector('.header__menu')
-	headerToggle.addEventListener('click', () => {
-		headerToggle.classList.toggle('header__toggle--open')
-		headerToggle.setAttribute(
-			'aria-expanded',
-			!(headerToggle.getAttribute('aria-expanded') === 'true')
-		)
-		headerMenu.classList.toggle('header__menu--open')
-	})
+	if (headerToggle && headerMenu) {
+		headerToggle.addEventListener('click', () => {
+			headerToggle.classList.toggle('header__toggle--open')
+			const isExpanded = headerToggle.getAttribute('aria-expanded') === 'true'
+			const newExpandedValue = isExpanded ? 'false' : 'true'
+			headerToggle.setAttribute('aria-expanded', newExpandedValue)
+			headerMenu.classList.toggle('header__menu--open')
+		})
+	}
 </script>
 <style>
 	.header {
-		@apply relative z-20 w-full bg-white/90 shadow-lg shadow-neutral-700/5 after:absolute after:left-0 after:top-full after:z-10 after:block after:h-px after:w-full lg:backdrop-blur-sm lg:after:hidden dark:bg-neutral-900/90 dark:shadow-neutral-950/50;
+		@apply dark:shadow-neutral-950/50 relative z-20 w-full bg-white/90 shadow-lg shadow-neutral-700/5 after:absolute after:left-0 after:top-full after:z-10 after:block after:h-px after:w-full lg:backdrop-blur-sm lg:after:hidden dark:bg-neutral-900/90;
 	}
 	.header__container {
 		@apply relative mx-auto max-w-full px-6 lg:max-w-5xl xl:max-w-7xl 2xl:max-w-[96rem];

@@ -1,0 +1,20 @@
+---
+interface Props {
+	type?: string
+}
+
+const { type = '' } = Astro.props
+---
+
+<div class:list={[`row ${type}`]}>
+	<slot />
+</div>
+
+<style>
+	.row {
+		@apply grid grid-cols-4 gap-6 md:grid-cols-8 lg:grid-cols-12 [&.flex]:flex;
+	}
+	.flex {
+		@apply flex-wrap items-center justify-center;
+	}
+</style>

@@ -1,37 +1,19 @@
 ---
+// Layout elements
 import Section from '../../ui/Section.astro'
+import Row from '../../ui/Row.astro'
 import Col from '../../ui/Col.astro'
 
-import TextElement from '../../ui/TextElement.astro'
-import Button from '../../ui/Button.astro'
+// UI elements
 import Heading from '../../ui/Heading.astro'
 ---
 
-<Section layout="someLayout" id="something" mode="">
-	<Col size="col-span-3 lg:col-span-12 ">
-		<TextElement
-			overheading="I am overheader"
-			subheading="I am subheader"
-			divider="lg"
-			align="center"
-		>
-			<Heading level="h1" slot="heading">
-				Welcome to Astro
-				<a href="#">hi</a>
-			</Heading>
-			<p slot="text">
-				To get started, open the directory src/pages in your project.
-				<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
-			</p>
-			<Button
-				link="/"
-				name="Subsribe"
-				style="primary"
-				size="lg"
-				iconName="icon"
-				iconType="lead"
-				elevated
-			/>
-		</TextElement>
-	</Col>
+<Section id="something">
+	<Row type="flex">
+		<Col size="2">sss</Col>
+
+		<Heading>Hi there</Heading>
+
+		<Col size="2" />
+	</Row>
 </Section>

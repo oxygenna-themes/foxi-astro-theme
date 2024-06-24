@@ -1,11 +1,11 @@
 ---
 interface Props {
-	size: string
+	size?: string
 }
 
 const { size } = Astro.props
 ---
 
-<div class:list={['col', size]}>
+<div class:list={[`col-span-${size}`]}>
 	<slot />
 </div>
