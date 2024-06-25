@@ -16,7 +16,7 @@ h6 {
 h1,
 h2,
 h3 {
-	@apply text-balance font-bold;
+	@apply text-pretty font-bold;
 }
 
 h4,
