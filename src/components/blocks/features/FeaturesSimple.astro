@@ -1,28 +1,36 @@
 ---
 import Section from '../../ui/Section.astro'
 import Col from '../../ui/Col.astro'
+import Row from '../../ui/Row.astro'
 import Feature from '../../ui/Feature.astro'
 ---
 
 <Section layout="someLayout" id="something" mode="">
-	<Col size="col-span-2 lg:col-span-3">
-		<Feature type="oneLine" title="Responsive Design:" iconName="rocket" iconPosition="top">
-			Embark on a transformational journey with our architectural solutions.
-		</Feature>
-	</Col>
-	<Col size="col-span-2 lg:col-span-3">
-		<Feature type="oneLine" title="Continuous Support:" iconName="chat-bubbles" iconPosition="top">
-			Benefit from steadfast guidance and assistance throughout creativity.
-		</Feature>
-	</Col>
-	<Col size="col-span-2 lg:col-span-3">
-		<Feature type="oneLine" title="App Access:" iconName="mobile" iconPosition="top">
-			Gain access to innovation and expertise with our architectural solutions app.
-		</Feature>
-	</Col>
-	<Col size="col-span-2 lg:col-span-3">
-		<Feature type="oneLine" title="Consulting:" iconName="book" iconPosition="top">
-			Navigate architectural planning confidently with the guidance of our solutions.
-		</Feature>
-	</Col>
+	<Row>
+		<Col size="col-span-2 lg:col-span-3">
+			<Feature type="oneLine" title="Responsive Design:" iconName="rocket" iconPosition="top">
+				Embark on a transformational journey with our architectural solutions.
+			</Feature>
+		</Col>
+		<Col size="col-span-2 lg:col-span-3">
+			<Feature
+				type="oneLine"
+				title="Continuous Support:"
+				iconName="chat-bubbles"
+				iconPosition="top"
+			>
+				Benefit from steadfast guidance and assistance throughout creativity.
+			</Feature>
+		</Col>
+		<Col size="col-span-2 lg:col-span-3">
+			<Feature type="oneLine" title="App Access:" iconName="mobile" iconPosition="top">
+				Gain access to innovation and expertise with our architectural solutions app.
+			</Feature>
+		</Col>
+		<Col size="col-span-2 lg:col-span-3">
+			<Feature type="oneLine" title="Consulting:" iconName="book" iconPosition="top">
+				Navigate architectural planning confidently with the guidance of our solutions.
+			</Feature>
+		</Col>
+	</Row>
 </Section>

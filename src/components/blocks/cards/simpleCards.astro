@@ -1,6 +1,7 @@
 ---
 import Section from '../../ui/Section.astro'
 import Col from '../../ui/Col.astro'
+import Row from '../../ui/Row.astro'
 import Card from '../../ui/Card.astro'
 
 import testImage from '../../../assets/test.jpg'
@@ -11,44 +12,46 @@ const avatarImage = { src: avatar.src, alt: 'I am alt description' }
 ---
 
 <Section layout="someLayout" id="something" mode="">
-	<Col size="col-span-3 lg:col-span-3 ">
-		<Card
-			link="https://docs.astro.build/"
-			title="Documentation"
-			subtitle="I am a clickable Card"
-			body="Following the journey of history and culture, is a journey through the beautiful green rice paddies, and endless golden fields! Dotted amongst the countryside are bustling towns, with a vibrant atmosphere and great cafe culture."
-			image={cardImage}
-			avatarImage={avatarImage}
-			linkType="linkableCard"
-		/>
-	</Col>
-	<Col size="col-span-3 lg:col-span-3 ">
-		<Card
-			link="https://astro.build/integrations/"
-			title="Integrations"
-			body="Following the journey of history and culture, is a journey through the beautiful green rice paddies, and endless golden fields! Dotted amongst the countryside are bustling towns, with a vibrant atmosphere and great cafe culture."
-			linkType="button"
-			align="center"
-		/>
-	</Col>
-	<Col size="col-span-3 lg:col-span-3 ">
-		<Card
-			link="https://astro.build/themes/"
-			title="Themes"
-			body="Following the journey of history and culture, is a journey through the beautiful green rice paddies, and endless golden fields! Dotted amongst the countryside are bustling towns, with a vibrant atmosphere and great cafe culture."
-			iconName="icon"
-			linkType="button"
-		/>
-	</Col>
-	<Col size="col-span-3 lg:col-span-3 ">
-		<Card
-			link="https://astro.build/chat/"
-			title="Community"
-			subtitle="My title is clickable"
-			body="Following the journey of history and culture, is a journey through the beautiful green rice paddies, and endless golden fields! Dotted amongst the countryside are bustling towns, with a vibrant atmosphere and great cafe culture."
-			image={cardImage}
-			linkType="cardTitle"
-			align="center"
-		/>
-	</Col>
+	<Row>
+		<Col size="col-span-3 lg:col-span-3 ">
+			<Card
+				link="https://docs.astro.build/"
+				title="Documentation"
+				subtitle="I am a clickable Card"
+				body="Following the journey of history and culture, is a journey through the beautiful green rice paddies, and endless golden fields! Dotted amongst the countryside are bustling towns, with a vibrant atmosphere and great cafe culture."
+				image={cardImage}
+				avatarImage={avatarImage}
+				linkType="linkableCard"
+			/>
+		</Col>
+		<Col size="col-span-3 lg:col-span-3 ">
+			<Card
+				link="https://astro.build/integrations/"
+				title="Integrations"
+				body="Following the journey of history and culture, is a journey through the beautiful green rice paddies, and endless golden fields! Dotted amongst the countryside are bustling towns, with a vibrant atmosphere and great cafe culture."
+				linkType="button"
+				align="center"
+			/>
+		</Col>
+		<Col size="col-span-3 lg:col-span-3 ">
+			<Card
+				link="https://astro.build/themes/"
+				title="Themes"
+				body="Following the journey of history and culture, is a journey through the beautiful green rice paddies, and endless golden fields! Dotted amongst the countryside are bustling towns, with a vibrant atmosphere and great cafe culture."
+				iconName="icon"
+				linkType="button"
+			/>
+		</Col>
+		<Col size="col-span-3 lg:col-span-3 ">
+			<Card
+				link="https://astro.build/chat/"
+				title="Community"
+				subtitle="My title is clickable"
+				body="Following the journey of history and culture, is a journey through the beautiful green rice paddies, and endless golden fields! Dotted amongst the countryside are bustling towns, with a vibrant atmosphere and great cafe culture."
+				image={cardImage}
+				linkType="cardTitle"
+				align="center"
+			/>
+		</Col>
+	</Row>
 </Section>
