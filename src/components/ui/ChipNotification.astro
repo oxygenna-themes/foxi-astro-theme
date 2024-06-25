@@ -8,15 +8,16 @@ type Props = {
 	buttonName?: string
 	linkName?: string
 	buttonPosition?: 'lead' | 'trail'
+	extraClasses?: string
 }
 
-const { link, body, linkName, variation, buttonName, buttonPosition } = Astro.props
+const { link, body, linkName, variation, buttonName, buttonPosition, extraClasses } = Astro.props
 ---
 
 {
 	buttonPosition === 'trail' ? (
 		<div
-			class={`chip ${variation === 'button' || variation === 'button-link' ? 'pl-4 pr-0.5' : 'px-4'}`}
+			class={`chip ${variation === 'button' || variation === 'button-link' ? 'pl-4 pr-0.5' : 'px-4'} ${extraClasses && `${extraClasses}`}`}
 		>
 			<div class="chip__body">
 				{(variation === 'link' || variation === 'button-link') && (
@@ -35,7 +36,7 @@ const { link, body, linkName, variation, buttonName, buttonPosition } = Astro.pr
 		</div>
 	) : (
 		<div
-			class={`chip ${variation === 'button' || variation === 'button-link' ? 'pl-0.5 pr-4' : 'pl-4'}`}
+			class={`chip ${variation === 'button' || variation === 'button-link' ? 'pl-0.5 pr-4' : 'pl-4'} ${extraClasses && `${extraClasses}`}`}
 		>
 			{variation === 'button' && <Button link={link} name={buttonName} style="primary" size="sm" />}
 			{variation === 'button-link' && (

@@ -2,11 +2,12 @@
 interface Props {
 	size?: string
 	align?: string
+	extraClasses?: string
 }
 
-const { size, align } = Astro.props
+const { size, align, extraClasses } = Astro.props
 ---
 
-<div class:list={[`space-y-6 col-span-${size} text-${align}`]}>
+<div class:list={[`space-y-6 col-span-${size} text-${align} ${extraClasses}`]}>
 	<slot />
 </div>

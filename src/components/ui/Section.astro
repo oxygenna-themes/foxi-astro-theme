@@ -11,11 +11,14 @@ interface Props {
 	mode?: string
 	bg?: BgProps
 	bgHeight?: string
+	extraClasses?: string
 }
 
-const { layout = '', id = '', mode = 'light', bg, bgHeight = '100%' } = Astro.props
+const { layout = '', id = '', mode = 'light', bg, bgHeight = '100%', extraClasses } = Astro.props
 const classes =
-	(layout.includes('fullwidth') ? 'section--fullwidth ' : '') + (mode === 'dark' ? 'dark' : '')
+	(layout.includes('fullwidth') ? 'section--fullwidth ' : '') +
+	(mode === 'dark' ? 'dark' : '') +
+	(extraClasses ? ' ' + extraClasses : '')
 console.log(bg)
 const bgStyle = bg
 	? {

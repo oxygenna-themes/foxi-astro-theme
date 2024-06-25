@@ -11,13 +11,25 @@ type Props = {
 	iconName?: string
 	iconType?: 'lead' | 'trail' | 'button'
 	fullWidth?: boolean
+	extraClasses?: string
 }
 
-const { link, size, name, style, variation, elevated, iconName, iconType, fullWidth } = Astro.props
+const {
+	link,
+	size,
+	name,
+	style,
+	variation,
+	elevated,
+	iconName,
+	iconType,
+	fullWidth,
+	extraClasses
+} = Astro.props
 ---
 
 <a
-	class={`button button--${size} button--${style} ${variation && `button--${variation}`} ${elevated && 'button--elevated'} ${fullWidth ? 'w-full' : 'w-fit'}`}
+	class={`button button--${size} button--${style} ${variation && `button--${variation}`} ${elevated && 'button--elevated'} ${fullWidth ? 'w-full' : 'w-fit'} ${extraClasses && `${extraClasses}`}`}
 	href={link}
 >
 	{iconType !== 'button' && <span class={`${iconType === 'lead' ? 'order-2' : ''}`}>{name}</span>}

@@ -15,6 +15,7 @@ type Props = {
 	avatarLink?: string
 	linkType?: 'button' | 'linkableCard' | 'cardTitle'
 	variation?: 'vertical' | 'horizontal'
+	extraClasses?: string
 }
 
 const {
@@ -28,7 +29,8 @@ const {
 	avatarImage,
 	avatarLink,
 	linkType,
-	variation
+	variation,
+	extraClasses
 } = Astro.props
 ---
 
@@ -36,7 +38,7 @@ const {
 	linkType === 'linkableCard' ? (
 		<a
 			href={link}
-			class={`card ${align === 'center' ? 'text-center' : ''} inline-block cursor-pointer ${variation === 'horizontal' ? 'flex flex-col sm:flex-row' : ''}`}
+			class={`card ${align === 'center' ? 'text-center' : ''} inline-block cursor-pointer ${variation === 'horizontal' ? 'flex flex-col sm:flex-row' : ''} ${extraClasses && `${extraClasses}`}`}
 		>
 			{image && (
 				<figure class={`${variation === 'horizontal' ? 'flex-1' : ''}`}>
@@ -76,7 +78,7 @@ const {
 		</a>
 	) : (
 		<div
-			class={`card ${align === 'center' ? 'text-center' : ''} ${variation === 'horizontal' ? 'flex flex-col sm:flex-row' : ''}`}
+			class={`card ${align === 'center' ? 'text-center' : ''} ${variation === 'horizontal' ? 'flex flex-col sm:flex-row' : ''} ${extraClasses && `${extraClasses}`}`}
 		>
 			{image && (
 				<figure class={`${variation === 'horizontal' ? 'flex-1' : ''}`}>

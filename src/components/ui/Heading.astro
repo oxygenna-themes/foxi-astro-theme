@@ -6,10 +6,11 @@ type Props = {
 	size?: string
 	mobileSize?: string
 	align?: string
+	extraClasses?: string
 }
 
-const { level = '1', size, mobileSize, align } = Astro.props
-const className = `text-${mobileSize} lg:text-${size} text-${align}`
+const { level = '1', size, mobileSize, align, extraClasses } = Astro.props
+const className = `text-${mobileSize} lg:text-${size} text-${align} ${extraClasses}`
 ---
 
 {

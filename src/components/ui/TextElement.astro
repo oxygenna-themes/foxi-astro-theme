@@ -4,12 +4,13 @@ type Props = {
 	divider?: 'base' | 'lg'
 	overheading?: string
 	subheading?: string
+	extraClasses?: string
 }
 
-const { align, divider, overheading, subheading } = Astro.props
+const { align, divider, overheading, subheading, extraClasses } = Astro.props
 ---
 
-<div class={`text-element ${align && 'text-element--' + align}`}>
+<div class={`text-element ${align && 'text-element--' + align} ${extraClasses}`}>
 	<div class="text-element__headlines">
 		{overheading && <span class="text-element__headlines--over">{overheading}</span>}
 		<slot name="heading" />
