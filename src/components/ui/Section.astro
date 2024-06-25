@@ -1,26 +1,47 @@
 ---
+interface BgProps {
+	src: string
+	width: number
+	height: number
+	format: string
+}
 interface Props {
 	layout?: string
 	id?: string
 	mode?: string
+	bg?: BgProps
+	bgHeight?: string
 }
 
-const { layout = '', id = '', mode = 'light' } = Astro.props
+const { layout = '', id = '', mode = 'light', bg, bgHeight = '100%' } = Astro.props
 const classes =
 	(layout.includes('fullwidth') ? 'section--fullwidth ' : '') + (mode === 'dark' ? 'dark' : '')
+console.log(bg)
+const bgStyle = bg
+	? {
+			backgroundImage: `url(${bg.src})`,
+			height: bgHeight
+		}
+	: {
+			height: bgHeight
+		}
 ---
 
-<section id={id} class={classes}>
+<section id={id} class:list={[`section ${classes}`]}>
+	<div class="section__bg" style={bgStyle}></div>
 	<div class="container">
 		<slot />
 	</div>
 </section>
 
 <style>
-	section {
-		@apply py-24 dark:bg-neutral-900;
+	.section {
+		@apply relative py-24 dark:bg-neutral-900;
+	}
+	.section__bg {
+		@apply absolute inset-0 bg-cover;
 	}
 	.container {
-		@apply mx-auto px-6 [.section--fullwidth_&]:max-w-full;
+		@apply relative z-[1] mx-auto px-6 [.section--fullwidth_&]:max-w-full;
 	}
 </style>
