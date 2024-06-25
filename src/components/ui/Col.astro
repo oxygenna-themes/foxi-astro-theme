@@ -7,6 +7,6 @@ interface Props {
 const { size, align } = Astro.props
 ---
 
-<div class:list={[`col-span-${size} text-${align}`]}>
+<div class:list={[`space-y-6 col-span-${size} text-${align}`]}>
 	<slot />
 </div>
