@@ -1,0 +1,29 @@
+---
+interface Props {
+	type?: string
+}
+
+const { type = '1' } = Astro.props
+---
+
+<span class:list={[`highlight highlight--${type}`]}>
+	<slot />
+</span>
+
+<style>
+	.highlight {
+		@apply relative inline-block before:absolute before:-bottom-1 before:-left-1 before:-right-1 before:-top-1 before:z-[-1];
+	}
+	.highlight--1 {
+		@apply text-primary-500;
+	}
+	.highlight--2 {
+		@apply bg-gradient-to-r from-primary-500 to-indigo-400 bg-clip-text text-transparent;
+	}
+	.highlight--3 {
+		@apply px-4 text-white before:bg-primary-500;
+	}
+	.highlight--4 {
+		@apply px-4 text-white before:-bottom-2 before:-top-2 before:-rotate-2 before:bg-primary-500;
+	}
+</style>

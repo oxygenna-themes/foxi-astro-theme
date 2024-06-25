@@ -6,6 +6,7 @@ import Col from '../../ui/Col.astro'
 
 // UI elements
 import Heading from '../../ui/Heading.astro'
+import Highlight from '../../ui/Highlight.astro'
 
 // Hero content
 import bg from '../../../assets/bg-01.png'
@@ -15,7 +16,9 @@ import bg from '../../../assets/bg-01.png'
 	<Row>
 		<Col size="2" />
 		<Col size="8" align="center">
-			<Heading>Crafting Handmade Websites that Drive Results.</Heading>
+			<Heading>
+				<Fragment> Crafting <Highlight>Handmade</Highlight> Websites that Drive Results. </Fragment>
+			</Heading>
 		</Col>
 		<Col size="2" />
 	</Row>
