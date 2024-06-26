@@ -3,7 +3,8 @@
 import Section from '../../ui/Section.astro'
 import Row from '../../ui/Row.astro'
 import Col from '../../ui/Col.astro'
-import Button from '../../ui/Button.astro'
+import Button from '../../ui/Button2.astro'
+import { Icon } from 'astro-icon/components'
 
 // UI elements
 import Heading from '../../ui/Heading.astro'
@@ -15,7 +16,7 @@ import { Icon } from 'astro-icon/components'
 import bg from '../../../assets/bg-01.png'
 ---
 
-<Section mode="dark">
+<Section>
 	<Row>
 		<Col size="2" />
 		<Col size="8" align="center" extraClasses="space-y-6">
@@ -29,7 +30,15 @@ import bg from '../../../assets/bg-01.png'
 			<Heading size="7xl" mobileSize="5xl"
 				>Crafting <Highlight>Handmade</Highlight> Websites that Drive Results.</Heading
 			>
-			<Button style="primary" size="lg" link="/" name="Hey" />
+			<Button size="sm" style="neutral" variation="outline">
+				Some nice <Icon name="moon" class="h-4 w-4" /></Button
+			>
+			<Button style="neutral" variation="outline">
+				Some nice <Icon name="moon" class="h-4 w-4" /></Button
+			>
+			<Button size="lg" style="neutral" variation="outline">
+				Some nice <Icon name="moon" class="h-5 w-5" /></Button
+			>
 		</Col>
 		<Col size="2" />
 	</Row>
