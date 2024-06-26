@@ -1,0 +1,38 @@
+---
+type Props = {
+	type?: 'top-icon' | 'side-icon'
+	align?: 'left' | 'center'
+	extraClasses?: string
+}
+
+const { type = 'top-icon', align, extraClasses } = Astro.props
+---
+
+<div
+	class:list={[
+		'feature',
+		{ ['feature--' + `${type}`]: type },
+		{ ['feature--' + `${align}`]: align },
+		{ [`${extraClasses}`]: extraClasses }
+	]}
+>
+	<div class="feature__icon">
+		<slot name="icon" />
+	</div>
+	<div class="feature__body">
+		<slot />
+	</div>
+</div>
+
+<style>
+	.feature {
+		@apply flex flex-col gap-4;
+	}
+
+	.feature--center {
+		@apply items-center text-center;
+	}
+	.feature--side-icon {
+		@apply flex-row;
+	}
+</style>

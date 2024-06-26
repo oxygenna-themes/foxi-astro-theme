@@ -3,7 +3,7 @@
 import Section from '../../ui/Section.astro'
 import Row from '../../ui/Row.astro'
 import Col from '../../ui/Col.astro'
-import Button from '../../ui/Button2.astro'
+import Feature from '../../ui/Feature2.astro'
 import { Icon } from 'astro-icon/components'
 
 // UI elements
@@ -30,16 +30,45 @@ import bg from '../../../assets/bg-01.png'
 			<Heading size="7xl" mobileSize="5xl"
 				>Crafting <Highlight>Handmade</Highlight> Websites that Drive Results.</Heading
 			>
-			<Button size="sm" style="neutral" variation="outline">
-				Some nice <Icon name="moon" class="h-4 w-4" /></Button
-			>
-			<Button style="neutral" variation="outline">
-				Some nice <Icon name="moon" class="h-4 w-4" /></Button
-			>
-			<Button size="lg" style="neutral" variation="outline">
-				Some nice <Icon name="moon" class="h-5 w-5" /></Button
-			>
 		</Col>
 		<Col size="2" />
 	</Row>
+	<Row>
+		<Col size="4">
+			<Feature align="left" type="side-icon">
+				<Icon name="moon" class="h-6 w-6 text-primary-500" slot="icon" />
+				<Heading level="4" size="lg" weight="normal">Thats the heading</Heading>
+				<p>
+					Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore, ea tenetur molestias
+					dolor doloremque
+				</p>
+			</Feature>
+		</Col>
+		<Col size="4">
+			<Feature align="left" type="side-icon">
+				<Icon name="moon" class="h-6 w-6 text-primary-500" slot="icon" />
+				<Heading level="4" size="lg" weight="normal">Thats the heading</Heading>
+				<p>
+					Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore, ea tenetur molestias
+					dolor doloremque
+				</p>
+			</Feature>
+		</Col>
+		<Col size="4">
+			<Feature align="left">
+				<Icon
+					name="moon"
+					class="flex h-10 w-10 items-center rounded bg-emerald-500 p-2 text-white"
+					slot="icon"
+				/>
+				<Heading level="3" weight="normal" classes="mb-4 text-lg leading-6"
+					>Thats the heading</Heading
+				>
+				<p>
+					Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore, ea tenetur molestias
+					dolor doloremque
+				</p>
+			</Feature>
+		</Col></Row
+	>
 </Section>

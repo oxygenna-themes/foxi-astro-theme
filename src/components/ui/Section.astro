@@ -5,7 +5,7 @@ interface Props {
 	mode?: string
 	bg?: BgProps
 	bgHeight?: string
-	extraClasses?: string
+	classes?: string
 }
 interface BgProps {
 	src: string
@@ -13,7 +13,7 @@ interface BgProps {
 	height: number
 	format: string
 }
-const { id, fullWidth, mode, bg, bgHeight = '100%', extraClasses } = Astro.props
+const { id, fullWidth, mode, bg, bgHeight = '100%', classes } = Astro.props
 
 const bgStyle = bg
 	? {
@@ -31,7 +31,7 @@ const bgStyle = bg
 		'section',
 		{ 'section--fullwidth': fullWidth },
 		{ dark: mode },
-		{ [`${extraClasses}`]: extraClasses }
+		{ [`${classes}`]: classes }
 	]}
 >
 	<div class="section__bg" style={bgStyle}></div>

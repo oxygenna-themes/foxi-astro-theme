@@ -7,10 +7,10 @@ type Props = {
 	iconName?: string
 	align?: 'left' | 'center'
 	iconPosition?: 'left' | 'top'
-	extraClasses?: string
+	classes?: string
 }
 
-const { type, title, iconName, iconPosition, align, extraClasses } = Astro.props
+const { type, title, iconName, iconPosition, align, classes } = Astro.props
 
 const flexDirection =
 	iconPosition === 'top'
@@ -21,10 +21,10 @@ const flexDirection =
 
 const alignment = align === 'center' ? 'items-center text-center' : 'items-start'
 
-const classes = `${flexDirection} ${alignment} ${extraClasses}`
+const classList = `${flexDirection} ${alignment} ${classes}`
 ---
 
-<div class={`feature ${classes} `}>
+<div class={`feature ${classList} `}>
 	{
 		iconName && (
 			<div class="feature__icon">

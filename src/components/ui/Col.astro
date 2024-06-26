@@ -2,10 +2,10 @@
 interface Props {
 	size?: string
 	align?: string
-	extraClasses?: string
+	classes?: string
 }
 
-const { size, align, extraClasses = 'ss' } = Astro.props
+const { size, align, classes = 'ss' } = Astro.props
 ---
 
 <div
@@ -13,7 +13,7 @@ const { size, align, extraClasses = 'ss' } = Astro.props
 		'col',
 		{ ['col-span-' + `${size}`]: size },
 		{ ['text-' + `${align}`]: align },
-		{ [`${extraClasses}`]: extraClasses }
+		{ [`${classes}`]: classes }
 	]}
 >
 	<slot />

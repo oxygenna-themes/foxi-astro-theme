@@ -10,19 +10,19 @@ h3,
 h4,
 h5,
 h6 {
-	@apply mb-6 text-neutral-700 last:mb-0 dark:text-neutral-50;
+	@apply text-neutral-700 last:mb-0 dark:text-neutral-50;
 }
 
 h1,
 h2,
 h3 {
-	@apply font-bold;
+	@apply mb-6 font-bold;
 }
 
 h4,
 h5,
 h6 {
-	@apply font-semibold;
+	@apply mb-4 font-semibold;
 }
 
 h1 {
