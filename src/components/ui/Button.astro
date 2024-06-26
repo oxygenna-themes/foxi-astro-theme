@@ -1,72 +1,80 @@
 ---
-import { Icon } from 'astro-icon/components'
-
 type Props = {
-	size: 'lg' | 'base' | 'sm'
-	name: string
-	link: string
-	style: 'primary' | 'secondary' | 'neutral'
-	elevated?: boolean
+	type?: 'link' | 'button' | 'submit' | 'reset'
+	size?: 'lg' | 'base' | 'sm'
+	link?: string
+	style?: 'primary' | 'secondary' | 'neutral'
 	variation?: 'outline' | 'link'
-	iconName?: string
-	iconType?: 'lead' | 'trail' | 'button'
-	fullWidth?: boolean
+	elevated?: boolean
 	extraClasses?: string
 }
 
 const {
-	link,
-	size,
-	name,
-	style,
+	type = 'button',
+	size = 'base',
+	link = '#',
+	style = 'primary',
 	variation,
 	elevated,
-	iconName,
-	iconType,
-	fullWidth,
 	extraClasses
 } = Astro.props
 ---
 
-<a
-	class={`button button--${size} button--${style} ${variation && `button--${variation}`} ${elevated && 'button--elevated'} ${fullWidth ? 'w-full' : 'w-fit'} ${extraClasses && `${extraClasses}`}`}
-	href={link}
->
-	{iconType !== 'button' && <span class={`${iconType === 'lead' ? 'order-2' : ''}`}>{name}</span>}
-
-	{
-		iconName && (
-			<span class="button__icon">
-				<Icon name={iconName} />
-			</span>
-		)
-	}
-</a>
-
+{
+	type === 'link' ? (
+		<a
+			href={link}
+			class:list={[
+				'button',
+				{ ['button--' + `${size}`]: size },
+				{ ['button--' + `${style}`]: style },
+				{ ['button--' + `${variation}`]: variation },
+				{ ['button--' + `${elevated}`]: elevated },
+				{ [`${extraClasses}`]: extraClasses }
+			]}
+		>
+			<slot />
+		</a>
+	) : (
+		<button
+			type={type}
+			class:list={[
+				'button',
+				{ ['button--' + `${size}`]: size },
+				{ ['button--' + `${style}`]: style },
+				{ ['button--' + `${variation}`]: variation },
+				{ ['button--' + `${elevated}`]: elevated },
+				{ [`${extraClasses}`]: extraClasses }
+			]}
+		>
+			<slot />
+		</button>
+	)
+}
 <style>
 	.button {
-		@apply inline-flex items-center justify-center gap-2 whitespace-nowrap rounded font-medium tracking-wide transition duration-300 focus-visible:outline-none disabled:cursor-not-allowed disabled:shadow-none [&_.button\_\_icon]:relative;
+		@apply inline-flex cursor-pointer items-center justify-center gap-2 whitespace-nowrap rounded font-medium tracking-wide transition duration-300 focus-visible:outline-none disabled:cursor-not-allowed disabled:shadow-none;
 	}
 
 	.button--lg {
-		@apply h-12 px-6 text-sm [&.button--elevated]:shadow-lg [&.button--elevated]:hover:shadow-md [&.button--elevated]:focus:shadow-md only:[&_.button\_\_icon]:-mx-6 [&_.button\_\_icon_svg]:h-5 [&_.button\_\_icon_svg]:w-5;
+		@apply h-12 px-6 text-sm [&.button--elevated]:shadow-lg [&.button--elevated]:hover:shadow-md [&.button--elevated]:focus:shadow-md;
 	}
 
 	.button--base {
-		@apply h-10 px-5 text-sm [&.button--elevated]:shadow-md [&.button--elevated]:hover:shadow-sm [&.button--elevated]:focus:shadow-sm only:[&_.button\_\_icon]:-mx-5 [&_.button\_\_icon_svg]:h-5 [&_.button\_\_icon_svg]:w-5;
+		@apply h-10 px-5 text-sm [&.button--elevated]:shadow-md [&.button--elevated]:hover:shadow-sm [&.button--elevated]:focus:shadow-sm;
 	}
 
 	.button--sm {
-		@apply h-8 px-4 text-xs [&.button--elevated]:shadow-md [&.button--elevated]:hover:shadow-sm [&.button--elevated]:focus:shadow-sm only:[&_.button\_\_icon]:-mx-4 [&_.button\_\_icon_svg]:h-4 [&_.button\_\_icon_svg]:w-4;
+		@apply h-8 px-4 text-xs [&.button--elevated]:shadow-md [&.button--elevated]:hover:shadow-sm [&.button--elevated]:focus:shadow-sm;
 	}
 	.button--outline {
 		@apply border;
 	}
 	.button--link {
-		@apply inline-flex items-center justify-start gap-2 px-0 font-normal [&>divsvg]:mb-0 [&_svg]:block;
+		@apply inline-flex items-center justify-start gap-2 px-0 font-normal;
 	}
 	.button--primary {
-		@apply bg-primary-500 text-white hover:bg-primary-600 focus:bg-primary-700 disabled:border-primary-300 disabled:bg-primary-300 [&.button--elevated]:shadow-lg [&.button--elevated]:shadow-primary-500/30 [&.button--elevated]:hover:shadow-primary-500/30 [&.button--elevated]:focus:shadow-primary-500/30 [&.button--link]:bg-transparent [&.button--link]:text-primary-500 hover:[&.button--link]:text-primary-600 focus:[&.button--link]:text-primary-600 [&.button--link_svg]:stroke-primary-500 [&.button--outline]:border-primary-500 [&.button--outline]:bg-transparent [&.button--outline]:text-primary-500 [&.button--outline]:hover:border-primary-600 [&.button--outline]:hover:text-primary-600 [&.button--outline_svg]:stroke-primary-500 [&_svg]:stroke-white;
+		@apply bg-primary-500 text-white hover:bg-primary-600 focus:bg-primary-700 disabled:border-primary-300 disabled:bg-primary-300 [&.button--elevated]:shadow-lg [&.button--elevated]:shadow-primary-500/30 [&.button--elevated]:hover:shadow-primary-500/30 [&.button--elevated]:focus:shadow-primary-500/30 [&.button--link]:bg-transparent [&.button--link]:text-primary-500 hover:[&.button--link]:text-primary-600 focus:[&.button--link]:text-primary-600 [&.button--outline]:border-primary-500 [&.button--outline]:bg-transparent [&.button--outline]:text-primary-500 [&.button--outline]:hover:border-primary-600 [&.button--outline]:hover:text-primary-600;
 	}
 
 	.button--secondary {
@@ -74,6 +82,6 @@ const {
 	}
 
 	.button--neutral {
-		@apply bg-neutral-500 text-white hover:bg-neutral-600 focus:bg-neutral-700 disabled:border-neutral-300 disabled:bg-neutral-300 [&.button--elevated]:shadow-neutral-500/30 [&.button--elevated]:hover:shadow-neutral-500/30 [&.button--elevated]:focus:shadow-neutral-500/30 [&.button--link]:bg-transparent [&.button--link]:text-neutral-500 hover:[&.button--link]:text-neutral-600 focus:[&.button--link]:text-neutral-600 [&.button--link_svg]:stroke-neutral-500 [&.button--outline]:border-neutral-500 [&.button--outline]:bg-transparent [&.button--outline]:text-neutral-500 [&.button--outline]:hover:border-neutral-600 [&.button--outline]:hover:text-neutral-600 [&.button--outline_svg]:stroke-neutral-500 [&_svg]:stroke-white;
+		@apply bg-neutral-700 text-white hover:bg-neutral-800 focus:bg-neutral-900 disabled:border-neutral-300 disabled:bg-neutral-300 [&.button--elevated]:shadow-neutral-500/30 [&.button--elevated]:hover:shadow-neutral-500/30 [&.button--elevated]:focus:shadow-neutral-500/30 [&.button--link]:bg-transparent [&.button--link]:text-neutral-700 hover:[&.button--link]:text-neutral-800 focus:[&.button--link]:text-neutral-900 [&.button--outline]:border-neutral-700 [&.button--outline]:bg-transparent [&.button--outline]:text-neutral-700 [&.button--outline]:hover:border-neutral-800 [&.button--outline]:hover:text-neutral-800;
 	}
 </style>

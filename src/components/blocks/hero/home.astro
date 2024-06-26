@@ -3,15 +3,13 @@
 import Section from '../../ui/Section.astro'
 import Row from '../../ui/Row.astro'
 import Col from '../../ui/Col.astro'
-import Feature from '../../ui/Feature2.astro'
-import { Icon } from 'astro-icon/components'
 
 // UI elements
 import Heading from '../../ui/Heading.astro'
 import ChipNotification from '../../ui/ChipNotification.astro'
 import Highlight from '../../ui/Highlight.astro'
-import Test from '../../ui/Test.astro'
-import { Icon } from 'astro-icon/components'
+import Feature from '../../ui/Feature.astro'
+
 // Hero content
 import bg from '../../../assets/bg-01.png'
 ---
@@ -19,7 +17,7 @@ import bg from '../../../assets/bg-01.png'
 <Section>
 	<Row>
 		<Col size="2" />
-		<Col size="8" align="center" extraClasses="space-y-6">
+		<Col size="8" align="center" classes="space-y-6">
 			<ChipNotification
 				variation="button"
 				body="I am a chip notification"
@@ -35,40 +33,12 @@ import bg from '../../../assets/bg-01.png'
 	</Row>
 	<Row>
 		<Col size="4">
-			<Feature align="left" type="side-icon">
-				<Icon name="moon" class="h-6 w-6 text-primary-500" slot="icon" />
-				<Heading level="4" size="lg" weight="normal">Thats the heading</Heading>
+			<Feature type="side-icon" iconStyle="square" title="ssss">
 				<p>
 					Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore, ea tenetur molestias
 					dolor doloremque
 				</p>
 			</Feature>
 		</Col>
-		<Col size="4">
-			<Feature align="left" type="side-icon">
-				<Icon name="moon" class="h-6 w-6 text-primary-500" slot="icon" />
-				<Heading level="4" size="lg" weight="normal">Thats the heading</Heading>
-				<p>
-					Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore, ea tenetur molestias
-					dolor doloremque
-				</p>
-			</Feature>
-		</Col>
-		<Col size="4">
-			<Feature align="left">
-				<Icon
-					name="moon"
-					class="flex h-10 w-10 items-center rounded bg-emerald-500 p-2 text-white"
-					slot="icon"
-				/>
-				<Heading level="3" weight="normal" classes="mb-4 text-lg leading-6"
-					>Thats the heading</Heading
-				>
-				<p>
-					Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore, ea tenetur molestias
-					dolor doloremque
-				</p>
-			</Feature>
-		</Col></Row
-	>
+	</Row>
 </Section>
