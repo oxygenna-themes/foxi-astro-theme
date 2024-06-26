@@ -7,7 +7,7 @@ interface Props {
 const { type = '1', extraClasses = '' } = Astro.props
 ---
 
-<span class:list={[`highlight highlight--${type} ${extraClasses}`]}>
+<span class={`highlight highlight--${type} ${extraClasses}`}>
 	<slot />
 </span>
 

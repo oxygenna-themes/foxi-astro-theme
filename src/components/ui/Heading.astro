@@ -16,32 +16,32 @@ const {
 	align = 'auto',
 	extraClasses = ''
 } = Astro.props
-const className = `text-${mobileSize} lg:text-${size} text-${align} ${extraClasses}`
+const classes = `text-${mobileSize} lg:text-${size} text-${align} ${extraClasses}`
 ---
 
 {
 	level === '1' ? (
-		<h1 class={className}>
+		<h1 class={classes}>
 			<slot />
 		</h1>
 	) : level === '2' ? (
-		<h2 class={className}>
+		<h2 class={classes}>
 			<slot />
 		</h2>
 	) : level === '3' ? (
-		<h3 class={className}>
+		<h3 class={classes}>
 			<slot />
 		</h3>
 	) : level === '4' ? (
-		<h4 class={className}>
+		<h4 class={classes}>
 			<slot />
 		</h4>
 	) : level === '5' ? (
-		<h5 class={className}>
+		<h5 class={classes}>
 			<slot />
 		</h5>
 	) : (
-		<h6 class={className}>
+		<h6 class={classes}>
 			<slot />
 		</h6>
 	)
