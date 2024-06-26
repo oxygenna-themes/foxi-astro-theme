@@ -5,9 +5,16 @@ interface Props {
 	extraClasses?: string
 }
 
-const { size = 'auto', align = 'auto', extraClasses = '', space = 'auto' } = Astro.props
+const { size, align, extraClasses = 'ss' } = Astro.props
 ---
 
-<div class={`col col-span-${size} text-${align} ${extraClasses}`}>
+<div
+	class:list={[
+		'col',
+		{ ['col-span-' + `${size}`]: size },
+		{ ['text-' + `${align}`]: align },
+		{ [`${extraClasses}`]: extraClasses }
+	]}
+>
 	<slot />
 </div>

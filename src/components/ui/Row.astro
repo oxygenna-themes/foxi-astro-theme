@@ -1,13 +1,13 @@
 ---
 interface Props {
-	type?: string
+	flex?: boolean
 	extraClasses?: string
 }
 
-const { type = '', extraClasses = '' } = Astro.props
+const { flex, extraClasses } = Astro.props
 ---
 
-<div class={`row ${type} ${extraClasses}`}>
+<div class:list={['row', { 'row--flex': flex }, { [`${extraClasses}`]: extraClasses }]}>
 	<slot />
 </div>
 
@@ -15,7 +15,7 @@ const { type = '', extraClasses = '' } = Astro.props
 	.row {
 		@apply grid grid-cols-4 gap-6 md:grid-cols-8 lg:grid-cols-12 [&.flex]:flex;
 	}
-	.flex {
+	.row--flex {
 		@apply flex-wrap items-center justify-center;
 	}
 </style>

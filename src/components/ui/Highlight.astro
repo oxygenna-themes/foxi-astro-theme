@@ -2,12 +2,18 @@
 interface Props {
 	type?: string
 	extraClasses?: string
+	some?: string
 }
 
-const { type = '1', extraClasses = '' } = Astro.props
+const { type = '1', extraClasses = '', some = 'ss' } = Astro.props
 ---
 
-<span class={`highlight highlight--${type} ${extraClasses}`}>
+<span
+	class:list={[
+		`highlight highlight--${type} ${extraClasses}`,
+		{ 'bg-dark dark:bg-transparent': some }
+	]}
+>
 	<slot />
 </span>
 
