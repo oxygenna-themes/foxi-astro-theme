@@ -3,24 +3,11 @@ interface Props {
 	size?: string
 	align?: string
 	extraClasses?: string
-	space?: string
 }
 
 const { size = 'auto', align = 'auto', extraClasses = '', space = 'auto' } = Astro.props
 ---
 
-<div class={`col col-space-lg ${space} col-span-${size} text-${align} ${extraClasses}`}>
+<div class={`col col-span-${size} text-${align} ${extraClasses}`}>
 	<slot />
 </div>
-
-<style>
-	.col-space-none {
-		@apply space-y-0;
-	}
-	.col-space-base {
-		@apply space-y-6;
-	}
-	.col {
-		@apply space-y-12 bg-primary-500;
-	}
-</style>
