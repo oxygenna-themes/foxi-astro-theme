@@ -9,39 +9,74 @@ type Props = {
 	extraClasses?: string
 }
 
-const {
-	level = '1',
-	size = 'auto',
-	mobileSize = size,
-	align = 'auto',
-	extraClasses = ''
-} = Astro.props
-const classes = `text-${mobileSize} lg:text-${size} text-${align} ${extraClasses}`
+const { level = '1', size, mobileSize = size, align, extraClasses } = Astro.props
 ---
 
 {
 	level === '1' ? (
-		<h1 class={classes}>
+		<h1
+			class:list={[
+				{ ['text-' + `${mobileSize}`]: mobileSize },
+				{ ['lg:text-' + `${size}`]: size },
+				{ ['text-' + `${align}`]: align },
+				{ [`${extraClasses}`]: extraClasses }
+			]}
+		>
 			<slot />
 		</h1>
 	) : level === '2' ? (
-		<h2 class={classes}>
+		<h2
+			class:list={[
+				{ ['text-' + `${mobileSize}`]: mobileSize },
+				{ ['lg:text-' + `${size}`]: size },
+				{ ['text-' + `${align}`]: align },
+				{ [`${extraClasses}`]: extraClasses }
+			]}
+		>
 			<slot />
 		</h2>
 	) : level === '3' ? (
-		<h3 class={classes}>
+		<h3
+			class:list={[
+				{ ['text-' + `${mobileSize}`]: mobileSize },
+				{ ['lg:text-' + `${size}`]: size },
+				{ ['text-' + `${align}`]: align },
+				{ [`${extraClasses}`]: extraClasses }
+			]}
+		>
 			<slot />
 		</h3>
 	) : level === '4' ? (
-		<h4 class={classes}>
+		<h4
+			class:list={[
+				{ ['text-' + `${mobileSize}`]: mobileSize },
+				{ ['lg:text-' + `${size}`]: size },
+				{ ['text-' + `${align}`]: align },
+				{ [`${extraClasses}`]: extraClasses }
+			]}
+		>
 			<slot />
 		</h4>
 	) : level === '5' ? (
-		<h5 class={classes}>
+		<h5
+			class:list={[
+				{ ['text-' + `${mobileSize}`]: mobileSize },
+				{ ['lg:text-' + `${size}`]: size },
+				{ ['text-' + `${align}`]: align },
+				{ [`${extraClasses}`]: extraClasses }
+			]}
+		>
 			<slot />
 		</h5>
 	) : (
-		<h6 class={classes}>
+		<h6
+			class:list={[
+				{ ['text-' + `${mobileSize}`]: mobileSize },
+				{ ['lg:text-' + `${size}`]: size },
+				{ ['text-' + `${align}`]: align },
+				{ [`${extraClasses}`]: extraClasses }
+			]}
+		>
 			<slot />
 		</h6>
 	)
