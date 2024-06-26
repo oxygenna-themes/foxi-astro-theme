@@ -2,12 +2,17 @@
 interface Props {
 	type?: string
 	classes?: string
+	colorFrom?: string
+	colorTo?: string
 }
 
-const { type = '1', classes = '' } = Astro.props
+const { type = '1', classes, colorFrom, colorTo } = Astro.props
 ---
 
-<span class:list={['highlight', { [`highlight--${type}`]: type }, { [`${classes}`]: classes }]}>
+<span
+	class:list={['highlight', { [`highlight--${type}`]: type }, { [`${classes}`]: classes }]}
+	style=`background-image:linear-gradient(to right, ${colorFrom} 0%, ${colorTo} 100%)`
+>
 	<slot />
 </span>
 
@@ -19,12 +24,12 @@ const { type = '1', classes = '' } = Astro.props
 		@apply text-primary-500;
 	}
 	.highlight--2 {
-		@apply bg-gradient-to-r from-primary-500 to-indigo-400 bg-clip-text text-transparent;
-	}
-	.highlight--3 {
 		@apply px-4 text-white before:bg-primary-500;
 	}
-	.highlight--4 {
+	.highlight--3 {
 		@apply px-4 text-white before:-rotate-2 before:bg-primary-500 lg:before:-bottom-2 lg:before:-top-2;
+	}
+	.highlight--4 {
+		@apply bg-gradient-to-r bg-clip-text text-transparent;
 	}
 </style>
