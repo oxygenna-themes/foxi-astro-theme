@@ -4,7 +4,7 @@ interface Props {
 	extraClasses?: string
 }
 
-const { type = '', extraClasses } = Astro.props
+const { type = '', extraClasses = '' } = Astro.props
 ---
 
 <div class:list={[`row ${type} ${extraClasses}`]}>

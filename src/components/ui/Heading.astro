@@ -9,7 +9,13 @@ type Props = {
 	extraClasses?: string
 }
 
-const { level = '1', size, mobileSize, align, extraClasses } = Astro.props
+const {
+	level = '1',
+	size = 'auto',
+	mobileSize = size,
+	align = 'auto',
+	extraClasses = ''
+} = Astro.props
 const className = `text-${mobileSize} lg:text-${size} text-${align} ${extraClasses}`
 ---
 

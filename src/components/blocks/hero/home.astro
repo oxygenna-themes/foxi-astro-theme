@@ -9,7 +9,8 @@ import Button from '../../ui/Button.astro'
 import Heading from '../../ui/Heading.astro'
 import ChipNotification from '../../ui/ChipNotification.astro'
 import Highlight from '../../ui/Highlight.astro'
-
+import Test from '../../ui/Test.astro'
+import { Icon } from 'astro-icon/components'
 // Hero content
 import bg from '../../../assets/bg-01.png'
 ---
@@ -17,7 +18,7 @@ import bg from '../../../assets/bg-01.png'
 <Section id="something" bg={bg}>
 	<Row>
 		<Col size="2" />
-		<Col size="8" align="center">
+		<Col size="8" align="center" space="lg">
 			<ChipNotification
 				variation="button"
 				body="I am a chip notification"
@@ -25,10 +26,10 @@ import bg from '../../../assets/bg-01.png'
 				linkName="Check it"
 				buttonName="v3.15.25"
 			/>
-			<Heading
+			<Heading size="7xl" mobileSize="5xl"
 				>Crafting <Highlight type="3" ?>Handmade</Highlight> Websites that Drive Results.</Heading
 			>
-			<Button style="primary" size="lg" link="/" extraClasses="mt-4 mb-8" name="Hey" />
+			<Button style="primary" size="lg" link="/" name="Hey" />
 			<Col size="2" />
 		</Col>
 	</Row>
