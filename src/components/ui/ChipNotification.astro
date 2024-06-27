@@ -11,14 +11,20 @@ const { elevated, extraClasses } = Astro.props
 ---
 
 <div class:list={['chip', { ['chip--elevated']: elevated }, { [`${extraClasses}`]: extraClasses }]}>
-	<slot />
+	<slot name="button" />
+	<span class="chip--body">
+		<slot />
+	</span>
 </div>
 
 <style>
 	.chip {
-		@apply inline-flex items-center rounded border border-neutral-200 bg-white/50 px-0.5 py-0.5 text-neutral-500 dark:border-neutral-800 dark:bg-neutral-900/50 dark:text-neutral-300;
+		@apply inline-flex items-center rounded border border-neutral-200 bg-white/50 px-0.5 py-0.5 text-neutral-500 dark:border-neutral-800 dark:bg-neutral-900/50 dark:text-neutral-300 [&_p]:m-0;
 	}
 	.chip--elevated {
 		@apply shadow-sm shadow-slate-700/10;
+	}
+	.chip--body {
+		@apply inline-flex items-center gap-4 px-4;
 	}
 </style>

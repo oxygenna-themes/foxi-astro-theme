@@ -21,8 +21,12 @@ import bg from '../../../assets/bg-01.png'
 		<Col size="2" />
 		<Col size="8" align="center" classes="space-y-6">
 			<ChipNotification>
-				<Button size="sm" style="primary" type="link" link="/"> v.3.1.3 </Button>
-				<Fragment> Some text here <a href="/">Hi</a> </Fragment>
+				<Button size="sm" style="primary" slot="button"> v.3.1.3 </Button>
+				Some text here
+				<Button size="sm" style="primary" type="link" link="/" variation="link">
+					v.3.1.3
+					<Icon name="long-arrow-right" />
+				</Button>
 			</ChipNotification>
 
 			<Heading size="7xl" mobileSize="5xl">
