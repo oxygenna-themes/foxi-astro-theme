@@ -1,4 +1,6 @@
 ---
+import { Icon } from 'astro-icon/components'
+
 type Props = {
 	type?: 'basic' | 'checklist'
 	listItems: Array<any>
@@ -8,7 +10,13 @@ const { type, listItems, extraClasses } = Astro.props
 ---
 
 <ul class:list={['list', { ['list--' + `${type}`]: type }, { [`${extraClasses}`]: extraClasses }]}>
-	{listItems.map((item) => <li> {item.listItem} </li>)}
+	{
+		listItems.map((item) => (
+			<li>
+				{type === 'checklist' && <Icon name="check-circle" />} {item.listItem}{' '}
+			</li>
+		))
+	}
 </ul>
 
 <style>
@@ -16,6 +24,6 @@ const { type, listItems, extraClasses } = Astro.props
 		@apply mb-2 ml-4 list-disc text-neutral-700 marker:text-primary-500 dark:text-neutral-50;
 	}
 	.list--checklist {
-		@apply [&>li]:ml-0 [&>li]:list-none [&>ul>li]:ml-0 [&>ul>li]:list-none [&_li]:relative [&_li]:mb-2 [&_li]:bg-[url('../../icons/red-check-circle.svg')] [&_li]:bg-[length:1.25rem] [&_li]:bg-[left_0.15rem] [&_li]:bg-no-repeat [&_li]:pl-6 last:[&_li]:mb-0 [&_ul]:pl-0 [&_ul_li]:ml-0 [&_ul_li]:list-none;
+		@apply [&_li]:flex [&_li]:items-start [&_li]:gap-2 [&_svg]:h-6 [&_svg]:w-6 [&_svg]:shrink-0 [&_svg]:p-1 [&_svg]:text-primary-500;
 	}
 </style>
