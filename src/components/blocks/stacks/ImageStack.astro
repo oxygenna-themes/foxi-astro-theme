@@ -16,7 +16,7 @@ const { images } = Astro.props
 		{
 			images.map((item) => (
 				<Col>
-					<img src={item.image} />
+					<img src={item.image} alt={item.alt} />
 				</Col>
 			))
 		}

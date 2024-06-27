@@ -1,0 +1,29 @@
+---
+import { Icon } from 'astro-icon/components'
+
+type Props = {
+	type?: 'basic' | 'checklist'
+	listItems: Array<any>
+	extraClasses?: string
+}
+const { type, listItems, extraClasses } = Astro.props
+---
+
+<ul class:list={['list', { ['list--' + `${type}`]: type }, { [`${extraClasses}`]: extraClasses }]}>
+	{
+		listItems.map((item) => (
+			<li>
+				{type === 'checklist' && <Icon name="check-circle" />} {item.listItem}
+			</li>
+		))
+	}
+</ul>
+
+<style>
+	.list li {
+		@apply mb-2 ml-4 list-disc text-neutral-700 marker:text-primary-500 dark:text-neutral-50;
+	}
+	.list--checklist {
+		@apply [&_li]:flex [&_li]:items-start [&_li]:gap-2 [&_svg]:h-6 [&_svg]:w-6 [&_svg]:shrink-0 [&_svg]:p-1 [&_svg]:text-primary-500;
+	}
+</style>
