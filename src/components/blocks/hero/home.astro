@@ -10,9 +10,11 @@ import Image from 'astro/components/Image.astro'
 import Heading from '../../ui/Heading.astro'
 import Highlight from '../../ui/Highlight.astro'
 import Button from '../../ui/Button.astro'
+import Card from '../../ui/cards/CardBasic.astro'
 
 // Content
 import heroImage from '../../../assets/hero-01.png'
+import Feature from '../../ui/Feature.astro'
 ---
 
 <Section padding="top" classes="bg-neutral-50 dark:bg-neutral-900">
@@ -36,8 +38,46 @@ import heroImage from '../../../assets/hero-01.png'
 		<Col size="2" />
 	</Row>
 </Section>
-<Section classes="dark">
+<Section>
 	<Row>
-		<Col>sss</Col>
+		<Col size="2" />
+		<Col size="8" align="center">
+			<Heading level="2">Enhance team <Highlight>performance</Highlight> and integration</Heading>
+			<p class="pb-12">Work smarter, not harder, with our innovative platform</p>
+		</Col>
+		<Col size="2" />
+
+		<Col size="4">
+			<Feature title="Responsive" classes="mb-8">
+				with end-to-end tests using modern web development techniques.
+			</Feature>
+		</Col>
+		<Col size="4">
+			<Feature title="Responsive" classes="mb-8">
+				with end-to-end tests using modern web development techniques.
+			</Feature>
+		</Col>
+		<Col size="4">
+			<Feature title="Responsive" classes="mb-8">
+				with end-to-end tests using modern web development techniques.
+			</Feature>
+		</Col>
+	</Row>
+	<Row>
+		<Col size="4">
+			<Feature title="Responsive" classes="mb-8">
+				with end-to-end tests using modern web development techniques.
+			</Feature>
+		</Col>
+		<Col size="4">
+			<Feature title="Responsive" classes="mb-8">
+				with end-to-end tests using modern web development techniques.
+			</Feature>
+		</Col>
+		<Col size="4">
+			<Feature title="Responsive" classes="mb-8">
+				with end-to-end tests using modern web development techniques.
+			</Feature>
+		</Col>
 	</Row>
 </Section>

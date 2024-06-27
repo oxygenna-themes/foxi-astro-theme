@@ -8,7 +8,7 @@ const { title = '', subtitle, image, link, type, classes } = Astro.props
 ---
 
 <Card classes={classes} link={link}>
-	<Image src={image} alt={title} class={type === 'image-bottom' ? 'order-2' : ''} />
+	{image && <Image src={image} alt={title} class={type === 'image-bottom' ? 'order-2' : ''} />}
 	<CardBody>
 		<Heading level="4" size="lg" mobileSize="lg">{title}</Heading>
 		<p>{subtitle}</p>
