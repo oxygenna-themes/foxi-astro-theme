@@ -13,7 +13,7 @@ const { type, listItems, extraClasses } = Astro.props
 	{
 		listItems.map((item) => (
 			<li>
-				{type === 'checklist' && <Icon name="check-circle" />} {item.listItem}{' '}
+				{type === 'checklist' && <Icon name="check-circle" />} {item.listItem}
 			</li>
 		))
 	}
