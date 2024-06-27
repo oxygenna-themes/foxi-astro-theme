@@ -137,7 +137,9 @@ const {
 			</div>
 			{linkType === 'button' && link && (
 				<div class={`card__actions ${align === 'center' ? 'justify-center' : 'justify-end'}`}>
-					<Button link={link} name="Read more" style="primary" size="base" variation="link" />
+					<Button size="base" style="primary" link={link} variation="link">
+						Read more
+					</Button>
 				</div>
 			)}
 		</div>
