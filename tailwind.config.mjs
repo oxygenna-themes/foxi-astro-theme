@@ -6,6 +6,7 @@ export default {
   safelist: [
     {
       pattern: /col-span-(\d+)/,
+      variants: ["lg"],
     },
     // Text sizes for all screen sizes
     {
@@ -26,17 +27,17 @@ export default {
       colors: {
         transparent: "transparent",
         primary: {
-          50: "#fef2f2",
-          100: "#fde3e3",
-          200: "#fdcbcb",
-          300: "#faa7a7",
-          400: "#f47575",
-          500: "#ec5959",
-          600: "#d72b2b",
-          700: "#b52020",
-          800: "#951f1f",
-          900: "#7c2020",
-          950: "#430c0c",
+          50: "#fdf2f8",
+          100: "#fce7f3",
+          200: "#fbcfe8",
+          300: "#f9a8d4",
+          400: "#f472b6",
+          500: "#ec4899",
+          600: "#db2777",
+          700: "#be185d",
+          800: "#9d174d",
+          900: "#831843",
+          950: "#500724",
         },
         neutral: {
           50: "#f8fafc",

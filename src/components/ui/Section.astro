@@ -23,6 +23,13 @@ const bgStyle = bg
 	: {
 			height: bgHeight
 		}
+
+const classList = classes
+	? classes
+			.split(' ')
+			.map((cls) => `!${cls}`)
+			.join(' ')
+	: ''
 ---
 
 <section
@@ -31,7 +38,7 @@ const bgStyle = bg
 		'section',
 		{ 'section--fullwidth': fullWidth },
 		{ [`${mode}`]: mode },
-		{ [`${classes}`]: classes }
+		{ [`!${classList}`]: classList }
 	]}
 >
 	<div class="section__bg" style={bgStyle}></div>
@@ -42,7 +49,7 @@ const bgStyle = bg
 
 <style>
 	.section {
-		@apply relative bg-white py-24 dark:bg-neutral-900;
+		@apply relative py-24 dark:bg-neutral-900;
 	}
 	.section__bg {
 		@apply absolute inset-0 bg-cover;

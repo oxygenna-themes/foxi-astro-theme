@@ -5,36 +5,33 @@ import Row from '../../ui/Row.astro'
 import Col from '../../ui/Col.astro'
 
 // UI elements
-import Card from '../../ui/cards/CardBasic.astro'
+import ChipNotification from '../../ui/ChipNotification.astro'
+import Image from 'astro/components/Image.astro'
+import Heading from '../../ui/Heading.astro'
+import Highlight from '../../ui/Highlight.astro'
 
-// Hero content
-import cardImage from '../../../assets/test.jpg'
+// Content
+import heroImage from '../../../assets/hero-01.png'
 ---
 
-<Section>
+<Section classes="bg-neutral-50 pb-0">
 	<Row>
 		<Col size="2" />
-		<Col size="8" align="center" classes="space-y-6" />
+		<Col size="8" classes="text-center space-y-12">
+			<ChipNotification classes="gap-0"
+				>version 3.0 is out now,&nbsp;<a href="#">read more!</a></ChipNotification
+			>
+			<Heading level="1"
+				>Enhance team <Highlight>performance</Highlight> with seamless integration</Heading
+			>
+			<p class="text-lg">Work smarter, not harder, with our innovative platform</p>
+			<Image
+				src={heroImage}
+				alt="Hero image"
+				class="rounded-t shadow-lg shadow-neutral-700/5 dark:shadow-neutral-950/50"
+			/>
+		</Col>
 		<Col size="2" />
 	</Row>
-	<Row mode="light">
-		<Col size="4">
-			<Card
-				classes="bg-neutral-100"
-				title="What a nice card"
-				image={cardImage}
-				subtitle="Spend days here, exploring a way of life by bicycle. Discover cobbled streets"
-			/>
-		</Col>
-		<Col size="4">
-			<Card
-				classes="bg-neutral-100"
-				title="What a nice card"
-				image={cardImage}
-				type="image-bottom"
-				link="/"
-				subtitle="Spend days here, exploring a way of life by bicycle. Discover cobbled streets"
-			/>
-		</Col>
-	</Row>
 </Section>
+<Section />

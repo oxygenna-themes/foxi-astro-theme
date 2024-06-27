@@ -1,13 +1,13 @@
 ---
 type Props = {
 	elevated?: boolean
-	extraClasses?: string
+	classes?: string
 }
 
-const { elevated, extraClasses } = Astro.props
+const { elevated, classes } = Astro.props
 ---
 
-<div class:list={['chip', { ['chip--elevated']: elevated }, { [`${extraClasses}`]: extraClasses }]}>
+<div class:list={['chip', { ['chip--elevated']: elevated }, { [`${classes}`]: classes }]}>
 	<slot name="button" />
 	<span class="chip--body">
 		<slot />
@@ -22,6 +22,6 @@ const { elevated, extraClasses } = Astro.props
 		@apply shadow-sm shadow-slate-700/10;
 	}
 	.chip--body {
-		@apply inline-flex items-center gap-4 px-4;
+		@apply inline-flex items-center px-4;
 	}
 </style>

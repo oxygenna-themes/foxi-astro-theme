@@ -7,13 +7,14 @@ import '../styles/global.css'
 export interface Props {
 	title?: string
 	description?: string
+	icon?: string
 	image?: string
 }
 
 const {
-	title = 'Oxygenna',
-	description = 'Oxygenna is a design and development agency that specializes in creating beautiful and functional websites.',
-	image = '/favicon.svg'
+	title = 'Foxi.',
+	description = 'Foxi is a design and development agency that specializes in creating beautiful and functional websites.',
+	image = '/og.png'
 } = Astro.props
 ---
 
@@ -22,7 +23,7 @@ const {
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<link rel="icon" type="image/png" href="/logo.svg" />
+		<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 		<link rel="sitemap" href="/sitemap-index.xml" />
 		<meta name="generator" content={Astro.generator} />
 		<meta name="description" content={description} />
