@@ -1,0 +1,52 @@
+---
+interface Props {
+	size: 'none' | '8' | '12' | '16' | '24' | '32' | '48' | '64' | '96' | '128'
+	desktopSize: 'none' | '8' | '12' | '16' | '24' | '32' | '48' | '64' | '96' | '128'
+}
+
+const { size = '24', desktopSize = '48' } = Astro.props
+---
+
+<div
+	class:list={[
+		'spacer',
+		{ [`spacer--${size}`]: size },
+		{ [`lg:spacer--${desktopSize}`]: desktopSize }
+	]}
+>
+</div>
+
+<style>
+	.spacer {
+	}
+	.spacer--none {
+		@apply h-0;
+	}
+	.spacer--8 {
+		@apply h-2;
+	}
+	.spacer--12 {
+		@apply h-3;
+	}
+	.spacer--16 {
+		@apply h-4;
+	}
+	.spacer--24 {
+		@apply h-6;
+	}
+	.spacer--32 {
+		@apply h-8;
+	}
+	.spacer--48 {
+		@apply h-12;
+	}
+	.spacer--64 {
+		@apply h-16;
+	}
+	.spacer--96 {
+		@apply h-24;
+	}
+	.spacer--128 {
+		@apply h-32;
+	}
+</style>
