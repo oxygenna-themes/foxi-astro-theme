@@ -63,7 +63,9 @@ const navActions = [
 			<div class="header__actions">
 				{
 					navActions.map((action) => (
-						<Button link={action.link} style={action.style} size={action.size} />
+						<Button size={action.size} style={action.style} link={action.link}>
+							{action.name}
+						</Button>
 					))
 				}
 			</div>

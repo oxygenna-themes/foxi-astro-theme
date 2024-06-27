@@ -1,77 +1,27 @@
 ---
-import Button from './Button.astro'
-
 type Props = {
-	variation?: 'button' | 'link' | 'button-link' | 'default'
-	body: string
-	link?: string
-	buttonName?: string
-	linkName?: string
-	buttonPosition?: 'lead' | 'trail'
+	elevated?: boolean
 	extraClasses?: string
 }
 
-const { link, body, linkName, variation, buttonName, buttonPosition, extraClasses } = Astro.props
+const { elevated, extraClasses } = Astro.props
 ---
 
-{
-	buttonPosition === 'trail' ? (
-		<div
-			class={`chip ${variation === 'button' || variation === 'button-link' ? 'pl-4 pr-0.5' : 'px-4'} ${extraClasses && `${extraClasses}`}`}
-		>
-			<div class="chip__body">
-				{(variation === 'link' || variation === 'button-link') && (
-					<Button link={link} name={linkName} style="primary" size="base" variation="link" />
-				)}
-				<span class={`${variation === 'button-link' ? 'hidden md:block' : 'truncate'}`}>
-					{body}
-				</span>
-			</div>
-			{variation === 'button' && <Button link={link} name={buttonName} style="primary" size="sm" />}
-			{variation === 'button-link' && (
-				<span class="chip__button">
-					<span>{buttonName}</span>
-				</span>
-			)}
-		</div>
-	) : (
-		<div
-			class={`chip ${variation === 'button' || variation === 'button-link' ? 'pl-0.5 pr-4' : 'pl-4'} ${extraClasses && `${extraClasses}`}`}
-		>
-			{variation === 'button' && <Button link={link} name={buttonName} style="primary" size="sm" />}
-			{variation === 'button-link' && (
-				<span class="chip__button">
-					<span>{buttonName}</span>
-				</span>
-			)}
-
-			<div class="chip__body">
-				<span class={`${variation === 'button-link' ? 'hidden md:block' : 'truncate'}`}>
-					{body}
-				</span>
-				{(variation === 'link' || variation === 'button-link') && (
-					<Button
-						link={link}
-						name={linkName}
-						style="primary"
-						size="base"
-						variation="link"
-						iconName="long-arrow-right"
-					/>
-				)}
-			</div>
-		</div>
-	)
-}
+<div class:list={['chip', { ['chip--elevated']: elevated }, { [`${extraClasses}`]: extraClasses }]}>
+	<slot name="button" />
+	<span class="chip--body">
+		<slot />
+	</span>
+</div>
 
 <style>
 	.chip {
-		@apply inline-flex items-center gap-4 rounded border border-neutral-200 bg-white/50 py-0.5 dark:border-neutral-800 dark:bg-neutral-900/50;
+		@apply inline-flex items-center rounded border border-neutral-200 bg-white/50 px-0.5 py-0.5 text-neutral-500 dark:border-neutral-800 dark:bg-neutral-900/50 dark:text-neutral-300 [&_p]:m-0;
 	}
-	.chip__button {
-		@apply inline-flex h-8 items-center justify-center gap-2 whitespace-nowrap rounded bg-primary-500 px-4 text-xs font-medium tracking-wide text-white;
+	.chip--elevated {
+		@apply shadow-sm shadow-slate-700/10;
 	}
-	.chip__body {
-		@apply flex items-center gap-1 text-neutral-500 dark:text-neutral-300;
+	.chip--body {
+		@apply inline-flex items-center gap-4 px-4;
 	}
 </style>
