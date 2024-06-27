@@ -9,29 +9,35 @@ import ChipNotification from '../../ui/ChipNotification.astro'
 import Image from 'astro/components/Image.astro'
 import Heading from '../../ui/Heading.astro'
 import Highlight from '../../ui/Highlight.astro'
+import Button from '../../ui/Button.astro'
 
 // Content
 import heroImage from '../../../assets/hero-01.png'
 ---
 
-<Section classes="bg-neutral-50 pb-0">
+<Section padding="top" classes="bg-neutral-50 dark:bg-neutral-900">
 	<Row>
 		<Col size="2" />
-		<Col size="8" classes="text-center space-y-12">
-			<ChipNotification classes="gap-0"
+		<Col size="8" align="center">
+			<ChipNotification classes="mb-6"
 				>version 3.0 is out now,&nbsp;<a href="#">read more!</a></ChipNotification
 			>
 			<Heading level="1"
 				>Enhance team <Highlight>performance</Highlight> with seamless integration</Heading
 			>
-			<p class="text-lg">Work smarter, not harder, with our innovative platform</p>
+			<p class="pb-0">Work smarter, not harder, with our innovative platform</p>
+			<Button size="lg">Get started for free</Button>
 			<Image
 				src={heroImage}
 				alt="Hero image"
-				class="rounded-t shadow-lg shadow-neutral-700/5 dark:shadow-neutral-950/50"
+				class="translate-y-8 shadow-2xl shadow-neutral-200 dark:shadow-neutral-950"
 			/>
 		</Col>
 		<Col size="2" />
 	</Row>
 </Section>
-<Section />
+<Section classes="dark">
+	<Row>
+		<Col>sss</Col>
+	</Row>
+</Section>

@@ -2,12 +2,12 @@
 import Header from '../components/ui/Header.astro'
 import Main from '../components/ui/Main.astro'
 import Footer from '../components/ui/Footer.astro'
+import Scriprs from '../components/LocalScripts.astro'
 import '../styles/global.css'
 
 export interface Props {
 	title?: string
 	description?: string
-	icon?: string
 	image?: string
 }
 
@@ -19,7 +19,7 @@ const {
 ---
 
 <!doctype html>
-<html lang="en" class="dark:bg-slate-500">
+<html lang="en" class="scroll-animation">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -47,16 +47,6 @@ const {
 			<slot />
 		</Main>
 		<Footer />
-
-		<script>
-			if (
-				localStorage.theme === 'dark' ||
-				(!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
-			) {
-				document.documentElement.classList.add('dark')
-			} else {
-				document.documentElement.classList.remove('dark')
-			}
-		</script>
+		<Scriprs />
 	</body>
 </html>

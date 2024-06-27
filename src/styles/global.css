@@ -1,6 +1,12 @@
-body {
-	@apply bg-white text-neutral-500 dark:bg-slate-900 dark:text-neutral-300 [.light_&]:text-neutral-500;
+/* Layout rules */
+html {
+	@apply scroll-smooth antialiased;
 }
+body {
+	@apply bg-white text-neutral-500 dark:bg-slate-950 dark:text-neutral-300 [.light_&]:text-neutral-500;
+}
+
+/* Main typography */
 p {
 	@apply mb-6 text-neutral-500 last:mb-0 dark:text-neutral-300 [.light_&]:text-neutral-500;
 }
@@ -47,4 +53,56 @@ h5 {
 
 h6 {
 	@apply text-base lg:text-lg;
+}
+main a {
+	@apply text-primary-500 hover:text-primary-600;
+}
+
+/* Scroll animations */
+/* To disable scroll animations remove the class "sroll-animation" from root html in the layout file */
+.scroll-animation .col {
+	opacity: 0;
+	transition: all 1s;
+	transform: translateY(1rem);
+}
+.scroll-animation .col:nth-child(1) {
+	transition-delay: 50ms;
+}
+.scroll-animation .col:nth-child(2) {
+	transition-delay: 125ms;
+}
+.scroll-animation .col:nth-child(3) {
+	transition-delay: 200ms;
+}
+.scroll-animation .col:nth-child(4) {
+	transition-delay: 275ms;
+}
+.scroll-animation .col:nth-child(5) {
+	transition-delay: 350ms;
+}
+.scroll-animation .col:nth-child(6) {
+	transition-delay: 425ms;
+}
+.scroll-animation .col:nth-child(7) {
+	transition-delay: 500ms;
+}
+.scroll-animation .col:nth-child(8) {
+	transition-delay: 575ms;
+}
+.scroll-animation .col:nth-child(9) {
+	transition-delay: 650ms;
+}
+.scroll-animation .col:nth-child(10) {
+	animation-delay: 825ms;
+}
+.scroll-animation .col:nth-child(11) {
+	animation-delay: 900ms;
+}
+.scroll-animation .col:nth-child(12) {
+	animation-delay: 975ms;
+}
+
+.scroll-animation .col.scroll-animated {
+	opacity: 1;
+	transform: translateY(0);
 }
