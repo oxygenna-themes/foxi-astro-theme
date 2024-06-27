@@ -8,28 +8,17 @@ import Col from '../../ui/Col.astro'
 import Heading from '../../ui/Heading.astro'
 import ChipNotification from '../../ui/ChipNotification.astro'
 import Highlight from '../../ui/Highlight.astro'
-import Card from '../cards/CardBasic.astro'
+import Card from '../../ui/cards/CardBasic.astro'
 
 // Hero content
 import cardImage from '../../../assets/test.jpg'
+console.log(typeof cardImage)
 ---
 
 <Section>
 	<Row>
 		<Col size="2" />
-		<Col size="8" align="center" classes="space-y-6">
-			<ChipNotification
-				variation="button"
-				body="I am a chip notification"
-				link="/"
-				linkName="Check it"
-				buttonName="v3.15.25"
-			/>
-			<Heading size="7xl" mobileSize="5xl"
-				>Crafting <Highlight type="4" colorFrom="#ef4444" colorTo="#6366f1">Handmade</Highlight> Websites
-				that Drive Results.</Heading
-			>
-		</Col>
+		<Col size="8" align="center" classes="space-y-6" />
 		<Col size="2" />
 	</Row>
 	<Row mode="light">
@@ -38,6 +27,16 @@ import cardImage from '../../../assets/test.jpg'
 				classes="bg-neutral-100"
 				title="What a nice card"
 				image={cardImage}
+				subtitle="Spend days here, exploring a way of life by bicycle. Discover cobbled streets"
+			/>
+		</Col>
+		<Col size="4">
+			<Card
+				classes="bg-neutral-100"
+				title="What a nice card"
+				image={cardImage}
+				type="image-bottom"
+				link="/"
 				subtitle="Spend days here, exploring a way of life by bicycle. Discover cobbled streets"
 			/>
 		</Col>
