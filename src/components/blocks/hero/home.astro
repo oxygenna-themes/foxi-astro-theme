@@ -6,17 +6,20 @@ import Col from '../../ui/Col.astro'
 
 // UI elements
 import Card from '../../ui/cards/CardBasic.astro'
+import List from '../../ui/List.astro'
 
 // Hero content
 import cardImage from '../../../assets/test.jpg'
+
+const listItems = [
+	{ listItem: 'Join forces with fellow architects' },
+	{ listItem: 'Present your projects with flair and captivate your audience.' },
+	{ listItem: 'Immerse yourself in the dynamic realm of architecture.' },
+	{ listItem: 'Unlock endless inspiration' }
+]
 ---
 
 <Section>
-	<Row>
-		<Col size="2" />
-		<Col size="8" align="center" classes="space-y-6" />
-		<Col size="2" />
-	</Row>
 	<Row mode="light">
 		<Col size="4">
 			<Card
@@ -26,15 +29,8 @@ import cardImage from '../../../assets/test.jpg'
 				subtitle="Spend days here, exploring a way of life by bicycle. Discover cobbled streets"
 			/>
 		</Col>
-		<Col size="4">
-			<Card
-				classes="bg-neutral-100"
-				title="What a nice card"
-				image={cardImage}
-				type="image-bottom"
-				link="/"
-				subtitle="Spend days here, exploring a way of life by bicycle. Discover cobbled streets"
-			/>
+		<Col size="8">
+			<List listItems={listItems} />
 		</Col>
 	</Row>
 </Section>
