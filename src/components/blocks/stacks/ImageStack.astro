@@ -1,0 +1,24 @@
+---
+// Layout elements
+import Section from '../../ui/Section.astro'
+import Row from '../../ui/Row.astro'
+import Col from '../../ui/Col.astro'
+
+type Props = {
+	images: Array<any>
+}
+
+const { images } = Astro.props
+---
+
+<Section>
+	<Row flex>
+		{
+			images.map((item) => (
+				<Col>
+					<img src={item.image} />
+				</Col>
+			))
+		}
+	</Row>
+</Section>

@@ -4,9 +4,28 @@ import Layout from '../layouts/Layout.astro'
 // Page sections
 import Intro from '../components/blocks/hero/home.astro'
 import FeaturesSimple from '../components/blocks/features/FeaturesSimple.astro'
+import SocialProof from '../components/blocks/stacks/ImageStack.astro'
+
+//Images
+import airtable from '../assets/logos/airtable-logo.svg'
+import asana from '../assets/logos/asana-logo.svg'
+import basecamp from '../assets/logos/basecamp-logo.svg'
+import evernote from '../assets/logos/evernote-logo.svg'
+import notion from '../assets/logos/notion-logo.svg'
+import slack from '../assets/logos/slack-logo.svg'
+
+const socialProofImages = [
+	{ image: airtable.src },
+	{ image: asana.src },
+	{ image: basecamp.src },
+	{ image: evernote.src },
+	{ image: notion.src },
+	{ image: slack.src }
+]
 ---
 
 <Layout title="Welcome to Astro.">
 	<Intro />
 	<FeaturesSimple />
+	<SocialProof images={socialProofImages} />
 </Layout>
