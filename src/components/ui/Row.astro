@@ -16,9 +16,9 @@ const { flex, mode, classes } = Astro.props
 
 <style>
 	.row {
-		@apply grid grid-cols-4 gap-6 md:grid-cols-8 lg:grid-cols-12 [&.flex]:flex;
+		@apply grid grid-cols-4 gap-6 md:grid-cols-8 lg:grid-cols-12;
 	}
 	.row--flex {
-		@apply flex-wrap items-center justify-center;
+		@apply flex flex-wrap items-center justify-center;
 	}
 </style>
