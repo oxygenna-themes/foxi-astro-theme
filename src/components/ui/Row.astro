@@ -2,12 +2,15 @@
 interface Props {
 	flex?: boolean
 	classes?: string
+	mode?: string
 }
 
-const { flex, classes } = Astro.props
+const { flex, mode, classes } = Astro.props
 ---
 
-<div class:list={['row', { 'row--flex': flex }, { [`${classes}`]: classes }]}>
+<div
+	class:list={['row', { 'row--flex': flex }, { [`${classes}`]: classes }, { [`${mode}`]: mode }]}
+>
 	<slot />
 </div>
 

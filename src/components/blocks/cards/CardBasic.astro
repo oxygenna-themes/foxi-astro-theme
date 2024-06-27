@@ -1,0 +1,30 @@
+---
+import Image from 'astro/components/Image.astro'
+import Card from './partials/Card.astro'
+import CardBody from './partials/CardBody.astro'
+import Heading from '../../ui/Heading.astro'
+=
+interface Props {
+	title?: string
+	subtitle?: string
+	image?: string
+	link?: string
+	type?: 'top-image' | 'bottom-image'
+	classes?: string
+}
+
+const { title = '', subtitle, image = '', link, type, classes } = Astro.props
+---
+
+<Card classes={classes}>
+    {(image) && {
+	sss
+    }
+	<CardBody>
+		<Heading level="4" size="lg" mobileSize="lg">{title}</Heading>
+		<p>{subtitle}</p>
+		<slot />
+	</CardBody>
+</Card>
+
+<style></style>

@@ -1,0 +1,17 @@
+---
+interface Props {
+	classes?: string
+}
+
+const { classes = 'bg-white dark:bg-neutral-900' } = Astro.props
+---
+
+<div class:list={['card', { [`${classes}`]: classes }]}>
+	<slot />
+</div>
+
+<style>
+	.card {
+		@apply flex flex-col rounded shadow-lg shadow-neutral-700/5 dark:shadow-neutral-950/50;
+	}
+</style>

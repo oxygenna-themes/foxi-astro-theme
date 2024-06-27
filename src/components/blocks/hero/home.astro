@@ -8,10 +8,10 @@ import Col from '../../ui/Col.astro'
 import Heading from '../../ui/Heading.astro'
 import ChipNotification from '../../ui/ChipNotification.astro'
 import Highlight from '../../ui/Highlight.astro'
-import Feature from '../../ui/Feature.astro'
+import Card from '../cards/CardBasic.astro'
 
 // Hero content
-import bg from '../../../assets/bg-01.png'
+import cardImage from '../../../assets/test.jpg'
 ---
 
 <Section>
@@ -32,14 +32,14 @@ import bg from '../../../assets/bg-01.png'
 		</Col>
 		<Col size="2" />
 	</Row>
-	<Row>
+	<Row mode="light">
 		<Col size="4">
-			<Feature type="side-icon" iconStyle="square" title="ssss">
-				<p>
-					Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore, ea tenetur molestias
-					dolor doloremque
-				</p>
-			</Feature>
+			<Card
+				classes="bg-neutral-100"
+				title="What a nice card"
+				image={cardImage}
+				subtitle="Spend days here, exploring a way of life by bicycle. Discover cobbled streets"
+			/>
 		</Col>
 	</Row>
 </Section>

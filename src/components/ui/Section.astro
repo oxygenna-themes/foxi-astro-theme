@@ -30,7 +30,7 @@ const bgStyle = bg
 	class:list={[
 		'section',
 		{ 'section--fullwidth': fullWidth },
-		{ dark: mode },
+		{ [`${mode}`]: mode },
 		{ [`${classes}`]: classes }
 	]}
 >
@@ -42,7 +42,7 @@ const bgStyle = bg
 
 <style>
 	.section {
-		@apply relative py-24 dark:bg-neutral-900;
+		@apply relative bg-white py-24 dark:bg-neutral-900;
 	}
 	.section__bg {
 		@apply absolute inset-0 bg-cover;

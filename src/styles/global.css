@@ -1,8 +1,8 @@
 body {
-	@apply bg-white text-neutral-500 dark:bg-slate-900 dark:text-neutral-300;
+	@apply bg-white text-neutral-500 dark:bg-slate-900 dark:text-neutral-300 [.light_&]:text-neutral-500;
 }
 p {
-	@apply mb-6 text-neutral-500 last:mb-0 dark:text-neutral-300;
+	@apply mb-6 text-neutral-500 last:mb-0 dark:text-neutral-300 [.light_&]:text-neutral-500;
 }
 h1,
 h2,
@@ -10,7 +10,7 @@ h3,
 h4,
 h5,
 h6 {
-	@apply text-neutral-700 last:mb-0 dark:text-neutral-50;
+	@apply text-neutral-700 last:mb-0 dark:text-neutral-50 [.light_&]:text-neutral-700;
 }
 
 h1,
