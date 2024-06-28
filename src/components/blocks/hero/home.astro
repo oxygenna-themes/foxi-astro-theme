@@ -1,25 +1,26 @@
 ---
-// Layout elements
+// Components
+// - Layout
 import Section from '../../ui/Section.astro'
 import Row from '../../ui/Row.astro'
 import Col from '../../ui/Col.astro'
 
-// UI elements
+// - UI
 import ChipNotification from '../../ui/ChipNotification.astro'
 import Image from 'astro/components/Image.astro'
 import Heading from '../../ui/Heading.astro'
 import Highlight from '../../ui/Highlight.astro'
 import Button from '../../ui/Button.astro'
 import AvatarGroup from '../../ui/AvatarGroup.astro'
-import Avatar from '../../ui/Avatar.astro'
 
 // Content
+// - Hero Image
 import heroImage from '../../../assets/hero-01.png'
-//Images
+
+// - Avatars
 import user1 from '../../../assets/avatars/avatar-01.png'
 import user2 from '../../../assets/avatars/avatar-02.png'
 import user3 from '../../../assets/avatars/avatar-03.png'
-
 const avatars = [
 	{ image: { src: user1.src, alt: 'user name' }, link: '/' },
 	{ image: { src: user2.src, alt: 'user name' }, link: '/' },
@@ -47,10 +48,5 @@ const avatars = [
 			/>
 		</Col>
 		<Col span="2" />
-	</Row>
-</Section>
-<Section>
-	<Row>
-		<Col span="12" />
 	</Row>
 </Section>
