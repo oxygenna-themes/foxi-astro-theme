@@ -1,0 +1,31 @@
+---
+import Avatar from './Avatar.astro'
+
+type Props = {
+	size?: 'lg' | 'base' | 'sm' | 'xs'
+	avatars: Array<any>
+	radius?: string
+	classes?: string
+}
+const { size = 'base', avatars, radius = 'rounded', classes } = Astro.props
+---
+
+<span class:list={['avatar-group', { [`${classes}`]: classes }]}>
+	{
+		avatars.map((item) => (
+			<Avatar
+				size={size}
+				image={item.image}
+				link={item.link}
+				radius={radius}
+				classes="-mx-2 first:ml-0"
+			/>
+		))
+	}
+</span>
+
+<style>
+	.avatar-group {
+		@apply flex -space-x-2;
+	}
+</style>

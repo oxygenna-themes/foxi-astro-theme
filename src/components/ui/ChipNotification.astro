@@ -1,13 +1,14 @@
 ---
 type Props = {
 	elevated?: boolean
+	radius?: string
 	classes?: string
 }
 
-const { elevated, classes } = Astro.props
+const { elevated, radius = 'rounded', classes } = Astro.props
 ---
 
-<div class:list={['chip', { ['chip--elevated']: elevated }, { [`${classes}`]: classes }]}>
+<div class:list={['chip', { ['chip--elevated']: elevated }, { [`${classes}`]: classes }, radius]}>
 	<slot name="button" />
 	<span class="chip--body">
 		<slot />
@@ -16,7 +17,7 @@ const { elevated, classes } = Astro.props
 
 <style>
 	.chip {
-		@apply inline-flex items-center rounded border border-neutral-200 bg-white/50 px-0.5 py-0.5 dark:border-neutral-800 dark:bg-neutral-900/50 [&_p]:m-0;
+		@apply inline-flex items-center border border-neutral-200 bg-white/50 px-0.5 py-0.5 dark:border-neutral-800 dark:bg-neutral-900/50 [&_p]:m-0;
 	}
 	.chip--elevated {
 		@apply shadow-sm shadow-slate-700/10;

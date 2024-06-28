@@ -2,19 +2,24 @@
 type Props = {
 	size?: 'lg' | 'base' | 'sm' | 'xs'
 	link?: string
+	radius?: string
 	image: { src: string; alt: string }
+	classes?: string
 }
 
-const { size = 'base', link = '#', image } = Astro.props
+const { size = 'base', link = '#', radius, image, classes } = Astro.props
 ---
 
-<a href={link} class:list={['avatar', { ['avatar--' + `${size}`]: size }]}>
-	<img src={image.src} alt={image.alt} title={image.alt} />
+<a
+	href={link}
+	class:list={['avatar', { ['avatar--' + `${size}`]: size }, , { [`${classes}`]: classes }]}
+>
+	<img src={image.src} alt={image.alt} title={image.alt} class={radius} />
 </a>
 
 <style>
 	.avatar {
-		@apply relative inline-flex items-center justify-center rounded text-white [&_img]:max-w-full [&_img]:rounded [&_img]:border-2 [&_img]:border-white;
+		@apply relative inline-flex items-center justify-center text-white [&_img]:max-w-full;
 	}
 	.avatar--lg {
 		@apply h-12 w-12 [&_img]:h-12 [&_img]:w-12;

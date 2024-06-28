@@ -1,18 +1,18 @@
 ---
 interface Props {
 	span?: string
-	mobileSize?: string
+	spanMobile?: string
 	align?: string
 	classes?: string
 }
 
-const { span, mobileSize = '12', align, classes } = Astro.props
+const { span, spanMobile = '12', align, classes } = Astro.props
 ---
 
 <div
 	class:list={[
 		'col',
-		{ ['col-span-' + `${mobileSize}`]: mobileSize },
+		{ ['col-span-' + `${spanMobile}`]: spanMobile },
 		{ ['lg:col-span-' + `${span}`]: span },
 		{ ['text-' + `${align}`]: align },
 		{ [`${classes}`]: classes }

@@ -10,24 +10,35 @@ import Image from 'astro/components/Image.astro'
 import Heading from '../../ui/Heading.astro'
 import Highlight from '../../ui/Highlight.astro'
 import Button from '../../ui/Button.astro'
-import Card from '../../ui/cards/CardBasic.astro'
+import AvatarGroup from '../../ui/AvatarGroup.astro'
+import Avatar from '../../ui/Avatar.astro'
 
 // Content
 import heroImage from '../../../assets/hero-01.png'
-import Feature from '../../ui/Feature.astro'
+//Images
+import user1 from '../../../assets/avatars/avatar-01.png'
+import user2 from '../../../assets/avatars/avatar-02.png'
+import user3 from '../../../assets/avatars/avatar-03.png'
+
+const avatars = [
+	{ image: { src: user1.src, alt: 'user name' }, link: '/' },
+	{ image: { src: user2.src, alt: 'user name' }, link: '/' },
+	{ image: { src: user3.src, alt: 'user name' }, link: '/' }
+]
 ---
 
 <Section padding="top" classes="bg-neutral-50 dark:bg-neutral-900">
 	<Row>
 		<Col span="2" />
 		<Col span="8" align="center">
-			<ChipNotification classes="mb-6"
-				>version 3.0 is out now,&nbsp;<a href="#">read more!</a></ChipNotification
-			>
+			<ChipNotification radius="rounded-full" classes="mb-6">
+				<Highlight classes="font-bold pr-1">30K+ </Highlight> satisfied customers
+				<AvatarGroup avatars={avatars} radius="rounded-full" slot="button" />
+			</ChipNotification>
 			<Heading level="1"
 				>Enhance team <Highlight>performance</Highlight> with seamless integration</Heading
 			>
-			<p class="pb-0">Work smarter, not harder, with our innovative platform</p>
+			<p class="pb-0 text-lg">Work smarter, not harder, with our innovative platform</p>
 			<Button size="lg">Get started for free</Button>
 			<Image
 				src={heroImage}
@@ -38,46 +49,8 @@ import Feature from '../../ui/Feature.astro'
 		<Col span="2" />
 	</Row>
 </Section>
-<Section mode="dark" classes="">
+<Section>
 	<Row>
-		<Col span="2" />
-		<Col span="8" align="center">
-			<Heading level="2">Enhance team <Highlight>performance</Highlight> and integration</Heading>
-			<p class="pb-12">Work smarter, not harder, with our innovative platform</p>
-		</Col>
-		<Col span="2" />
-
-		<Col span="4">
-			<Feature title="Responsive" classes="mb-8">
-				with end-to-end tests using modern web development techniques.
-			</Feature>
-		</Col>
-		<Col span="4">
-			<Feature title="Responsive" classes="mb-8">
-				with end-to-end tests using modern web development techniques.
-			</Feature>
-		</Col>
-		<Col span="4">
-			<Feature title="Responsive" classes="mb-8">
-				with end-to-end tests using modern web development techniques.
-			</Feature>
-		</Col>
-	</Row>
-	<Row>
-		<Col span="4">
-			<Feature title="Responsive" classes="mb-8">
-				with end-to-end tests using modern web development techniques.
-			</Feature>
-		</Col>
-		<Col span="4">
-			<Feature title="Responsive" classes="mb-8">
-				with end-to-end tests using modern web development techniques.
-			</Feature>
-		</Col>
-		<Col span="4">
-			<Feature title="Responsive" classes="mb-8">
-				with end-to-end tests using modern web development techniques.
-			</Feature>
-		</Col>
+		<Col span="12" />
 	</Row>
 </Section>

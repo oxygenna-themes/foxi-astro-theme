@@ -7,7 +7,7 @@ const observer = new IntersectionObserver((entries) => {
 })
 
 const elements = document.querySelectorAll('.scroll-animation .col')
-console.log(elements)
+
 elements.forEach((element) => {
 	observer.observe(element)
 })
