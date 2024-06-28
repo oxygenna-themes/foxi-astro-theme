@@ -1,0 +1,45 @@
+---
+// Layout elements
+import Section from '../../ui/Section.astro'
+import Row from '../../ui/Row.astro'
+import Col from '../../ui/Col.astro'
+
+//UI Components
+import PricingTable from '../../ui/pricing-tables/PricingTable.astro'
+
+type Props = {
+	data: Array<{
+		header: {
+			title: string
+			subtitle: string
+			currency: string
+			price: string
+			perTime: string
+			buttonName: string
+			buttonLink: string
+		}
+		body: {
+			listItems: Array<{ listItem: string }>
+		}
+		footer: {
+			buttonName: string
+			buttonLink: string
+		}
+		type: string
+	}>
+}
+
+const { data } = Astro.props
+---
+
+<Section>
+	<Row flex>
+		{
+			data.map((item) => (
+				<Col>
+					<PricingTable data={item} />
+				</Col>
+			))
+		}
+	</Row>
+</Section>
