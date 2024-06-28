@@ -1,0 +1,127 @@
+---
+//UI Components
+import Heading from '../Heading.astro'
+import Button from '../Button.astro'
+import List from '../List.astro'
+
+//Partials
+import Header from './partials/Header.astro'
+import Body from './partials/Body.astro'
+import Footer from './partials/Footer.astro'
+
+type PricingTableProps = {
+	type: string
+	header: {
+		title: string
+		subtitle: string
+		currency: string
+		price: string
+		perTime: string
+		buttonName: string
+		buttonLink: string
+	}
+	body: {
+		listItems: Array<{ listItem: string }>
+	}
+	footer: {
+		buttonName: string
+		buttonLink: string
+	}
+}
+
+type Props = {
+	data: PricingTableProps
+}
+
+const { data } = Astro.props
+
+const { type, header, body, footer } = data
+---
+
+<div class:list={['pricing lg:max-md-full', { [`pricing--${type}`]: type }]}>
+	<div class="pricing__container">
+		<Header type={type}>
+			<Heading align="left" level="3" size="xl" weight="bold" classes="text-primary-50">
+				{header.title}
+				<span class="pricing__header--subtitle">{header.subtitle}</span>
+			</Heading>
+			<Heading
+				align="left"
+				level="4"
+				size="6xl"
+				mobileSize="5xl"
+				weight="bold"
+				classes={type === 'featured' ? 'text-primary-50 ' : 'text-slate-700 dark:text-neutral-50'}
+			>
+				<span class="pricing__header--currency">{header.currency}</span>
+				<span class="pricing__header--price">{header.price}</span>
+				<span class="pricing__header--perTime">{header.perTime}</span>
+			</Heading>
+			<Button
+				size="lg"
+				style={type === 'featured' ? 'secondary' : 'primary'}
+				elevated
+				type="link"
+				link={header.buttonLink}
+			>
+				{header.buttonName}
+			</Button>
+		</Header>
+
+		{
+			body && (
+				<Body>
+					<List
+						listItems={body.listItems}
+						extraClasses="space-y-4"
+						listColor={type === 'featured' ? 'white' : 'primary'}
+					/>
+				</Body>
+			)
+		}
+		{
+			footer && (
+				<Footer type={type}>
+					<Button
+						size="lg"
+						style="primary"
+						type="link"
+						link={footer.buttonLink}
+						variation="link"
+						extraClasses={type === 'featured' ? '!text-white' : ''}
+					>
+						{footer.buttonName}
+					</Button>
+				</Footer>
+			)
+		}
+	</div>
+</div>
+
+<style>
+	.pricing {
+		@apply mx-auto max-w-sm overflow-hidden rounded;
+	}
+	.pricing__container {
+		@apply flex flex-col;
+	}
+	.pricing__header--subtitle {
+		@apply block text-sm font-normal;
+	}
+	.pricing__header--currency {
+		@apply text-3xl;
+	}
+	.pricing__header--price {
+		@apply tracking-tighter;
+	}
+	.pricing__header--perTime {
+		@apply text-sm;
+	}
+
+	.pricing--basic {
+		@apply rounded bg-white text-neutral-500 shadow-lg shadow-neutral-500/30 dark:bg-neutral-800 dark:text-neutral-300 [&_.pricing\_\_header--subtitle]:text-neutral-400;
+	}
+	.pricing--featured {
+		@apply bg-primary-500 text-primary-100 shadow-xl shadow-primary-500/30 [&_.pricing\_\_header--subtitle]:text-primary-200;
+	}
+</style>

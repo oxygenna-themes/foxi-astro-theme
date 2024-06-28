@@ -1,0 +1,30 @@
+---
+interface Props {
+	classes?: string
+	type: string
+}
+
+const { classes, type } = Astro.props
+---
+
+<footer
+	class:list={[
+		'pricing__footer',
+		{ [` pricing__footer--${type}`]: type },
+		{ [`${classes}`]: classes }
+	]}
+>
+	<slot />
+</footer>
+
+<style>
+	.pricing__footer {
+		@apply border-t p-6 text-center text-sm;
+	}
+	.pricing__footer--basic {
+		@apply border-neutral-200 bg-neutral-100 dark:border-neutral-400 dark:bg-neutral-700;
+	}
+	.pricing__footer--featured {
+		@apply border-primary-600 bg-primary-600/50;
+	}
+</style>

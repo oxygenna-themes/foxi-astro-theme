@@ -1,0 +1,17 @@
+---
+interface Props {
+	classes?: string
+}
+
+const { classes } = Astro.props
+---
+
+<div class:list={['pricing__body', { [`${classes}`]: classes }]}>
+	<slot />
+</div>
+
+<style>
+	.pricing__body {
+		@apply p-6;
+	}
+</style>
