@@ -73,7 +73,7 @@ const { type, header, body, footer } = data
 				<Body>
 					<List
 						listItems={body.listItems}
-						extraClasses="space-y-4"
+						extraClasses={type === 'featured' ? '[&_li]:!text-primary-50 space-y-4' : 'space-y-4'}
 						listColor={type === 'featured' ? 'white' : 'primary'}
 					/>
 				</Body>
