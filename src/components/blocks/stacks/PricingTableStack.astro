@@ -18,18 +18,19 @@ type Props = {
 			buttonName: string
 			buttonLink: string
 		}
-		body: {
+		body?: {
 			listItems: Array<{ listItem: string }>
 		}
-		footer: {
+		footer?: {
 			buttonName: string
 			buttonLink: string
 		}
 		type: string
 	}>
+	classes?: string
 }
 
-const { data } = Astro.props
+const { data, classes } = Astro.props
 ---
 
 <Section>
@@ -37,7 +38,7 @@ const { data } = Astro.props
 		{
 			data.map((item) => (
 				<Col>
-					<PricingTable data={item} />
+					<PricingTable data={item} classes={classes} />
 				</Col>
 			))
 		}

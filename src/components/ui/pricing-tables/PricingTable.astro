@@ -20,10 +20,10 @@ type PricingTableProps = {
 		buttonName: string
 		buttonLink: string
 	}
-	body: {
+	body?: {
 		listItems: Array<{ listItem: string }>
 	}
-	footer: {
+	footer?: {
 		buttonName: string
 		buttonLink: string
 	}
@@ -31,17 +31,30 @@ type PricingTableProps = {
 
 type Props = {
 	data: PricingTableProps
+	classes?: string
 }
 
-const { data } = Astro.props
+const { data, classes } = Astro.props
 
 const { type, header, body, footer } = data
 ---
 
-<div class:list={['pricing lg:max-md-full', { [`pricing--${type}`]: type }]}>
+<div
+	class:list={[
+		'pricing lg:max-md-full',
+		{ [`pricing--${type}`]: type },
+		{ [`${classes}`]: classes }
+	]}
+>
 	<div class="pricing__container">
 		<Header type={type}>
-			<Heading align="left" level="3" size="xl" weight="bold" classes="text-primary-50">
+			<Heading
+				align="left"
+				level="3"
+				size="xl"
+				weight="bold"
+				classes={type === 'featured' ? 'text-primary-50' : 'text-neutral-700 dark:text-neutral-50'}
+			>
 				{header.title}
 				<span class="pricing__header--subtitle">{header.subtitle}</span>
 			</Heading>
