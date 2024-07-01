@@ -1,0 +1,35 @@
+---
+import Layout from '../layouts/Layout.astro'
+
+// Page sections
+import FeaturesSimple from '../components/blocks/features/FeaturesSimple.astro'
+import SocialProof from '../components/blocks/stacks/ImageStack.astro'
+import Pricing from '../components/blocks/pricing/Pricing.astro'
+
+//UI Components
+import Testimonial from '../components/ui/Testimonial.astro'
+
+//Images
+import airtable from '../assets/logos/airtable-logo.svg'
+import asana from '../assets/logos/asana-logo.svg'
+import basecamp from '../assets/logos/basecamp-logo.svg'
+import evernote from '../assets/logos/evernote-logo.svg'
+import notion from '../assets/logos/notion-logo.svg'
+import slack from '../assets/logos/slack-logo.svg'
+
+const socialProofImages = [
+	{ image: airtable.src, alt: 'airtable logo' },
+	{ image: asana.src, alt: 'asana logo' },
+	{ image: basecamp.src, alt: 'basecamp logo' },
+	{ image: evernote.src, alt: 'evernote logo' },
+	{ image: notion.src, alt: 'notion logo' },
+	{ image: slack.src, alt: 'slack logo' }
+]
+---
+
+<Layout title="Welcome to Astro.">
+	<Testimonial />
+	<Pricing />
+	<FeaturesSimple />
+	<SocialProof images={socialProofImages} />
+</Layout>
