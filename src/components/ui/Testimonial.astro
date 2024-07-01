@@ -8,11 +8,9 @@ type Props = {
 	figcaption: string
 	cite?: string
 	link?: string
-	rating?: '1' | '2' | '3' | '4' | '5'
 	avatar?: any
-	size?: 'base' | 'lg'
-	style?: 'basic' | 'primary'
-	elevated?: boolean
+	size?: string
+	mobileSize?: string
 	align?: 'left' | 'center'
 	extraClasses?: string
 }
@@ -22,12 +20,10 @@ const {
 	figcaption,
 	cite,
 	avatar,
-	rating,
 	size = 'base',
-	style = 'basic',
+	mobileSize = size,
 	align = 'left',
 	link,
-	elevated,
 	extraClasses
 } = Astro.props
 ---
@@ -35,10 +31,9 @@ const {
 <div
 	class:list={[
 		'testimonial',
-		{ ['testimonial--' + `${size}`]: size },
-		{ ['testimonial--' + `${style}`]: style },
 		{ ['testimonial--' + `${align}`]: align },
-		{ ['testimonial--elevated']: elevated },
+		{ ['text-' + `${mobileSize}`]: mobileSize },
+		{ ['lg:text-' + `${size}`]: size },
 		{ [`${extraClasses}`]: extraClasses }
 	]}
 >
@@ -50,7 +45,6 @@ const {
 				</p>
 			</blockquote>
 			<figcaption class="testimonial__figcaption">
-				<!-- Add rating when ready -->
 				<div class="testimonial__figcaption-container">
 					{
 						avatar && (
@@ -82,15 +76,6 @@ const {
 <style>
 	.testimonial {
 		@apply overflow-hidden text-neutral-500 dark:text-neutral-300;
-	}
-	.testimonial--elevated {
-		@apply rounded bg-white shadow-2xl shadow-neutral-700/10 dark:bg-neutral-800 [&.testimonial--primary]:bg-primary-500 [&.testimonial--primary]:text-primary-200 [&.testimonial--primary]:shadow-primary-500/30 [&.testimonial--primary_.testimonial--quote]:text-white/10 [&.testimonial--primary_.testimonial\_\_figcaption]:text-white;
-	}
-	.testimonial--basic {
-		@apply [&_.testimonial\_\_blockquote]:text-lg;
-	}
-	.testimonial--lg {
-		@apply [&_.testimonial\_\_blockquote]:text-2xl;
 	}
 	.testimonial--center {
 		@apply text-center [&_.testimonial\_\_figcaption:has(.avatar)_.testimonial\_\_figcaption-cite-container]:text-left [&_.testimonial\_\_figcaption]:justify-center;
