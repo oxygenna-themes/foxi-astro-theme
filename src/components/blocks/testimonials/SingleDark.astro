@@ -13,7 +13,12 @@ import Testimonial from '../../ui/Testimonial.astro'
 import background from '../../../assets/testimonial-bg.jpg'
 ---
 
-<Section id="testimonial" mode="dark" bg={background}>
+<Section
+	id="testimonial"
+	mode="dark"
+	bg={background}
+	classes="dark:border-t border-y border-neutral-800"
+>
 	<Row>
 		<Col span="12">
 			<Testimonial
