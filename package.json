@@ -14,7 +14,7 @@
     "@astrojs/tailwind": "^5.1.0",
     "@fontsource-variable/inter": "^5.0.18",
     "@fontsource/inter": "^5.0.18",
-    "astro": "^4.10.1",
+    "astro": "^4.11.3",
     "astro-icon": "^1.1.0",
     "prettier": "^3.3.2",
     "prettier-plugin-astro": "^0.14.0",
