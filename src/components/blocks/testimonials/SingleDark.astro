@@ -1,0 +1,32 @@
+---
+// Components
+// - Layout
+import Section from '../../ui/Section.astro'
+import Row from '../../ui/Row.astro'
+import Col from '../../ui/Col.astro'
+
+// - UI
+import Testimonial from '../../ui/Testimonial.astro'
+
+// Content
+// - Backhground
+import background from '../../../assets/testimonial-bg.jpg'
+---
+
+<Section id="testimonial" mode="dark" bg={background}>
+	<Row>
+		<Col span="2" />
+		<Col span="8">
+			<Testimonial
+				blockquote="Foxi is like a rocket boost for our productivity! Its sleek design and out-of-this-world features make managing projects and team communication a breeze. "
+				figcaption="Sheryl Sandberg"
+				cite="CEO, Facebook"
+				align="center"
+				size="4xl"
+				mobileSize="3xl"
+				classes="!leading-tight font-bold xl:text-5xl"
+			/>
+		</Col>
+		<Col span="2" />
+	</Row>
+</Section>
