@@ -1,0 +1,125 @@
+---
+import { Icon } from 'astro-icon/components'
+import { Image } from 'astro:assets'
+import Avatar from './Avatar.astro'
+
+type Props = {
+	blockquote: string
+	figcaption: string
+	cite?: string
+	link?: string
+	rating?: '1' | '2' | '3' | '4' | '5'
+	avatar?: any
+	size?: 'base' | 'lg'
+	style?: 'basic' | 'primary'
+	elevated?: boolean
+	align?: 'left' | 'center'
+	extraClasses?: string
+}
+
+const {
+	blockquote,
+	figcaption,
+	cite,
+	avatar,
+	rating,
+	size = 'base',
+	style = 'basic',
+	align = 'left',
+	link,
+	elevated,
+	extraClasses
+} = Astro.props
+---
+
+<div
+	class:list={[
+		'testimonial',
+		{ ['testimonial--' + `${size}`]: size },
+		{ ['testimonial--' + `${style}`]: style },
+		{ ['testimonial--' + `${align}`]: align },
+		{ ['testimonial--elevated']: elevated },
+		{ [`${extraClasses}`]: extraClasses }
+	]}
+>
+	<div class="testimonial__container">
+		<figure class="testimonial__figure">
+			<blockquote class="testimonial__blockquote">
+				<p>
+					{blockquote}
+				</p>
+			</blockquote>
+			<figcaption class="testimonial__figcaption">
+				<!-- Add rating when ready -->
+				<div class="testimonial__figcaption-container">
+					{
+						avatar && (
+							<Avatar
+								size="lg"
+								image={avatar}
+								radius="rounded-full"
+								classes="cursor-default max-w-full shrink-0"
+							/>
+						)
+					}
+					<div class="testimonial__figcaption-cite-container">
+						<span class="testimonial__figcaption--credit">{figcaption}</span>
+						{
+							cite && (
+								<cite class="testimonial__figcaption--cite">
+									{link ? <a href={link}>{cite}</a> : <span>{cite}</span>}
+								</cite>
+							)
+						}
+					</div>
+				</div>
+			</figcaption>
+		</figure>
+		<Icon name="quotes" class="testimonial--quote" size={64} width={64} height={64} />
+	</div>
+</div>
+
+<style>
+	.testimonial {
+		@apply overflow-hidden text-neutral-500 dark:text-neutral-300;
+	}
+	.testimonial--elevated {
+		@apply rounded bg-white shadow-2xl shadow-neutral-700/10 dark:bg-neutral-800 [&.testimonial--primary]:bg-primary-500 [&.testimonial--primary]:text-primary-200 [&.testimonial--primary]:shadow-primary-500/30 [&.testimonial--primary_.testimonial--quote]:text-white/10 [&.testimonial--primary_.testimonial\_\_figcaption]:text-white;
+	}
+	.testimonial--basic {
+		@apply [&_.testimonial\_\_blockquote]:text-lg;
+	}
+	.testimonial--lg {
+		@apply [&_.testimonial\_\_blockquote]:text-2xl;
+	}
+	.testimonial--center {
+		@apply text-center [&_.testimonial\_\_figcaption:has(.avatar)_.testimonial\_\_figcaption-cite-container]:text-left [&_.testimonial\_\_figcaption]:justify-center;
+	}
+	.testimonial--quote {
+		@apply absolute left-6 top-6 z-0 text-primary-50 dark:text-primary-50/15;
+	}
+	.testimonial__container {
+		@apply relative p-6;
+	}
+	.testimonial__figure {
+		@apply relative z-10;
+	}
+	.testimonial__blockquote {
+		@apply p-6 leading-relaxed;
+	}
+	.testimonial__figcaption {
+		@apply flex items-center gap-4 p-6 pt-2 text-sm text-primary-500;
+	}
+	.testimonial__figcaption-container {
+		@apply flex items-center gap-4 pt-4 text-sm;
+	}
+	.testimonial__figcaption-cite-container {
+		@apply flex flex-col gap-1;
+	}
+	.testimonial__figcaption--credit {
+		@apply font-bold uppercase;
+	}
+	.testimonial__figcaption--cite {
+		@apply not-italic;
+	}
+</style>

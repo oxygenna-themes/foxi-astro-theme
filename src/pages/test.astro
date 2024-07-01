@@ -5,11 +5,10 @@ import Layout from '../layouts/Layout.astro'
 import FeaturesSimple from '../components/blocks/features/FeaturesSimple.astro'
 import SocialProof from '../components/blocks/stacks/ImageStack.astro'
 import Pricing from '../components/blocks/pricing/Pricing.astro'
-
-//UI Components
-import Testimonial from '../components/ui/Testimonial.astro'
+import SimpleTestimonials from '../components/blocks/testimonials/Simple.astro'
 
 //Images
+import avatarImage from '../assets/avatars/avatar-01.png'
 import airtable from '../assets/logos/airtable-logo.svg'
 import asana from '../assets/logos/asana-logo.svg'
 import basecamp from '../assets/logos/basecamp-logo.svg'
@@ -28,7 +27,7 @@ const socialProofImages = [
 ---
 
 <Layout title="Welcome to Astro.">
-	<Testimonial />
+	<SimpleTestimonials />
 	<Pricing />
 	<FeaturesSimple />
 	<SocialProof images={socialProofImages} />
