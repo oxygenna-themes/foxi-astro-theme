@@ -1,0 +1,53 @@
+---
+import { Icon } from 'astro-icon/components'
+
+//UI Components
+import Heading from './Heading.astro'
+
+type Props = {
+	title?: string
+	text?: string
+	helperText?: string
+	rating: 0 | 1 | 2 | 3 | 4 | 5
+	elevated?: boolean
+	extraClasses?: string
+}
+
+const { rating = 0, elevated, title, text, helperText, extraClasses } = Astro.props
+---
+
+<div class="rating">
+	{
+		title && (
+			<Heading level="4" size="base" weight="bold">
+				{title}
+			</Heading>
+		)
+	}
+	<span class="rating__body">
+		<span
+			class="flex gap-1 text-amber-400"
+			role="img"
+			aria-label={`Rating: ${rating} out of 5 stars`}
+		>
+			{
+				Array.from({ length: 5 }, (_, index) => (
+					<span aria-hidden="true">
+						<Icon name={index < rating ? 'filled-star' : 'empty-star'} class="h-6 w-6" />
+					</span>
+				))
+			}
+		</span>
+		{text && <span>{text}</span>}
+	</span>
+	{helperText && <span class="text-xs leading-6 text-slate-400"> {helperText} </span>}
+</div>
+
+<style>
+	.rating {
+		@apply inline-flex flex-col items-center gap-2;
+	}
+	.rating__body {
+		@apply flex items-center gap-4 rounded text-sm text-slate-500;
+	}
+</style>
