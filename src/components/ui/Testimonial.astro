@@ -15,6 +15,7 @@ type Props = {
 	mobileSize?: string
 	align?: 'left' | 'center'
 	rating?: 0 | 1 | 2 | 3 | 4 | 5
+	quoteSize?: number
 	classes?: string
 }
 
@@ -28,7 +29,8 @@ const {
 	rating,
 	align = 'left',
 	link,
-	classes
+	classes,
+	quoteSize = 64
 } = Astro.props
 ---
 
@@ -74,7 +76,13 @@ const {
 				</div>
 			</figcaption>
 		</figure>
-		<Icon name="quotes" class="testimonial--quote" size={64} width={64} height={64} />
+		<Icon
+			name="quotes"
+			class="testimonial--quote"
+			size={quoteSize}
+			width={quoteSize}
+			height={quoteSize}
+		/>
 	</div>
 </div>
 
