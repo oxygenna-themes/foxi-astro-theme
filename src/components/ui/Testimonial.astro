@@ -1,6 +1,8 @@
 ---
 import { Icon } from 'astro-icon/components'
-import { Image } from 'astro:assets'
+
+//UI Components
+import Rating from './Rating.astro'
 import Avatar from './Avatar.astro'
 
 type Props = {
@@ -12,6 +14,7 @@ type Props = {
 	size?: string
 	mobileSize?: string
 	align?: 'left' | 'center'
+	rating?: 0 | 1 | 2 | 3 | 4 | 5
 	extraClasses?: string
 }
 
@@ -22,6 +25,7 @@ const {
 	avatar,
 	size = 'base',
 	mobileSize = size,
+	rating,
 	align = 'left',
 	link,
 	extraClasses
@@ -45,6 +49,7 @@ const {
 				</p>
 			</blockquote>
 			<figcaption class="testimonial__figcaption">
+				{rating && <Rating rating={rating} />}
 				<div class="testimonial__figcaption-container">
 					{
 						avatar && (
@@ -93,7 +98,7 @@ const {
 		@apply p-6 leading-relaxed;
 	}
 	.testimonial__figcaption {
-		@apply flex items-center gap-4 p-6 pt-2 text-sm text-primary-500;
+		@apply flex flex-col items-center gap-4 p-6 pt-2 text-sm text-primary-500;
 	}
 	.testimonial__figcaption-container {
 		@apply flex items-center gap-4 pt-4 text-sm;
