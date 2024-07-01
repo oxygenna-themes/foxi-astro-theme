@@ -6,7 +6,7 @@ type Props = {
 	style?: 'primary' | 'secondary' | 'neutral'
 	variation?: 'outline' | 'link'
 	elevated?: boolean
-	extraClasses?: string
+	classes?: string
 }
 
 const {
@@ -16,7 +16,7 @@ const {
 	style = 'primary',
 	variation,
 	elevated,
-	extraClasses
+	classes
 } = Astro.props
 ---
 
@@ -30,7 +30,7 @@ const {
 				{ ['button--' + `${style}`]: style },
 				{ ['button--' + `${variation}`]: variation },
 				{ ['button--elevated']: elevated },
-				{ [`${extraClasses}`]: extraClasses }
+				{ [`${classes}`]: classes }
 			]}
 		>
 			<slot />
@@ -44,7 +44,7 @@ const {
 				{ ['button--' + `${style}`]: style },
 				{ ['button--' + `${variation}`]: variation },
 				{ ['button--elevated']: elevated },
-				{ [`${extraClasses}`]: extraClasses }
+				{ [`${classes}`]: classes }
 			]}
 		>
 			<slot />

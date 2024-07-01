@@ -86,7 +86,7 @@ const { type, header, body, footer } = data
 				<Body>
 					<List
 						listItems={body.listItems}
-						extraClasses={type === 'featured' ? '[&_li]:!text-primary-50 space-y-4' : 'space-y-4'}
+						classes={type === 'featured' ? '[&_li]:!text-primary-50 space-y-4' : 'space-y-4'}
 						listColor={type === 'featured' ? 'white' : 'primary'}
 					/>
 				</Body>
@@ -101,7 +101,7 @@ const { type, header, body, footer } = data
 						type="link"
 						link={footer.buttonLink}
 						variation="link"
-						extraClasses={type === 'featured' ? '!text-white' : ''}
+						classes={type === 'featured' ? '!text-white' : ''}
 					>
 						{footer.buttonName}
 					</Button>

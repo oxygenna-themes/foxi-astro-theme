@@ -4,10 +4,10 @@ import { Icon } from 'astro-icon/components'
 type Props = {
 	type?: 'basic' | 'checklist'
 	listItems: Array<any>
-	extraClasses?: string
+	classes?: string
 	listColor?: 'primary' | 'neutral' | 'white'
 }
-const { type = 'basic', listColor = 'primary', listItems, extraClasses } = Astro.props
+const { type = 'basic', listColor = 'primary', listItems, classes } = Astro.props
 ---
 
 <ul
@@ -15,7 +15,7 @@ const { type = 'basic', listColor = 'primary', listItems, extraClasses } = Astro
 		'list',
 		{ ['list--' + `${type}`]: type },
 		{ ['list--' + `${listColor}`]: listColor },
-		{ [`${extraClasses}`]: extraClasses }
+		{ [`${classes}`]: classes }
 	]}
 >
 	{

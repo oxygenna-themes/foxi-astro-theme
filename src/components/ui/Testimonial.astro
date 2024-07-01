@@ -15,7 +15,7 @@ type Props = {
 	mobileSize?: string
 	align?: 'left' | 'center'
 	rating?: 0 | 1 | 2 | 3 | 4 | 5
-	extraClasses?: string
+	classes?: string
 }
 
 const {
@@ -28,7 +28,7 @@ const {
 	rating,
 	align = 'left',
 	link,
-	extraClasses
+	classes
 } = Astro.props
 ---
 
@@ -38,7 +38,7 @@ const {
 		{ ['testimonial--' + `${align}`]: align },
 		{ ['text-' + `${mobileSize}`]: mobileSize },
 		{ ['lg:text-' + `${size}`]: size },
-		{ [`${extraClasses}`]: extraClasses }
+		{ [`${classes}`]: classes }
 	]}
 >
 	<div class="testimonial__container">
