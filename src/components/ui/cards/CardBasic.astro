@@ -4,13 +4,22 @@ import Card from './partials/Card.astro'
 import CardBody from './partials/CardBody.astro'
 import Heading from '../../ui/Heading.astro'
 
-const { title = '', subtitle, titleSize = 'lg', image, link, type, classes } = Astro.props
+const {
+	title = '',
+	headingLevel = '3',
+	subtitle,
+	titleSize = 'lg',
+	image,
+	link,
+	type,
+	classes
+} = Astro.props
 ---
 
 <Card classes={classes} link={link}>
 	{image && <Image src={image} alt={title} class={type === 'image-bottom' ? 'order-2' : ''} />}
 	<CardBody>
-		<Heading level="4" size={titleSize} mobileSize="lg">{title}</Heading>
+		<Heading level={headingLevel} size={titleSize} mobileSize="lg">{title}</Heading>
 		<p>{subtitle}</p>
 		<slot />
 	</CardBody>

@@ -67,14 +67,17 @@ const subFooter = {
 	socials: [
 		{
 			link: '/',
+			name: 'facebook',
 			icon: 'fb-icon'
 		},
 		{
 			link: '/',
+			name: 'twitter',
 			icon: 'twitter-icon'
 		},
 		{
 			link: '/',
+			name: 'discord',
 			icon: 'discord-icon'
 		}
 	]
@@ -123,7 +126,7 @@ const subFooter = {
 						{
 							subFooter.socials.map((social) => (
 								<li>
-									<a href={social.link}>
+									<a href={social.link} aria-label={social.name}>
 										<Icon name={social.icon} />
 									</a>
 								</li>
