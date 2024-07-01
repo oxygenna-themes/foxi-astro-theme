@@ -1,0 +1,30 @@
+---
+import Section from '../../ui/Section.astro'
+import Col from '../../ui/Col.astro'
+import Row from '../../ui/Row.astro'
+import Rating from '../../ui/Rating.astro'
+---
+
+<Section id="something">
+	<Row flex>
+		<Col>
+			<Rating
+				rating={4}
+				title="Customer reviews"
+				text="4 out of 5"
+				helperText="based on 42 user ratings"
+				elevated
+				size="sm"
+			/>
+		</Col>
+		<Col>
+			<Rating
+				rating={4}
+				title="Customer reviews"
+				text="4 out of 5"
+				helperText="based on 42 user ratings"
+				elevated
+			/>
+		</Col>
+	</Row>
+</Section>
