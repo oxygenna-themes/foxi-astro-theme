@@ -1,0 +1,302 @@
+[
+	{
+		"title": "Release 1.0.0",
+		"date": "2024-01-01",
+		"body": "Initial release of the product.",
+		"listItems": [
+			{ "listItem": "Feature A implemented" },
+			{ "listItem": "Feature B implemented" },
+			{ "listItem": "Initial setup and configuration" }
+		]
+	},
+	{
+		"title": "Release 1.0.1",
+		"date": "2024-01-10",
+		"body": "Minor bug fixes and performance improvements.",
+		"listItems": [
+			{ "listItem": "Fixed issue with login" },
+			{ "listItem": "Improved performance on dashboard" },
+			{ "listItem": "Updated dependencies" }
+		]
+	},
+	{
+		"title": "Release 1.1.0",
+		"date": "2024-01-20",
+		"body": "Added new features and enhancements.",
+		"listItems": [
+			{ "listItem": "Added user profile page" },
+			{ "listItem": "Enhanced security measures" },
+			{ "listItem": "UI improvements" }
+		]
+	},
+	{
+		"title": "Release 1.1.1",
+		"date": "2024-01-25",
+		"body": "Bug fixes and minor improvements.",
+		"listItems": [
+			{ "listItem": "Fixed issue with notifications" },
+			{ "listItem": "Improved loading times" },
+			{ "listItem": "Minor UI tweaks" }
+		]
+	},
+	{
+		"title": "Release 1.2.0",
+		"date": "2024-02-01",
+		"body": "Major update with new features.",
+		"listItems": [
+			{ "listItem": "Introduced dark mode" },
+			{ "listItem": "Added multi-language support" },
+			{ "listItem": "Performance enhancements" }
+		]
+	},
+	{
+		"title": "Release 1.2.1",
+		"date": "2024-02-10",
+		"body": "Patch release with bug fixes.",
+		"listItems": [
+			{ "listItem": "Fixed issue with dark mode" },
+			{ "listItem": "Resolved login issues" },
+			{ "listItem": "Updated translations" }
+		]
+	},
+	{
+		"title": "Release 1.3.0",
+		"date": "2024-02-20",
+		"body": "Feature update and improvements.",
+		"listItems": [
+			{ "listItem": "Added user activity log" },
+			{ "listItem": "Enhanced reporting tools" },
+			{ "listItem": "Improved accessibility" }
+		]
+	},
+	{
+		"title": "Release 1.3.1",
+		"date": "2024-02-25",
+		"body": "Bug fixes and performance improvements.",
+		"listItems": [
+			{ "listItem": "Fixed issue with activity log" },
+			{ "listItem": "Optimized database queries" },
+			{ "listItem": "Updated UI components" }
+		]
+	},
+	{
+		"title": "Release 1.4.0",
+		"date": "2024-03-01",
+		"body": "New features and enhancements.",
+		"listItems": [
+			{ "listItem": "Introduced real-time notifications" },
+			{ "listItem": "Added file upload functionality" },
+			{ "listItem": "UI/UX improvements" }
+		]
+	},
+	{
+		"title": "Release 1.4.1",
+		"date": "2024-03-10",
+		"body": "Bug fixes and minor updates.",
+		"listItems": [
+			{ "listItem": "Fixed file upload issues" },
+			{ "listItem": "Improved real-time notifications" },
+			{ "listItem": "Updated error messages" }
+		]
+	},
+	{
+		"title": "Release 1.5.0",
+		"date": "2024-03-20",
+		"body": "Major feature release.",
+		"listItems": [
+			{ "listItem": "Introduced user roles and permissions" },
+			{ "listItem": "Enhanced security protocols" },
+			{ "listItem": "Improved system performance" }
+		]
+	},
+	{
+		"title": "Release 1.5.1",
+		"date": "2024-03-25",
+		"body": "Patch release with bug fixes.",
+		"listItems": [
+			{ "listItem": "Fixed issue with user roles" },
+			{ "listItem": "Improved system logging" },
+			{ "listItem": "Minor UI updates" }
+		]
+	},
+	{
+		"title": "Release 1.6.0",
+		"date": "2024-04-01",
+		"body": "New features and improvements.",
+		"listItems": [
+			{ "listItem": "Added API integrations" },
+			{ "listItem": "Improved data export options" },
+			{ "listItem": "UI enhancements" }
+		]
+	},
+	{
+		"title": "Release 1.6.1",
+		"date": "2024-04-10",
+		"body": "Bug fixes and performance improvements.",
+		"listItems": [
+			{ "listItem": "Fixed API integration issues" },
+			{ "listItem": "Optimized data export" },
+			{ "listItem": "Updated UI components" }
+		]
+	},
+	{
+		"title": "Release 1.7.0",
+		"date": "2024-04-20",
+		"body": "Feature update and enhancements.",
+		"listItems": [
+			{ "listItem": "Added new reporting features" },
+			{ "listItem": "Enhanced user dashboard" },
+			{ "listItem": "Performance improvements" }
+		]
+	},
+	{
+		"title": "Release 1.7.1",
+		"date": "2024-04-25",
+		"body": "Bug fixes and minor updates.",
+		"listItems": [
+			{ "listItem": "Fixed reporting issues" },
+			{ "listItem": "Improved dashboard performance" },
+			{ "listItem": "Updated user guides" }
+		]
+	},
+	{
+		"title": "Release 1.8.0",
+		"date": "2024-05-01",
+		"body": "Major update with new features.",
+		"listItems": [
+			{ "listItem": "Introduced user groups" },
+			{ "listItem": "Added advanced search options" },
+			{ "listItem": "UI/UX enhancements" }
+		]
+	},
+	{
+		"title": "Release 1.8.1",
+		"date": "2024-05-10",
+		"body": "Patch release with bug fixes.",
+		"listItems": [
+			{ "listItem": "Fixed issues with user groups" },
+			{ "listItem": "Improved search performance" },
+			{ "listItem": "Minor UI updates" }
+		]
+	},
+	{
+		"title": "Release 1.9.0",
+		"date": "2024-05-20",
+		"body": "Feature update and improvements.",
+		"listItems": [
+			{ "listItem": "Added email notifications" },
+			{ "listItem": "Enhanced user management" },
+			{ "listItem": "Performance enhancements" }
+		]
+	},
+	{
+		"title": "Release 1.9.1",
+		"date": "2024-05-25",
+		"body": "Bug fixes and minor updates.",
+		"listItems": [
+			{ "listItem": "Fixed email notification issues" },
+			{ "listItem": "Improved user management features" },
+			{ "listItem": "Updated UI components" }
+		]
+	},
+	{
+		"title": "Release 2.0.0",
+		"date": "2024-06-01",
+		"body": "Major release with significant updates.",
+		"listItems": [
+			{ "listItem": "Introduced new user interface" },
+			{ "listItem": "Enhanced security features" },
+			{ "listItem": "Performance and stability improvements" }
+		]
+	},
+	{
+		"title": "Release 2.0.1",
+		"date": "2024-06-10",
+		"body": "Bug fixes and minor improvements.",
+		"listItems": [
+			{ "listItem": "Fixed UI issues" },
+			{ "listItem": "Improved stability" },
+			{ "listItem": "Updated documentation" }
+		]
+	},
+	{
+		"title": "Release 2.1.0",
+		"date": "2024-06-20",
+		"body": "Feature update and enhancements.",
+		"listItems": [
+			{ "listItem": "Added user activity tracking" },
+			{ "listItem": "Enhanced reporting capabilities" },
+			{ "listItem": "Performance optimizations" }
+		]
+	},
+	{
+		"title": "Release 2.1.1",
+		"date": "2024-06-25",
+		"body": "Bug fixes and minor updates.",
+		"listItems": [
+			{ "listItem": "Fixed activity tracking issues" },
+			{ "listItem": "Improved report generation" },
+			{ "listItem": "Updated help guides" }
+		]
+	},
+	{
+		"title": "Release 2.2.0",
+		"date": "2024-07-01",
+		"body": "Major update with new features.",
+		"listItems": [
+			{ "listItem": "Introduced audit logs" },
+			{ "listItem": "Added data import/export functionality" },
+			{ "listItem": "UI/UX improvements" }
+		]
+	},
+	{
+		"title": "Release 2.2.1",
+		"date": "2024-07-10",
+		"body": "Patch release with bug fixes.",
+		"listItems": [
+			{ "listItem": "Fixed audit log issues" },
+			{ "listItem": "Improved data import/export" },
+			{ "listItem": "Minor UI updates" }
+		]
+	},
+	{
+		"title": "Release 2.3.0",
+		"date": "2024-07-20",
+		"body": "Feature update and improvements.",
+		"listItems": [
+			{ "listItem": "Added role-based access control" },
+			{ "listItem": "Enhanced security protocols" },
+			{ "listItem": "Performance enhancements" }
+		]
+	},
+	{
+		"title": "Release 2.3.1",
+		"date": "2024-07-25",
+		"body": "Bug fixes and minor updates.",
+		"listItems": [
+			{ "listItem": "Fixed access control issues" },
+			{ "listItem": "Improved security features" },
+			{ "listItem": "Updated documentation" }
+		]
+	},
+	{
+		"title": "Release 2.4.0",
+		"date": "2024-08-01",
+		"body": "New features and enhancements.",
+		"listItems": [
+			{ "listItem": "Introduced custom dashboards" },
+			{ "listItem": "Added advanced analytics" },
+			{ "listItem": "UI/UX enhancements" }
+		]
+	},
+	{
+		"title": "Release 2.4.1",
+		"date": "2024-08-10",
+		"body": "Patch release with bug fixes.",
+		"listItems": [
+			{ "listItem": "Fixed issues with custom dashboards" },
+			{ "listItem": "Improved analytics performance" },
+			{ "listItem": "Minor UI updates" }
+		]
+	}
+]
