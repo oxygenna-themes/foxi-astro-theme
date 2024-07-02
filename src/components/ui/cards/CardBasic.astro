@@ -2,18 +2,8 @@
 import { Image } from 'astro:assets'
 import Card from './partials/Card.astro'
 import CardBody from './partials/CardBody.astro'
-import Heading from '../../ui/Heading.astro'
 
-const {
-	title = '',
-	headingLevel = '3',
-	subtitle,
-	titleSize = 'lg',
-	image,
-	link,
-	type,
-	classes
-} = Astro.props
+const { title = '', subtitle, titleSize = 'lg', image, link, type, classes } = Astro.props
 
 const { src, ...attrs } = Astro.props
 ---
