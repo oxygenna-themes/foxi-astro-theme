@@ -3,6 +3,7 @@ import Header from '../components/ui/Header.astro'
 import Main from '../components/ui/Main.astro'
 import Footer from '../components/ui/Footer.astro'
 import Scriprs from '../components/LocalScripts.astro'
+import { ViewTransitions } from 'astro:transitions'
 import '@fontsource-variable/inter'
 import '../styles/global.css'
 
@@ -39,6 +40,8 @@ const {
 		<meta property="twitter:title" content={title} />
 		<meta property="twitter:description" content={description} />
 		<meta property="twitter:image" content="/og.jpg" />
+
+		<ViewTransitions />
 	</head>
 	<body>
 		<Header />
