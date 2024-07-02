@@ -6,25 +6,12 @@ import Col from '../../ui/Col.astro'
 
 // UI elements
 import Card from '../../ui/cards/CardBasic.astro'
-import Avatar from '../../ui/Avatar.astro'
 
 // Hero content
 import cardImage from '../../../assets/test.jpg'
-
-//Images
-import avatar from '../../../assets/avatar.jpg'
-
-const avatarImage = { src: avatar.src, alt: 'user name' }
 ---
 
 <Section>
-	<Row>
-		<Col span="2" />
-		<Col span="8" align="center" classes="space-y-6">
-			<Avatar size="lg" image={avatarImage} />
-		</Col>
-		<Col span="2" />
-	</Row>
 	<Row mode="light">
 		<Col span="4">
 			<Card

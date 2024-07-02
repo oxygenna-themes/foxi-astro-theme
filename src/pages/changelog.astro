@@ -1,14 +1,27 @@
 ---
 // Layout
 import Layout from '../layouts/Layout.astro'
+import Section from '../components/ui/Section.astro'
+import Row from '../components/ui/Row.astro'
+import Col from '../components/ui/Col.astro'
 
 // Sections
 import SimpleFeed from '../components/blocks/feeds/SimpleFeed.astro'
+import Index from '../components/blocks/hero/index.astro'
 
 // JSON data
 import feedData from '../content/pages/changelogData.json'
 ---
 
 <Layout>
+	<Section padding="top">
+		<Row>
+			<Col span="2" />
+			<Col span="8">
+				<h1 class="text-3xl">Changelog</h1>
+			</Col>
+			<Col span="2" />
+		</Row>
+	</Section>
 	<SimpleFeed data={feedData} />
 </Layout>
