@@ -27,10 +27,11 @@ type Props = {
 		}
 		type: string
 	}>
+	listType?: 'basic' | 'checklist'
 	classes?: string
 }
 
-const { data, classes } = Astro.props
+const { data, listType, classes } = Astro.props
 ---
 
 <Section>
@@ -38,7 +39,7 @@ const { data, classes } = Astro.props
 		{
 			data.map((item) => (
 				<Col>
-					<PricingTable data={item} classes={classes} />
+					<PricingTable data={item} classes={classes} listType={listType} />
 				</Col>
 			))
 		}
