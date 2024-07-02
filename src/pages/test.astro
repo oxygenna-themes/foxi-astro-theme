@@ -6,9 +6,9 @@ import SocialProof from '../components/blocks/stacks/ImageStack.astro'
 import Pricing from '../components/blocks/pricing/Pricing.astro'
 import SimpleTestimonials from '../components/blocks/testimonials/Simple.astro'
 import SimpleRatings from '../components/blocks/ratings/Simple.astro'
+import SimpleForm from '../components/blocks/forms/SmpleForm.astro'
 
 //Images
-import avatarImage from '../assets/avatars/avatar-01.png'
 import airtable from '../assets/logos/airtable-logo.svg'
 import asana from '../assets/logos/asana-logo.svg'
 import basecamp from '../assets/logos/basecamp-logo.svg'
@@ -27,6 +27,7 @@ const socialProofImages = [
 ---
 
 <Layout title="Welcome to Astro.">
+	<SimpleForm />
 	<SimpleRatings />
 	<SimpleTestimonials />
 	<Pricing />

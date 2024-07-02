@@ -1,0 +1,17 @@
+---
+type Props = {
+	classes?: string
+}
+
+const { classes } = Astro.props
+---
+
+<div class:list={['form__field', { [`${classes}`]: classes }]}>
+	<slot />
+</div>
+
+<style>
+	.form__field {
+		@apply my-8 flex flex-col items-baseline justify-between lg:flex-row lg:gap-6;
+	}
+</style>
