@@ -1,5 +1,5 @@
 ---
-import Image from 'astro/components/Image.astro'
+import { Image } from 'astro:assets'
 import Card from './partials/Card.astro'
 import CardBody from './partials/CardBody.astro'
 import Heading from '../../ui/Heading.astro'
@@ -14,15 +14,17 @@ const {
 	type,
 	classes
 } = Astro.props
+
+const { src, ...attrs } = Astro.props
 ---
 
 <Card classes={classes} link={link}>
 	{image && <Image src={image} alt={title} class={type === 'image-bottom' ? 'order-2' : ''} />}
 	<CardBody>
-		<Heading level={headingLevel} size={titleSize} mobileSize="lg">{title}</Heading>
+		<h3 class:list={[['text-' + `${titleSize} ` + `lg:text` + `${titleSize}`]]}>
+			{title}
+		</h3>
 		<p>{subtitle}</p>
 		<slot />
 	</CardBody>
 </Card>
-
-<style></style>

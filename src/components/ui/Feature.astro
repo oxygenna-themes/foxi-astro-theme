@@ -1,5 +1,4 @@
 ---
-import Heading from './Heading.astro'
 import { Icon } from 'astro-icon/components'
 type Props = {
 	type?: 'top-icon' | 'side-icon'
@@ -32,16 +31,14 @@ const { type = 'top-icon', title, icon = 'rocket', iconStyle, align, classes } =
 	<div class="feature__body">
 		{
 			title && (
-				<Heading
-					level="3"
-					weight="normal"
-					classes={
-						'mb-4 text-lg leading-6 ' +
-						(iconStyle === 'square' && type === 'side-icon' ? 'py-2 mb-2' : '')
-					}
+				<h3
+					class:list={[
+						'feature__title',
+						{ [`mb-2 py-2`]: iconStyle === 'square' && type === 'side-icon' }
+					]}
 				>
 					{title}
-				</Heading>
+				</h3>
 			)
 		}
 		<slot />
@@ -51,7 +48,9 @@ const { type = 'top-icon', title, icon = 'rocket', iconStyle, align, classes } =
 		.feature {
 			@apply flex flex-col gap-4;
 		}
-
+		.feature__title {
+			@apply mb-4 text-lg font-normal leading-6;
+		}
 		.feature--center {
 			@apply items-center text-center;
 		}

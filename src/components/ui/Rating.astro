@@ -1,9 +1,6 @@
 ---
 import { Icon } from 'astro-icon/components'
 
-//UI Components
-import Heading from './Heading.astro'
-
 type Props = {
 	title?: string
 	text?: string
@@ -25,13 +22,7 @@ const { rating = 0, size = 'base', elevated, title, text, helperText, classes } 
 		{ [`${classes}`]: classes }
 	]}
 >
-	{
-		title && (
-			<Heading level="4" size="base" weight="bold" classes="m-0">
-				{title}
-			</Heading>
-		)
-	}
+	{title && <h4 class="rating__title">{title}</h4>}
 	<span class="rating__body">
 		<span class="rating__stars" role="img" aria-label={`Rating: ${rating} out of 5 stars`}>
 			{
@@ -50,6 +41,9 @@ const { rating = 0, size = 'base', elevated, title, text, helperText, classes } 
 <style>
 	.rating {
 		@apply inline-flex flex-col items-center gap-2;
+	}
+	.rating__title {
+		@apply m-0 text-base font-bold;
 	}
 	.rating__body {
 		@apply flex items-center gap-4 rounded text-sm text-neutral-500 dark:text-neutral-300;

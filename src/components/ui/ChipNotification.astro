@@ -23,6 +23,6 @@ const { elevated, radius = 'rounded', classes } = Astro.props
 		@apply shadow-sm shadow-slate-700/10;
 	}
 	.chip--body {
-		@apply inline-flex items-center px-4;
+		@apply inline-flex items-center px-4 [&_strong]:pr-1 [&_strong]:font-bold;
 	}
 </style>
