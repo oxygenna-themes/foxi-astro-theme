@@ -9,7 +9,6 @@ import '../styles/global.css'
 export interface Props {
 	title?: string
 	description?: string
-	image?: string
 }
 
 const {
@@ -39,7 +38,7 @@ const {
 		<meta property="twitter:url" content={Astro.url} />
 		<meta property="twitter:title" content={title} />
 		<meta property="twitter:description" content={description} />
-		<meta property="twitter:image" content={image} />
+		<meta property="twitter:image" content="/og.jpg" />
 	</head>
 	<body>
 		<Header />

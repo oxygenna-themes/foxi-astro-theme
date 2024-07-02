@@ -6,6 +6,6 @@ import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
 export default defineConfig({
-  // site: 'site domain here',
+  site: "https://astro-theme-one.vercel.app/",
   integrations: [tailwind(), icon(), sitemap()],
 });
