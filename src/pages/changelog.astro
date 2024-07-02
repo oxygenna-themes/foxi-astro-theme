@@ -1,0 +1,14 @@
+---
+// Layout
+import Layout from '../layouts/Layout.astro'
+
+// Sections
+import SimpleFeed from '../components/blocks/feeds/SimpleFeed.astro'
+
+// JSON data
+import feedData from '../content/changelogData.json'
+---
+
+<Layout>
+	<SimpleFeed data={feedData} />
+</Layout>
