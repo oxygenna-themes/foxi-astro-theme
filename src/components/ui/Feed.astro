@@ -1,0 +1,52 @@
+---
+import List from './List.astro'
+
+type Props = {
+	data: Array<{
+		title: string
+		date?: string
+		body?: string
+		listItems?: Array<{ listItem: string }>
+	}>
+	classes?: string
+}
+
+const { data, classes } = Astro.props
+---
+
+<ul aria-label="Changelog feed" role="feed" class:list={['feed', { [`${classes}`]: classes }]}>
+	{
+		data.map((item) => (
+			<li role="article" class="feed__item">
+				<div class="feed__item-container">
+					<h4 class="feed__item-header">
+						{item.title}
+						<span> - {item.date}</span>
+					</h4>
+					<p>{item.body}</p>
+					{item.listItems && (
+						<List
+							listItems={item.listItems}
+							classes="pl-5 [&_li]:!text-neutral-500 [&_li]:dark:!text-neutral-300"
+						/>
+					)}
+				</div>
+			</li>
+		))
+	}
+</ul>
+
+<style>
+	.feed {
+		@apply relative flex flex-col gap-12 py-12 pl-6 before:absolute before:left-6 before:top-0 before:h-full before:-translate-x-1/2 before:border before:border-dashed before:border-neutral-200 after:absolute after:bottom-6 after:left-6 after:top-6 after:-translate-x-1/2 after:border after:border-neutral-200 dark:before:border-neutral-600 dark:after:border-neutral-600;
+	}
+	.feed__item {
+		@apply relative pl-6 before:absolute before:left-0 before:top-2 before:z-10 before:h-2 before:w-2 before:-translate-x-1/2 before:rounded-full before:bg-primary-500 before:ring-2 before:ring-white dark:before:ring-neutral-900;
+	}
+	.feed__item-container {
+		@apply flex flex-1 flex-col gap-4 text-neutral-500 dark:text-neutral-300 [&_p]:m-0;
+	}
+	.feed__item-header {
+		@apply text-lg font-medium text-primary-500 [&_span]:text-lg [&_span]:font-normal [&_span]:text-neutral-500 [&_span]:dark:text-neutral-300;
+	}
+</style>

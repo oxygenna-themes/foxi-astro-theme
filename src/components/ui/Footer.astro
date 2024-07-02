@@ -1,87 +1,11 @@
 ---
 import { Icon } from 'astro-icon/components'
 
-const footerAbout = {
-	title: 'oxygenna',
-	aboutText:
-		'Expertly made, responsive, accessible components in React and HTML ready to be used on your website or app. Just copy and paste them on your Tailwind CSS project.',
-	logo: { src: 'logo.svg', alt: 'wind ui' }
-}
+// Import JSON data
+import footerData from '../../content/menus/footer.json'
+import socialMedia from '../../content/menus/socialMedia.json'
 
-const footerColumns = [
-	{
-		category: 'Product',
-		subCategories: [
-			{
-				subCategory: 'Features',
-				subCategoryLink: '/'
-			},
-			{
-				subCategory: 'Customers',
-				subCategoryLink: '/'
-			},
-			{
-				subCategory: 'Pricing',
-				subCategoryLink: '/'
-			}
-		]
-	},
-	{
-		category: 'About us',
-		subCategories: [
-			{
-				subCategory: 'About us',
-				subCategoryLink: '/'
-			},
-			{
-				subCategory: 'Events',
-				subCategoryLink: '/'
-			},
-			{
-				subCategory: 'Careers',
-				subCategoryLink: '/'
-			}
-		]
-	},
-	{
-		category: 'Get in touch',
-		subCategories: [
-			{
-				subCategory: 'Contact',
-				subCategoryLink: '/'
-			},
-			{
-				subCategory: 'Support',
-				subCategoryLink: '/'
-			},
-			{
-				subCategory: 'Join us',
-				subCategoryLink: '/'
-			}
-		]
-	}
-]
-
-const subFooter = {
-	copywriteText: '© Oxygenna 2024.',
-	socials: [
-		{
-			link: '/',
-			name: 'facebook',
-			icon: 'fb-icon'
-		},
-		{
-			link: '/',
-			name: 'twitter',
-			icon: 'twitter-icon'
-		},
-		{
-			link: '/',
-			name: 'discord',
-			icon: 'discord-icon'
-		}
-	]
-}
+const { footerAbout, footerColumns, subFooter } = footerData
 ---
 
 <footer class="footer">
@@ -124,7 +48,7 @@ const subFooter = {
 					<h2 class="sr-only" id="footer-social-links-dark">Social Media Links</h2>
 					<ul>
 						{
-							subFooter.socials.map((social) => (
+							socialMedia.map((social) => (
 								<li>
 									<a href={social.link} aria-label={social.name}>
 										<Icon name={social.icon} />
