@@ -1,0 +1,31 @@
+---
+// Layout
+import Layout from '../layouts/Layout.astro'
+import Section from '../components/ui/Section.astro'
+import Row from '../components/ui/Row.astro'
+import Col from '../components/ui/Col.astro'
+
+import Spacer from '../components/ui/Spacer.astro'
+import Button from '../components/ui/Button.astro'
+---
+
+<Layout>
+	<Section>
+		<Row flex classes="text-center">
+			<Col span="2" />
+			<Col span="8">
+				<h1 class="text-9xl">404</h1>
+				<p>Page not found</p>
+			</Col>
+			<Col span="2" />
+		</Row>
+		<Row flex classes="text-center items-center justify-center">
+			<Col span="2" />
+			<Col span="8">
+				<Spacer size="12" desktopSize="24" />
+				<Button> Return to homepage </Button>
+			</Col>
+			<Col span="2" />
+		</Row>
+	</Section>
+</Layout>
