@@ -1,0 +1,47 @@
+---
+import Section from '../../ui/Section.astro'
+import Col from '../../ui/Col.astro'
+import Row from '../../ui/Row.astro'
+
+//UI Components
+import Card from '../../ui/cards/partials/Card.astro'
+import CardBody from '../../ui/cards/partials/CardBody.astro'
+import Form from '../../ui/forms/Form.astro'
+import FormField from '../../ui/forms/partials/FormField.astro'
+import InputField from '../../ui/forms/form-elements/InputField.astro'
+import Button from '../../ui/Button.astro'
+---
+
+<Section id="something">
+	<Row>
+		<Col span="6">
+			<Card>
+				<CardBody>
+					<h2 class="text-xl">Simple Form</h2>
+					<Form>
+						<FormField>
+							<InputField
+								type="text"
+								id="firstName"
+								label="First Name"
+								iconName="moon"
+								iconPosition="lead"
+							/>
+							<InputField
+								type="text"
+								id="lastName"
+								label="Last Name"
+								iconName="sun"
+								iconPosition="trail"
+							/>
+						</FormField>
+						<FormField>
+							<InputField type="email" id="email" label="Email" value="email@gmail.com" required />
+						</FormField>
+						<Button style="primary" type="submit">Submit</Button>
+					</Form>
+				</CardBody>
+			</Card>
+		</Col>
+	</Row>
+</Section>

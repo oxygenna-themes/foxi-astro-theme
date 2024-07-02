@@ -1,0 +1,12 @@
+---
+type Props = {
+	method?: 'post' | 'get' | 'dialog'
+	classes?: string
+}
+
+const { method = 'post', classes } = Astro.props
+---
+
+<form method={method} novalidate class:list={[{ [`${classes}`]: classes }]}>
+	<slot />
+</form>
