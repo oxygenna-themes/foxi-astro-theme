@@ -22,6 +22,10 @@
 				{
 					"subCategory": "Pricing",
 					"subCategoryLink": "#"
+				},
+				{
+					"subCategory": "Changelog",
+					"subCategoryLink": "/changelog"
 				}
 			]
 		},
