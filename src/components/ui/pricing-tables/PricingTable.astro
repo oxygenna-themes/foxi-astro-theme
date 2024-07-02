@@ -30,10 +30,11 @@ type PricingTableProps = {
 
 type Props = {
 	data: PricingTableProps
+	listType?: 'basic' | 'checklist'
 	classes?: string
 }
 
-const { data, classes } = Astro.props
+const { data, listType, classes } = Astro.props
 
 const { type, header, body, footer } = data
 ---
@@ -83,6 +84,7 @@ const { type, header, body, footer } = data
 			body && (
 				<Body>
 					<List
+						type={listType}
 						listItems={body.listItems}
 						classes={type === 'featured' ? '[&_li]:!text-primary-50 space-y-4' : 'space-y-4'}
 						listColor={type === 'featured' ? 'white' : 'primary'}

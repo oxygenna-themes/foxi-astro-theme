@@ -42,8 +42,28 @@ const pricingTablesData = [
 		},
 		footer: { buttonName: 'See all features', buttonLink: '/' },
 		type: 'featured'
+	},
+	{
+		header: {
+			title: 'Enterprise',
+			subtitle: 'Ideal for companies',
+			currency: '$',
+			price: '55',
+			perTime: 'month',
+			buttonName: 'Try for free',
+			buttonLink: '/'
+		},
+		body: {
+			listItems: [
+				{ listItem: 'Join forces with fellow architects' },
+				{ listItem: 'Present your projects with flair and captivate your audience.' },
+				{ listItem: 'Immerse yourself in the dynamic realm of architecture.' }
+			]
+		},
+		footer: { buttonName: 'See all features', buttonLink: '/' },
+		type: 'basic'
 	}
 ]
 ---
 
-<PricingTablesStack data={pricingTablesData} />
+<PricingTablesStack data={pricingTablesData} listType="checklist" />
