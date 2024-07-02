@@ -1,0 +1,13 @@
+{
+	"logo": {
+		"src": "logo.svg",
+		"alt": "wind ui"
+	},
+	"navItems": [
+		{ "name": "Home", "link": "/" },
+		{ "name": "About", "link": "/test" },
+		{ "name": "Services", "link": "/services" },
+		{ "name": "Contact", "link": "/contact" }
+	],
+	"navActions": [{ "name": "Try it now", "link": "/", "style": "primary", "size": "lg" }]
+}

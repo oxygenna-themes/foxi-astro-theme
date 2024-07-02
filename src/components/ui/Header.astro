@@ -2,24 +2,16 @@
 import Button from './Button.astro'
 import Switcher from './ModeSwitcher.astro'
 
-// Logo
-const logo = { src: 'logo.svg', alt: 'wind ui' }
+import navigation from '../../content/menus/navigation.json'
 
-// Navigation links
-const navItems = [
-	{ name: 'Home', link: '/' },
-	{ name: 'About', link: '/test' },
-	{ name: 'Services', link: '/services' },
-	{ name: 'Contact', link: '/contact' }
-]
-type navItem = {
-	link: string
-	name: string
-}
-// Action buttons
-const navActions = [
-	{ name: 'Try it now', link: '/', style: 'primary' as const, size: 'lg' as const }
-]
+const { logo, navItems, navActions } = navigation
+
+// Type assertion for navActions to ensure type safety
+const savedNavActions = navActions.map((action) => ({
+	...action,
+	size: action.size as 'base' | 'lg' | 'sm',
+	style: action.style as 'primary' | 'secondary' | 'neutral'
+}))
 ---
 
 <header class="header">
@@ -46,9 +38,9 @@ const navActions = [
 			</button>
 
 			<!-- Navigation links -->
-			<ul role="menubar" aria-label="Select page" class="header__menu" }>
+			<ul role="menubar" aria-label="Select page" class="header__menu">
 				{
-					navItems.map((item: navItem) => (
+					navItems.map((item) => (
 						<li role="none" class="header__menu-item">
 							<a href={item.link} role="menuitem" class="header__menu-link">
 								{item.name}
@@ -63,7 +55,7 @@ const navActions = [
 			<!-- Navigation action buttons -->
 			<div class="header__actions">
 				{
-					navActions.map((action) => (
+					savedNavActions.map((action) => (
 						<Button size={action.size} style={action.style} link={action.link}>
 							{action.name}
 						</Button>
