@@ -51,8 +51,8 @@ const featureBlocks = [
 ---
 
 {
-	featureBlocks.map((feature) => (
-		<Section>
+	featureBlocks.map((feature, key) => (
+		<Section id={`feature-` + key}>
 			<Row flex>
 				<Col classes="grow flex justify-center">
 					{feature.mobileImage && (
