@@ -6,9 +6,7 @@ import Row from '../../ui/Row.astro'
 import Col from '../../ui/Col.astro'
 // - UI
 import ChipNotification from '../../ui/ChipNotification.astro'
-import Image from 'astro/components/Image.astro'
-import Heading from '../../ui/Heading.astro'
-import Highlight from '../../ui/Highlight.astro'
+import { Image } from 'astro:assets'
 import Button from '../../ui/Button.astro'
 import AvatarGroup from '../../ui/AvatarGroup.astro'
 
@@ -37,7 +35,7 @@ const avatars = [
 			<h1>Enhance team <strong>performance</strong> with seamless integration</h1>
 
 			<p class="pb-0 text-lg">Work smarter, not harder, with our innovative platform</p>
-			<Button size="lg">Get started for free</Button>
+			<Button size="lg" link="/">Get started for free</Button>
 		</Col>
 		<Col span="2" />
 		<Col span="2" />
