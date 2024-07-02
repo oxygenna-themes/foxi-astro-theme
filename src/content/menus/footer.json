@@ -1,0 +1,66 @@
+{
+	"footerAbout": {
+		"title": "Foxi.",
+		"aboutText": "Expertly made, responsive, accessible components in React and HTML ready to be used on your website or app. Just copy and paste them on your Tailwind CSS project.",
+		"logo": {
+			"src": "logo.svg",
+			"alt": "wind ui"
+		}
+	},
+	"footerColumns": [
+		{
+			"category": "Product",
+			"subCategories": [
+				{
+					"subCategory": "Features",
+					"subCategoryLink": "#"
+				},
+				{
+					"subCategory": "Customers",
+					"subCategoryLink": "#"
+				},
+				{
+					"subCategory": "Pricing",
+					"subCategoryLink": "#"
+				}
+			]
+		},
+		{
+			"category": "About us",
+			"subCategories": [
+				{
+					"subCategory": "About us",
+					"subCategoryLink": "#"
+				},
+				{
+					"subCategory": "Events",
+					"subCategoryLink": "#"
+				},
+				{
+					"subCategory": "Careers",
+					"subCategoryLink": "#"
+				}
+			]
+		},
+		{
+			"category": "Get in touch",
+			"subCategories": [
+				{
+					"subCategory": "Contact",
+					"subCategoryLink": "#"
+				},
+				{
+					"subCategory": "Support",
+					"subCategoryLink": "#"
+				},
+				{
+					"subCategory": "Join us",
+					"subCategoryLink": "#"
+				}
+			]
+		}
+	],
+	"subFooter": {
+		"copywriteText": "© Foxi 2024."
+	}
+}
