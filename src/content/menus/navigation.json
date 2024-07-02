@@ -1,7 +1,7 @@
 {
 	"logo": {
 		"src": "logo.svg",
-		"alt": "wind ui"
+		"alt": "Foxi"
 	},
 	"navItems": [
 		{ "name": "Home", "link": "/" },
