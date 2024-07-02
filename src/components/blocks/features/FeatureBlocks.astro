@@ -55,12 +55,10 @@ const featureBlocks = [
 		<Section id={`feature-` + key}>
 			<Row flex>
 				<Col classes="grow flex justify-center">
-					{feature.mobileImage && (
-						<Image src={feature.mobileImage} alt={feature.title} class="block lg:hidden" />
-					)}
-					{feature.image && (
-						<Image src={feature.image} alt={feature.title} class="hidden lg:block" />
-					)}
+					<picture>
+						<source srcset={feature.mobileImage.src} media="(max-width: 1024px)" />
+						<img src={feature.image.src} alt={feature.title} />
+					</picture>
 				</Col>
 				<Col
 					classes={`grow max-w-lg self-center ${feature.imagePosition === 'right' ? 'lg:-order-1' : ''}`}
