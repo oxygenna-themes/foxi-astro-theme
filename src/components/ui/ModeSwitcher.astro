@@ -33,15 +33,3 @@
 		@apply order-3 flex cursor-pointer items-center p-6;
 	}
 </style>
-<script>
-	document.getElementById('theme-selector')?.addEventListener('click', () => {
-		if (localStorage.theme === 'dark') {
-			localStorage.theme = 'light'
-			document.documentElement.classList.remove('dark')
-		} else {
-			localStorage.theme = 'dark'
-			document.documentElement.classList.add('dark')
-		}
-	})
-</script>
-<style></style>
