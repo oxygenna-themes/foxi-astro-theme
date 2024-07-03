@@ -1,9 +1,6 @@
 ---
 // Components
-// - Layout
-import Section from '../../ui/Section.astro'
-import Row from '../../ui/Row.astro'
-import Col from '../../ui/Col.astro'
+import TextImage from '../basic/TextImage.astro'
 
 // Content
 import highlight01 from '../../../assets/highlights/highlight-01.svg'
@@ -46,24 +43,16 @@ const highlightBlocks = [
 ]
 ---
 
-<Section id="highlights">
-	{
-		highlightBlocks.map((feature) => (
-			<Row flex>
-				<Col classes="grow flex justify-center">
-					<picture>
-						<source srcset={feature.mobileImage.src} media="(max-width: 1024px)" />
-						<img src={feature.image.src} alt={feature.title} />
-					</picture>
-				</Col>
-				<Col
-					classes={`grow max-w-lg self-center ${feature.imagePosition === 'right' ? 'lg:-order-1' : ''}`}
-				>
-					<h2 class="text-pretty text-2xl lg:text-3xl" set:html={feature.title} />
-					<p class="text-lg leading-relaxed">{feature.text}</p>
-				</Col>
-			</Row>
-		))
-	}
-</Section>
+{
+	highlightBlocks.map((highlight) => (
+		<TextImage
+			id="highlights"
+			title={highlight.title}
+			text={highlight.text}
+			image={highlight.image}
+			mobileImage={highlight.mobileImage}
+			imagePosition={highlight.imagePosition}
+		/>
+	))
+}
 <style></style>

@@ -1,0 +1,48 @@
+---
+// Components
+// - Layout
+import Section from '../../ui/Section.astro'
+import Row from '../../ui/Row.astro'
+import Col from '../../ui/Col.astro'
+
+const {
+	id = '',
+	title = '',
+	image = '',
+	mobileImage,
+	imagePosition = 'right',
+	text = ''
+} = Astro.props
+---
+
+<Section id={id}>
+	<Row>
+		<Col span="6">
+			<picture class="text-image__picture">
+				{mobileImage && <source srcset={mobileImage.src} media="(max-width: 1024px)" />}
+				<img src={image.src} alt={title} />
+			</picture>
+		</Col>
+		<Col span="6" classes={`self-center ${imagePosition === 'right' ? 'lg:-order-1' : ''}`}>
+			<div class="text-image__content">
+				<h2 class="text-image__heading" set:html={title} />
+				<p class="text-image__text">{text}</p>
+			</div>
+		</Col>
+	</Row>
+</Section>
+
+<style>
+	.text-image__picture {
+		@apply flex justify-center;
+	}
+	.text-image__content {
+		@apply max-w-xl;
+	}
+	.text-image__heading {
+		@apply text-pretty text-2xl lg:text-3xl;
+	}
+	.text-image__text {
+		@apply text-lg leading-relaxed;
+	}
+</style>
