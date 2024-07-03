@@ -55,7 +55,7 @@ const {
 	{iconName && <Icon name={iconName} class="input__icon" />}
 	{
 		helperText && (
-			<small class="input__small">
+			<small class="input__helper-text">
 				<span> {helperText} </span>
 			</small>
 		)
@@ -75,7 +75,7 @@ const {
 	.input__icon {
 		@apply absolute top-2.5 h-5 w-5 stroke-slate-400 peer-disabled:cursor-not-allowed;
 	}
-	.input__small {
+	.input__helper-text {
 		@apply absolute flex w-full justify-between px-4 py-1 text-xs text-slate-400 transition peer-invalid:text-red-500;
 	}
 	.input--icon-lead {
