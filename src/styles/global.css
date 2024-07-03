@@ -16,7 +16,7 @@ h3,
 h4,
 h5,
 h6 {
-	@apply text-neutral-700 last:mb-0 dark:text-neutral-50 [&>strong]:text-primary-500 [.light_&]:text-neutral-700;
+	@apply font-headings text-neutral-700 last:mb-0 dark:text-neutral-50 [&>strong]:text-primary-500 [.light_&]:text-neutral-700;
 }
 h1 strong,
 h2 strong,
