@@ -11,11 +11,12 @@ const {
 	image = '',
 	mobileImage,
 	imagePosition = 'right',
-	text = ''
+	text = '',
+	classes = ''
 } = Astro.props
 ---
 
-<Section id={id}>
+<Section id={id} classes={classes}>
 	<Row>
 		<Col span="6">
 			<picture class="text-image__picture">

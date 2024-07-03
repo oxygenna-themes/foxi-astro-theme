@@ -44,15 +44,15 @@ const highlightBlocks = [
 ---
 
 {
-	highlightBlocks.map((highlight) => (
+	highlightBlocks.map((highlight, key) => (
 		<TextImage
-			id="highlights"
+			id={`highlight-${key}`}
 			title={highlight.title}
 			text={highlight.text}
 			image={highlight.image}
 			mobileImage={highlight.mobileImage}
 			imagePosition={highlight.imagePosition}
+			classes={key === 0 ? '!pb-0' : key === highlightBlocks.length - 1 ? '!pt-0' : '!py-0'}
 		/>
 	))
 }
-<style></style>
