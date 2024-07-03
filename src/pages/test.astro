@@ -4,9 +4,6 @@ import Layout from '../layouts/Layout.astro'
 // Page sections
 import SocialProof from '../components/blocks/stacks/ImageStack.astro'
 import Pricing from '../components/blocks/pricing/Pricing.astro'
-import SimpleTestimonials from '../components/blocks/testimonials/Simple.astro'
-import SimpleRatings from '../components/blocks/ratings/Simple.astro'
-import SimpleForm from '../components/blocks/forms/SmpleForm.astro'
 import BasicBreadcrumbs from '../components/blocks/breadcrumbs/BasicBreadcrumbs.astro'
 
 //Images
@@ -29,9 +26,6 @@ const socialProofImages = [
 
 <Layout title="Welcome to Astro.">
 	<BasicBreadcrumbs />
-	<SimpleForm />
-	<SimpleRatings />
-	<SimpleTestimonials />
-	<Pricing />
 	<SocialProof images={socialProofImages} />
+	<Pricing />
 </Layout>
