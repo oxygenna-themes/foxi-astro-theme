@@ -8,6 +8,9 @@ import SimpleTestimonials from '../components/blocks/testimonials/Simple.astro'
 import SimpleRatings from '../components/blocks/ratings/Simple.astro'
 import SimpleForm from '../components/blocks/forms/SmpleForm.astro'
 
+//UI Components
+import Breadcrumbs from '../components/ui/Breadcrumbs.astro'
+
 //Images
 import airtable from '../assets/logos/airtable-logo.svg'
 import asana from '../assets/logos/asana-logo.svg'
@@ -27,6 +30,7 @@ const socialProofImages = [
 ---
 
 <Layout title="Welcome to Astro.">
+	<Breadcrumbs />
 	<SimpleForm />
 	<SimpleRatings />
 	<SimpleTestimonials />
