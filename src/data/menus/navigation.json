@@ -1,7 +1,7 @@
 {
 	"logo": {
 		"src": "logo.svg",
-		"alt": "Foxi"
+		"text": "Foxi."
 	},
 	"navItems": [
 		{ "name": "Home", "link": "/" },
