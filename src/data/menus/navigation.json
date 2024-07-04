@@ -6,7 +6,15 @@
 	"navItems": [
 		{ "name": "Home", "link": "/" },
 		{ "name": "Pricing", "link": "/pricing" },
-		{ "name": "Blog", "link": "/blog" },
+		{
+			"name": "Resources",
+			"link": "#",
+			"submenu": [
+				{ "name": "Blog", "link": "/blog" },
+				{ "name": "Changelog", "link": "/changelog" },
+				{ "name": "Support", "link": "/support" }
+			]
+		},
 		{ "name": "Contact", "link": "/contact" }
 	],
 	"navActions": [{ "name": "Try it now", "link": "/", "style": "primary", "size": "lg" }]

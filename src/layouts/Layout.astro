@@ -49,10 +49,11 @@ const {
 		<meta property="twitter:image" content={image} />
 		{canonical && <link rel="canonical" href={canonical} item-prop="url" />}
 		{noindex && <meta name="robots" content="noindex,nofollow" />}
-		<ViewTransitions />
+		<ViewTransitions fallback="swap" />
 	</head>
 	<body>
 		<Header />
+
 		<Main>
 			<slot />
 		</Main>

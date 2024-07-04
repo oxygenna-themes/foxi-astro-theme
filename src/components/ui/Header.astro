@@ -1,10 +1,12 @@
 ---
+const path = new URL(Astro.request.url).pathname
+import { Icon } from 'astro-icon/components'
+
 import Button from './Button.astro'
 import Switcher from './ModeSwitcher.astro'
+import Navigation from '../../data/menus/navigation.json'
 
-import navigation from '../../data/menus/navigation.json'
-
-const { logo, navItems, navActions } = navigation
+const { logo, navItems, navActions } = Navigation
 
 // Type assertion for navActions to ensure type safety
 const savedNavActions = navActions.map((action) => ({
@@ -42,9 +44,38 @@ const savedNavActions = navActions.map((action) => ({
 				{
 					navItems.map((item) => (
 						<li role="none" class="header__menu-item">
-							<a href={item.link} role="menuitem" class="header__menu-link">
-								{item.name}
-							</a>
+							{!item.submenu ? (
+								<a
+									href={item.link}
+									role="menuitem"
+									class={`header__menu-link ${path === item.link ? 'active' : ''}`}
+								>
+									{item.name}
+								</a>
+							) : (
+								<span
+									role="menuitem"
+									class={`header__menu-link ${path === item.link ? 'active' : ''}`}
+								>
+									{item.name}
+									<Icon name="chevron-down" class="header__menu-chevron" />
+								</span>
+							)}
+							{item.submenu && (
+								<ul class="header__submenu">
+									{item.submenu.map((subItem) => (
+										<li role="none" class="header__submenu-item">
+											<a
+												href={subItem.link}
+												role="menuitem"
+												class={`header__menu-link ${path === subItem.link ? 'active' : ''}`}
+											>
+												{subItem.name}
+											</a>
+										</li>
+									))}
+								</ul>
+							)}
 						</li>
 					))
 				}
@@ -66,19 +97,6 @@ const savedNavActions = navActions.map((action) => ({
 	</div>
 </header>
 
-<script>
-	const headerToggle = document.querySelector('.header__toggle')
-	const headerMenu = document.querySelector('.header__menu')
-	if (headerToggle && headerMenu) {
-		headerToggle.addEventListener('click', () => {
-			headerToggle.classList.toggle('header__toggle--open')
-			const isExpanded = headerToggle.getAttribute('aria-expanded') === 'true'
-			const newExpandedValue = isExpanded ? 'false' : 'true'
-			headerToggle.setAttribute('aria-expanded', newExpandedValue)
-			headerMenu.classList.toggle('header__menu--open')
-		})
-	}
-</script>
 <style>
 	.header {
 		@apply sticky top-0 z-20 w-full bg-white/90 shadow-lg shadow-neutral-700/5 after:absolute after:left-0 after:top-full after:z-10 after:block after:h-px after:w-full lg:backdrop-blur-sm lg:after:hidden dark:bg-neutral-900/90 dark:shadow-neutral-950/50;
@@ -99,10 +117,22 @@ const savedNavActions = navActions.map((action) => ({
 		@apply visible opacity-100 backdrop-blur-sm;
 	}
 	.header__menu-item {
-		@apply flex items-stretch;
+		@apply relative flex cursor-pointer flex-col items-stretch lg:flex-row;
 	}
 	.header__menu-link {
-		@apply flex items-center gap-2 py-4 transition-colors duration-300 hover:text-primary-500 focus:text-primary-600 focus:outline-none focus-visible:outline-none lg:px-8;
+		@apply relative flex items-center gap-1 py-4 transition-colors duration-300 hover:text-primary-500 focus:text-primary-600 focus:outline-none focus-visible:outline-none lg:px-8 [&.active]:text-primary-500;
+	}
+	.header__menu-chevron {
+		@apply h-4 w-4 transition-transform [.header\_\_menu-item.open_&]:rotate-180;
+	}
+	.header__submenu {
+		@apply animate-dropdown left-0 top-full hidden lg:absolute lg:min-w-48 lg:rounded-b lg:bg-white/90 lg:shadow-lg lg:shadow-neutral-700/5 lg:backdrop-blur-sm [.header\_\_menu-item.open_&]:block;
+	}
+	.header__submenu-item {
+		@apply hidden [.header\_\_menu-item.open_&]:block;
+	}
+	.header__submenu-link {
+		@apply px-8 py-4 hover:text-primary-500 [.header\_\_menu-item.open_&]:flex;
 	}
 	.header__toggle {
 		@apply relative order-10 block h-10 w-10 self-center lg:hidden [&--open]:visible [&--open]:opacity-100;

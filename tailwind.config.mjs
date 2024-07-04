@@ -20,8 +20,7 @@ export default {
     },
     // Font weights
     {
-      pattern:
-        /font-(thin|extralight|light|normal|medium|semibold|bold|extrabold|black)/,
+      pattern: /font-(thin|extralight|light|normal|medium|semibold|bold|extrabold|black)/,
     },
     // Alignments
     {
@@ -65,6 +64,15 @@ export default {
       fontFamily: {
         sans: ["Inter Variable", ...defaultTheme.fontFamily.sans],
         headings: ["Outfit Variable", ...defaultTheme.fontFamily.sans],
+      },
+      keyframes: {
+        dropdown: {
+          "0%": { transform: "translateY(-1rem)", opacity: 0 },
+          "100%": { transform: "translateY(0)", opacity: 1 },
+        },
+      },
+      animation: {
+        dropdown: "dropdown 300ms ease-in-out forwards",
       },
     },
   },
