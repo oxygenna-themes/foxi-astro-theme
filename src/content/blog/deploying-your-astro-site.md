@@ -9,12 +9,6 @@ image:
 tags: ['astro', 'guide']
 ---
 
-# Deploying Your Astro Site
-
-Published on: 2022-10-10
-
-Once you've built your Astro site, the next step is to deploy it so the world can see it. This guide will walk you through the process of deploying your site to various platforms.
-
 ## Deploying to Vercel
 
 Vercel is a popular platform for deploying static sites. To deploy your Astro site to Vercel, simply connect your GitHub repository to Vercel, and it will handle the rest. Vercel also provides features like automatic builds and previews.

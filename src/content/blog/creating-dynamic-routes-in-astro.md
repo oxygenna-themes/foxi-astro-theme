@@ -9,12 +9,6 @@ image:
 tags: ['astro', 'routing']
 ---
 
-# Creating Dynamic Routes in Astro
-
-Published on: 2023-02-15
-
-Dynamic routes allow you to create pages that can handle variable data. In this guide, we'll explore how to set up dynamic routes in your Astro project.
-
 ## Setting Up Dynamic Routes
 
 Dynamic routes in Astro are created using square brackets in your file names. For example, to create a route that handles different blog posts, you can create a file named `[slug].astro` in your `src/pages/blog` directory.

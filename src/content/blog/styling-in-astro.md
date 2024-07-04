@@ -9,12 +9,6 @@ image:
 tags: ['astro', 'styling']
 ---
 
-# Styling in Astro
-
-Published on: 2022-09-05
-
-Styling your Astro project is a crucial part of the development process. In this post, we'll explore the different methods you can use to style your Astro components and pages.
-
 ## Using CSS
 
 The most straightforward way to style your Astro project is by using CSS. You can create global stylesheets and import them into your components, or use inline styles for quick adjustments.

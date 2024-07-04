@@ -9,12 +9,6 @@ image:
 tags: ['astro']
 ---
 
-# Optimizing Astro Performance
-
-Published on: 2023-01-10
-
-Ensuring your Astro site runs efficiently is crucial for providing a great user experience. This post will cover various techniques to optimize the performance of your Astro site.
-
 ## Minifying CSS and JavaScript
 
 Minifying your CSS and JavaScript files reduces their size, which in turn decreases the load time of your site. Astro supports minification out of the box, but you can also use additional tools like Terser for further optimization.
