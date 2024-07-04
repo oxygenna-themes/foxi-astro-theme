@@ -4,7 +4,7 @@ pubDate: 2022-10-10
 description: 'Step-by-step guide to deploying your Astro site to various platforms.'
 author: 'Deployment Expert'
 image:
-  url: 'https://images.unsplash.com/photo-1522202221321-4ec8e3f44b3c?q=80&w=2074&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+  url: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
   alt: 'Server racks with glowing lights.'
 tags: ['astro', 'deployment', 'guide']
 ---
