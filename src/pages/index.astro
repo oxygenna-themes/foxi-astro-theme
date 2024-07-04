@@ -8,12 +8,15 @@ import Features from '../components/blocks/features/FeatureCards.astro'
 import Testimonial from '../components/blocks/testimonials/BasicDark.astro'
 import HighlightBlocks from '../components/blocks/highlights/HightlightRows.astro'
 import CTA from '../components/blocks/CTA/BasicDark.astro'
+
+// Content
+import testimonialBackground from '../assets/testimonial-bg-01.jpg'
 ---
 
 <Layout>
 	<Hero />
 	<Features />
-	<Testimonial />
+	<Testimonial background={testimonialBackground} />
 	<HighlightBlocks />
 	<CTA />
 </Layout>

@@ -1,0 +1,34 @@
+---
+import { Icon } from 'astro-icon/components'
+
+const {
+	title = 'Foxi. Tailwind CSS Astro Starter Kit by Oxygenna',
+	text = 'Foxi is a design and development agency that specializes in creating beautiful and functional websites.',
+	open = false
+} = Astro.props
+---
+
+<details class="accordion group" open={open ? true : undefined}>
+	<summary class="accordion__summary">
+		{title}
+		<Icon name="plus" class="accordion__icon" />
+	</summary>
+	<p class="accordion__text">
+		{text}
+	</p>
+</details>
+
+<style>
+	.accordion {
+		@apply cursor-pointer;
+	}
+	.accordion__summary {
+		@apply relative list-none px-6 py-4 text-lg font-medium text-neutral-700 transition focus-visible:outline-none dark:text-neutral-300 [&::-webkit-details-marker]:hidden;
+	}
+	.accordion__icon {
+		@apply absolute right-4 top-[1.375rem] h-4 w-4 shrink-0 transition duration-300 group-open:rotate-45;
+	}
+	.accordion__text {
+		@apply mb-0 bg-neutral-50 p-6 transition dark:bg-neutral-800/50;
+	}
+</style>

@@ -1,0 +1,77 @@
+---
+// Components
+// - Layout
+import Section from '../../ui/Section.astro'
+import Row from '../../ui/Row.astro'
+import Col from '../../ui/Col.astro'
+
+// - UI
+import Feature from '../../ui/Feature.astro'
+// Content
+// - Cards
+---
+
+<Section id="features">
+	<Row>
+		<Col span="12" align="center" classes="mb-12 max-w-4xl mx-auto">
+			<h2 class="text-pretty">Whats included on <strong>all</strong> foxi plans</h2>
+			<p class="pb-0 text-lg">
+				Explore the suite of tools designed to streamline your workflow, enhance productivity, and
+				drive growth. Each product is crafted with precision to meet your needs and exceed your
+				expectations.
+			</p>
+		</Col>
+	</Row>
+	<Row>
+		<Col span="3">
+			<Feature title="Real-Time Analytics" icon="chart-pie" align="left" classes="mb-12"
+				>Gain valuable insights instantly with Foxi's real-time analytics. Track performance
+				metrics, user behavior, and campaign effectiveness effortlessly.</Feature
+			>
+		</Col>
+		<Col span="3">
+			<Feature title="Customizable Dashboards" icon="squares-plus" align="left" classes="mb-12"
+				>Tailor your workspace with personalized dashboards that suit your workflow. Stay organized
+				and focused on what matters most to your business.</Feature
+			>
+		</Col>
+		<Col span="3">
+			<Feature title="Task Management" icon="cliboard-document-check" align="left" classes="mb-12"
+				>Efficiently manage tasks and projects with Foxi's intuitive task management tools. Assign,
+				track progress, and collaborate seamlessly.</Feature
+			>
+		</Col>
+		<Col span="3">
+			<Feature title="Third-Party Apps" icon="rocket" align="left" classes="mb-12"
+				>Connect Foxi with your favorite tools and apps effortlessly. Streamline workflows and
+				enhance productivity with seamless integrations.</Feature
+			>
+		</Col>
+	</Row>
+	<Row>
+		<Col span="3">
+			<Feature title="Mobile Accessibility" icon="device-phone-mobile" align="left" classes="mb-12"
+				>Stay productive on the go with Foxi's mobile app. Access key features, collaborate with
+				your team, and manage tasks anytime, anywhere.</Feature
+			>
+		</Col>
+		<Col span="3">
+			<Feature title="Dedicated Customer Support" icon="trophy" align="left" classes="mb-12"
+				>Receive exceptional customer support whenever you need it. Our dedicated team is here 24/7
+				to assist you with any questions or issues.</Feature
+			>
+		</Col>
+		<Col span="3">
+			<Feature title="Robust Data Security" icon="shield-check" align="left" classes="mb-12"
+				>Rest assured knowing your data is safe with Foxi's robust security measures. We employ
+				industry-standard protocols to protect your information.</Feature
+			>
+		</Col>
+		<Col span="3">
+			<Feature title="Scalability" icon="arrow-treding-up" align="left" classes="mb-12"
+				>Grow your business with confidence using Foxi's scalable platform. Whether you're a startup
+				or a large enterprise, our solution adapts to your needs.</Feature
+			>
+		</Col>
+	</Row>
+</Section>

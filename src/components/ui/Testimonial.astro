@@ -88,7 +88,7 @@ const {
 
 <style>
 	.testimonial {
-		@apply overflow-hidden leading-relaxed text-neutral-500 dark:text-neutral-300;
+		@apply overflow-hidden leading-relaxed;
 	}
 	.testimonial--center {
 		@apply text-center [&_.testimonial\_\_figcaption:has(.avatar)_.testimonial\_\_figcaption-cite-container]:text-left [&_.testimonial\_\_figcaption]:justify-center;
@@ -103,10 +103,10 @@ const {
 		@apply relative z-10;
 	}
 	.testimonial__blockquote {
-		@apply p-6;
+		@apply p-6 [&>p]:text-neutral-500 dark:[&>p]:text-neutral-300;
 	}
 	.testimonial__figcaption {
-		@apply flex flex-col items-center gap-4 p-6 pt-2 text-sm leading-normal text-primary-500;
+		@apply flex flex-col items-center gap-4 p-6 pt-2 text-sm leading-normal text-neutral-700 dark:text-neutral-50;
 	}
 	.testimonial__figcaption-container {
 		@apply flex items-center gap-4 pt-4 text-sm;

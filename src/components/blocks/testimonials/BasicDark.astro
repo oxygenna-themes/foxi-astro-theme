@@ -8,9 +8,13 @@ import Col from '../../ui/Col.astro'
 // - UI
 import Testimonial from '../../ui/Testimonial.astro'
 
-// Content
-// - Backhground
-import background from '../../../assets/testimonial-bg.jpg'
+// Props
+const {
+	blockquote = 'Foxi is like a rocket boost for our productivity! Its sleek design and out-of-this-world features make managing projects and team communication a breeze.',
+	figcaption = 'Sheryl Sandberg',
+	cite = 'CEO, Facebook',
+	background
+} = Astro.props
 ---
 
 <Section
@@ -22,9 +26,9 @@ import background from '../../../assets/testimonial-bg.jpg'
 	<Row>
 		<Col span="12">
 			<Testimonial
-				blockquote="Foxi is like a rocket boost for our productivity! Its sleek design and out-of-this-world features make managing projects and team communication a breeze. "
-				figcaption="Sheryl Sandberg"
-				cite="CEO, Facebook"
+				blockquote={blockquote}
+				figcaption={figcaption}
+				cite={cite}
 				align="center"
 				size="4xl"
 				mobileSize="3xl"

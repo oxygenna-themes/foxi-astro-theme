@@ -8,7 +8,7 @@ body {
 
 /* Main typography */
 p {
-	@apply mb-6 text-neutral-500 last:mb-0 dark:text-neutral-300 [.light_&]:text-neutral-500;
+	@apply mb-6 text-neutral-500 last:mb-0;
 }
 h1,
 h2,
@@ -66,6 +66,9 @@ main a {
 }
 .highlight {
 	@apply text-primary-500;
+}
+.small {
+	@apply text-sm font-normal text-neutral-400 dark:text-neutral-600;
 }
 /* Scroll animations */
 /* To disable scroll animations remove the class "sroll-animation" from root html in the layout file */
