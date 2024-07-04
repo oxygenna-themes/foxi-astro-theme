@@ -1,16 +1,22 @@
 ---
 type Props = {
 	name: string
-	color?: string
+	link?: string
 	classes?: string
 }
 
-const { name, color = 'primary', classes } = Astro.props
+const { name, link, classes } = Astro.props
 ---
 
-<span class:list={['badge', { [`${classes}`]: classes }]}>
-	{name}
-</span>
+{
+	link ? (
+		<a href={link} class:list={['badge', { [`${classes}`]: classes }]}>
+			{name}
+		</a>
+	) : (
+		<span class:list={['badge', { [`${classes}`]: classes }]}>{name}</span>
+	)
+}
 
 <style>
 	.badge {
