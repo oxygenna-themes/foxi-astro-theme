@@ -6,7 +6,7 @@
 	"navItems": [
 		{ "name": "Home", "link": "/" },
 		{ "name": "Pricing", "link": "/pricing" },
-		{ "name": "Services", "link": "/services" },
+		{ "name": "Blog", "link": "/blog" },
 		{ "name": "Contact", "link": "/contact" }
 	],
 	"navActions": [{ "name": "Try it now", "link": "/", "style": "primary", "size": "lg" }]
