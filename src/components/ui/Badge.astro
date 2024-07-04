@@ -1,0 +1,19 @@
+---
+type Props = {
+	name: string
+	color?: string
+	classes?: string
+}
+
+const { name, color = 'primary', classes } = Astro.props
+---
+
+<span class:list={['badge', { [`${classes}`]: classes }]}>
+	{name}
+</span>
+
+<style>
+	.badge {
+		@apply inline-flex items-center justify-center gap-1 rounded bg-primary-500 px-1.5 text-sm text-white;
+	}
+</style>
