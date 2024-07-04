@@ -1,0 +1,25 @@
+---
+type Props = {
+	name: string
+	link?: string
+	classes?: string
+}
+
+const { name, link, classes } = Astro.props
+---
+
+{
+	link ? (
+		<a href={link} class:list={['badge', { [`${classes}`]: classes }]}>
+			{name}
+		</a>
+	) : (
+		<span class:list={['badge', { [`${classes}`]: classes }]}>{name}</span>
+	)
+}
+
+<style>
+	.badge {
+		@apply inline-flex items-center justify-center gap-1 rounded bg-primary-500 px-1.5 text-sm text-white;
+	}
+</style>
