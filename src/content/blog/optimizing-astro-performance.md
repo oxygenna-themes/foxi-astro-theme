@@ -6,7 +6,7 @@ author: 'Performance Guru'
 image:
   url: 'https://images.unsplash.com/photo-1526948128573-703ee1aeb6fa?q=80&w=2074&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
   alt: 'Speedometer indicating high performance.'
-tags: ['astro', 'performance', 'optimization']
+tags: ['astro']
 ---
 
 # Optimizing Astro Performance
