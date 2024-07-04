@@ -99,7 +99,10 @@ const savedNavActions = navActions.map((action) => ({
 
 <style>
 	.header {
-		@apply sticky top-0 z-20 w-full bg-white/90 shadow-lg shadow-neutral-700/5 after:absolute after:left-0 after:top-full after:z-10 after:block after:h-px after:w-full lg:backdrop-blur-sm lg:after:hidden dark:bg-neutral-900/90 dark:shadow-neutral-950/50;
+		@apply sticky top-0 z-20 w-full before:absolute after:absolute after:left-0 after:top-full after:z-10 after:block after:h-px after:w-full lg:after:hidden;
+	}
+	.header:before {
+		@apply block h-full w-full bg-white/90 shadow-lg shadow-neutral-700/5 lg:backdrop-blur-sm dark:bg-neutral-900/90 dark:shadow-neutral-950/50;
 	}
 	.header__container {
 		@apply relative mx-auto max-w-full px-6 lg:max-w-5xl xl:max-w-7xl 2xl:max-w-[96rem];
@@ -126,7 +129,7 @@ const savedNavActions = navActions.map((action) => ({
 		@apply h-4 w-4 transition-transform [.header\_\_menu-item.open_&]:rotate-180;
 	}
 	.header__submenu {
-		@apply animate-dropdown left-0 top-full hidden lg:absolute lg:min-w-48 lg:rounded-b lg:bg-white/90 lg:shadow-lg lg:shadow-neutral-700/5 lg:backdrop-blur-sm [.header\_\_menu-item.open_&]:block;
+		@apply animate-dropdown left-0 top-full hidden rounded bg-neutral-300/10 p-6 lg:absolute lg:min-w-48 lg:rounded-b lg:bg-white/90 lg:p-0 lg:shadow-lg lg:shadow-neutral-700/5 lg:backdrop-blur-sm dark:bg-neutral-500/10 lg:dark:bg-neutral-900/90 lg:dark:shadow-neutral-950/50 [.header\_\_menu-item.open_&]:block;
 	}
 	.header__submenu-item {
 		@apply hidden [.header\_\_menu-item.open_&]:block;
