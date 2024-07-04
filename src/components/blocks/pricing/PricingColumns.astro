@@ -1,0 +1,36 @@
+---
+// Layout elements
+import Section from '../../ui/Section.astro'
+import Row from '../../ui/Row.astro'
+import Col from '../../ui/Col.astro'
+
+//UI Components
+import PricingTable from '../../ui/pricing-tables/PricingTable.astro'
+import Toggle from '../../ui/forms/form-elements/Toggle.astro'
+
+const { data, listType, classes } = Astro.props
+
+// Content
+import pricingTablesData from '../../../data/sections/pricingTablesdata.json'
+
+// Script
+import PricingChange from '../../scripts/PricingChange.astro'
+---
+
+<Section>
+	<Row>
+		<Col span="12" align="center" classes="flex items-center justify-center gap-4 mb-12">
+			<span id="monthlyLabel" class="font-semibold opacity-70 transition-colors">Bill monthly</span>
+			<Toggle id="pricingType" label="pricing" showLabel={false} checked={true} />
+			<span class="highlight font-semibold transition-colors" id="annualLabel">Bill annualy</span>
+		</Col>
+		{
+			pricingTablesData.map((item, key) => (
+				<Col span="4">
+					<PricingTable data={item} listType="checklist" id={`plan-${key}`} />
+				</Col>
+			))
+		}
+	</Row>
+</Section>
+<PricingChange />

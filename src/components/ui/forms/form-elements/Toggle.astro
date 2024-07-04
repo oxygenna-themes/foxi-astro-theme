@@ -2,17 +2,26 @@
 type Props = {
 	id: string
 	label: string
+	showLabel?: boolean
+	checked?: boolean
 	helperText?: string
 	disabled?: boolean
 	classes?: string
 }
 
-const { id, label, helperText, disabled, classes } = Astro.props
+const { id, label, showLabel = true, checked = false, helperText, disabled, classes } = Astro.props
 ---
 
 <div class:list={['toggle', { [`${classes}`]: classes }]}>
-	<input class="toggle__input peer" type="checkbox" value="" id={id} disabled={disabled} />
-	<label class="toggle__label" for={id}> {label}</label>
+	<input
+		class:list={['toggle__input peer']}
+		type="checkbox"
+		value=""
+		id={id}
+		disabled={disabled}
+		checked={checked}
+	/>
+	<label class:list={['toggle__label', { ['sr-only']: !showLabel }]} for={id}>{label}</label>
 	{
 		helperText && (
 			<small class="toggle__helper-text">

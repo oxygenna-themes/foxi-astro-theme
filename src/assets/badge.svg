@@ -1,5 +1,6 @@
 <svg width="300" height="301" viewBox="0 0 300 301" fill="none" xmlns="http://www.w3.org/2000/svg">
 <rect x="11" y="12" width="278" height="278" rx="139" fill="#CBD5E1" fill-opacity="0.15"/>
+<g class="wobble">
 <rect x="143" y="183.076" width="13.0851" height="46.1421" fill="#DE9300"/>
 <path d="M93.3564 85.6699H53C53 116.965 55.4 134.967 99.9887 134.967" stroke="#FFEC86" stroke-width="9"/>
 <path d="M208.554 126.658C208.554 159.39 182.019 185.925 149.287 185.925C116.554 185.925 90.0195 159.39 90.0195 126.658C90.0195 93.9253 116.554 67.3905 149.287 67.3905C182.019 67.3905 208.554 93.9253 208.554 126.658Z" fill="#FFEC86"/>
@@ -11,4 +12,44 @@
 <circle cx="150.448" cy="120.061" r="35.4674" fill="#DCAE0C"/>
 <circle cx="150.379" cy="119.623" r="44.5629" fill="#DE9300"/>
 <path d="M150.38 90.4648L159.366 108.437L177.338 110.683L164.997 124.522L168.352 144.38L150.38 135.395L132.408 144.38L135.793 124.522L123.422 110.683L141.394 108.437L150.38 90.4648Z" fill="#FFF4BC"/>
+</g>
+<style>
+.wobble {
+    animation: wobble 4s ease infinite;
+}
+
+@keyframes wobble {
+    0%, 18% {
+        -webkit-transform: translateX(0%);
+        transform: translateX(0%);
+        -webkit-transform-origin: 50% 50%;
+        transform-origin: 50% 50%;
+    }
+
+    3% {
+        -webkit-transform: translateX(-32px) rotate(-10deg);
+        transform: translateX(-32px) rotate(-10deg);
+    }
+
+    6% {
+        -webkit-transform: translateX(calc(32px / 2)) rotate(10deg);
+        transform: translateX(calc(32px / 2)) rotate(10deg);
+    }
+
+    9% {
+        -webkit-transform: translateX(calc(-32px / 2)) rotate(calc(-10deg / 1.8));
+        transform: translateX(calc(-32px / 2)) rotate(calc(-10deg / 1.8));
+    }
+
+    12% {
+        -webkit-transform: translateX(calc(32px / 3.3)) rotate(calc(10deg / 3));
+        transform: translateX(calc(32px / 3.3)) rotate(calc(10deg / 3));
+    }
+
+    15% {
+        -webkit-transform: translateX(calc(-32px / 5.5)) rotate(calc(-10deg / 5));
+        transform: translateX(calc(-32px / 5.5)) rotate(calc(-10deg / 5));
+    }
+}
+</style>
 </svg>

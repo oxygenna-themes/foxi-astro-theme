@@ -64,7 +64,9 @@ h6 {
 main a {
 	@apply text-primary-500 hover:text-primary-600;
 }
-
+.highlight {
+	@apply text-primary-500;
+}
 /* Scroll animations */
 /* To disable scroll animations remove the class "sroll-animation" from root html in the layout file */
 .scroll-animation .col {

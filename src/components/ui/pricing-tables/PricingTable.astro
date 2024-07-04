@@ -30,22 +30,17 @@ type PricingTableProps = {
 
 type Props = {
 	data: PricingTableProps
+	id?: string
 	listType?: 'basic' | 'checklist'
 	classes?: string
 }
 
-const { data, listType, classes } = Astro.props
+const { data, id, listType, classes } = Astro.props
 
 const { type, header, body, footer } = data
 ---
 
-<div
-	class:list={[
-		'pricing lg:max-md-full',
-		{ [`pricing--${type}`]: type },
-		{ [`${classes}`]: classes }
-	]}
->
+<div id={id} class:list={['pricing', { [`pricing--${type}`]: type }, { [`${classes}`]: classes }]}>
 	<div class="pricing__container">
 		<Header type={type}>
 			<h3
@@ -101,7 +96,7 @@ const { type, header, body, footer } = data
 						type="link"
 						link={footer.buttonLink}
 						variation="link"
-						classes={type === 'featured' ? '!text-white' : ''}
+						classes={'!font-medium ' + (type === 'featured' ? '!text-white' : '')}
 					>
 						{footer.buttonName}
 					</Button>
@@ -113,13 +108,13 @@ const { type, header, body, footer } = data
 
 <style>
 	.pricing {
-		@apply mx-auto max-w-sm overflow-hidden rounded;
+		@apply mx-auto max-w-sm overflow-hidden rounded border border-neutral-100 bg-white text-neutral-500 shadow-xl shadow-neutral-700/5 dark:border-neutral-800 dark:bg-neutral-900 dark:text-neutral-300 dark:shadow-neutral-950/50 [&_.pricing\_\_header-subtitle]:text-neutral-400;
 	}
 	.pricing__container {
 		@apply flex flex-col;
 	}
 	.pricing__header-title {
-		@apply text-xl font-bold text-neutral-700 dark:text-neutral-50 [&.pricing\_\_header-title--featured]:text-primary-50;
+		@apply mb-0 text-xl font-bold text-neutral-700 dark:text-neutral-50 [&.pricing\_\_header-title--featured]:text-primary-50;
 	}
 	.pricing__header-subtitle {
 		@apply block text-sm font-normal;
@@ -133,10 +128,8 @@ const { type, header, body, footer } = data
 	.pricing__header-perTime {
 		@apply text-sm;
 	}
-	.pricing--basic {
-		@apply rounded bg-white text-neutral-500 shadow-lg shadow-neutral-500/30 dark:bg-neutral-800 dark:text-neutral-300 [&_.pricing\_\_header-subtitle]:text-neutral-400;
-	}
+
 	.pricing--featured {
-		@apply bg-primary-500 text-primary-100 shadow-xl shadow-primary-500/30 [&_.pricing\_\_header-subtitle]:text-primary-200;
+		@apply border-primary-500 bg-primary-500 text-primary-100 shadow-2xl shadow-primary-500/30 [&_.pricing\_\_header-subtitle]:text-primary-200;
 	}
 </style>

@@ -1,0 +1,26 @@
+---
+// Layout
+import Layout from '../layouts/Layout.astro'
+
+// Sections
+import Hero from '../components/blocks/hero/PageHeader.astro'
+import Price from '../components/blocks/pricing/PricingColumns.astro'
+
+// Content
+// - SEO
+const title = 'Foxi | Pricing made simple'
+const description =
+	'Discover the perfect SaaS pricing plan for your business. From startups to enterprises, our scalable solutions offer unparalleled features and 24/7 support.'
+
+// - Page Header
+const header = {
+	title: 'Choose the plan that works for <strong>your</strong> needs',
+	text: 'From startups to enterprises, our scalable solutions offer unparalleled features and 24/7 support.'
+}
+---
+
+<Layout title={title} description={description}>
+	<Hero title={header.title} text={header.text} />
+
+	<Price />
+</Layout>

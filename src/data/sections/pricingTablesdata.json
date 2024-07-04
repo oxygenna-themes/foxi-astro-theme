@@ -5,7 +5,7 @@
 			"subtitle": "Ideal for individual developers.",
 			"currency": "$",
 			"price": "15",
-			"perTime": "month",
+			"perTime": "month, billed anually",
 			"buttonName": "Try for free",
 			"buttonLink": "/"
 		},
@@ -28,7 +28,7 @@
 			"subtitle": "Ideal for small teams",
 			"currency": "$",
 			"price": "25",
-			"perTime": "month",
+			"perTime": "month, billed anually",
 			"buttonName": "Try for free",
 			"buttonLink": "/"
 		},
@@ -52,7 +52,7 @@
 			"subtitle": "Ideal for companies",
 			"currency": "$",
 			"price": "55",
-			"perTime": "month",
+			"perTime": "month, billed anually",
 			"buttonName": "Try for free",
 			"buttonLink": "/"
 		},

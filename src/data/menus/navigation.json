@@ -5,7 +5,7 @@
 	},
 	"navItems": [
 		{ "name": "Home", "link": "/" },
-		{ "name": "About", "link": "/test" },
+		{ "name": "Pricing", "link": "/pricing" },
 		{ "name": "Services", "link": "/services" },
 		{ "name": "Contact", "link": "/contact" }
 	],
