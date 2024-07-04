@@ -9,12 +9,6 @@ image:
 tags: ['astro', 'guide']
 ---
 
-# Exploring Astro Components
-
-Published on: 2022-08-15
-
-In this post, we'll dive into the world of Astro components. Components are the building blocks of any Astro project, allowing you to create reusable and modular pieces of UI.
-
 ## Understanding Components
 
 Components in Astro are simple yet powerful. You can create them using `.astro` files, and they can include HTML, JavaScript, and CSS. This flexibility makes it easy to build complex UIs.
