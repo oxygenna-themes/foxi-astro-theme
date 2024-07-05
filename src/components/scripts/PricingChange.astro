@@ -5,8 +5,6 @@
 		const plans = ['plan-0', 'plan-1', 'plan-2']
 		if (pricingTypeCheckbox) {
 			pricingTypeCheckbox.addEventListener('change', function () {
-				const isAnnualy = (pricingTypeCheckbox as HTMLInputElement).checked
-
 				plans.forEach((plan) => {
 					const planElement = document.getElementById(plan)
 
