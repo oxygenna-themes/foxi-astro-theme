@@ -29,7 +29,7 @@
 					}
 				]
 
-				const isAnnualy = this.checked
+				const isAnnualy = (pricingTypeCheckbox as HTMLInputElement).checked
 
 				plans.forEach((plan) => {
 					const planElement = document.getElementById(plan.elementId)
