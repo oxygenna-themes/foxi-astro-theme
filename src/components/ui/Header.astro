@@ -124,13 +124,13 @@ const savedNavActions = navActions.map((action) => ({
 		@apply relative flex cursor-pointer flex-col items-stretch lg:flex-row;
 	}
 	.header__menu-link {
-		@apply relative flex items-center gap-1 py-4 transition-colors duration-300 hover:text-primary-500 focus:text-primary-600 focus:outline-none focus-visible:outline-none lg:px-8 [&.active]:text-primary-500;
+		@apply relative flex items-center gap-1 py-4 transition-colors duration-300 hover:text-primary-500 focus:text-primary-600 focus:outline-none focus-visible:outline-none lg:px-6 [&.active]:text-primary-500;
 	}
 	.header__menu-chevron {
 		@apply h-4 w-4 transition-transform [.header\_\_menu-item.open_&]:rotate-180;
 	}
 	.header__submenu {
-		@apply animate-dropdown left-0 top-full hidden rounded bg-neutral-300/10 px-4 lg:absolute lg:min-w-48 lg:rounded-b lg:bg-white/90 lg:p-0 lg:shadow-lg lg:shadow-neutral-700/5 lg:backdrop-blur-sm dark:bg-neutral-500/10 lg:dark:bg-neutral-900/90 lg:dark:shadow-neutral-950/50 [.header\_\_menu-item.open_&]:block;
+		@apply animate-dropdown left-0 top-full hidden rounded bg-neutral-300/10 px-4 lg:absolute lg:min-w-48 lg:rounded-t-none lg:bg-white/90 lg:p-0 lg:shadow-lg lg:shadow-neutral-700/5 lg:backdrop-blur-sm dark:bg-neutral-500/10 lg:dark:bg-neutral-900/90 lg:dark:shadow-neutral-950/50 [.header\_\_menu-item.open_&]:block;
 	}
 	.header__submenu-item {
 		@apply hidden [.header\_\_menu-item.open_&]:block;
@@ -157,6 +157,6 @@ const savedNavActions = navActions.map((action) => ({
 		@apply w-1/2 origin-top-left translate-y-2 [.header\_\_toggle--open_&]:w-0;
 	}
 	.header__actions {
-		@apply fixed bottom-0 left-0 hidden w-full items-center justify-between gap-4 border-t border-neutral-100 bg-white px-6 py-4 lg:relative lg:ml-auto lg:w-auto lg:border-none lg:bg-transparent lg:px-0 lg:py-0 dark:border-neutral-800 dark:bg-neutral-950 [.header\_\_menu--open~&]:flex;
+		@apply fixed bottom-0 left-0 hidden w-full items-center justify-between gap-4 border-t border-neutral-100 bg-white px-6 py-4 lg:relative lg:ml-auto lg:flex lg:w-auto lg:border-none lg:bg-transparent lg:px-0 lg:py-0 dark:border-neutral-800 dark:bg-neutral-950 [.header\_\_menu--open~&]:flex;
 	}
 </style>
