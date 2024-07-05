@@ -21,6 +21,14 @@ Images often take up a significant portion of a webpage's load time. Optimizing 
 
 Lazy loading is a technique that delays the loading of non-critical resources until they are needed. This can be particularly useful for images and videos, ensuring that they only load when they enter the viewport.
 
+## Performance Comparison
+
+| Technique          | Description                                         | Benefit                        |
+| ------------------ | --------------------------------------------------- | ------------------------------ |
+| Minifying          | Reduces size of CSS and JavaScript files            | Faster load times              |
+| Image Optimization | Compresses images and uses modern formats like WebP | Improved load times for images |
+| Lazy Loading       | Delays loading of non-critical resources            | Reduces initial load time      |
+
 ## Conclusion
 
 Optimizing the performance of your Astro site can lead to faster load times and a better user experience. Implement these techniques to ensure your site runs smoothly and efficiently.
