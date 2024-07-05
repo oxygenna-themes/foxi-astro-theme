@@ -3,23 +3,23 @@
 import Layout from '../layouts/Layout.astro'
 
 // Sections
-import FeatureCategory from '../components/blocks/features/FeatureSticky.astro'
+import Features from '../components/blocks/features/FeatureSticky.astro'
 
 // JSON data
 import featuresData from '../data/sections/featuresData.json'
 
 // Extract unique categories
-const categories = [...new Set(featuresData.map((feature) => feature.category))]
+const featuresAnalytics = featuresData.filter((feature) => feature.category === 'Analytics')
+const featuresSecurity = featuresData.filter((feature) => feature.category === 'Security')
+const featuresProductivity = featuresData.filter((feature) => feature.category === 'Productivity')
+const featuresIntegrations = featuresData.filter((feature) => feature.category === 'Integrations')
+const featuresSupport = featuresData.filter((feature) => feature.category === 'Support')
 ---
 
 <Layout>
-	{
-		categories.map((category) => (
-			<FeatureCategory
-				title={category}
-				text={`Features related to ${category}`}
-				data={featuresData}
-			/>
-		))
-	}
+	<Features title="ss" text="sse" data={featuresAnalytics} />
+	<Features title="ss" text="sse" data={featuresSecurity} />
+	<Features title="ss" text="sse" data={featuresProductivity} />
+	<Features title="ss" text="sse" data={featuresIntegrations} />
+	<Features title="ss" text="sse" data={featuresSupport} />
 </Layout>

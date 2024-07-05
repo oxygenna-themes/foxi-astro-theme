@@ -9,7 +9,7 @@
 		"title": "Customizable Dashboards",
 		"icon": "squares-plus",
 		"description": "Tailor your workspace with personalized dashboards that suit your workflow. Stay organized and focused on what matters most to your business.",
-		"category": "Customization"
+		"category": "Analytics"
 	},
 	{
 		"title": "Task Management",
@@ -21,13 +21,13 @@
 		"title": "Third-Party Apps",
 		"icon": "rocket",
 		"description": "Connect Foxi with your favorite tools and apps effortlessly. Streamline workflows and enhance productivity with seamless integrations.",
-		"category": "Integrations"
+		"category": "Productivity"
 	},
 	{
 		"title": "Mobile Accessibility",
 		"icon": "device-phone-mobile",
 		"description": "Stay productive on the go with Foxi's mobile app. Access key features, collaborate with your team, and manage tasks anytime, anywhere.",
-		"category": "Accessibility"
+		"category": "Support"
 	},
 	{
 		"title": "Dedicated Customer Support",
@@ -45,13 +45,13 @@
 		"title": "Scalability",
 		"icon": "arrow-treding-up",
 		"description": "Grow your business with confidence using Foxi's scalable platform. Whether you're a startup or a large enterprise, our solution adapts to your needs.",
-		"category": "Growth"
+		"category": "Security"
 	},
 	{
 		"title": "Real-Time Notifications",
 		"icon": "moon",
 		"description": "Stay updated with real-time notifications for important events and updates. Never miss out on critical information with instant alerts.",
-		"category": "Notifications"
+		"category": "Security"
 	},
 	{
 		"title": "Advanced Reporting",
@@ -69,19 +69,19 @@
 		"title": "In-App Messaging",
 		"icon": "moon",
 		"description": "Communicate directly within the app using in-app messaging. Keep conversations organized and accessible without switching between tools.",
-		"category": "Communication"
+		"category": "Integrations"
 	},
 	{
 		"title": "Multi-Device Sync",
 		"icon": "moon",
 		"description": "Ensure seamless access to your data across all devices. Sync your information in real-time, so you can work from anywhere with consistency.",
-		"category": "Accessibility"
+		"category": "Support"
 	},
 	{
 		"title": "Customizable Alerts",
 		"icon": "moon",
 		"description": "Set up customizable alerts to notify you of important events and changes. Tailor notifications to your needs for better management and response.",
-		"category": "Notifications"
+		"category": "Support"
 	},
 	{
 		"title": "API Integrations",
@@ -99,7 +99,7 @@
 		"title": "Custom Themes",
 		"icon": "moon",
 		"description": "Customize the look and feel of your workspace with custom themes. Choose from various design options to match your brand's style.",
-		"category": "Customization"
+		"category": "Analytics"
 	},
 	{
 		"title": "Data Backup",
@@ -123,7 +123,7 @@
 		"title": "Custom Widgets",
 		"icon": "moon",
 		"description": "Enhance your dashboard with custom widgets. Add and configure widgets to display the most relevant information for your needs.",
-		"category": "Customization"
+		"category": "Analytics"
 	},
 	{
 		"title": "Data Visualization",
@@ -171,13 +171,13 @@
 		"title": "Accessibility Features",
 		"icon": "moon",
 		"description": "Explore features designed to enhance accessibility. Ensure your tools and workspace are usable for all team members, including those with disabilities.",
-		"category": "Accessibility"
+		"category": "Security"
 	},
 	{
 		"title": "Enhanced Mobile Access",
 		"icon": "moon",
 		"description": "Benefit from enhanced mobile access features. Use our app to stay connected and productive with improved functionality on mobile devices.",
-		"category": "Accessibility"
+		"category": "Security"
 	},
 	{
 		"title": "Advanced Task Tracking",
@@ -195,12 +195,36 @@
 		"title": "Real-Time Accessibility Updates",
 		"icon": "moon",
 		"description": "Receive real-time updates on accessibility features and improvements. Stay informed about changes that impact your mobile and web access.",
-		"category": "Accessibility"
+		"category": "Support"
 	},
 	{
 		"title": "Productivity Analytics",
 		"icon": "moon",
 		"description": "Analyze productivity metrics to optimize performance. Gain insights into team and individual productivity to drive improvements.",
 		"category": "Productivity"
+	},
+	{
+		"title": "In-App Messaging",
+		"icon": "rocket",
+		"description": "Communicate directly within the app using in-app messaging. Keep conversations organized and accessible without switching between tools.",
+		"category": "Integrations"
+	},
+	{
+		"title": "Third-Party API Support",
+		"icon": "rocket",
+		"description": "Seamlessly integrate with third-party APIs to extend the functionality of your app. Enjoy smooth data exchange and enhanced performance.",
+		"category": "Integrations"
+	},
+	{
+		"title": "CRM Integration",
+		"icon": "rocket",
+		"description": "Connect your app with popular CRM systems to streamline customer management. Synchronize data and improve customer relationship processes.",
+		"category": "Integrations"
+	},
+	{
+		"title": "Payment Gateway Integration",
+		"icon": "rocket",
+		"description": "Integrate multiple payment gateways to offer diverse payment options. Ensure secure transactions and smooth payment processing for users.",
+		"category": "Integrations"
 	}
 ]

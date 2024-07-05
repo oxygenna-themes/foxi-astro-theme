@@ -16,12 +16,6 @@ type Props = {
 	classes?: string
 }
 const { title, text, data, classes } = Astro.props
-
-// Define the category to filter by
-const categoryToFilter = title
-
-// Group features by category
-const filteredFeatures = data.filter((feature: any) => feature.category === categoryToFilter)
 ---
 
 <StickySidebar classes={classes}>
@@ -33,7 +27,7 @@ const filteredFeatures = data.filter((feature: any) => feature.category === cate
 	<Row>
 		{
 			// Map through the filtered features and render them
-			filteredFeatures.map((feature: any) => (
+			data.map((feature: any) => (
 				<Col span="4">
 					<Feature title={feature.title} icon={feature.icon} align="left" classes="mb-12">
 						{feature.description}
