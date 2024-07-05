@@ -1,0 +1,28 @@
+---
+import { Image } from 'astro:assets'
+
+//Layout Components
+import Section from '../../../components/ui/Section.astro'
+import Row from '../../../components/ui/Row.astro'
+import Col from '../../../components/ui/Col.astro'
+
+type Props = {
+	image: any
+}
+
+const { image } = Astro.props
+---
+
+<Section padding="none" fullWidth>
+	<Row>
+		<Col span="12">
+			<Image src={image.url} alt={image.alt} height="500" width="1200" class="page-coverImage" />
+		</Col>
+	</Row>
+</Section>
+
+<style>
+	.page-coverImage {
+		@apply h-[500px] w-full object-cover;
+	}
+</style>

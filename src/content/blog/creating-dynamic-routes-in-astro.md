@@ -1,7 +1,7 @@
 ---
 title: 'Creating Dynamic Routes in Astro'
 pubDate: 2023-02-15
-description: 'A guide to creating dynamic routes and pages in Astro.'
+description: 'A guide to creating dynamic routes and pages in Astro, based on  parameters.'
 author: 'Routing Master'
 image:
   url: 'https://images.unsplash.com/photo-1513628253939-010e64ac66cd?q=80&w=2074&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
@@ -15,7 +15,12 @@ Dynamic routes in Astro are created using square brackets in your file names. Fo
 
 ## Fetching Data
 
-To display dynamic content, you can fetch data based on the route parameters. In the `[slug].astro` file, you can use Astro's data fetching capabilities to load content dynamically.
+To display dynamic content, you can fetch data based on the route parameters. In the `[slug].astro` file, you can use Astro's data fetching capabilities to load content dynamically. Here are the steps to fetch data:
+
+- **Import necessary modules**: Start by importing the modules you need for data fetching.
+- **Get route parameters**: Use Astro's API to access route parameters.
+- **Fetch data**: Fetch data from an API or a local data source based on the parameters.
+- **Display data**: Use the fetched data to render the content dynamically.
 
 ## Creating Links
 

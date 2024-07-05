@@ -1,0 +1,35 @@
+---
+// Layout Components
+import Section from '../../../components/ui/Section.astro'
+import Row from '../../../components/ui/Row.astro'
+import Col from '../../../components/ui/Col.astro'
+
+// UI Components
+import Spacer from '../../ui/Spacer.astro'
+import BlogPost from '../../../components/ui/blog/BlogPost.astro'
+import TagNavigation from '../../../components/ui/blog/TagNavigation.astro'
+
+const { data: allPosts } = Astro.props
+---
+
+<Section>
+	<Row>
+		<Col span="12">
+			<TagNavigation />
+		</Col>
+	</Row>
+	<Row>
+		<Col span="12">
+			<Spacer size="6" desktopSize="8" />
+		</Col>
+	</Row>
+	<Row>
+		{
+			allPosts.map((post: any) => (
+				<Col span="4">
+					<BlogPost url={'/blog/' + post.slug} data={post.data} />
+				</Col>
+			))
+		}
+	</Row>
+</Section>

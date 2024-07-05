@@ -1,0 +1,21 @@
+---
+import { getCollection } from 'astro:content'
+
+// Layout Components
+import Layout from '../../../layouts/Layout.astro'
+
+// Sections
+import Hero from '../../../components/blocks/hero/PageHeader.astro'
+import BlogPosts from '../../../components/blocks/blog/BlogPosts.astro'
+
+//UI Components
+import CardBasic from '../../../components/ui/cards/CardBasic.astro'
+
+const allPosts = await getCollection('blog')
+const tags = [...new Set(allPosts.map((post) => post.data.tags).flat())]
+---
+
+<Layout>
+	<Hero title="Tags" />
+	<BlogPosts data={allPosts} />
+</Layout>

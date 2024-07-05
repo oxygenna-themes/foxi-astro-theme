@@ -1,0 +1,57 @@
+---
+//Layout Components
+import Section from '../../../components/ui/Section.astro'
+import Row from '../../../components/ui/Row.astro'
+import Col from '../../../components/ui/Col.astro'
+
+//UI Components
+import Badge from '../../../components/ui/Badge.astro'
+
+type Props = {
+	tags?: any
+	title: string
+	author?: string
+	publishDate?: string
+}
+
+const { tags, title, author, publishDate } = Astro.props
+---
+
+<Section id="intro" classes="bg-neutral-50 dark:bg-neutral-900">
+	<Row>
+		<Col span="12" align="center">
+			<header class="page-header">
+				{
+					tags && (
+						<div class="flex flex-row items-center justify-center gap-2 pb-2">
+							{tags.map((tag: string) => (
+								<Badge name={tag} link={`/blog/tags/` + tag} classes="capitalize" />
+							))}
+						</div>
+					)
+				}
+				<h1 class="page-header__title">
+					{title}
+				</h1>
+				{
+					author ? (
+						<p class="page-header__text">
+							Written by, {author} {publishDate && 'on ' + publishDate}
+						</p>
+					) : (
+						publishDate && <p class="page-header__text">Published on, {publishDate}</p>
+					)
+				}
+			</header>
+		</Col>
+	</Row>
+</Section>
+
+<style>
+	.page-header {
+		@apply mx-auto max-w-4xl;
+	}
+	.page-header__text {
+		@apply text-base leading-relaxed;
+	}
+</style>

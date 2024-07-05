@@ -9,7 +9,7 @@ image:
 tags: ['astro', 'guide']
 ---
 
-## Deploying to Vercel
+## Deploying to <strong>Vercel</strong>
 
 Vercel is a popular platform for deploying static sites. To deploy your Astro site to Vercel, simply connect your GitHub repository to Vercel, and it will handle the rest. Vercel also provides features like automatic builds and previews.
 
