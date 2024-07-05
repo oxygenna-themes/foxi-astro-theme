@@ -1,7 +1,7 @@
 ---
 title: 'Creating Dynamic Routes in Astro'
 pubDate: 2023-02-15
-description: 'A guide to creating dynamic routes and pages in Astro.'
+description: 'A guide to creating dynamic routes and pages in Astro, based on  parameters.'
 author: 'Routing Master'
 image:
   url: 'https://images.unsplash.com/photo-1513628253939-010e64ac66cd?q=80&w=2074&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
