@@ -8,7 +8,7 @@ const url = new URL(Astro.request.url)
 const pathname = url.pathname
 
 // Remove leading and trailing slashes, split the pathname into segments and filter out empty segments
-const segments = pathname.split('/').filter(Boolean) //
+const segments = pathname.split('/').filter(Boolean)
 
 // Create breadcrumbs including "Home" as the first breadcrumb
 const breadcrumbs = ['Home', ...segments]
@@ -20,7 +20,7 @@ const breadcrumbs = ['Home', ...segments]
 			breadcrumbs.map((segment, index) => (
 				<li class="breadcrumbs__list-item">
 					<a href={`/${segments.slice(0, index).join('/')}`} class="breadcrumbs__item-link">
-						{segment}
+						{index === 0 ? segment : segment.replace(/-/g, ' ')}
 					</a>
 					{index < breadcrumbs.length - 1 && (
 						<Icon name="chevron-left" class="breadcrumbs__item-icon" />
