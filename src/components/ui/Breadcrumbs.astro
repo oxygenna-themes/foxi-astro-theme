@@ -39,7 +39,7 @@ const breadcrumbs = ['Home', ...segments]
 		@apply flex items-center gap-2 [&:not(:first-child):not(:last-child)]:hidden [&:not(:first-child):not(:last-child)]:md:flex;
 	}
 	.breadcrumbs__item-link {
-		@apply flex max-w-[20ch] items-center gap-1 truncate whitespace-nowrap capitalize text-neutral-700 transition-colors last:pointer-events-none last:text-neutral-400 hover:text-primary-500 dark:text-neutral-50;
+		@apply flex items-center gap-1 truncate whitespace-nowrap capitalize text-neutral-700 transition-colors last:pointer-events-none last:text-neutral-400 hover:text-primary-500 dark:text-neutral-50;
 	}
 	.breadcrumbs__item-icon {
 		@apply h-4 w-4 flex-none text-neutral-700 transition-transform md:rotate-180 dark:text-neutral-50;
