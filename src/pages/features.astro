@@ -3,7 +3,7 @@
 import Layout from '../layouts/Layout.astro'
 
 // Sections
-import Features from '../components/blocks/features/FeatureSticky.astro'
+import Feature from '../components/blocks/features/FeatureSticky.astro'
 import Hero from '../components/blocks/hero/PageHeader.astro'
 
 // - Page Header
@@ -25,9 +25,13 @@ const featuresSupport = featuresData.filter((feature) => feature.category === 'S
 
 <Layout>
 	<Hero title={header.title} text={header.text} />
-	<Features title="ss" text="sse" data={featuresAnalytics} />
-	<Features title="ss" text="sse" data={featuresSecurity} />
-	<Features title="ss" text="sse" data={featuresProductivity} />
-	<Features title="ss" text="sse" data={featuresIntegrations} />
-	<Features title="ss" text="sse" data={featuresSupport} />
+	<Feature
+		title="Insightful Analytics"
+		text="Delve into your data with precision and uncover actionable insights."
+		data={featuresAnalytics}
+	/>
+	<Feature title="ss" text="sse" data={featuresSecurity} />
+	<Feature title="ss" text="sse" data={featuresProductivity} />
+	<Feature title="ss" text="sse" data={featuresIntegrations} />
+	<Feature title="ss" text="sse" data={featuresSupport} />
 </Layout>
