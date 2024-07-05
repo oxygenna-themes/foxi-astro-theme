@@ -1,0 +1,29 @@
+---
+// Components
+// - Layout
+import Row from '../../ui/Row.astro'
+import Col from '../../ui/Col.astro'
+import StickySidebar from '../basic/StickySidebar.astro'
+
+// - UI
+import Feature from '../../ui/Feature.astro'
+
+const { title, text, data, classes } = Astro.props
+---
+
+<StickySidebar classes={classes}>
+	<header slot="sidebar">
+		{title && <h3>{title}</h3>}
+		{text && <p class="text-lg leading-relaxed">{text}</p>}
+	</header>
+
+	<Row>
+		<!-- Loop that per category in data -->
+		<Col span="4">
+			<Feature title="Real-Time Analytics" icon="chart-pie" align="left" classes="mb-12"
+				>Gain valuable insights instantly with Foxi's real-time analytics. Track performance
+				metrics, user behavior, and campaign effectiveness effortlessly.</Feature
+			>
+		</Col>
+	</Row>
+</StickySidebar>

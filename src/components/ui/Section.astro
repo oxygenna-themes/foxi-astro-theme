@@ -2,6 +2,7 @@
 interface Props {
 	id?: string
 	fullWidth?: boolean
+	stickyCol?: boolean
 	mode?: 'dark' | 'light'
 	padding?: 'both' | 'top' | 'bottom' | 'none'
 	bg?: BgProps
@@ -18,6 +19,7 @@ interface BgProps {
 const {
 	id,
 	fullWidth,
+	stickyCol = true,
 	mode,
 	padding = 'both',
 	bg,
@@ -41,6 +43,7 @@ const bgStyle = bg
 	{...id ? { id } : {}}
 	class:list={[
 		'section',
+		{ 'section--sticky-col': stickyCol },
 		{ 'section--fullwidth': fullWidth },
 		{ 'section--padded': padding === 'both' },
 		{ 'section--padded-t': padding === 'top' },
@@ -57,7 +60,7 @@ const bgStyle = bg
 
 <style>
 	.section {
-		@apply relative overflow-hidden text-neutral-500 dark:text-neutral-300 [&.dark:not([class*='bg-'])]:bg-neutral-950 [&.dark]:text-neutral-300 [&.light:not([class*='bg-'])]:bg-white [&.light]:bg-white [&.light]:text-neutral-500;
+		@apply relative text-neutral-500 dark:text-neutral-300 [&.dark:not([class*='bg-'])]:bg-neutral-950 [&.dark]:text-neutral-300 [&.light:not([class*='bg-'])]:bg-white [&.light]:bg-white [&.light]:text-neutral-500 [&.section--sticky-col_.container]:h-full [&:not(.section--sticky-col)]:overflow-visible;
 	}
 	.section--padded {
 		@apply py-12 lg:py-24;

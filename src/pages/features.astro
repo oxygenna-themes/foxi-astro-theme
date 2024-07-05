@@ -1,0 +1,18 @@
+---
+// Layout
+import Layout from '../layouts/Layout.astro'
+import Section from '../components/ui/Section.astro'
+import Row from '../components/ui/Row.astro'
+import Col from '../components/ui/Col.astro'
+
+// Sections
+import FeatureCat1 from '../components/blocks/features/FeatureSticky.astro'
+
+// JSON data
+---
+
+<Layout>
+	<!-- Loop all features and add them in objects per category then pass that as data-->
+	<FeatureCat1 title="a" text="ttt" />
+	<FeatureCat1 title="a" />
+</Layout>
