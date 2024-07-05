@@ -9,12 +9,6 @@ image:
 tags: ['astro', 'interactions']
 ---
 
-# Integrating Third-Party Services with Astro
-
-Published on: 2022-11-20
-
-Astro makes it easy to integrate third-party services into your site. Whether you need analytics, authentication, or content management, there are plenty of options to choose from.
-
 ## Adding Google Analytics
 
 To track user interactions on your site, you can integrate Google Analytics. Simply add the tracking code provided by Google to your Astro project's head section, and you'll start receiving detailed analytics reports.
