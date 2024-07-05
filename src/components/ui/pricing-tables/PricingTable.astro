@@ -15,7 +15,9 @@ type PricingTableProps = {
 		subtitle: string
 		currency: string
 		price: string
-		perTime: string
+		priceLabel: string
+		priceMontly: string
+		priceLabelMontly: string
 		buttonName: string
 		buttonLink: string
 	}
@@ -40,7 +42,14 @@ const { data, id, listType, classes } = Astro.props
 const { type, header, body, footer } = data
 ---
 
-<div id={id} class:list={['pricing', { [`pricing--${type}`]: type }, { [`${classes}`]: classes }]}>
+<div
+	id={id}
+	class:list={[
+		'pricing pricing--annualy',
+		{ [`pricing--${type}`]: type },
+		{ [`${classes}`]: classes }
+	]}
+>
 	<div class="pricing__container">
 		<Header type={type}>
 			<h3
@@ -53,17 +62,29 @@ const { type, header, body, footer } = data
 
 				<span class="pricing__header-subtitle">{header.subtitle}</span>
 			</h3>
+			<div class="pricing__header-info">
+				<h4
+					class:list={[
+						'pricing__header-info-annualy text-5xl font-bold text-neutral-700 lg:text-6xl dark:text-neutral-50',
+						{ [`text-primary-50`]: type === 'featured' }
+					]}
+				>
+					<span class="pricing__header-currency">{header.currency}</span>
+					<span class="pricing__header-price">{header.price}</span>
+					<span class="pricing__header-perTime">/{header.priceLabel}</span>
+				</h4>
+				<h4
+					class:list={[
+						'pricing__header-info-monthly text-5xl font-bold text-neutral-700 lg:text-6xl dark:text-neutral-50',
+						{ [`text-primary-50`]: type === 'featured' }
+					]}
+				>
+					<span class="pricing__header-currency">{header.currency}</span>
+					<span class="pricing__header-price">{header.priceMontly}</span>
+					<span class="pricing__header-perTime">/{header.priceLabelMontly}</span>
+				</h4>
+			</div>
 
-			<h4
-				class:list={[
-					'text-5xl font-bold text-neutral-700 lg:text-6xl dark:text-neutral-50',
-					{ [`text-primary-50`]: type === 'featured' }
-				]}
-			>
-				<span class="pricing__header-currency">{header.currency}</span>
-				<span class="pricing__header-price">{header.price}</span>
-				<span class="pricing__header-perTime">/{header.perTime}</span>
-			</h4>
 			<Button
 				size="lg"
 				style={type === 'featured' ? 'secondary' : 'primary'}
@@ -128,7 +149,15 @@ const { type, header, body, footer } = data
 	.pricing__header-perTime {
 		@apply text-sm;
 	}
-
+	.pricing__header-info {
+		@apply h-16 overflow-hidden;
+	}
+	.pricing__header-info-annualy {
+		@apply mb-0 h-16 transition-all duration-300 [.pricing--monthly_&]:-translate-y-16 [.pricing--monthly_&]:opacity-0;
+	}
+	.pricing__header-info-monthly {
+		@apply mb-0 h-16 opacity-0 transition-all duration-300 [.pricing--monthly_&]:-translate-y-16 [.pricing--monthly_&]:opacity-100;
+	}
 	.pricing--featured {
 		@apply border-primary-500 bg-primary-500 text-primary-100 shadow-2xl shadow-primary-500/30 [&_.pricing\_\_header-subtitle]:text-primary-200;
 	}

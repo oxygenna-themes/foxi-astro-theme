@@ -13,14 +13,16 @@ const {
 	blockquote = 'Foxi is like a rocket boost for our productivity! Its sleek design and out-of-this-world features make managing projects and team communication a breeze.',
 	figcaption = 'Sheryl Sandberg',
 	cite = 'CEO, Facebook',
-	background
+	bg,
+	bgPosition = 'center'
 } = Astro.props
 ---
 
 <Section
 	id="testimonial"
 	mode="dark"
-	bg={background}
+	bg={bg}
+	bgPosition={bgPosition}
 	classes="dark:border-t border-y border-neutral-800"
 >
 	<Row>
@@ -31,7 +33,7 @@ const {
 				cite={cite}
 				align="center"
 				size="4xl"
-				mobileSize="3xl"
+				mobileSize="2xl"
 				classes="!leading-tight font-bold xl:text-5xl max-w-4xl mx-auto"
 				quoteSize={112}
 			/>

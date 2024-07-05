@@ -5,6 +5,7 @@ interface Props {
 	mode?: 'dark' | 'light'
 	padding?: 'both' | 'top' | 'bottom' | 'none'
 	bg?: BgProps
+	bgPosition?: string
 	bgHeight?: string
 	classes?: string
 }
@@ -14,12 +15,22 @@ interface BgProps {
 	height: number
 	format: string
 }
-const { id, fullWidth, mode, padding = 'both', bg, bgHeight = '100%', classes } = Astro.props
+const {
+	id,
+	fullWidth,
+	mode,
+	padding = 'both',
+	bg,
+	bgPosition = 'center',
+	bgHeight = '100%',
+	classes
+} = Astro.props
 
 const bgStyle = bg
 	? {
 			backgroundImage: `url(${bg.src})`,
-			height: bgHeight
+			height: bgHeight,
+			backgroundPosition: bgPosition
 		}
 	: {
 			height: bgHeight
