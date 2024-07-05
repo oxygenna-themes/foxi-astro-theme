@@ -8,7 +8,20 @@ import StickySidebar from '../basic/StickySidebar.astro'
 // - UI
 import Feature from '../../ui/Feature.astro'
 
+// Props
+type Props = {
+	title: string
+	text?: string
+	data: any
+	classes?: string
+}
 const { title, text, data, classes } = Astro.props
+
+// Define the category to filter by
+const categoryToFilter = title
+
+// Group features by category
+const filteredFeatures = data.filter((feature: any) => feature.category === categoryToFilter)
 ---
 
 <StickySidebar classes={classes}>
@@ -18,12 +31,15 @@ const { title, text, data, classes } = Astro.props
 	</header>
 
 	<Row>
-		<!-- Loop that per category in data -->
-		<Col span="4">
-			<Feature title="Real-Time Analytics" icon="chart-pie" align="left" classes="mb-12"
-				>Gain valuable insights instantly with Foxi's real-time analytics. Track performance
-				metrics, user behavior, and campaign effectiveness effortlessly.</Feature
-			>
-		</Col>
+		{
+			// Map through the filtered features and render them
+			filteredFeatures.map((feature: any) => (
+				<Col span="4">
+					<Feature title={feature.title} icon={feature.icon} align="left" classes="mb-12">
+						{feature.description}
+					</Feature>
+				</Col>
+			))
+		}
 	</Row>
 </StickySidebar>
