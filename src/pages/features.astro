@@ -1,18 +1,25 @@
 ---
 // Layout
 import Layout from '../layouts/Layout.astro'
-import Section from '../components/ui/Section.astro'
-import Row from '../components/ui/Row.astro'
-import Col from '../components/ui/Col.astro'
 
 // Sections
-import FeatureCat1 from '../components/blocks/features/FeatureSticky.astro'
+import FeatureCategory from '../components/blocks/features/FeatureSticky.astro'
 
 // JSON data
+import featuresData from '../data/sections/featuresData.json'
+
+// Extract unique categories
+const categories = [...new Set(featuresData.map((feature) => feature.category))]
 ---
 
 <Layout>
-	<!-- Loop all features and add them in objects per category then pass that as data-->
-	<FeatureCat1 title="a" text="ttt" />
-	<FeatureCat1 title="a" />
+	{
+		categories.map((category) => (
+			<FeatureCategory
+				title={category}
+				text={`Features related to ${category}`}
+				data={featuresData}
+			/>
+		))
+	}
 </Layout>
