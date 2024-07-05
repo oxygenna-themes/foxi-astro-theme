@@ -1,0 +1,35 @@
+---
+import { getCollection } from 'astro:content'
+
+import Layout from '../../../layouts/Layout.astro'
+
+// Sections
+import Hero from '../../../components/blocks/hero/PageHeader.astro'
+import BlogPosts from '../../../components/blocks/blog/BlogPosts.astro'
+
+export async function getStaticPaths() {
+	const allPosts = await getCollection('blog')
+	const uniqueTags = [...new Set(allPosts.map((post) => post.data.tags).flat())]
+
+	return uniqueTags.map((tag) => {
+		const filteredPosts = allPosts.filter((post) => post.data.tags.includes(tag))
+		return {
+			params: { tag },
+			props: { posts: filteredPosts }
+		}
+	})
+}
+
+const { tag } = Astro.params
+const { posts } = Astro.props
+
+const header = {
+	title: `Tag: <strong>` + tag.charAt(0).toUpperCase() + tag.slice(1).toLowerCase() + `</strong>`,
+	text: `Posts tagged with the ` + tag + ` tag`
+}
+---
+
+<Layout>
+	<Hero title={header.title} text={header.text} />
+	<BlogPosts data={posts} />
+</Layout>

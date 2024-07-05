@@ -1,0 +1,56 @@
+---
+import { Image } from 'astro:assets'
+
+//UI Components
+import Card from './partials/Card.astro'
+import CardBody from './partials/CardBody.astro'
+import Badge from '../Badge.astro'
+import Button from '../Button.astro'
+import { Icon } from 'astro-icon/components'
+
+const { title = '', subtitle, titleSize = 'lg', image, link, type, classes, tags } = Astro.props
+---
+
+<Card classes={classes}>
+	{
+		image && (
+			<Image
+				src={image.url}
+				alt={image.alt}
+				width="500"
+				height="600"
+				class={`aspect-video h-fit w-full object-cover ${type === 'image-bottom' ? 'order-2' : ''} `}
+			/>
+		)
+	}
+	<CardBody>
+		{
+			tags && (
+				<div class="flex flex-row gap-1 pb-2">
+					{tags.map((tag: string) => (
+						<Badge name={tag} link={`/blog/tags/` + tag} classes="capitalize" />
+					))}
+				</div>
+			)
+		}
+		{
+			title && (
+				<h3 class:list={['m-0', 'text-' + `${titleSize} ` + `lg:text` + `${titleSize}`]}>
+					{title}
+				</h3>
+			)
+		}
+		{subtitle && <p class="text-sm">{subtitle}</p>}
+		<slot />
+		{
+			link && (
+				<div class="flex items-center justify-end">
+					<Button type="link" link={link} variation="link" size="lg">
+						Read more
+						<Icon name="long-arrow-right" class="h-5 w-5" />
+					</Button>
+				</div>
+			)
+		}
+	</CardBody>
+</Card>
