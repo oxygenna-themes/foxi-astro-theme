@@ -22,7 +22,7 @@ const savedNavActions = navActions.map((action) => ({
 			<!-- Logo -->
 			<a href="/" class="header__logo">
 				<img src={logo.src} alt={logo.text} />
-				<span class="hidden lg:block">{logo.text}</span>
+				<span>{logo.text}</span>
 			</a>
 
 			<!-- Menu toggle -->
@@ -83,11 +83,12 @@ const savedNavActions = navActions.map((action) => ({
 
 			<!-- Theme Switcher -->
 			<Switcher />
+
 			<!-- Navigation action buttons -->
 			<div class="header__actions">
 				{
 					savedNavActions.map((action) => (
-						<Button size={action.size} style={action.style} link={action.link}>
+						<Button classes="flex-auto" size={action.size} style={action.style} link={action.link}>
 							{action.name}
 						</Button>
 					))
@@ -108,13 +109,13 @@ const savedNavActions = navActions.map((action) => ({
 		@apply relative mx-auto max-w-full px-6 lg:max-w-5xl xl:max-w-7xl 2xl:max-w-[96rem];
 	}
 	.header__logo {
-		@apply flex items-center gap-2 whitespace-nowrap py-3 font-headings text-2xl font-black tracking-wider focus:outline-none lg:flex-1;
+		@apply flex flex-auto items-center gap-2 whitespace-nowrap py-3 font-headings text-2xl font-black tracking-wider focus:outline-none;
 	}
 	.header__nav {
-		@apply flex h-[5.5rem] items-stretch justify-between gap-6 font-medium text-neutral-700 dark:text-neutral-50;
+		@apply flex h-[5.5rem] items-stretch gap-6 font-medium text-neutral-700 lg:justify-between dark:text-neutral-50;
 	}
 	.header__menu {
-		@apply invisible absolute left-0 top-0 z-[-1] ml-auto h-screen w-full justify-center overflow-hidden overflow-y-auto overscroll-contain bg-white/90 px-8 pb-12 pt-28 font-medium opacity-0 transition-[opacity,visibility] duration-300 lg:visible lg:relative lg:top-0 lg:z-0 lg:flex lg:h-full lg:w-auto lg:items-stretch lg:overflow-visible lg:bg-white/0 lg:px-0 lg:py-0 lg:pt-0 lg:opacity-100 dark:bg-neutral-900/90 dark:lg:bg-transparent;
+		@apply invisible absolute left-0 top-0 z-[-1] ml-auto h-dvh w-full justify-center overflow-hidden overflow-y-auto overscroll-contain bg-white/90 px-8 py-[6rem] font-medium opacity-0 transition-[opacity,visibility] duration-300 lg:visible lg:relative lg:top-0 lg:z-0 lg:flex lg:h-full lg:w-auto lg:items-stretch lg:overflow-visible lg:bg-white/0 lg:px-0 lg:py-0 lg:pt-0 lg:opacity-100 dark:bg-neutral-900/90 dark:lg:bg-transparent;
 	}
 	.header__menu--open {
 		@apply visible opacity-100 backdrop-blur-sm;
@@ -156,6 +157,6 @@ const savedNavActions = navActions.map((action) => ({
 		@apply w-1/2 origin-top-left translate-y-2 [.header\_\_toggle--open_&]:w-0;
 	}
 	.header__actions {
-		@apply ml-auto flex items-center gap-4;
+		@apply fixed bottom-0 left-0 hidden w-full items-center justify-between gap-4 border-t border-neutral-100 bg-white px-6 py-4 lg:relative lg:ml-auto lg:w-auto lg:border-none lg:bg-transparent lg:px-0 lg:py-0 dark:border-neutral-800 dark:bg-neutral-950 [.header\_\_menu--open~&]:flex;
 	}
 </style>
