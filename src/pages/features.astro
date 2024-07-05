@@ -4,19 +4,27 @@ import Layout from '../layouts/Layout.astro'
 
 // Sections
 import Features from '../components/blocks/features/FeatureSticky.astro'
+import Hero from '../components/blocks/hero/PageHeader.astro'
+
+// - Page Header
+const header = {
+	title: 'Choose the plan that works for <strong>your</strong> needs',
+	text: 'All plans come with a 30-day money-back guarantee.'
+}
 
 // JSON data
 import featuresData from '../data/sections/featuresData.json'
 
 // Extract unique categories
 const featuresAnalytics = featuresData.filter((feature) => feature.category === 'Analytics')
-const featuresSecurity = featuresData.filter((feature) => feature.category === 'Security')
 const featuresProductivity = featuresData.filter((feature) => feature.category === 'Productivity')
+const featuresSecurity = featuresData.filter((feature) => feature.category === 'Security')
 const featuresIntegrations = featuresData.filter((feature) => feature.category === 'Integrations')
 const featuresSupport = featuresData.filter((feature) => feature.category === 'Support')
 ---
 
 <Layout>
+	<Hero title={header.title} text={header.text} />
 	<Features title="ss" text="sse" data={featuresAnalytics} />
 	<Features title="ss" text="sse" data={featuresSecurity} />
 	<Features title="ss" text="sse" data={featuresProductivity} />
