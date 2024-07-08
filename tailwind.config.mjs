@@ -70,9 +70,17 @@ export default {
           "0%": { transform: "translateY(-1rem)", opacity: 0 },
           "100%": { transform: "translateY(0)", opacity: 1 },
         },
+        fadeInShadowLight: {
+          "100%": { boxShadow: "0 20px 25px -5px rgba(15, 23, 42, .025), 0 8px 10px -6px rgba(15, 23, 42, .025);" },
+        },
+        fadeInShadowDark: {
+          "100%": { boxShadow: "0 20px 25px -5px rgba(2, 6, 23, .35), 0 8px 10px -6px rgba(2, 6, 23, .35);" },
+        },
       },
       animation: {
         dropdown: "dropdown 300ms ease-in-out forwards",
+        fadeInShadowLight: "fadeInShadowLight 500ms ease-in-out forwards",
+        fadeInShadowDark: "fadeInShadowDark 500ms ease-in-out forwards",
       },
     },
   },

@@ -100,10 +100,10 @@ const savedNavActions = navActions.map((action) => ({
 
 <style>
 	.header {
-		@apply sticky top-0 z-20 w-full before:absolute after:absolute after:left-0 after:top-full after:z-10 after:block after:h-px after:w-full lg:after:hidden;
+		@apply animate-fadeInShadowLight dark:animate-fadeInShadowDark sticky top-0 z-20 w-full [animation-range:0%_20rem] [animation-timeline:scroll()] before:absolute after:absolute after:left-0 after:top-full after:z-10 after:block after:h-px after:w-full lg:after:hidden dark:[animation-range:0%_20rem] dark:[animation-timeline:scroll()];
 	}
 	.header:before {
-		@apply block h-full w-full bg-white/90 shadow-lg shadow-neutral-700/5 lg:backdrop-blur-sm dark:bg-neutral-900/90 dark:shadow-neutral-950/50;
+		@apply block h-full w-full bg-white/90 lg:backdrop-blur-sm dark:bg-neutral-900/90;
 	}
 	.header__container {
 		@apply relative mx-auto max-w-full px-6 lg:max-w-5xl xl:max-w-7xl 2xl:max-w-[96rem];
