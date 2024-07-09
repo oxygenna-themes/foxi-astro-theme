@@ -3,12 +3,12 @@ html {
 	@apply scroll-smooth antialiased;
 }
 body {
-	@apply bg-white text-neutral-500 has-[.header\_\_menu--open]:overflow-hidden lg:has-[.header\_\_menu--open]:overflow-auto dark:bg-neutral-950 dark:text-neutral-300 [.light_&]:text-neutral-500;
+	@apply bg-white text-neutral-500 has-[.header\_\_menu--open]:overflow-hidden lg:has-[.header\_\_menu--open]:overflow-auto dark:bg-neutral-950 dark:text-neutral-900 [.dark_&]:text-neutral-900 [.light_&]:text-neutral-500;
 }
 
 /* Main typography */
 p {
-	@apply mb-6 text-neutral-500 last:mb-0;
+	@apply mb-6 last:mb-0;
 }
 h1,
 h2,
@@ -16,7 +16,7 @@ h3,
 h4,
 h5,
 h6 {
-	@apply font-headings text-neutral-700 last:mb-0 dark:text-neutral-50 [&>strong]:text-primary-500 [.light_&]:text-neutral-700;
+	@apply font-headings text-neutral-700 last:mb-0 dark:text-neutral-50 [&>strong]:text-primary-500 [.dark_&]:text-neutral-50 [.light_&]:text-neutral-700;
 }
 h1 strong,
 h2 strong,
@@ -68,8 +68,13 @@ main a {
 	@apply text-primary-500;
 }
 .small {
-	@apply text-sm font-normal text-neutral-400 dark:text-neutral-600;
+	@apply text-sm font-normal text-neutral-400 dark:text-neutral-500;
 }
+/* Global basic styling */
+.basic-text {
+	@apply [&_li]:mb-2 [&_li]:ml-4 [&_li]:list-disc [&_li]:marker:text-primary-500;
+}
+
 /* Scroll animations */
 /* To disable scroll animations remove the class "sroll-animation" from root html in the layout file */
 .scroll-animation .col {

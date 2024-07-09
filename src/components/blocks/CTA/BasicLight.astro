@@ -8,12 +8,10 @@ import Col from '../../ui/Col.astro'
 // - UI
 import CTA from '../../ui/CTA.astro'
 import Button from '../../ui/Button.astro'
-import ChipNotification from '../../ui/ChipNotification.astro'
-import { Image } from 'astro:assets'
-import Highlight from '../../ui/Highlight.astro'
+import Ratings from '../../ui/Rating.astro'
 
 // Content
-import ctaImage from '../../../assets/cta-dark-bg.png'
+
 import badge from '../../../assets/badge.svg'
 ---
 
@@ -22,15 +20,11 @@ import badge from '../../../assets/badge.svg'
 		<Col span="1" />
 		<Col span="10">
 			<CTA
-				title="Join Over 30,000 Satisfied Users!"
+				title="Join the Foxi Revolution!"
 				text="Discover why thousands of professionals trust our platform to streamline their workflow and enhance productivity. Get started today and see the difference for yourself!"
-				mode="dark"
-				bg={ctaImage}
+				classes="!shadow-none"
 			>
-				<ChipNotification radius="rounded-full" classes="mb-6 box">
-					<Image src={badge} alt="Product of the Year" class="h-12 w-12" slot="button" />
-					#1 Product of the Year, <Highlight classes="ml-2">Product Hunt</Highlight>
-				</ChipNotification>
+				<Ratings rating={5} text="30K customer ratings" classes="mb-4" />
 				<Button size="lg" style="primary"> Get started now! </Button>
 			</CTA>
 			<Col span="1" />
