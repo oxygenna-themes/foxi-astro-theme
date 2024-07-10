@@ -18,7 +18,9 @@ const { name, link, type = 'neutral', classes } = Astro.props
 			{name}
 		</a>
 	) : (
-		<span class:list={['badge', { [`${classes}`]: classes }]}>{name}</span>
+		<span class:list={['badge', { [`${classes}`]: classes }, { [`badge--${type}`]: type }]}>
+			{name}
+		</span>
 	)
 }
 

@@ -16,18 +16,14 @@ const currentTag = currentPath.startsWith('/blog/tags/')
 ---
 
 <div class="tags">
-	<Badge
-		link={`/blog/`}
-		name={`All`}
-		type={` ${currentTag === null ? 'badge--primary' : 'badge--neutral'}`}
-	/>
+	<Badge link={`/blog/`} name={`All`} type={`${currentTag === null ? 'primary' : 'neutral'}`} />
 	{
 		tags.map((tag) => (
 			<>
 				<Badge
 					link={`/blog/tags/${tag}`}
 					name={tag}
-					type={` ${currentTag === tag ? 'badge--primary' : 'badge--neutral'}`}
+					type={`${currentTag === tag ? 'primary' : 'neutral'}`}
 				/>
 			</>
 		))
