@@ -2,15 +2,19 @@
 type Props = {
 	name: string
 	link?: string
+	type?: string
 	classes?: string
 }
 
-const { name, link, classes } = Astro.props
+const { name, link, type = 'neutral', classes } = Astro.props
 ---
 
 {
 	link ? (
-		<a href={link} class:list={['badge', { [`${classes}`]: classes }]}>
+		<a
+			href={link}
+			class:list={['badge', { [`${classes}`]: classes }, { [`badge--${type}`]: type }]}
+		>
 			{name}
 		</a>
 	) : (
@@ -20,6 +24,12 @@ const { name, link, classes } = Astro.props
 
 <style>
 	.badge {
-		@apply inline-flex items-center justify-center gap-1 rounded bg-primary-500 px-1.5 text-sm text-white;
+		@apply inline-flex items-center justify-center gap-1 rounded px-1.5 py-1 text-sm transition-colors;
+	}
+	.badge--neutral {
+		@apply bg-neutral-100 text-neutral-500 dark:bg-neutral-800 dark:text-neutral-500;
+	}
+	.badge--primary {
+		@apply bg-primary-500 text-white;
 	}
 </style>

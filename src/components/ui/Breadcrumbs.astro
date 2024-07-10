@@ -1,20 +1,15 @@
 ---
 import { Icon } from 'astro-icon/components'
 
-// Get the current URL from the request object
+const { classes } = Astro.props
+
 const url = new URL(Astro.request.url)
-
-// Extract the pathname from the URL (e.g., "/components/accordions/")
 const pathname = url.pathname
-
-// Remove leading and trailing slashes, split the pathname into segments and filter out empty segments
 const segments = pathname.split('/').filter(Boolean)
-
-// Create breadcrumbs including "Home" as the first breadcrumb
 const breadcrumbs = ['Home', ...segments]
 ---
 
-<nav aria-label="Breadcrumb" class="breadcrumbs">
+<nav aria-label="Breadcrumb" class:list={['breadcrumbs', { [`${classes}`]: classes }]}>
 	<ol class="breadcrumbs__list">
 		{
 			breadcrumbs.map((segment, index) => (
@@ -32,8 +27,11 @@ const breadcrumbs = ['Home', ...segments]
 </nav>
 
 <style>
+	.breadcrumbs {
+		@apply inline-flex rounded border border-neutral-200 bg-white/50 px-4 py-2 text-sm text-neutral-500 dark:border-neutral-800 dark:bg-neutral-800/50 dark:text-neutral-300;
+	}
 	.breadcrumbs__list {
-		@apply flex list-none items-stretch gap-2;
+		@apply inline-flex items-center;
 	}
 	.breadcrumbs__list-item {
 		@apply flex items-center gap-2 [&:not(:first-child):not(:last-child)]:hidden [&:not(:first-child):not(:last-child)]:md:flex;

@@ -19,9 +19,11 @@ const featuresSupport = featuresData.filter((feature) => feature.category === 'S
 
 // Content
 // - SEO
-const title = 'Discover Foxi Features: Boost Productivity & Security'
-const description =
-	"Explore Foxi's powerful features designed to enhance productivity, ensure top-notch security, and integrate seamlessly with your favorite tools. Join thousands of satisfied users and transform your workflow with Foxi today!"
+const SEO = {
+	title: 'Foxi | Features to Boost Productivity & Security',
+	description:
+		"Explore Foxi's powerful features designed to enhance productivity, ensure top-notch security, and integrate seamlessly with your favorite tools. Join thousands of satisfied users and transform your workflow with Foxi today!"
+}
 
 // - Page Header
 const header = {
@@ -30,7 +32,7 @@ const header = {
 }
 ---
 
-<Layout>
+<Layout title={SEO.title} description={SEO.description}>
 	<Hero title={header.title} text={header.text} />
 	<Feature
 		title="Insightful Analytics"

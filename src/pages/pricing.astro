@@ -13,10 +13,11 @@ import CTA from '../components/blocks/CTA/BasicDark.astro'
 
 // Content
 // - SEO
-const title = 'Foxi | Pricing made simple'
-const description =
-	'Discover the perfect SaaS pricing plan for your business. From startups to enterprises, our scalable solutions offer unparalleled features and 24/7 support.'
-
+const SEO = {
+	title: 'Foxi | Pricing made simple',
+	description:
+		'Discover the perfect SaaS pricing plan for your business. From startups to enterprises, our scalable solutions offer unparalleled features and 24/7 support.'
+}
 // - Page Header
 const header = {
 	title: 'Choose the plan that works for <strong>your</strong> needs',
@@ -33,7 +34,7 @@ const testimonialData = {
 }
 ---
 
-<Layout title={title} description={description}>
+<Layout title={SEO.title} description={SEO.description}>
 	<Hero title={header.title} text={header.text} />
 	<Price />
 	<SocialProof />

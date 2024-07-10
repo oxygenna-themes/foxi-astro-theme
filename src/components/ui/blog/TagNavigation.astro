@@ -1,4 +1,5 @@
 ---
+import Badge from '../Badge.astro'
 import { getCollection } from 'astro:content'
 
 // Fetching blog posts and tags
@@ -15,31 +16,26 @@ const currentTag = currentPath.startsWith('/blog/tags/')
 ---
 
 <div class="tags">
-	<span class="tags__title">Tags: </span>
-	<a href="/blog" class={`tags__link ${currentTag === null ? 'tags__link--active ' : ''}`}> All </a>
+	<Badge
+		link={`/blog/`}
+		name={`All`}
+		type={` ${currentTag === null ? 'badge--primary' : 'badge--neutral'}`}
+	/>
 	{
 		tags.map((tag) => (
-			<a
-				href={`/blog/tags/${tag}`}
-				class={`tags__link ${currentTag === tag ? 'tags__link--active' : ''}`}
-			>
-				{tag}
-			</a>
+			<>
+				<Badge
+					link={`/blog/tags/${tag}`}
+					name={tag}
+					type={` ${currentTag === tag ? 'badge--primary' : 'badge--neutral'}`}
+				/>
+			</>
 		))
 	}
 </div>
 
 <style>
 	.tags {
-		@apply flex flex-row flex-wrap items-center gap-0;
-	}
-	.tags__title {
-		@apply pr-1 font-medium;
-	}
-	.tags__link {
-		@apply inline-flex h-6 items-center justify-center gap-2 justify-self-center whitespace-nowrap rounded px-2 text-sm font-medium capitalize tracking-wide text-neutral-500 transition duration-300 hover:bg-neutral-50 hover:text-neutral-600 focus:bg-neutral-100 focus:text-neutral-700 focus-visible:outline-none disabled:cursor-not-allowed disabled:text-neutral-300 disabled:shadow-none disabled:hover:bg-transparent dark:hover:bg-neutral-500/15 dark:focus:bg-neutral-500/25;
-	}
-	.tags__link--active {
-		@apply font-bold text-primary-500 hover:bg-primary-50 hover:text-primary-600 focus:bg-primary-100 focus:text-primary-700 dark:hover:bg-primary-500/15 dark:focus:bg-primary-500/25;
+		@apply mb-6 flex flex-row flex-wrap items-center justify-start gap-2;
 	}
 </style>

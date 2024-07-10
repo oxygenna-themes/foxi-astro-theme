@@ -1,6 +1,6 @@
 {
 	"logo": {
-		"src": "logo.svg",
+		"src": "/logo.svg",
 		"text": "Foxi."
 	},
 	"navItems": [

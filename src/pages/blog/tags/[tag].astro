@@ -22,14 +22,22 @@ export async function getStaticPaths() {
 
 const { tag } = Astro.params
 const { posts } = Astro.props
+// Content
+// - SEO
+const SEO = {
+	title: `Foxi | posts tagges as ` + tag,
+	description:
+		"Explore Foxi's latest news designed to enhance productivity, ensure top-notch security, and integrate seamlessly with your favorite tools. Join thousands of satisfied users and transform your workflow with Foxi today!"
+}
 
+// - Page Header
 const header = {
-	title: `Tag: <strong>` + tag.charAt(0).toUpperCase() + tag.slice(1).toLowerCase() + `</strong>`,
-	text: `Posts tagged with the ` + tag + ` tag`
+	title: `Foxi posts about <br><strong>` + tag + `</strong>`,
+	text: `Stay informed, stay productive with all the latest fromFoxi.`
 }
 ---
 
-<Layout>
+<Layout title={SEO.title} description={SEO.description}>
 	<Hero title={header.title} text={header.text} />
 	<BlogPosts data={posts} />
 </Layout>

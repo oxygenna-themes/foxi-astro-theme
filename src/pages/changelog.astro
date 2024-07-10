@@ -15,9 +15,11 @@ import feedData from '../data/pages/changelogData.json'
 
 // Content
 // - SEO
-const title = 'Foxi: Version Updates and Improvements'
-const description =
-	"Explore Foxi's powerful features designed to enhance productivity, ensure top-notch security, and integrate seamlessly with your favorite tools. Join thousands of satisfied users and transform your workflow with Foxi today!"
+const SEO = {
+	title: 'Foxi | Version Updates and Improvements',
+	description:
+		"Explore Foxi's powerful features designed to enhance productivity, ensure top-notch security, and integrate seamlessly with your favorite tools. Join thousands of satisfied users and transform your workflow with Foxi today!"
+}
 
 // - Page Header
 const header = {
@@ -26,7 +28,7 @@ const header = {
 }
 ---
 
-<Layout>
+<Layout title={SEO.title} description={SEO.description}>
 	<Hero title={header.title} text={header.text} />
 	<SimpleFeed data={feedData} />
 	<CTA />

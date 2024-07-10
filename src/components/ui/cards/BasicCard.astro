@@ -4,12 +4,20 @@ import Card from './partials/Card.astro'
 import CardBody from './partials/CardBody.astro'
 
 const { title = '', subtitle, titleSize = 'lg', image, link, type, classes } = Astro.props
-
-const { src, ...attrs } = Astro.props
 ---
 
 <Card classes={classes} link={link}>
-	{image && <Image src={image} alt={title} class={type === 'image-bottom' ? 'order-2' : ''} />}
+	{
+		image && (
+			<Image
+				src={image}
+				alt={title}
+				class={type === 'image-bottom' ? 'order-2' : ''}
+				width={600}
+				height={400}
+			/>
+		)
+	}
 	<CardBody>
 		{
 			title && (
