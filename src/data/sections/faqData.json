@@ -1,0 +1,147 @@
+[
+	{
+		"question": "What is the cost of the basic plan?",
+		"reply": "The basic plan is $9.99 per month, which includes access to core features and limited integrations.",
+		"category": "pricing"
+	},
+	{
+		"question": "Are there any discounts for annual subscriptions?",
+		"reply": "Yes, we offer a 20% discount on annual subscriptions for all our plans.",
+		"category": "pricing"
+	},
+	{
+		"question": "Can I change my subscription plan at any time?",
+		"reply": "Yes, you can upgrade or downgrade your subscription plan at any time from your account settings.",
+		"category": "pricing"
+	},
+	{
+		"question": "Is there a free trial available?",
+		"reply": "Yes, we offer a 14-day free trial for all new users.",
+		"category": "pricing"
+	},
+	{
+		"question": "Do you offer refunds?",
+		"reply": "We offer a 30-day money-back guarantee if you are not satisfied with our service.",
+		"category": "pricing"
+	},
+	{
+		"question": "How do I cancel my subscription?",
+		"reply": "You can cancel your subscription from your account settings at any time.",
+		"category": "pricing"
+	},
+	{
+		"question": "Can I use Foxi with Google Calendar?",
+		"reply": "Yes, Foxi integrates seamlessly with Google Calendar for easy scheduling and task management.",
+		"category": "integrations"
+	},
+	{
+		"question": "Does Foxi work with Slack?",
+		"reply": "Yes, you can integrate Foxi with Slack to receive notifications and updates directly in your channels.",
+		"category": "integrations"
+	},
+	{
+		"question": "How do I connect Foxi with Trello?",
+		"reply": "To connect Foxi with Trello, go to the integrations page in your settings and follow the instructions to link your accounts.",
+		"category": "integrations"
+	},
+	{
+		"question": "Is there an API for custom integrations?",
+		"reply": "Yes, we provide an API that allows you to create custom integrations with Foxi.",
+		"category": "integrations"
+	},
+	{
+		"question": "Can I sync Foxi with my email?",
+		"reply": "Currently, we do not support email integration, but this feature is on our roadmap for future releases.",
+		"category": "integrations"
+	},
+	{
+		"question": "Does Foxi support Zapier?",
+		"reply": "Yes, Foxi integrates with Zapier, allowing you to connect with over 2,000 apps and automate your workflows.",
+		"category": "integrations"
+	},
+	{
+		"question": "What are the main features of Foxi?",
+		"reply": "Foxi includes in-app messaging, project management, time tracking, customizable dashboards, and more.",
+		"category": "features"
+	},
+	{
+		"question": "How do I use the in-app messaging feature?",
+		"reply": "In-app messaging allows you to communicate with your team directly within Foxi. Simply navigate to the messaging tab to start a conversation.",
+		"category": "features"
+	},
+	{
+		"question": "Can I customize my dashboard?",
+		"reply": "Yes, you can customize your dashboard by adding, removing, and rearranging widgets to fit your workflow.",
+		"category": "features"
+	},
+	{
+		"question": "How does the time tracking feature work?",
+		"reply": "Time tracking allows you to log the time spent on tasks and projects. Start the timer when you begin a task and stop it when you're done.",
+		"category": "features"
+	},
+	{
+		"question": "Is there a mobile app for Foxi?",
+		"reply": "Yes, Foxi is available on both iOS and Android, allowing you to manage your tasks and projects on the go.",
+		"category": "features"
+	},
+	{
+		"question": "Can I set reminders for tasks?",
+		"reply": "Yes, you can set reminders for tasks to ensure you never miss a deadline.",
+		"category": "features"
+	},
+	{
+		"question": "How do I invite team members to Foxi?",
+		"reply": "To invite team members, go to your account settings and enter their email addresses in the team management section.",
+		"category": "features"
+	},
+	{
+		"question": "Can I assign tasks to other team members?",
+		"reply": "Yes, you can assign tasks to team members by selecting their names from the task assignment dropdown menu.",
+		"category": "features"
+	},
+	{
+		"question": "What customization options are available for project management?",
+		"reply": "You can customize project labels, set priority levels, and add custom fields to your projects.",
+		"category": "features"
+	},
+	{
+		"question": "How does Foxi handle data security?",
+		"reply": "Foxi uses industry-standard encryption and security protocols to ensure your data is safe and secure.",
+		"category": "features"
+	},
+	{
+		"question": "Can I export my data from Foxi?",
+		"reply": "Yes, you can export your data in various formats such as CSV and PDF from the account settings.",
+		"category": "features"
+	},
+	{
+		"question": "Is there a limit to the number of projects I can create?",
+		"reply": "There is no limit to the number of projects you can create in Foxi, regardless of your subscription plan.",
+		"category": "features"
+	},
+	{
+		"question": "Does Foxi offer customer support?",
+		"reply": "Yes, we offer 24/7 customer support via chat, email, and phone.",
+		"category": "features"
+	},
+	{
+		"question": "How do I enable Dark Mode?",
+		"reply": "To enable Dark Mode, go to your account settings and switch to the Dark Mode option.",
+		"category": "features"
+	},
+	{
+		"question": "What languages is Foxi available in?",
+		"reply": "Foxi is currently available in English, Spanish, French, and German.",
+		"category": "features"
+	},
+	{
+		"question": "Can I create recurring tasks?",
+		"reply": "Yes, you can set tasks to recur daily, weekly, monthly, or at custom intervals.",
+		"category": "features"
+	},
+	{
+		"question": "How do I access the analytics dashboard?",
+		"reply": "Access the analytics dashboard from the main menu to view reports and insights on your productivity.",
+		"category": "features"
+	}
+]

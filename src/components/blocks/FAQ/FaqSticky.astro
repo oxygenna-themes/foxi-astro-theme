@@ -1,0 +1,26 @@
+---
+// Components
+import StickySidebar from '../basic/StickySidebar.astro'
+
+// - UI
+import FAQ from '../../ui/Accordion.astro'
+
+// Props
+type Props = {
+	title: string
+	text?: string
+	data: any
+	classes?: string
+}
+const { title, text, data, classes } = Astro.props
+console.log(data)
+---
+
+<StickySidebar classes={classes}>
+	<header slot="sidebar">
+		{title && <h3 class="text-3xl">{title}</h3>}
+		{text && <p class="text-lg leading-relaxed">{text}</p>}
+	</header>
+
+	{data.map((faq: any) => <FAQ title={faq.question} text={faq.reply} />)}
+</StickySidebar>

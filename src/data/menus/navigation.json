@@ -13,7 +13,7 @@
 			"submenu": [
 				{ "name": "Blog", "link": "/blog" },
 				{ "name": "Changelog", "link": "/changelog" },
-				{ "name": "Guides", "link": "/guides" }
+				{ "name": "FAQ", "link": "/faq" }
 			]
 		},
 		{ "name": "Contact", "link": "/contact" }
