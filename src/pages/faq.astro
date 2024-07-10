@@ -7,13 +7,21 @@ import FAQ from '../components/blocks/FAQ/FaqSticky.astro'
 import Hero from '../components/blocks/hero/PageHeader.astro'
 import CTA from '../components/blocks/CTA/BasicDark.astro'
 
-// JSON data
+// Content
+
+// - JSON data
 import faqData from '../data/sections/faqData.json'
 
-// Extract unique categories
+// - Categories
 const faqPricing = faqData.filter((faq) => faq.category === 'pricing')
+const faqIntegrations = faqData.filter((faq) => faq.category === 'integrations')
+const faqFeatures = faqData.filter((faq) => faq.category === 'features')
 
-// Content
+// images
+import faqImage1 from '../assets/faq/faq-01.png'
+import faqImage2 from '../assets/faq/faq-02.png'
+import faqImage3 from '../assets/faq/faq-03.png'
+
 // - SEO
 const SEO = {
 	title: 'Foxi | Get Your Questions Answered with a Smile',
@@ -31,10 +39,23 @@ const header = {
 <Layout title={SEO.title} description={SEO.description}>
 	<Hero title={header.title} text={header.text} />
 	<FAQ
-		title="Insightful Analytics"
-		text="Delve into your data with precision and uncover actionable insights."
+		title="Understanding Our Pricing Plans"
+		text="Get all the details on Foxi’s pricing plans. Learn about the costs, discounts, and subscription options to find the best plan that fits your needs and budget."
 		data={faqPricing}
+		image={faqImage1}
 	/>
-
+	<FAQ
+		title="Integrations Made Easy"
+		text="Discover how Foxi seamlessly integrates with your favorite tools and platforms. From Google Calendar to Slack, find out how to connect and enhance your productivity with powerful integrations."
+		data={faqIntegrations}
+		image={faqImage2}
+		classes="bg-neutral-50 dark:bg-neutral-900"
+	/>
+	<FAQ
+		title="Unveiling Foxi's Features"
+		text="Dive into the features that make Foxi stand out. From in-app messaging to customizable dashboards, explore the full range of capabilities that make Foxi a powerful tool for your team."
+		data={faqFeatures}
+		image={faqImage3}
+	/>
 	<CTA />
 </Layout>

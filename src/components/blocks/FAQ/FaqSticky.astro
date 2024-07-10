@@ -1,18 +1,21 @@
 ---
 // Components
 import StickySidebar from '../basic/StickySidebar.astro'
+import { Image } from 'astro:assets'
 
 // - UI
 import FAQ from '../../ui/Accordion.astro'
+import Card from '../../ui/cards/partials/Card.astro'
 
 // Props
 type Props = {
 	title: string
 	text?: string
 	data: any
+	image?: any
 	classes?: string
 }
-const { title, text, data, classes } = Astro.props
+const { title, text, data, image, classes } = Astro.props
 console.log(data)
 ---
 
@@ -22,5 +25,8 @@ console.log(data)
 		{text && <p class="text-lg leading-relaxed">{text}</p>}
 	</header>
 
-	{data.map((faq: any) => <FAQ title={faq.question} text={faq.reply} />)}
+	<Card classes="divide-y divide-neutral-100 dark:divide-neutral-800">
+		<Image src={image} alt="FAQ Sticky" class="w-full" />
+		{data.map((faq: any) => <FAQ title={faq.question} text={faq.reply} />)}
+	</Card>
 </StickySidebar>
