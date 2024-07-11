@@ -12,14 +12,17 @@ const {
 	mobileImage,
 	imagePosition = 'right',
 	text = '',
-	classes = ''
+	classes = '',
+	offsetImage = false
 } = Astro.props
 ---
 
 <Section id={id} classes={classes}>
 	<Row>
-		<Col span="6">
-			<picture class="text-image__picture">
+		<Col span="6" classes="relative">
+			<picture
+				class=`text-image__picture ${offsetImage  ? 'text-image__picture--offset' : ''} ${imagePosition === 'right' ? 'text-image__picture--offset-right' : ''}`
+			>
 				{mobileImage && <source srcset={mobileImage.src} media="(max-width: 1024px)" />}
 				<img src={image.src} alt={title} />
 			</picture>
@@ -35,7 +38,7 @@ const {
 
 <style>
 	.text-image__picture {
-		@apply flex justify-center;
+		@apply flex justify-center lg:[&.text-image\_\_picture--offset-right_img]:left-0 lg:[&.text-image\_\_picture--offset-right_img]:right-auto lg:[&.text-image\_\_picture--offset]:h-full lg:[&.text-image\_\_picture--offset_img]:absolute lg:[&.text-image\_\_picture--offset_img]:right-0 lg:[&.text-image\_\_picture--offset_img]:top-1/2 lg:[&.text-image\_\_picture--offset_img]:max-w-none lg:[&.text-image\_\_picture--offset_img]:-translate-y-1/2;
 	}
 	.text-image__content {
 		@apply max-w-xl;

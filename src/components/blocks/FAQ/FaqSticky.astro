@@ -12,11 +12,10 @@ type Props = {
 	title: string
 	text?: string
 	data: any
-	image?: any
 	type?: string
 	classes?: string
 }
-const { title, text, data, image, type = 'left', classes } = Astro.props
+const { title, text, data, type = 'left', classes } = Astro.props
 console.log(data)
 ---
 
@@ -27,7 +26,6 @@ console.log(data)
 	</header>
 
 	<Card classes="divide-y divide-neutral-100 dark:divide-neutral-800">
-		<Image src={image} alt="FAQ Sticky" class="w-full" />
-		{data.map((faq: any) => <FAQ title={faq.question} text={faq.reply} />)}
+		{data.map((faq: any) => <FAQ title={faq.question} text={faq.reply} open={faq.open} />)}
 	</Card>
 </StickySidebar>

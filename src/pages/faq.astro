@@ -3,9 +3,12 @@
 import Layout from '../layouts/Layout.astro'
 
 // Sections
-import FAQ from '../components/blocks/FAQ/FaqSticky.astro'
 import Hero from '../components/blocks/hero/PageHeader.astro'
+import FAQ from '../components/blocks/FAQ/FaqSticky.astro'
+import TextImage from '../components/blocks/basic/TextImage.astro'
 import CTA from '../components/blocks/CTA/BasicDark.astro'
+
+import faqImage1 from '../assets/faq/faq-01.png'
 
 // Content
 
@@ -15,12 +18,6 @@ import faqData from '../data/sections/faqData.json'
 // - Categories
 const faqPricing = faqData.filter((faq) => faq.category === 'pricing')
 const faqIntegrations = faqData.filter((faq) => faq.category === 'integrations')
-const faqFeatures = faqData.filter((faq) => faq.category === 'features')
-
-// images
-import faqImage1 from '../assets/faq/faq-01.png'
-import faqImage2 from '../assets/faq/faq-02.png'
-import faqImage3 from '../assets/faq/faq-03.png'
 
 // - SEO
 const SEO = {
@@ -42,21 +39,21 @@ const header = {
 		title="Understanding Our Pricing Plans"
 		text="Get all the details on Foxi’s pricing plans. Learn about the costs, discounts, and subscription options to find the best plan that fits your needs and budget."
 		data={faqPricing}
+	/>
+	<TextImage
+		title="Why Foxi’s Pricing Plans Offer Great Value"
+		text="At Foxi, we believe in providing exceptional value at every price point. Our pricing plans are designed to cater to a variety of needs, from individuals and small teams to large enterprises. Each plan includes access to our powerful features, seamless integrations, and top-notch customer support. "
 		image={faqImage1}
+		mobileImage={faqImage1}
+		imagePosition="left"
+		offsetImage
+		classes="bg-neutral-50 dark:bg-neutral-900 lg:!py-64"
 	/>
 	<FAQ
 		title="Integrations Made Easy"
 		text="Discover how Foxi seamlessly integrates with your favorite tools and platforms. From Google Calendar to Slack, find out how to connect and enhance your productivity with powerful integrations."
 		data={faqIntegrations}
-		image={faqImage2}
-		classes="bg-neutral-50 dark:bg-neutral-900"
-		type="right"
 	/>
-	<FAQ
-		title="Unveiling Foxi's Features"
-		text="Dive into the features that make Foxi stand out. From in-app messaging to customizable dashboards, explore the full range of capabilities that make Foxi a powerful tool for your team."
-		data={faqFeatures}
-		image={faqImage3}
-	/>
+
 	<CTA />
 </Layout>
