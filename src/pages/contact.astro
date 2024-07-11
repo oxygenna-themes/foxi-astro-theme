@@ -3,7 +3,7 @@
 import Layout from '../layouts/Layout.astro'
 
 // Sections
-import Form from '../components/blocks/contact/ContactHero.astro'
+import FormHero from '../components/blocks/hero/ContactHero.astro'
 import CTA from '../components/blocks/CTA/BasicDark.astro'
 import ContactCards from '../components/blocks/contact/ContactCards.astro'
 import SocialProof from '../components/blocks/socialproof/Basic.astro'
@@ -25,14 +25,14 @@ const header = {
 ---
 
 <Layout title={SEO.title} description={SEO.description}>
-	<Form
+	<FormHero
 		title={header.title}
 		text={header.text}
 		id="contact"
-		classes="bg-neutral-50 dark:bg-neutral-900"
+		classes="bg-neutral-50 dark:bg-neutral-950/80"
 	/>
-	<ContactCards />
-	<SocialProof />
+	<ContactCards classes="bg-neutral-900" />
+	<SocialProof classes="bg-neutral-900" />
 
 	<CTA />
 </Layout>

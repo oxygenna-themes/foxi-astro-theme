@@ -6,7 +6,7 @@ import Row from '../../ui/Row.astro'
 import Col from '../../ui/Col.astro'
 
 // - UI
-import Form from './BasicForm.astro'
+import Form from '../contact/BasicForm.astro'
 
 const { id = '', title = '', text = '', classes = '' } = Astro.props
 ---
@@ -19,7 +19,7 @@ const { id = '', title = '', text = '', classes = '' } = Astro.props
 				<p class="text-lg leading-relaxed">{text}</p>
 			</header>
 		</Col>
-		<Col span="6" classes="relative">
+		<Col span="6" classes="relative light">
 			<Form classes="max-w-xl" />
 		</Col>
 	</Row>

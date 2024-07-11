@@ -7,9 +7,11 @@ import Col from '../../ui/Col.astro'
 
 // - UI
 import Card from '../../ui/cards/BasicCard.astro'
+
+const { classes } = Astro.props
 ---
 
-<Section id="features">
+<Section id="features" classes={classes}>
 	<Row>
 		<Col span="12" align="center" classes="mb-12 max-w-4xl mx-auto">
 			<h2 class="text-balance">Have a Special Request? We’re Here to <strong>Help!</strong></h2>

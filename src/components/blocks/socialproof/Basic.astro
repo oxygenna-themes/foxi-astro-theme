@@ -41,9 +41,11 @@ const images = [
 		alt: 'Slack logo'
 	}
 ]
+
+const { classes } = Astro.props
 ---
 
-<Section padding="bottom">
+<Section padding="bottom" classes={classes}>
 	<Row>
 		<Col span="12" align="center">
 			<h2 class="!mb-6 text-base font-normal text-neutral-400 dark:text-neutral-600">
