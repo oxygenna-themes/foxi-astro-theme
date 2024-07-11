@@ -13,13 +13,14 @@ type Props = {
 	text?: string
 	data: any
 	image?: any
+	type?: string
 	classes?: string
 }
-const { title, text, data, image, classes } = Astro.props
+const { title, text, data, image, type = 'left', classes } = Astro.props
 console.log(data)
 ---
 
-<StickySidebar classes={classes}>
+<StickySidebar classes={classes} type={type}>
 	<header slot="sidebar">
 		{title && <h3 class="text-3xl">{title}</h3>}
 		{text && <p class="text-lg leading-relaxed">{text}</p>}
