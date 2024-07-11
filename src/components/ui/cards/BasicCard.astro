@@ -1,9 +1,10 @@
 ---
 import { Image } from 'astro:assets'
+import { Icon } from 'astro-icon/components'
 import Card from './partials/Card.astro'
 import CardBody from './partials/CardBody.astro'
 
-const { title = '', subtitle, titleSize = 'lg', image, link, type, classes } = Astro.props
+const { title = '', subtitle, titleSize = 'lg', image, icon, link, type, classes } = Astro.props
 ---
 
 <Card classes={classes} link={link}>
@@ -18,6 +19,13 @@ const { title = '', subtitle, titleSize = 'lg', image, link, type, classes } = A
 			/>
 		)
 	}
+	{
+		icon && (
+			<div class="px-6 pt-6">
+				<Icon name={`${icon}`} class="card__icon" />
+			</div>
+		)
+	}
 	<CardBody>
 		{
 			title && (
@@ -28,3 +36,8 @@ const { title = '', subtitle, titleSize = 'lg', image, link, type, classes } = A
 		<slot />
 	</CardBody>
 </Card>
+<style>
+	.card__icon {
+		@apply inline-block size-6 shrink-0 text-primary-500;
+	}
+</style>

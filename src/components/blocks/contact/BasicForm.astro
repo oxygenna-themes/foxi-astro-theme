@@ -1,0 +1,31 @@
+---
+//UI Components
+import Card from '../../ui/cards/partials/Card.astro'
+import CardBody from '../../ui/cards/partials/CardBody.astro'
+import Form from '../../ui/forms/Form.astro'
+import FormField from '../../ui/forms/partials/FormField.astro'
+import InputField from '../../ui/forms/form-elements/InputField.astro'
+import TextArea from '../../ui/forms/form-elements/TextArea.astro'
+import Button from '../../ui/Button.astro'
+
+const { classes } = Astro.props
+---
+
+<Card classes={classes}>
+	<CardBody>
+		<Form>
+			<FormField>
+				<InputField type="text" id="firstName" label="First Name" />
+				<InputField type="text" id="lastName" label="Last Name" />
+			</FormField>
+			<FormField>
+				<InputField type="email" id="email" label="Email" required value="name@youremail.com" />
+			</FormField>
+			<FormField>
+				<InputField type="phone" id="phone" label="phone number" />
+			</FormField>
+			<FormField><TextArea id="message" label="Your Message" /></FormField>
+			<Button style="primary" type="submit">Submit</Button>
+		</Form>
+	</CardBody>
+</Card>
