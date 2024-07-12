@@ -1,5 +1,18 @@
 ---
-//UI Components
+// Blog Card
+// ------------
+// Description: The blog card component
+// Properties:
+// - Title: the title of the card
+// - Subtitle: the subtitle of the card
+// - Image: the main image of the card
+// - Icon: the icon of the card
+// - Link: The link to the blog post
+// - classes: extra classes
+// - Tags: the tags of the blog post
+// Reference: https://wind-ui.com/components/cards/
+
+// Components
 import { Image } from 'astro:assets'
 import Card from './partials/Card.astro'
 import CardBody from './partials/CardBody.astro'
@@ -8,10 +21,8 @@ import Badge from '../Badge.astro'
 const {
 	title = '',
 	subtitle,
-	titleSize = '',
 	image,
 	link,
-	type,
 	classes = '!shadow-none border border-neutral-100 dark:border-neutral-800',
 	tags
 } = Astro.props

@@ -1,15 +1,12 @@
 ---
+// Tags for the Blog and post pages
 import Badge from '../Badge.astro'
 import { getCollection } from 'astro:content'
 
-// Fetching blog posts and tags
 const posts = await getCollection('blog')
 const tags = [...new Set(posts.map((post) => post.data.tags).flat())]
-
-// Get current URL path
 const currentPath = new URL(Astro.request.url).pathname
 
-// Extract current tag from URL if it exists (assuming URL structure like /tags/tagName)
 const currentTag = currentPath.startsWith('/blog/tags/')
 	? currentPath.split('/blog/tags/')[1]
 	: null
