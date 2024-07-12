@@ -8,17 +8,13 @@ import FAQ from '../components/blocks/FAQ/FaqSticky.astro'
 import TextImage from '../components/blocks/basic/TextImage.astro'
 import CTA from '../components/blocks/CTA/BasicDark.astro'
 
-import faqImage1 from '../assets/faq/faq-01.png'
-
-// Content
-
-// - JSON data
+// Data
 import faqData from '../data/sections/faqData.json'
-
-// - Categories
+// - FAQ Categories
 const faqPricing = faqData.filter((faq) => faq.category === 'pricing')
 const faqIntegrations = faqData.filter((faq) => faq.category === 'integrations')
 
+// Content
 // - SEO
 const SEO = {
 	title: 'Foxi | Get Your Questions Answered with a Smile',
@@ -54,6 +50,5 @@ const header = {
 		text="Discover how Foxi seamlessly integrates with your favorite tools and platforms. From Google Calendar to Slack, find out how to connect and enhance your productivity with powerful integrations."
 		data={faqIntegrations}
 	/>
-
 	<CTA />
 </Layout>

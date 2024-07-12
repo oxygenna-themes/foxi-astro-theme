@@ -1,6 +1,4 @@
 ---
-import { Icon } from 'astro-icon/components'
-
 //Layout Components
 import Layout from '../layouts/Layout.astro'
 import Section from '../components/ui/Section.astro'
@@ -10,8 +8,15 @@ import Col from '../components/ui/Col.astro'
 //UI Components
 import Spacer from '../components/ui/Spacer.astro'
 import Button from '../components/ui/Button.astro'
+import { Icon } from 'astro-icon/components'
 
-//Assets
+// Content
+// - SEO
+const SEO = {
+	title: 'Oops! Foxi Lost the Trail - Page Not Found',
+	description:
+		" Looks like we chased our tail and lost the page. Don't worry, let's get you back on the Foxi trail!"
+}
 ---
 
 <Layout>
@@ -98,10 +103,10 @@ import Button from '../components/ui/Button.astro'
 							fill="#F1F5F9"></path>
 						<path
 							d="M162.911 190.126C148.155 177.493 138.805 158.729 138.805 137.779C138.805 99.7366 169.645 68.8965 207.687 68.8965C207.778 68.8965 207.87 68.8965 207.961 68.8979C176.149 79.1312 152.515 108.274 150.951 143.614C150.199 160.609 154.659 176.629 162.911 190.126Z"
-							class="fill-primary-300"></path>
+							class="fill-neutral-400"></path>
 						<path
 							d="M207.693 206.656C190.598 206.656 174.958 200.43 162.917 190.12C154.665 176.623 150.205 160.603 150.957 143.608C152.521 108.268 176.154 79.126 207.966 68.8926C245.885 69.038 276.576 99.822 276.576 137.774C276.576 175.816 245.736 206.656 207.693 206.656Z"
-							class="fill-primary-200"></path>
+							class="fill-neutral-200"></path>
 						<path
 							d="M207.687 206.655C169.645 206.655 138.805 175.815 138.805 137.773C138.805 158.722 148.155 177.486 162.911 190.119C174.953 200.429 190.593 206.655 207.687 206.655Z"
 							fill="#6BCED8"></path>
