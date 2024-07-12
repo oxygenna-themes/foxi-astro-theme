@@ -8,6 +8,7 @@ import '@fontsource-variable/inter'
 import '@fontsource-variable/outfit'
 import '../styles/global.css'
 
+import Modal from '../components/blocks/modal/SignUp.astro'
 export interface Props {
 	title?: string
 	description?: string
@@ -53,11 +54,11 @@ const {
 	</head>
 	<body>
 		<Header />
-
 		<Main>
 			<slot />
 		</Main>
 		<Footer />
+		<Modal />
 		<Scriprs />
 	</body>
 </html>

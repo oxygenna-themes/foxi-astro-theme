@@ -88,7 +88,7 @@ const savedNavActions = navActions.map((action) => ({
 			<div class="header__actions">
 				{
 					savedNavActions.map((action) => (
-						<Button classes="flex-auto" size={action.size} style={action.style} link={action.link}>
+						<Button classes="flex-auto" size={action.size} style={action.style} modal="signup">
 							{action.name}
 						</Button>
 					))
@@ -100,7 +100,7 @@ const savedNavActions = navActions.map((action) => ({
 
 <style>
 	.header {
-		@apply animate-fadeInShadowLight dark:animate-fadeInShadowDark sticky top-0 z-20 w-full [animation-range:0%_20rem] [animation-timeline:scroll()] before:absolute after:absolute after:left-0 after:top-full after:z-10 after:block after:h-px after:w-full lg:after:hidden dark:[animation-range:0%_20rem] dark:[animation-timeline:scroll()];
+		@apply sticky top-0 z-20 w-full animate-fadeInShadowLight [animation-range:0%_20rem] [animation-timeline:scroll()] before:absolute after:absolute after:left-0 after:top-full after:z-10 after:block after:h-px after:w-full lg:after:hidden dark:animate-fadeInShadowDark dark:[animation-range:0%_20rem] dark:[animation-timeline:scroll()];
 	}
 	.header:before {
 		@apply block h-full w-full bg-white/90 lg:backdrop-blur-sm dark:bg-neutral-900/90;

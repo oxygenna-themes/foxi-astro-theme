@@ -1,4 +1,4 @@
-<!-- Menu navigation -->
+<!-- Menu UI elements -->
 <script async defer>
 	document.addEventListener('astro:page-load', () => {
 		// Menu Dropdown
@@ -37,6 +37,39 @@
 				headerMenu.classList.toggle('header__menu--open')
 			})
 		}
+
+		// Modals
+		function openModal(modal) {
+			if (modal && modal.classList.contains('modal')) {
+				modal.classList.add('open')
+			}
+		}
+		function closeModal(modal) {
+			if (modal && modal.classList.contains('modal')) {
+				modal.classList.remove('open')
+			}
+		}
+		const modalButtons = document.querySelectorAll('[data-modal]')
+
+		modalButtons.forEach(function (button) {
+			button.addEventListener('click', function () {
+				const modalId = button.getAttribute('data-modal')
+				const modal = document.getElementById(modalId)
+				openModal(modal)
+			})
+		})
+		document.querySelectorAll('.modal').forEach(function (modal) {
+			modal.addEventListener('click', function (event) {
+				if (event.target === modal) {
+					closeModal(modal)
+				}
+			})
+			const close = modal.querySelector('.modal__close')
+			close.addEventListener('click', function (event) {
+				event.stopPropagation()
+				closeModal(modal)
+			})
+		})
 	})
 </script>
 
@@ -110,3 +143,5 @@
 		setupThemeSwitcher()
 	})
 </script>
+
+<script></script>

@@ -3,6 +3,7 @@ type Props = {
 	type?: 'link' | 'button' | 'submit' | 'reset'
 	size?: 'lg' | 'base' | 'sm'
 	link?: string
+	modal?: string
 	style?: 'primary' | 'secondary' | 'neutral'
 	variation?: 'outline' | 'link'
 	elevated?: boolean
@@ -13,6 +14,7 @@ const {
 	type = 'button',
 	size = 'base',
 	link,
+	modal,
 	style = 'primary',
 	variation,
 	elevated,
@@ -46,6 +48,7 @@ const {
 				{ ['button--elevated']: elevated },
 				{ [`${classes}`]: classes }
 			]}
+			{...(modal ? { 'data-modal': modal } : {})}
 		>
 			<slot />
 		</button>
