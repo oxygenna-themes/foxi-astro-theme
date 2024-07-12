@@ -24,8 +24,8 @@ const {
 	id = '',
 	title = '',
 	image = '',
-	imageW = '',
-	imageH = '',
+	imageWidth,
+	imageHeight,
 	mobileImage,
 	imagePosition = 'right',
 	text = '',
@@ -41,7 +41,7 @@ const {
 				class=`text-image__picture ${offsetImage  ? 'text-image__picture--offset' : ''} ${imagePosition === 'right' ? 'text-image__picture--offset-right' : ''}`
 			>
 				{mobileImage && <source srcset={mobileImage.src} media="(max-width: 1024px)" />}
-				<img src={image.src} alt={title} width={imageW} height={imageH} />
+				<img src={image.src} alt={title} width={imageWidth} height={imageHeight} />
 			</picture>
 		</Col>
 		<Col span="6" classes={`self-center ${imagePosition === 'right' ? 'lg:-order-1' : ''}`}>
