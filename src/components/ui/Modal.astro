@@ -25,9 +25,10 @@ const { id, title, classes } = Astro.props
 <div {...id ? { id } : {}} class:list={['modal', { [`${classes}`]: classes }]}>
 	<div class="modal__popup">
 		<div class="modal__header">
-			{title && <h4 class="modal__title">{title}</h4>}
+			{title && <h2 class="modal__title">{title}</h2>}
 			<Button size="sm" style="neutral" classes="modal__close" variation="link">
 				<Icon name="x-mark" class="dark:text-neutral-50" />
+				<span class="sr-only">Close</span>
 			</Button>
 		</div>
 		<div class="modal__body">

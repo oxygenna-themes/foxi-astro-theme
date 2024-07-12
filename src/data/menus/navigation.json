@@ -1,6 +1,7 @@
 {
 	"logo": {
 		"src": "/logo.svg",
+		"alt": "The tailwind astro theme",
 		"text": "Foxi."
 	},
 	"navItems": [
