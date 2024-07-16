@@ -16,7 +16,16 @@ import highlight03mobile from '../../../assets/highlights/highlight-03-mobile.sv
 import highlight04 from '../../../assets/highlights/highlight-04.svg'
 import highlight04mobile from '../../../assets/highlights/highlight-04-mobile.svg'
 
-const highlightBlocks = [
+type HighlightBlock = {
+	title: string
+	text: string
+	image: any
+	mobileImage?: any
+	imageWidth: number
+	imageHeight: number
+	imagePosition: 'left' | 'right'
+}
+const highlightBlocks: HighlightBlock[] = [
 	{
 		title: 'Complete Project <strong>Visibility</strong>',
 		text: 'Gain complete visibility into your projects and tasks with our comprehensive dashboard. Easily track progress, deadlines, and team performance at a glance. Our dashboard offers real-time project tracking',

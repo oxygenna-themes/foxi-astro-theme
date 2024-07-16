@@ -13,6 +13,13 @@ import Col from '../../ui/Col.astro'
 import Testimonial from '../../ui/Testimonial.astro'
 
 // Props
+type Props = {
+	blockquote?: string
+	figcaption?: string
+	cite?: string
+	bg?: any
+	bgPosition?: 'left' | 'right' | 'center'
+}
 const {
 	blockquote = 'Foxi is like a rocket boost for our productivity! Its sleek design and out-of-this-world features make managing projects and team communication a breeze.',
 	figcaption = 'Sheryl Sandberg',

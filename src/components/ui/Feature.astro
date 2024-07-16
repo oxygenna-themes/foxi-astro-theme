@@ -13,6 +13,7 @@
 
 // Components
 import { Icon } from 'astro-icon/components'
+
 type Props = {
 	type?: 'top-icon' | 'side-icon'
 	title?: string
@@ -21,7 +22,6 @@ type Props = {
 	align?: 'left' | 'center'
 	classes?: string
 }
-
 const { type = 'top-icon', title, icon = 'rocket', iconStyle, align, classes } = Astro.props
 ---
 

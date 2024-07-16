@@ -7,12 +7,11 @@
 // - Mode:  use that to overide the light/dark mode for a specific row. Usefull if you have a row that might contain a dark background
 // - classes: additional classes
 
-interface Props {
+type Props = {
 	flex?: boolean
 	classes?: string
 	mode?: string
 }
-
 const { flex, mode, classes } = Astro.props
 ---
 

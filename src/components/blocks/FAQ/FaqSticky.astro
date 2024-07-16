@@ -5,7 +5,6 @@
 
 // Components
 import StickySidebar from '../basic/StickySidebar.astro'
-import { Image } from 'astro:assets'
 
 // - UI
 import FAQ from '../../ui/Accordion.astro'
@@ -16,7 +15,7 @@ type Props = {
 	title: string
 	text?: string
 	data: any
-	type?: string
+	type?: 'left' | 'right'
 	classes?: string
 }
 const { title, text, data, type = 'left', classes } = Astro.props

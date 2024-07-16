@@ -12,7 +12,13 @@
 // Components
 import Card from './BasicCard.astro'
 
-const { title = '', subtitle, image, link } = Astro.props
+type Props = {
+	title?: string
+	subtitle?: string
+	image?: any
+	link?: string
+}
+const { title , subtitle, image, link } = Astro.props
 ---
 
 <Card

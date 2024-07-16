@@ -12,7 +12,13 @@ import Col from '../../ui/Col.astro'
 // - UI
 import Form from '../contact/BasicForm.astro'
 
-const { id = '', title = '', text = '', classes = '' } = Astro.props
+type Props = {
+	id?: string
+	title?: string
+	text?: string
+	classes?: string
+}
+const { id, title, text, classes } = Astro.props
 ---
 
 <Section id={id} classes={classes}>

@@ -13,7 +13,13 @@
 // - BgHeight: the height of the background
 // - classes: additional classes
 
-interface Props {
+type BgProps =  {
+	src: string
+	width: number
+	height: number
+	format: string
+}
+type Props = {
 	id?: string
 	fullWidth?: boolean
 	stickyCol?: boolean
@@ -23,12 +29,6 @@ interface Props {
 	bgPosition?: string
 	bgHeight?: string
 	classes?: string
-}
-interface BgProps {
-	src: string
-	width: number
-	height: number
-	format: string
 }
 const {
 	id,
