@@ -17,19 +17,60 @@ Foxi is a free, highly customizable, and production-ready template for Astro, ut
 
 ### Features
 
-- <img src="./public/logo.svg" alt="Logo Icon" width="14" height="14" /> **Built with Tailwind CSS:** Powered by Tailwind CSS for rapid UI development and responsive design.
-- <img src="./public/logo.svg" alt="Logo Icon" width="14" height="14" /> **Perfect Scores in PageSpeed Insights:** Achieve perfect 100s for both desktop and mobile performance.
-- <img src="./public/logo.svg" alt="Logo Icon" width="14" height="14" /> **Light & Dark Mode Support:** Seamlessly switch between light and dark themes to suit user preferences.
-- <img src="./public/logo.svg" alt="Logo Icon" width="14" height="14" /> **Fully Responsive & Customizable:** Ensure your site looks great on any device, with easy customization to match your brand’s identity.
-- <img src="./public/logo.svg" alt="Logo Icon" width="14" height="14" /> **SEO-friendly:** Optimized for search engines to improve visibility and organic traffic.
-- <img src="./public/logo.svg" alt="Logo Icon" width="14" height="14" /> **Pre-designed Pages:** Includes a variety of pages such as Home, Pricing, Features, Contact, and more, to get you started quickly.
-- <img src="./public/logo.svg" alt="Logo Icon" width="14" height="14" /> **Blog with MDX Support & Tags:** Create dynamic blog content with Markdown and JSX, complete with tagging for better organization.
-- <img src="./public/logo.svg" alt="Logo Icon" width="14" height="14" /> **Easy Updates with JSON Files:** Simplify content management and updates using structured JSON files.
-- <img src="./public/logo.svg" alt="Logo Icon" width="14" height="14" /> **Page Loading & Transition Animations:** Enhance user experience with smooth loading and transition effects.
-- <img src="./public/logo.svg" alt="Logo Icon" width="14" height="14" /> **Clean Code & Folder Structure:** Maintain a well-organized codebase that’s easy to navigate and extend.
-- <img src="./public/logo.svg" alt="Logo Icon" width="14" height="14" /> **Heroicons by Tailwind:** Access a wide range of high-quality icons to use across your site.
-- <img src="./public/logo.svg" alt="Logo Icon" width="14" height="14" /> **Built-in Contact Form:** Ready-to-use contact form included.
-- <img src="./public/logo.svg" alt="Logo Icon" width="14" height="14" /> **Utilizes WindUI Components:** Integrates optional WindUI TailwindCSS components.
+<ul style="list-style: none; padding-left: 16px;">
+    <li>
+        <img src="./public/logo.svg" alt="Logo Icon" width="14" height="14" style="vertical-align: middle;"/> 
+        <strong>Built with Tailwind CSS:</strong> Powered by Tailwind CSS for rapid UI development and responsive design.
+    </li>
+    <li>
+        <img src="./public/logo.svg" alt="Logo Icon" width="14" height="14" style="vertical-align: middle;"/> 
+        <strong>Perfect Scores in PageSpeed Insights:</strong> Achieve perfect 100s for both desktop and mobile performance.
+    </li>
+    <li>
+        <img src="./public/logo.svg" alt="Logo Icon" width="14" height="14" style="vertical-align: middle;"/> 
+        <strong>Light & Dark Mode Support:</strong> Seamlessly switch between light and dark themes to suit user preferences.
+    </li>
+    <li>
+        <img src="./public/logo.svg" alt="Logo Icon" width="14" height="14" style="vertical-align: middle;"/> 
+        <strong>Fully Responsive & Customizable:</strong> Ensure your site looks great on any device, with easy customization to match your brand’s identity.
+    </li>
+    <li>
+        <img src="./public/logo.svg" alt="Logo Icon" width="14" height="14" style="vertical-align: middle;"/> 
+        <strong>SEO-friendly:</strong> Optimized for search engines to improve visibility and organic traffic.
+    </li>
+    <li>
+        <img src="./public/logo.svg" alt="Logo Icon" width="14" height="14" style="vertical-align: middle;"/> 
+        <strong>Pre-designed Pages:</strong> Includes a variety of pages such as Home, Pricing, Features, Contact, and more, to get you started quickly.
+    </li>
+    <li>
+        <img src="./public/logo.svg" alt="Logo Icon" width="14" height="14" style="vertical-align: middle;"/> 
+        <strong>Blog with MDX Support & Tags:</strong> Create dynamic blog content with Markdown and JSX, complete with tagging for better organization.
+    </li>
+    <li>
+        <img src="./public/logo.svg" alt="Logo Icon" width="14" height="14" style="vertical-align: middle;"/> 
+        <strong>Easy Updates with JSON Files:</strong> Simplify content management and updates using structured JSON files.
+    </li>
+    <li>
+        <img src="./public/logo.svg" alt="Logo Icon" width="14" height="14" style="vertical-align: middle;"/> 
+        <strong>Page Loading & Transition Animations:</strong> Enhance user experience with smooth loading and transition effects.
+    </li>
+    <li>
+        <img src="./public/logo.svg" alt="Logo Icon" width="14" height="14" style="vertical-align: middle;"/> 
+        <strong>Clean Code & Folder Structure:</strong> Maintain a well-organized codebase that’s easy to navigate and extend.
+    </li>
+    <li>
+        <img src="./public/logo.svg" alt="Logo Icon" width="14" height="14" style="vertical-align: middle;"/> 
+        <strong>Heroicons by Tailwind:</strong> Access a wide range of high-quality icons to use across your site.
+    </li>
+    <li>
+        <img src="./public/logo.svg" alt="Logo Icon" width="14" height="14" style="vertical-align: middle;"/> 
+        <strong>Built-in Contact Form:</strong> Ready-to-use contact form included.
+    </li>
+    <li>
+        <img src="./public/logo.svg" alt="Logo Icon" width="14" height="14" style="vertical-align: middle;"/> 
+        <strong>Utilizes WindUI Components:</strong> Integrates optional WindUI TailwindCSS components.
+    </li>
+</ul>
 
 ## Getting Started
 
