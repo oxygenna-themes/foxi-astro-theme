@@ -70,7 +70,7 @@ const savedNavActions = navActions.map((action) => ({
 									role="menuitem"
 									class={`header__menu-link ${isActivePath(item.link) ? 'active' : ''}`}
 								>
-									{item.name} -> {item.link}
+									{item.name} -> {item.link} = {path}
 								</a>
 							) : (
 								<span
