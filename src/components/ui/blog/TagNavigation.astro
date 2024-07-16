@@ -1,8 +1,11 @@
 ---
 // Tags for the Blog and post pages
-import Badge from '../Badge.astro'
-import { getCollection } from 'astro:content'
 
+// UI Components
+import Badge from '../Badge.astro'
+
+//Data
+import { getCollection } from 'astro:content'
 const posts = await getCollection('blog')
 const tags = [...new Set(posts.map((post) => post.data.tags).flat())]
 const currentPath = new URL(Astro.request.url).pathname
