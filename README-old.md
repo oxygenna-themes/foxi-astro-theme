@@ -1,5 +1,7 @@
 # Astro Starter Kit: Basics
 
+![just-the-basics](https://oxygenna-themes.b-cdn.net/foxi-astro/foxi.png)
+
 ```sh
 npm create astro@latest -- --template basics
 ```
