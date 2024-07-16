@@ -19,9 +19,13 @@ import Switcher from './ModeSwitcher.astro'
 import Navigation from '../../data/menus/navigation.json'
 
 // Data
-const path = new URL(Astro.request.url).pathname
-
 const { logo, navItems, navActions } = Navigation
+
+// Determine current path
+const path = new URL(Astro.request.url).pathname
+function isActivePath(currentPath: string): boolean {
+	return currentPath === path || currentPath === `${path}/`
+}
 
 // Type assertion for navActions to ensure type safety
 const savedNavActions = navActions.map((action) => ({
@@ -64,14 +68,14 @@ const savedNavActions = navActions.map((action) => ({
 								<a
 									href={item.link}
 									role="menuitem"
-									class={`header__menu-link ${path === item.link ? 'active' : ''}`}
+									class={`header__menu-link ${isActivePath(item.link) ? 'active' : ''}`}
 								>
 									{item.name}
 								</a>
 							) : (
 								<span
 									role="menuitem"
-									class={`header__menu-link ${path === item.link ? 'active' : ''}`}
+									class={`header__menu-link ${isActivePath(item.link) ? 'active' : ''}`}
 								>
 									{item.name}
 									<Icon name="chevron-down" class="header__menu-chevron" />
