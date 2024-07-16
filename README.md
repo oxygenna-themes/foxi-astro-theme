@@ -129,8 +129,8 @@ If you need to enforce a specific theme, you can set **`mode-light`** or **`mode
 
 ## License
 
-Copyright (c) 2024 - Present, Designed & Developed by [Oxygenna](#)
+Copyright © 2024 - Designed & Developed by [Oxygenna](http://www.oxygenna.com/)
 
-**Code License:** Released under the MIT license.
+Released under the MIT license.
 
 ## Need customization?
