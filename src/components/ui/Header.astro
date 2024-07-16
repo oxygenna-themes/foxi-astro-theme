@@ -24,8 +24,7 @@ const { logo, navItems, navActions } = Navigation
 // Determine current path
 const path = new URL(Astro.request.url).pathname
 function isActivePath(currentPath: string): boolean {
-	return currentPath === path || currentPath === `${path}/`
-	console.log(currentPath)
+	return path === currentPath || path === `${currentPath}/`
 }
 
 // Type assertion for navActions to ensure type safety
@@ -70,7 +69,7 @@ const savedNavActions = navActions.map((action) => ({
 									role="menuitem"
 									class={`header__menu-link ${isActivePath(item.link) ? 'active' : ''}`}
 								>
-									{item.name} -> {item.link} = {path}
+									{item.name}
 								</a>
 							) : (
 								<span
