@@ -20,16 +20,28 @@ import Section from '../../ui/Section.astro'
 import Row from '../../ui/Row.astro'
 import Col from '../../ui/Col.astro'
 
+type Props = {
+	id?: string
+	title?: string
+	image?: any
+	imageWidth?: number
+	imageHeight?: number
+	mobileImage?: any
+	imagePosition?: 'left' | 'right'
+	text?: string
+	classes?: string
+	offsetImage?: boolean
+}
 const {
-	id = '',
-	title = '',
-	image = '',
+	id,
+	title ,
+	image ,
 	imageWidth,
 	imageHeight,
 	mobileImage,
 	imagePosition = 'right',
-	text = '',
-	classes = '',
+	text ,
+	classes ,
 	offsetImage = false
 } = Astro.props
 ---

@@ -12,13 +12,35 @@ import Col from '../../ui/Col.astro'
 import PricingTable from '../../ui/pricing-tables/PricingTable.astro'
 import Toggle from '../../ui/forms/form-elements/Toggle.astro'
 
-const { data, listType, classes } = Astro.props
-
 // Content
 import pricingTablesData from '../../../data/sections/pricingTablesdata.json'
 
 // Script
 import PricingChange from '../../scripts/PricingChange.astro'
+
+type PricingTableData = {
+	header: {
+		title: string;
+		subtitle: string;
+		currency: string;
+		price: string;
+		priceLabel: string;
+		priceMonthly?: string;
+		priceLabelMonthly?: string;
+		buttonName: string;
+		buttonLink: string;
+	};
+	body?: {
+		listItems: Array<{ listItem: string }>;
+	};
+	footer?: {
+		buttonName: string;
+		buttonLink: string;
+	};
+	type: 'basic' | 'featured';
+};
+
+const pricingData: PricingTableData[] = pricingTablesData as PricingTableData[];
 ---
 
 <Section>
@@ -29,7 +51,7 @@ import PricingChange from '../../scripts/PricingChange.astro'
 			<span class="highlight font-semibold transition-colors" id="annualLabel">Bill annualy</span>
 		</Col>
 		{
-			pricingTablesData.map((item, key) => (
+			pricingData.map((item, key) => (
 				<Col span="4">
 					<PricingTable data={item} listType="checklist" id={`plan-${key}`} />
 				</Col>

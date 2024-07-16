@@ -13,7 +13,10 @@ import Col from '../../ui/Col.astro'
 import Accordion from '../../ui/Accordion.astro'
 import Card from '../../ui/cards/partials/Card.astro'
 
-const { classes = '' } = Astro.props
+type Props = {
+	classes?: string
+}
+const { classes } = Astro.props
 ---
 
 <Section id="FAQ" classes={classes}>

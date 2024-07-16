@@ -13,6 +13,11 @@ import Section from '../../ui/Section.astro'
 import Row from '../../ui/Row.astro'
 import Col from '../../ui/Col.astro'
 
+type Props = {
+	id?: string
+	type?: 'left' | 'right'
+	classes?: string
+}
 const { id, type = 'left', classes } = Astro.props
 ---
 
