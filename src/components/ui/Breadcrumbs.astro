@@ -7,15 +7,17 @@
 
 // Reference: https://wind-ui.com/components/breadcrumbs/
 
-// UI Components
+// Components
+// - UI
 import { Icon } from 'astro-icon/components'
 
-
+// URL Parsing and breadcrumb generation
 const url = new URL(Astro.request.url)
 const pathname = url.pathname
 const segments = pathname.split('/').filter(Boolean)
 const breadcrumbs = ['Home', ...segments]
 
+// Props
 type Props = {
 	classes?: string
 }

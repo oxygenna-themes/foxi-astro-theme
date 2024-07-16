@@ -11,12 +11,14 @@
 
 // Reference: https://wind-ui.com/components/navbars/
 
-// UI Components
+// Components
+// - UI
 import { Icon } from 'astro-icon/components'
 import Button from './Button.astro'
 import Switcher from './ModeSwitcher.astro'
 import Navigation from '../../data/menus/navigation.json'
 
+// Data
 const path = new URL(Astro.request.url).pathname
 const { logo, navItems, navActions } = Navigation
 
