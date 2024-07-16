@@ -10,7 +10,7 @@ npm create astro@latest -- --template basics
 
 > 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
 
-![just-the-basics](https://oxygenna-themes.b-cdn.net/foxi-astro/performance.svg)
+![just-the-basics](https://oxygenna-themes.b-cdn.net/foxi-astro/pagespeed.svg)
 
 ## 🚀 Project Structure
 
