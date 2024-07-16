@@ -20,7 +20,7 @@ import Navigation from '../../data/menus/navigation.json'
 
 // Data
 const path = new URL(Astro.request.url).pathname
-console.log(path)
+
 const { logo, navItems, navActions } = Navigation
 
 // Type assertion for navActions to ensure type safety
@@ -31,6 +31,7 @@ const savedNavActions = navActions.map((action) => ({
 }))
 ---
 
+{path}
 <header class="header">
 	<div class="header__container">
 		<nav aria-label="main navigation" role="navigation" class="header__nav">
