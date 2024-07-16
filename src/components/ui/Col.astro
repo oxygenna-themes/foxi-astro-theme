@@ -8,13 +8,12 @@
 // - Align: the horizontal alignment of the column (start, center, end)
 // - Classes: additional classes
 
-interface Props {
+type Props = {
 	span?: string
 	spanMobile?: string
 	align?: string
 	classes?: string
 }
-
 const { span, spanMobile = '12', align, classes } = Astro.props
 
 const hasContent = Astro.slots.default

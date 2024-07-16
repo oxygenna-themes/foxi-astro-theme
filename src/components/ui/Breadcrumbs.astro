@@ -10,12 +10,16 @@
 // Components
 import { Icon } from 'astro-icon/components'
 
-const { classes } = Astro.props
 
 const url = new URL(Astro.request.url)
 const pathname = url.pathname
 const segments = pathname.split('/').filter(Boolean)
 const breadcrumbs = ['Home', ...segments]
+
+type Props = {
+	classes?: string
+}
+const { classes } = Astro.props
 ---
 
 <nav aria-label="Breadcrumb" class:list={['breadcrumbs', { [`${classes}`]: classes }]}>

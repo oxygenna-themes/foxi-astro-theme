@@ -13,12 +13,11 @@ import Button from './Button.astro'
 
 import { Icon } from 'astro-icon/components'
 
-interface Props {
+type Props = {
 	id?: string
 	title?: string
 	classes?: string
 }
-
 const { id, title, classes } = Astro.props
 ---
 

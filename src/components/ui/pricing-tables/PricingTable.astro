@@ -26,7 +26,7 @@ import Body from './partials/Body.astro'
 import Footer from './partials/Footer.astro'
 
 type PricingTableProps = {
-	type: string
+	type:'basic' | 'featured'
 	header: {
 		title: string
 		subtitle: string
@@ -46,16 +46,13 @@ type PricingTableProps = {
 		buttonLink: string
 	}
 }
-
 type Props = {
 	data: PricingTableProps
 	id?: string
 	listType?: 'basic' | 'checklist'
 	classes?: string
 }
-
 const { data, id, listType, classes } = Astro.props
-
 const { type, header, body, footer } = data
 ---
 

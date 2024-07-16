@@ -6,11 +6,10 @@
 // - classes: Additional classes to be added to the text field
 // - type: The type of the pricing table (basic, featured)
 
-interface Props {
+type Props = {
+	type?: 'basic' | 'featured'
 	classes?: string
-	type: string
 }
-
 const { classes, type } = Astro.props
 ---
 
