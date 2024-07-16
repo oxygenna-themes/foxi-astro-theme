@@ -4,7 +4,8 @@
 		"aboutText": "Expertly made, responsive, accessible components in React and HTML ready to be used on your website or app. Just copy and paste them on your Tailwind CSS project.",
 		"logo": {
 			"src": "/logo.svg",
-			"alt": "Foxi"
+			"alt": "The tailwind astro theme",
+			"text": "Foxi."
 		}
 	},
 	"footerColumns": [
@@ -13,15 +14,15 @@
 			"subCategories": [
 				{
 					"subCategory": "Features",
-					"subCategoryLink": "#"
+					"subCategoryLink": "/features"
 				},
 				{
-					"subCategory": "Customers",
-					"subCategoryLink": "#"
+					"subCategory": "FAQ",
+					"subCategoryLink": "/faq"
 				},
 				{
 					"subCategory": "Pricing",
-					"subCategoryLink": "#"
+					"subCategoryLink": "/pricing"
 				},
 				{
 					"subCategory": "Changelog",
@@ -34,15 +35,15 @@
 			"subCategories": [
 				{
 					"subCategory": "About us",
-					"subCategoryLink": "#"
+					"subCategoryLink": "/"
 				},
 				{
-					"subCategory": "Events",
-					"subCategoryLink": "#"
+					"subCategory": "News",
+					"subCategoryLink": "/blog"
 				},
 				{
 					"subCategory": "Careers",
-					"subCategoryLink": "#"
+					"subCategoryLink": "/blog"
 				}
 			]
 		},
@@ -51,15 +52,15 @@
 			"subCategories": [
 				{
 					"subCategory": "Contact",
-					"subCategoryLink": "#"
+					"subCategoryLink": "/contact"
 				},
 				{
 					"subCategory": "Support",
-					"subCategoryLink": "#"
+					"subCategoryLink": "/contact"
 				},
 				{
 					"subCategory": "Join us",
-					"subCategoryLink": "#"
+					"subCategoryLink": "/contact"
 				}
 			]
 		}
