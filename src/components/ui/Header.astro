@@ -20,6 +20,7 @@ import Navigation from '../../data/menus/navigation.json'
 
 // Data
 const path = new URL(Astro.request.url).pathname
+console.log(path)
 const { logo, navItems, navActions } = Navigation
 
 // Type assertion for navActions to ensure type safety
