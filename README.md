@@ -31,6 +31,7 @@ Foxi is a free, highly customizable, and production-ready template for Astro, ut
 - **Heroicons by Tailwind:** Access a wide range of high-quality icons to use across your site.
 - **Built-in Contact Form:** Ready-to-use contact form included.
 - **Utilizes WindUI Components:** Integrates optional WindUI TailwindCSS components.
+- **Modular Design:** The template is organized into reusable blocks enabling easy customization and expansion.
 
 ## Getting Started
 
