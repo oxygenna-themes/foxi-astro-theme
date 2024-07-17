@@ -10,10 +10,8 @@ import { getCollection } from 'astro:content'
 const posts = await getCollection('blog')
 const tags = [...new Set(posts.map((post) => post.data.tags).flat())]
 const currentPath = new URL(Astro.request.url).pathname
-
-const currentTag = currentPath.startsWith('/blog/tags/')
-	? currentPath.split('/blog/tags/')[1]
-	: null
+const pathSegments = currentPath.split('/').filter((segment) => segment.length > 0)
+const currentTag = pathSegments[pathSegments.length - 1] || ''
 ---
 
 CP {currentPath} --- CT {currentTag}
