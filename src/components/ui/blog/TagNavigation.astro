@@ -11,9 +11,7 @@ const posts = await getCollection('blog')
 const tags = [...new Set(posts.map((post) => post.data.tags).flat())]
 const currentPath = new URL(Astro.request.url).pathname
 
-const currentTag = currentPath.startsWith('/blog/tags/')
-	? currentPath.split('/blog/tags/')[1]
-	: null
+const currentTag = currentPath
 ---
 
 <div class="tags">
