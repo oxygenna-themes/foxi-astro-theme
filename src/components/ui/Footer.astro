@@ -10,7 +10,9 @@ import { Icon } from 'astro-icon/components'
 
 // Data
 import footerData from '../../data/menus/footer.json'
-import socialMedia from '../../data/menus/socialMedia.json'
+// import socialMedia from '../../data/menus/socialMedia.json'
+import { socialLinks } from '../../config/socialLinks'
+
 const { footerAbout, footerColumns, subFooter } = footerData
 ---
 
@@ -54,7 +56,7 @@ const { footerAbout, footerColumns, subFooter } = footerData
 					<h2 class="sr-only" id="footer-social-links-dark">Social Media Links</h2>
 					<ul>
 						{
-							socialMedia.map((social) => (
+							socialLinks.map((social) => (
 								<li>
 									<a href={social.link} aria-label={social.name}>
 										<Icon name={social.icon} />

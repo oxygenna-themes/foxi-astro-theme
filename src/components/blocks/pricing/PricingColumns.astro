@@ -16,40 +16,45 @@ import Toggle from '../../ui/forms/form-elements/Toggle.astro'
 import pricingTablesData from '../../../data/sections/pricingTablesdata.json'
 
 // Script
-import PricingChange from '../../scripts/PricingChange.astro'
+import PricingChange from '../../scripts/PricingPlanChange.astro'
 
 // Props
 type PricingTableData = {
 	header: {
-		title: string;
-		subtitle: string;
-		currency: string;
-		price: string;
-		priceLabel: string;
-		priceMonthly?: string;
-		priceLabelMonthly?: string;
-		buttonName: string;
-		buttonLink: string;
-	};
+		title: string
+		subtitle: string
+		currency: string
+		price: string
+		priceLabel: string
+		priceMonthly?: string
+		priceLabelMonthly?: string
+		buttonName: string
+		buttonLink: string
+	}
 	body?: {
-		listItems: Array<{ listItem: string }>;
-	};
+		listItems: Array<{ listItem: string }>
+	}
 	footer?: {
-		buttonName: string;
-		buttonLink: string;
-	};
-	type: 'basic' | 'featured';
-};
+		buttonName: string
+		buttonLink: string
+	}
+	type: 'basic' | 'featured'
+}
 
-const pricingData: PricingTableData[] = pricingTablesData as PricingTableData[];
+const pricingData: PricingTableData[] = pricingTablesData as PricingTableData[]
 ---
 
 <Section>
 	<Row>
 		<Col span="12" align="center" classes="flex items-center justify-center gap-4 mb-12">
-			<span id="monthlyLabel" class="font-semibold opacity-70 transition-colors">Bill monthly</span>
+			<span id="monthlyLabel" class="font-semibold text-neutral-400 transition-colors"
+				>Bill monthly</span
+			>
 			<Toggle id="pricingType" label="pricing" showLabel={false} checked={true} />
-			<span class="highlight font-semibold transition-colors" id="annualLabel">Bill annualy</span>
+			<span
+				class="font-semibold text-neutral-400 text-primary-500 transition-colors"
+				id="annualLabel">Bill annualy</span
+			>
 		</Col>
 		{
 			pricingData.map((item, key) => (
