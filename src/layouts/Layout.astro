@@ -4,12 +4,14 @@ import Header from '../components/ui/Header.astro'
 import Main from '../components/ui/Main.astro'
 import Footer from '../components/ui/Footer.astro'
 import Scriprs from '../components/scripts/LocalScripts.astro'
+
 import { ViewTransitions } from 'astro:transitions'
-import { Analytics } from '@vercel/analytics/react'
 
 import '@fontsource-variable/inter'
 import '@fontsource-variable/outfit'
+
 import '../styles/global.css'
+
 import Modal from '../components/blocks/modal/SignUp.astro'
 export type Props = {
 	title?: string
@@ -62,6 +64,5 @@ const {
 		<Footer />
 		<Modal />
 		<Scriprs />
-		<Analytics />
 	</body>
 </html>
