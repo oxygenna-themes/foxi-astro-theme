@@ -9,7 +9,7 @@ import sitemap from "@astrojs/sitemap";
 export default defineConfig({
   site: "https://astro-theme-one.vercel.app/",
   integrations: [tailwind(), icon(), sitemap()],
-  webAnalytics: {
-    enabled: true,
-  },
+  adapter: vercel({
+    webAnalytics: { enabled: true },
+  }),
 });
