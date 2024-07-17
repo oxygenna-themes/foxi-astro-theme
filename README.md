@@ -2,7 +2,7 @@
 
 Open-source Astro website template with fully responsive, customizable TailwindCSS components.
 
-[![View live Demo](https://oxygenna-themes.b-cdn.net/foxi-astro/demo-button.svg)](https://foxi-astro-theme.vercel.app/)   
+[![View live Demo](https://oxygenna-themes.b-cdn.net/foxi-astro/demo-button.svg)](https://foxi-astro-theme.vercel.app/)
 [![Page Speed Insights (100%)](https://oxygenna-themes.b-cdn.net/foxi-astro/insights-button.svg)](https://pagespeed.web.dev/analysis/https-foxi-astro-theme-vercel-app/n6wcy1dso0?form_factor=mobile)
 
 ![just-the-basics](https://oxygenna-themes.b-cdn.net/foxi-astro/foxi.png)
