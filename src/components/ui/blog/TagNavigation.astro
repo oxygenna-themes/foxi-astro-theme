@@ -14,9 +14,8 @@ const pathSegments = currentPath.split('/').filter((segment) => segment.length >
 const currentTag = pathSegments[pathSegments.length - 1] || ''
 ---
 
-CP {currentPath} --- CT {currentTag}
 <div class="tags">
-	<Badge link={`/blog/`} name={`All`} type={`${currentTag === null ? 'primary' : 'neutral'}`} />
+	<Badge link={`/blog/`} name={`All`} type={`${currentTag === 'blog' ? 'primary' : 'neutral'}`} />
 	{
 		tags.map((tag) => (
 			<>
