@@ -1,3 +1,6 @@
+// Footer Navigation
+// ------------
+// Description: The footer navigation data for the website.
 export interface Logo {
 	src: string
 	alt: string
