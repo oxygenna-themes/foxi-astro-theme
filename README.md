@@ -20,7 +20,6 @@ Foxi is a free, highly customizable, and production-ready template for Astro, ut
 - **Perfect Scores in PageSpeed Insights:** Achieve perfect 100s for both desktop and mobile performance.
 - **Built with Tailwind CSS:** Powered by Tailwind CSS for rapid UI development and responsive design.
 - **Light & Dark Mode Support:** Seamlessly switch between light and dark themes to suit user preferences.
-- **Modular Design:** Mix and match content blocks effortlessly to create custom pages tailored to your needs.
 - **Fully Responsive & Customizable:** Ensure your site looks great on any device, with easy customization to match your brand’s identity.
 - **SEO-friendly:** Optimized for search engines to improve visibility and organic traffic.
 - **Pre-designed Pages:** Includes a variety of pages such as Home, Pricing, Features, Contact, and more, to get you started quickly.
@@ -32,6 +31,8 @@ Foxi is a free, highly customizable, and production-ready template for Astro, ut
 - **Built-in Contact Form:** Ready-to-use contact form included.
 - **Utilizes WindUI Components:** Integrates optional WindUI TailwindCSS components.
 - **Modular Design:** The template is organized into reusable blocks enabling easy customization and expansion.
+- **Integrated Analytics:** Includes integrated Google Analytics and Google Tag Manager functionalities.
+- **Sitemap Included:** Includes a sitemap to enhance website navigation and search engine indexing.
 
 ## Getting Started
 
