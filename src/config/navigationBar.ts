@@ -47,7 +47,8 @@ export const navigationBarData: NavData = {
 			submenu: [
 				{ name: 'Blog', link: '/blog' },
 				{ name: 'Changelog', link: '/changelog' },
-				{ name: 'FAQ', link: '/faq' }
+				{ name: 'FAQ', link: '/faq' },
+				{ name: 'Terms', link: '/terms' }
 			]
 		},
 		{ name: 'Contact', link: '/contact' }

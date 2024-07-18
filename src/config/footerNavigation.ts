@@ -63,6 +63,10 @@ export const footerNavigationData: FooterData = {
 				{
 					subCategory: 'Changelog',
 					subCategoryLink: '/changelog'
+				},
+				{
+					subCategory: 'Terms',
+					subCategoryLink: '/terms'
 				}
 			]
 		},
