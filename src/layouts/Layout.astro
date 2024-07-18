@@ -21,22 +21,15 @@ type Props = {
 	title?: string
 	description?: string
 	ogImage?: string
-	canonical?: string
 	noindex?: boolean
 }
 // Page Metadata
-const { title, description, ogImage, canonical, noindex }: Props = Astro.props
+const { title, description, ogImage, noindex } = Astro.props
 ---
 
 <!doctype html>
 <html lang="en" class="scroll-animation mode-auto">
-	<Header
-		title={title}
-		description={description}
-		ogImage={ogImage}
-		canonical={canonical}
-		noindex={noindex}
-	/>
+	<Header title={title} description={description} ogImage={ogImage} noindex={noindex} />
 	<body
 		class:list={[
 			{ ['mode-' + `${configData.mode}`]: configData.mode },

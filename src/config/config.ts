@@ -10,6 +10,8 @@ export interface Config {
 	siteDescription: string
 	ogImage: string
 	logo: Logo
+	canonical: boolean
+	noindex: boolean
 	mode: Mode
 	scrollAnimations: boolean
 }
@@ -23,6 +25,8 @@ export const configData: Config = {
 		src: '/logo.svg',
 		alt: 'Foxi. logo'
 	},
+	canonical: true,
+	noindex: false,
 	mode: 'auto',
 	scrollAnimations: true
 }

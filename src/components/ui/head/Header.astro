@@ -11,7 +11,7 @@ type Props = {
 	title?: string
 	description?: string
 	ogImage?: string
-	canonical?: string
+	canonical?: boolean
 	noindex?: boolean
 }
 // Page Metadata
@@ -19,9 +19,9 @@ const {
 	title = configData.siteTitle,
 	description = configData.siteDescription,
 	ogImage = configData.ogImage,
-	canonical,
-	noindex = false
-}: Props = Astro.props
+	canonical = configData.canonical,
+	noindex = configData.noindex
+} = Astro.props
 ---
 
 <head>
