@@ -1,18 +1,22 @@
 ---
 // Imports
-import Header from '../components/ui/NavigationBar.astro'
+// Components
+import NavigationBar from '../components/ui/NavigationBar.astro'
 import Main from '../components/ui/Main.astro'
 import Footer from '../components/ui/Footer.astro'
+import Modal from '../components/blocks/modal/SignUp.astro'
+// Scripts
 import Scriprs from '../components/scripts/LocalScripts.astro'
-
+// Styles
 import { ViewTransitions } from 'astro:transitions'
-
+import '../styles/global.css'
+// Fonts
 import '@fontsource-variable/inter'
 import '@fontsource-variable/outfit'
+// Data
+import { configData } from '../config/config'
 
-import '../styles/global.css'
-
-import Modal from '../components/blocks/modal/SignUp.astro'
+// Props
 export type Props = {
 	title?: string
 	description?: string
@@ -22,9 +26,9 @@ export type Props = {
 }
 // Page Metadata
 const {
-	title = 'Foxi. Tailwind CSS Astro Starter Kit by Oxygenna',
-	description = 'Foxi is a design and development agency that specializes in creating beautiful and functional websites.',
-	image = '/og.jpg',
+	title = configData.siteTitle,
+	description = configData.siteDescription,
+	image = configData.ogImage,
 	canonical,
 	noindex = false
 } = Astro.props
@@ -35,7 +39,7 @@ const {
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+		<link rel="icon" href={configData.logo.src} type="image/svg+xml" />
 		<link rel="sitemap" href="/sitemap-index.xml" />
 		<meta name="generator" content={Astro.generator} />
 		<meta name="description" content={description} />
@@ -56,8 +60,13 @@ const {
 		{noindex && <meta name="robots" content="noindex,nofollow" />}
 		<ViewTransitions fallback="swap" />
 	</head>
-	<body>
-		<Header />
+	<body
+		class:list={[
+			{ ['mode-' + `${configData.mode}`]: configData.mode },
+			{ ['scroll-animation']: configData.scrollAnimations }
+		]}
+	>
+		<NavigationBar />
 		<Main>
 			<slot />
 		</Main>
