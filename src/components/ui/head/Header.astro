@@ -1,0 +1,42 @@
+---
+// Imports
+import { ViewTransitions } from 'astro:transitions'
+// Partials
+import Seo from './partials/Seo.astro'
+// Data
+import { configData } from '../../../config/config'
+
+// Props
+type Props = {
+	title?: string
+	description?: string
+	ogImage?: string
+	canonical?: string
+	noindex?: boolean
+}
+// Page Metadata
+const {
+	title = configData.siteTitle,
+	description = configData.siteDescription,
+	ogImage = configData.ogImage,
+	canonical,
+	noindex = false
+}: Props = Astro.props
+---
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<Seo
+		title={title}
+		description={description}
+		ogImage={ogImage}
+		canonical={canonical}
+		noindex={noindex}
+	/>
+	<link rel="icon" href={configData.logo.src} type="image/svg+xml" />
+	<link rel="sitemap" href="/sitemap-index.xml" />
+	<meta name="generator" content={Astro.generator} />
+	<meta name="theme-color" content="#134e4a" />
+	<ViewTransitions fallback="swap" />
+</head>

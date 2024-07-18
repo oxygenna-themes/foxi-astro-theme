@@ -5,10 +5,10 @@ import NavigationBar from '../components/ui/NavigationBar.astro'
 import Main from '../components/ui/Main.astro'
 import Footer from '../components/ui/Footer.astro'
 import Modal from '../components/blocks/modal/SignUp.astro'
+import Header from '../components/ui/head/Header.astro'
 // Scripts
 import Scriprs from '../components/scripts/LocalScripts.astro'
 // Styles
-import { ViewTransitions } from 'astro:transitions'
 import '../styles/global.css'
 // Fonts
 import '@fontsource-variable/inter'
@@ -17,49 +17,26 @@ import '@fontsource-variable/outfit'
 import { configData } from '../config/config'
 
 // Props
-export type Props = {
+type Props = {
 	title?: string
 	description?: string
-	image?: string
+	ogImage?: string
 	canonical?: string
 	noindex?: boolean
 }
 // Page Metadata
-const {
-	title = configData.siteTitle,
-	description = configData.siteDescription,
-	image = configData.ogImage,
-	canonical,
-	noindex = false
-} = Astro.props
+const { title, description, ogImage, canonical, noindex }: Props = Astro.props
 ---
 
 <!doctype html>
 <html lang="en" class="scroll-animation mode-auto">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<link rel="icon" href={configData.logo.src} type="image/svg+xml" />
-		<link rel="sitemap" href="/sitemap-index.xml" />
-		<meta name="generator" content={Astro.generator} />
-		<meta name="description" content={description} />
-		<meta name="theme-color" content="#134e4a" />
-		<link rel="canonical" href={Astro.url} />
-		<title>{title}</title>
-		<meta property="og:type" content="website" />
-		<meta property="og:url" content={Astro.url} />
-		<meta property="og:title" content={title} />
-		<meta property="og:description" content={description} />
-		<meta property="og:image" content={image} />
-		<meta property="twitter:card" content="summary_large_image" />
-		<meta property="twitter:url" content={Astro.url} />
-		<meta property="twitter:title" content={title} />
-		<meta property="twitter:description" content={description} />
-		<meta property="twitter:image" content={image} />
-		{canonical && <link rel="canonical" href={canonical} item-prop="url" />}
-		{noindex && <meta name="robots" content="noindex,nofollow" />}
-		<ViewTransitions fallback="swap" />
-	</head>
+	<Header
+		title={title}
+		description={description}
+		ogImage={ogImage}
+		canonical={canonical}
+		noindex={noindex}
+	/>
 	<body
 		class:list={[
 			{ ['mode-' + `${configData.mode}`]: configData.mode },
