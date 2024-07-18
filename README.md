@@ -62,6 +62,8 @@ Inside Foxi Astro project, you'll see the following folders and files:
 │   │   │   └── ...
 │   │   └── ui/
 │   │       └── ...
+│   ├── config/
+│   │   └── ...
 │   ├── content/
 │   │   └── blog/
 │   │       └── ...
@@ -86,9 +88,10 @@ Inside Foxi Astro project, you'll see the following folders and files:
 | `src/components/`        | Contains reusable components for your site. This directory is divided into `ui` for UI components and `blocks` for section blocks. |
 | `src/components/blocks/` | Contains Section blocks used throughout the site.                                                                                  |
 | `src/components/ui/`     | Contains individual UI components.                                                                                                 |
+| `src/config/`            | Contains configuration files for the project in typescript format.                                                                 |
 | `src/content/`           | Holds collection data, such as blog posts.                                                                                         |
 | `src/content/blog/`      | Contains individual blog posts in markdown.                                                                                        |
-| `src/data/`              | Contains JSON files with content data (like features, testimonials etc).                                                           |
+| `src/data/`              | Contains JSON and md files with content data (like features, testimonials etc).                                                    |
 | `src/icons/`             | Contains all icons used in the project, sourced from [Heroicons](https://heroicons.com/).                                          |
 | `src/layouts/`           | Contains layout components that define the overall structure of your pages.                                                        |
 | `src/pages/`             | Contains `.astro` files for each page. Each file here is exposed as a route based on its file name.                                |
