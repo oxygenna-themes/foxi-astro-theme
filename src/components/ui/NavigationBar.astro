@@ -16,10 +16,10 @@
 import { Icon } from 'astro-icon/components'
 import Button from './Button.astro'
 import Switcher from './ModeSwitcher.astro'
-import Navigation from '../../data/menus/navigation.json'
 
 // Data
-const { logo, navItems, navActions } = Navigation
+import { navigationBarData } from '../../config/navigationBar'
+const { logo, navItems, navActions } = navigationBarData
 
 // Determine current path
 const path = new URL(Astro.request.url).pathname

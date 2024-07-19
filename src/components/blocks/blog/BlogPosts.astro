@@ -1,7 +1,7 @@
 ---
 // Blog Posts grid Section
 // ------------
-// Description: A grid of blog posts in a 3 column layout.
+// Description: A grid of blog posts sorted by date in a 3 column layout.
 // Properties:
 // - data: An array of blog posts
 
@@ -19,6 +19,11 @@ type Props = {
 	data: any
 }
 const { data: allPosts } = Astro.props
+
+// Function to sort posts by date
+const sortedPosts = allPosts.sort((a: any, b: any) => {
+	return new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime()
+})
 ---
 
 <Section>
@@ -27,12 +32,12 @@ const { data: allPosts } = Astro.props
 			<TagNavigation />
 		</Col>
 		{
-			allPosts.map((post: any) => (
+			sortedPosts.map((post: any) => (
 				<Col span="4">
 					<Post
-						link={'/blog/' + post.slug}
+						link={`/blog/${post.slug}`}
 						title={post.data.title}
-						subtitle={`By ${post.data.author} on ${post.data.pubDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}`}
+						subtitle={`By ${post.data.author} on ${new Date(post.data.pubDate).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}`}
 						image={post.data.image}
 						tags={post.data.tags}
 					>

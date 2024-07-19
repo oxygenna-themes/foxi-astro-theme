@@ -12,10 +12,15 @@ import StickySidebar from '../basic/StickySidebar.astro'
 import Feature from '../../ui/Feature.astro'
 
 // Props
+type FeatureData = {
+	title: string
+	icon: string
+	description: string
+}
 type Props = {
 	title: string
 	text?: string
-	data: any
+	data: FeatureData[]
 	classes?: string
 }
 const { title, text, data, classes } = Astro.props
@@ -30,7 +35,7 @@ const { title, text, data, classes } = Astro.props
 	<Row>
 		{
 			// Map through the filtered features and render them
-			data.map((feature: any) => (
+			data.map((feature: FeatureData) => (
 				<Col span="4">
 					<Feature title={feature.title} icon={feature.icon} align="left" classes="mb-12">
 						{feature.description}

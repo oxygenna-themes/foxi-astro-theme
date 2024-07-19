@@ -17,10 +17,9 @@ Foxi is a free, highly customizable, and production-ready template for Astro, ut
 
 ### Features
 
-- **Perfect Scores in PageSpeed Insights:** Achieve perfect 100s for both desktop and mobile performance.
 - **Built with Tailwind CSS:** Powered by Tailwind CSS for rapid UI development and responsive design.
+- **Perfect Scores in PageSpeed Insights:** Achieve perfect 100s for both desktop and mobile performance.
 - **Light & Dark Mode Support:** Seamlessly switch between light and dark themes to suit user preferences.
-- **Modular Design:** Mix and match content blocks effortlessly to create custom pages tailored to your needs.
 - **Fully Responsive & Customizable:** Ensure your site looks great on any device, with easy customization to match your brand’s identity.
 - **SEO-friendly:** Optimized for search engines to improve visibility and organic traffic.
 - **Pre-designed Pages:** Includes a variety of pages such as Home, Pricing, Features, Contact, and more, to get you started quickly.
@@ -32,6 +31,8 @@ Foxi is a free, highly customizable, and production-ready template for Astro, ut
 - **Built-in Contact Form:** Ready-to-use contact form included.
 - **Utilizes WindUI Components:** Integrates optional WindUI TailwindCSS components.
 - **Modular Design:** The template is organized into reusable blocks enabling easy customization and expansion.
+- **Integrated Analytics:** Includes integrated Google Analytics and Google Tag Manager functionalities.
+- **Sitemap Included:** Includes a sitemap to enhance website navigation and search engine indexing.
 
 ## Getting Started
 
@@ -62,6 +63,8 @@ Inside Foxi Astro project, you'll see the following folders and files:
 │   │   │   └── ...
 │   │   └── ui/
 │   │       └── ...
+│   ├── config/
+│   │   └── ...
 │   ├── content/
 │   │   └── blog/
 │   │       └── ...
@@ -86,17 +89,45 @@ Inside Foxi Astro project, you'll see the following folders and files:
 | `src/components/`        | Contains reusable components for your site. This directory is divided into `ui` for UI components and `blocks` for section blocks. |
 | `src/components/blocks/` | Contains Section blocks used throughout the site.                                                                                  |
 | `src/components/ui/`     | Contains individual UI components.                                                                                                 |
+| `src/config/`            | Contains configuration files for the project in typescript format.                                                                 |
 | `src/content/`           | Holds collection data, such as blog posts.                                                                                         |
 | `src/content/blog/`      | Contains individual blog posts in markdown.                                                                                        |
-| `src/data/`              | Contains JSON files with content data (like features, testimonials etc).                                                           |
+| `src/data/`              | Contains JSON and md files with content data (like features, testimonials etc).                                                    |
 | `src/icons/`             | Contains all icons used in the project, sourced from [Heroicons](https://heroicons.com/).                                          |
 | `src/layouts/`           | Contains layout components that define the overall structure of your pages.                                                        |
 | `src/pages/`             | Contains `.astro` files for each page. Each file here is exposed as a route based on its file name.                                |
 | `package.json`           | Lists dependencies and scripts for your project, including metadata and various package requirements.                              |
 
-### Contributing
+## Theme Configuration
 
-## How to
+You can find the configuration files in the `src/config` directory. The configuration files are written in TypeScript and contain various settings for the theme, such as basic information, navigation bar, footer navigation, analytics, and social links. You can customize these settings to fit your specific needs.
+
+| Configuration File               | Description                                                                                     |
+| -------------------------------- | ----------------------------------------------------------------------------------------------- |
+| `src/config/config.ts`           | Includes the basic configuration settings including SEO, mode, and scroll animations.           |
+| `src/config/navigationBar.ts`    | Includes menu options for the navigation bar.                                                   |
+| `src/config/footerNavigation.ts` | Includes menu options for the footer navigation.                                                |
+| `src/config/analytics.ts`        | Includes the required codes for Google Analytics, Google Tag Manager and Google Search Console. |
+| `src/config/socialLinks.ts`      | Contains the social link data for the website.                                                  |
+
+### Basic configuration settings
+
+In the `src/config/config.ts` file, you can find the basic configuration settings.
+These includes the default SEO settings:
+
+- `siteTitle`: The default title of your website.
+- `siteDescription`: The default description of your website.
+- `ogImage`: The open graph image for your website.
+- `logo`: The logo for your website.
+- `canonical`: Whether to use canonical links for your website.
+- `noindex`: Prevents search engines from indexing your website if set to true.
+
+as well as the default site settings:
+
+- `mode`: The default mode for your website. Can be set to 'auto', 'light', or 'dark'. Auto mode will automatically switch between light and dark modes based on the user's system settings, while 'light' and 'dark' will force the site to use the corresponding mode.
+- `scrollAnimations`: Whether to enable smooth scrolling animations for your website.
+
+## Theme Customization
 
 ### Customize the Colors
 
@@ -136,5 +167,9 @@ If you need to enforce a specific theme, you can set the class above as **`mode-
 Copyright © 2024 - Designed & Developed by [Oxygenna](http://www.oxygenna.com/)
 
 Released under the MIT license.
+
+## Join the Community
+
+You can join our community on [Discord](https://discord.gg/YC5Eup8ZEx)!
 
 [![Hire Us](https://oxygenna-themes.b-cdn.net/foxi-astro/hireus.png)](mailto:info@oxygenna.com,christos@oxygenna.com)
