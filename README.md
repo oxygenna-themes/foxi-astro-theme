@@ -17,8 +17,8 @@ Foxi is a free, highly customizable, and production-ready template for Astro, ut
 
 ### Features
 
-- **Perfect Scores in PageSpeed Insights:** Achieve perfect 100s for both desktop and mobile performance.
 - **Built with Tailwind CSS:** Powered by Tailwind CSS for rapid UI development and responsive design.
+- **Perfect Scores in PageSpeed Insights:** Achieve perfect 100s for both desktop and mobile performance.
 - **Light & Dark Mode Support:** Seamlessly switch between light and dark themes to suit user preferences.
 - **Fully Responsive & Customizable:** Ensure your site looks great on any device, with easy customization to match your brand’s identity.
 - **SEO-friendly:** Optimized for search engines to improve visibility and organic traffic.
@@ -109,6 +109,23 @@ You can find the configuration files in the `src/config` directory. The configur
 | `src/config/footerNavigation.ts` | Includes menu options for the footer navigation.                                                |
 | `src/config/analytics.ts`        | Includes the required codes for Google Analytics, Google Tag Manager and Google Search Console. |
 | `src/config/socialLinks.ts`      | Contains the social link data for the website.                                                  |
+
+### Basic configuration settings
+
+In the `src/config/config.ts` file, you can find the basic configuration settings.
+These includes the default SEO settings:
+
+- `siteTitle`: The default title of your website.
+- `siteDescription`: The default description of your website.
+- `ogImage`: The open graph image for your website.
+- `logo`: The logo for your website.
+- `canonical`: Whether to use canonical links for your website.
+- `noindex`: Prevents search engines from indexing your website if set to true.
+
+as well as the default site settings:
+
+- `mode`: The default mode for your website. Can be set to 'auto', 'light', or 'dark'. Auto mode will automatically switch between light and dark modes based on the user's system settings, while 'light' and 'dark' will force the site to use the corresponding mode.
+- `scrollAnimations`: Whether to enable smooth scrolling animations for your website.
 
 ## Theme Customization
 
