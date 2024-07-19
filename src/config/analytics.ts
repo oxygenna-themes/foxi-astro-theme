@@ -5,4 +5,4 @@
 
 export const googleSiteVerification = ''
 export const googleAnalyticsMeasurementID = 'G-6JVV6NQT7N'
-export const googleTagManagerID = ''
+export const googleTagManagerID = 'SSS'

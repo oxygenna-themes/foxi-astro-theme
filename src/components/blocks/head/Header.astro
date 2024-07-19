@@ -9,6 +9,9 @@ import Seo from './partials/Seo.astro'
 // Data
 import { configData } from '../../../config/config'
 
+import { googleAnalyticsMeasurementID } from '../../../config/analytics'
+import { googleTagManagerID } from '../../../config/analytics'
+
 // Props
 type Props = {
 	title?: string
@@ -28,8 +31,8 @@ const {
 ---
 
 <head>
-	<GoogleAnalytics />
-	<GoogleTagManagerHead />
+	{googleAnalyticsMeasurementID && <GoogleAnalytics />}
+	{googleTagManagerID && <GoogleTagManagerHead />}
 	<GoogleSearchConsole />
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
