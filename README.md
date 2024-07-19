@@ -98,9 +98,19 @@ Inside Foxi Astro project, you'll see the following folders and files:
 | `src/pages/`             | Contains `.astro` files for each page. Each file here is exposed as a route based on its file name.                                |
 | `package.json`           | Lists dependencies and scripts for your project, including metadata and various package requirements.                              |
 
-### Contributing
+## Theme Configuration
 
-## How to
+You can find the configuration files in the `src/config` directory. The configuration files are written in TypeScript and contain various settings for the theme, such as basic information, navigation bar, footer navigation, analytics, and social links. You can customize these settings to fit your specific needs.
+
+| Configuration File               | Description                                                                                     |
+| -------------------------------- | ----------------------------------------------------------------------------------------------- |
+| `src/config/config.ts`           | Includes the basic configuration settings including SEO, mode, and scroll animations.           |
+| `src/config/navigationBar.ts`    | Includes menu options for the navigation bar.                                                   |
+| `src/config/footerNavigation.ts` | Includes menu options for the footer navigation.                                                |
+| `src/config/analytics.ts`        | Includes the required codes for Google Analytics, Google Tag Manager and Google Search Console. |
+| `src/config/socialLinks.ts`      | Contains the social link data for the website.                                                  |
+
+## Theme Customization
 
 ### Customize the Colors
 
@@ -140,5 +150,9 @@ If you need to enforce a specific theme, you can set the class above as **`mode-
 Copyright © 2024 - Designed & Developed by [Oxygenna](http://www.oxygenna.com/)
 
 Released under the MIT license.
+
+## Join the Community
+
+You can join our community on [Discord](https://discord.gg/YC5Eup8ZEx)!
 
 [![Hire Us](https://oxygenna-themes.b-cdn.net/foxi-astro/hireus.png)](mailto:info@oxygenna.com,christos@oxygenna.com)
