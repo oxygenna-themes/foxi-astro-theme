@@ -21,6 +21,6 @@ const { method = 'post', classes, id, name } = Astro.props
 const formName = name || id || undefined;
 ---
 
-<form method={method} novalidate class:list={[{ [`${classes}`]: classes }]} id={id} name={name}>
+<form method={method} novalidate class:list={[{ [`${classes}`]: classes }]} id={id} name={formName}>
 	<slot />
 </form>
