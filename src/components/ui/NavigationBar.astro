@@ -66,7 +66,7 @@ const savedNavActions = navActions.map((action) => ({
 								<a
 									href={item.link}
 									role="menuitem"
-									class={`header__menu-link ${isActivePath(item.link) ? 'active' : ''}`}
+									class={`header__menu-link`}
 								>
 									{item.name}
 								</a>
@@ -104,7 +104,7 @@ const savedNavActions = navActions.map((action) => ({
 				{
 					savedNavActions.map((action) => (
 						<Button classes="flex-auto" size={action.size} style={action.style}>
-							{action.name}
+							<a href="#contact">{action.name}</a>
 						</Button>
 					))
 				}

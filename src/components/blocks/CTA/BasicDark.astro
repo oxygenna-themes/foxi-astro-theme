@@ -16,19 +16,21 @@ import Button from '../../ui/Button.astro'
 import ctaImage from '../../../assets/cta-dark-bg.webp'
 ---
 
-<Section>
-	<Row>
-		<Col span="1" />
-		<Col span="10">
-			<CTA
-				title="Intéressé par Optifit ?"
-				text="Vous pouvez dès maintenant demander une démo pour découvrir en détail les fonctionnalités de notre application et comment elle peut vous aider à gérer vos évènements sportifs !"
-				mode="dark"
-				bg={ctaImage}
-			>
-				<Button size="lg" style="primary">Je veux une démo</Button>
-			</CTA>
+<div id="contact">
+	<Section>
+		<Row>
 			<Col span="1" />
-		</Col>
-	</Row>
-</Section>
+			<Col span="10">
+				<CTA
+					title="Intéressé par Optifit ?"
+					text="Vous pouvez dès maintenant demander une démo pour découvrir en détail les fonctionnalités de notre application et comment elle peut vous aider à gérer vos évènements sportifs !"
+					mode="dark"
+					bg={ctaImage}
+				>
+					<Button size="lg" style="primary">Je veux une démo</Button>
+				</CTA>
+				<Col span="1" />
+			</Col>
+		</Row>
+	</Section>
+</div>
