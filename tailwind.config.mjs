@@ -32,17 +32,17 @@ export default {
       colors: {
         transparent: "transparent",
         primary: {
-          50: "#fdf2f8",
-          100: "#fce7f3",
-          200: "#fbcfe8",
-          300: "#f9a8d4",
-          400: "#f472b6",
-          500: "#E2187D",
-          600: "#db2777",
-          700: "#be185d",
-          800: "#9d174d",
-          900: "#831843",
-          950: "#500724",
+          50: "#f3f3ff",
+          100: "#e0e0ff",
+          200: "#d6d6ff",
+          300: "#d5d6ff",
+          400: "#c3c6ff",
+          500: "#454ade",
+          600: "#454ade",
+          700: "#9296fd",
+          800: "#6f72ff",
+          900: "#6168ff",
+          950: "#454ade",
         },
         neutral: {
           50: "#f8fafc",
@@ -62,8 +62,8 @@ export default {
         fancy: "url(https://www.svgrepo.com/show/269/color-picker.svg)",
       },
       fontFamily: {
-        sans: ["Inter Variable", ...defaultTheme.fontFamily.sans],
-        headings: ["Outfit Variable", ...defaultTheme.fontFamily.sans],
+        sans: ["Montserrat", ...defaultTheme.fontFamily.sans],
+        headings: ["Montserrat", ...defaultTheme.fontFamily.sans],
       },
       keyframes: {
         dropdown: {
