@@ -8,14 +8,10 @@
 import TextImage from '../basic/TextImage.astro'
 
 // Content
-import highlight01 from '../../../assets/highlights/highlight-01.svg'
-import highlight01mobile from '../../../assets/highlights/highlight-01-mobile.svg'
-import highlight02 from '../../../assets/highlights/highlight-02.svg'
-import highlight02mobile from '../../../assets/highlights/highlight-02-mobile.svg'
-import highlight03 from '../../../assets/highlights/highlight-03.svg'
-import highlight03mobile from '../../../assets/highlights/highlight-03-mobile.svg'
-import highlight04 from '../../../assets/highlights/highlight-04.svg'
-import highlight04mobile from '../../../assets/highlights/highlight-04-mobile.svg'
+import highlight01 from '../../../assets/highlights/highlight-01.png'
+import highlight02 from '../../../assets/highlights/highlight-02.png'
+import highlight03 from '../../../assets/highlights/highlight-03.png'
+import highlight04 from '../../../assets/highlights/highlight-04.png'
 
 type HighlightBlock = {
 	title: string
@@ -28,39 +24,39 @@ type HighlightBlock = {
 }
 const highlightBlocks: HighlightBlock[] = [
 	{
-		title: 'Complete Project <strong>Visibility</strong>',
-		text: 'Gain complete visibility into your projects and tasks with our comprehensive dashboard. Easily track progress, deadlines, and team performance at a glance. Our dashboard offers real-time project tracking',
+		title: 'Génération des <strong>matchs</strong> intelligente',
+		text: 'Les matchs sont générés au fur et à mesure des inscriptions des équipes pour que toutes les équipes s\'affrontent, avec une assignation automatique des terrains, les matchs sont organisés avec une répartition fluide, évitant que les équipes jouent deux matchs consécutifs.',
 		image: highlight01,
 		imageWidth: highlight01.width,
 		imageHeight: highlight01.height,
-		mobileImage: highlight01mobile,
+		mobileImage: highlight01,
 		imagePosition: 'right'
 	},
 	{
-		title: 'Advanced <strong>Automation</strong> Tools',
-		text: 'Automate repetitive tasks and streamline your workflow with our advanced automation tools. Save time and reduce errors by leveraging automated task assignments, workflow templates, and seamless integration with popular apps and services.',
+		title: 'Génération des <strong>phases finales</strong> flexible',
+		text: 'Dans les tournois avec des groupes, la progression vers les phases finales est générée au fil du tournoi. Une fois les phases de poules terminées, vous choisissez combien d\'équipes par groupe avancent. Le système crée automatiquement les huitièmes, quarts, demi-finales ou finales en fonction de vos paramètres.',
 		image: highlight02,
-		mobileImage: highlight02mobile,
-		imageWidth: highlight02.width,
-		imageHeight: highlight02.height,
+		mobileImage: highlight02,
+		imageWidth: 500,
+    imageHeight: 500,
 		imagePosition: 'left'
 	},
 	{
-		title: '<strong>Effective</strong> Team Collaboration',
-		text: 'Enhance team communication and collaboration with our seamless tools. Keep everyone on the same page and ensure efficient project execution through real-time messaging, shared document editing, and task comments. ',
+		title: 'Résultats <strong>en temps réel</strong>',
+		text: 'Les spectateurs ont accès aux résultats en temps réel grâce à une fiche de tournoi contenant un QR Code. En le scannant, ils peuvent consulter instantanément le classement, les matchs et toutes les informations du tournoi en direct.',
 		image: highlight03,
-		mobileImage: highlight03mobile,
-		imageWidth: highlight03.width,
-		imageHeight: highlight03.height,
+		mobileImage: highlight03,
+		imageWidth: 400,
+		imageHeight: 700,
 		imagePosition: 'right'
 	},
 	{
-		title: 'Robust Data <strong>Security</strong>',
-		text: 'Protect your data with our robust security features. We prioritize your privacy and security to ensure that your information is always safe. With end-to-end encryption, role-based access control, and regular security audits.',
+		title: 'Attribution de notes <strong>fair-play</strong> aux équipes pendant les matchs',
+		text: 'Option configurable lors de la création du tournoi, les équipes peuvent recevoir des notes de fair-play pendant les matchs. Ces notes, comptabilisées sous forme de moyenne sur 5, s’intègrent dans la comptabilisation pour le classement final.',
 		image: highlight04,
-		mobileImage: highlight04mobile,
-		imageWidth: highlight04.width,
-		imageHeight: highlight04.height,
+		mobileImage: highlight04,
+    imageWidth: 500,
+    imageHeight: 200,
 		imagePosition: 'left'
 	}
 ]
@@ -69,17 +65,20 @@ const highlightBlocks: HighlightBlock[] = [
 <div id="features">
 	{
 		highlightBlocks.map((highlight, key) => (
-			<TextImage
-				id={`highlight-${key}`}
-				title={highlight.title}
-				text={highlight.text}
-				image={highlight.image}
-				imageWidth={highlight.imageWidth}
-				imageHeight={highlight.imageHeight}
-				mobileImage={highlight.mobileImage}
-				imagePosition={highlight.imagePosition}
-				classes={key === 0 ? '!pb-0' : key === highlightBlocks.length - 1 ? '!pt-0' : '!py-0'}
-			/>
+			<>
+        <TextImage
+          id={`highlight-${key}`}
+          title={highlight.title}
+          text={highlight.text}
+          image={highlight.image}
+          imageWidth={highlight.imageWidth}
+          imageHeight={highlight.imageHeight}
+          mobileImage={highlight.mobileImage}
+          imagePosition={highlight.imagePosition}
+          classes={key === 0 ? '!pb-5' : key === highlightBlocks.length - 1 ? '!pt-0' : '!py-0'}
+        />
+        <br /><br />
+      </>
 		))
 	}
 </div>
