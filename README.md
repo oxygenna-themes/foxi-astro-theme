@@ -71,7 +71,7 @@ Foxi is a free, highly customizable, and production-ready template for Astro, ut
 |                           | Continue with Free version | [View Pro Version](https://astro.build/themes/details/foxi-pro/) |
 
 [![Get Pro Version](https://oxygenna-themes.b-cdn.net/foxi-pro-astro/primary-button-get-foxi-pro.svg)](https://oxygenna.lemonsqueezy.com/buy/2e32ec07-aa31-45a4-835d-8ebb7f6048cc)
-[![View Foxi Pro live Demo](https://oxygenna-themes.b-cdn.net/foxi-pro-astro/secondary-button-demo.svg)](https://foxi-pro.netlify.app/)
+[![View Foxi Pro live Demo](https://oxygenna-themes.b-cdn.net/foxi-pro-astro/secondary-button-foxi-pro-demo.svg)](https://foxi-pro.netlify.app/)
 
 ## Getting Started
 
