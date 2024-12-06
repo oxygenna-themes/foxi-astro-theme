@@ -34,6 +34,45 @@ Foxi is a free, highly customizable, and production-ready template for Astro, ut
 - **Integrated Analytics:** Includes integrated Google Analytics and Google Tag Manager functionalities.
 - **Sitemap Included:** Includes a sitemap to enhance website navigation and search engine indexing.
 
+### Upgrade to Pro Version
+
+| Feature                   | Free Version               | Pro Version                                                      |
+| :------------------------ | :------------------------- | :--------------------------------------------------------------- |
+| Tailwind CSS              | ✅                         | ✅                                                               |
+| Mobile Responsive         | ✅                         | ✅                                                               |
+| SEO-Friendly              | ✅                         | ✅                                                               |
+| i18n Multilingual Support | ❌                         | ✅                                                               |
+| Keystatic CMS             | ❌                         | ✅                                                               |
+| Content Collections       | ✅                         | ✅                                                               |
+| Mega Menu                 | ❌                         | ✅                                                               |
+| Video Popup               | ❌                         | ✅                                                               |
+| Lottie File Integration   | ❌                         | ✅                                                               |
+| Homepage Variations       | ❌                         | ✅                                                               |
+| Features Page Variations  | ❌                         | ✅                                                               |
+| Integrations Page         | ❌                         | ✅                                                               |
+| Advanced Pricing Page     | ❌                         | ✅                                                               |
+| Blog Collection           | ✅                         | ✅                                                               |
+| Blog Categories           | ✅                         | ✅                                                               |
+| Blog Authors              | ❌                         | ✅                                                               |
+| Post Pagination           | ❌                         | ✅                                                               |
+| eGuides Collection        | ❌                         | ✅                                                               |
+| Roadmap Page              | ❌                         | ✅                                                               |
+| SignUp Page               | ❌                         | ✅                                                               |
+| Changelog Page            | ✅                         | ✅                                                               |
+| FAQ Page                  | ✅                         | ✅                                                               |
+| Terms Page                | ✅                         | ✅                                                               |
+| Working Contact Page      | ❌                         | ✅                                                               |
+| Total Pages               | 10                         | 20+                                                              |
+|                           |                            |                                                                  |
+| Free Updates              | ✅                         | ✅                                                               |
+| License                   | MIT                        | Commercial                                                       |
+|                           |                            |                                                                  |
+| Pricing                   | Free                       | $79.99                                                           |
+|                           | Continue with Free version | [View Pro Version](https://astro.build/themes/details/foxi-pro/) |
+
+[![Get Pro Version](https://oxygenna-themes.b-cdn.net/foxi-pro-astro/primary-button-get-foxi-pro.svg)](https://oxygenna.lemonsqueezy.com/buy/2e32ec07-aa31-45a4-835d-8ebb7f6048cc)
+[![View Foxi Pro live Demo](https://oxygenna-themes.b-cdn.net/foxi-pro-astro/secondary-button-foxi-pro-demo.svg)](https://foxi-pro.netlify.app/)
+
 ## Getting Started
 
 ### Commands
