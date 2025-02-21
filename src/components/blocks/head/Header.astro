@@ -1,6 +1,6 @@
 ---
 // Imports
-import { ViewTransitions } from 'astro:transitions'
+import { ClientRouter } from 'astro:transitions'
 import GoogleAnalytics from '../../scripts/googleAnalytics.astro'
 import GoogleTagManagerHead from '../../scripts/googleTagManagerHead.astro'
 import GoogleSearchConsole from '../../scripts/googleSearchConsole.astro'
@@ -47,5 +47,5 @@ const {
 	<link rel="sitemap" href="/sitemap-index.xml" />
 	<meta name="generator" content={Astro.generator} />
 	<meta name="theme-color" content="#134e4a" />
-	<ViewTransitions fallback="swap" />
+	<ClientRouter fallback="swap" />
 </head>
