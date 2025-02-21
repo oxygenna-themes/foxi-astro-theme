@@ -32,11 +32,12 @@ import badge from '../../../assets/badge.svg'
 			>
 				<ChipNotification radius="rounded-full" classes="mb-6 box">
 					<Image src={badge} alt="Product of the Year" class="h-12 w-12" slot="button" />
-					#1 Product of the Year, <Highlight classes="ml-2">Product Hunt</Highlight>
+					<span class="hidden md:block">#1 Product of the Year,</span>
+					<Highlight classes="md:ml-2"> Product Hunt </Highlight>
 				</ChipNotification>
 				<Button size="lg" style="primary"> Get started now! </Button>
 			</CTA>
-			<Col span="1" />
 		</Col>
+		<Col span="1" />
 	</Row>
 </Section>
