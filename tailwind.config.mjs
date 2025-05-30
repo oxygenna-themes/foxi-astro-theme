@@ -84,13 +84,7 @@ export default {
       },
     },
   },
-  variants: {
-    animation: ["responsive"],
-  },
   plugins: [
     require("@tailwindcss/typography"),
-    require("tailwindcss/plugin")(function ({ addVariant }) {
-      addVariant("dark-me", ".dark_&");
-    }),
   ],
 };
