@@ -19,7 +19,7 @@ type Props = {
 	size?: 'lg' | 'base' | 'sm'
 	link?: string
 	modal?: string
-	style?: 'primary' | 'secondary' | 'neutral'
+	style?: 'primary' | 'secondary' | 'neutral' | 'white'
 	variation?: 'outline' | 'link'
 	elevated?: boolean
 	classes?: string
@@ -40,6 +40,7 @@ const {
 	type === 'link' || link ? (
 		<a
 			href={link}
+			target={link?.startsWith('http') ? '_blank' : '_self'}
 			class:list={[
 				'button',
 				{ ['button--' + `${size}`]: size },
@@ -100,5 +101,9 @@ const {
 
 	.button--neutral {
 		@apply bg-neutral-700 text-white hover:bg-neutral-800 focus:bg-neutral-900 disabled:border-neutral-300 disabled:bg-neutral-300 [&.button--elevated]:shadow-neutral-500/30 [&.button--elevated]:hover:shadow-neutral-500/30 [&.button--elevated]:focus:shadow-neutral-500/30 [&.button--link]:bg-transparent [&.button--link]:text-neutral-700 hover:[&.button--link]:text-neutral-800 focus:[&.button--link]:text-neutral-900 [&.button--outline]:border-neutral-700 [&.button--outline]:bg-transparent [&.button--outline]:text-neutral-700 [&.button--outline]:hover:border-neutral-800 [&.button--outline]:hover:text-neutral-800;
+	}
+
+	.button--white {
+		@apply bg-white text-white disabled:border-neutral-300 disabled:bg-neutral-300 [&.button--elevated]:shadow-neutral-500/30 [&.button--elevated]:hover:shadow-neutral-500/30 [&.button--elevated]:focus:shadow-neutral-500/30 [&.button--link]:bg-transparent [&.button--link]:text-white [&.button--outline]:border-white [&.button--outline]:bg-transparent [&.button--outline]:text-white;
 	}
 </style>
