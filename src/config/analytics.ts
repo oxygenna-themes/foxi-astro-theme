@@ -4,5 +4,5 @@
 // - Google Tag Manager ID: for Google Tag Manager
 
 export const googleSiteVerification = ''
-export const googleAnalyticsMeasurementID = 'G-6JT3PTTD25'
+export const googleAnalyticsMeasurementID = import.meta.env.PUBLIC_GA_TRACKING_ID // Replace with your Google Analytics Measurement ID (e.g. "G-XXXXXXXXXX")
 export const googleTagManagerID = ''
