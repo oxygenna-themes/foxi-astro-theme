@@ -207,10 +207,6 @@ Copyright © 2025 - Designed & Developed by [Oxygenna](http://www.oxygenna.com/)
 
 Released under the MIT license.
 
-## Join the Community
-
-You can join our community on [Discord](https://discord.gg/YC5Eup8ZEx)!
-
 ## Want more themes?
 
 ### Toki
@@ -230,5 +226,9 @@ Check out **Foxi Framer**, our premium Astro website template with fully respons
 
 [![Get Foxi Framer](https://oxygenna-themes.b-cdn.net/foxi-astro/primary-button-get-foxi-framer.svg)](https://framer.com/remix/83IKsO4mvnbEpUyUXtwD)
 [![View live Demo](https://oxygenna-themes.b-cdn.net/foxi-astro/secondary-button-foxi-framer-demo.svg)](https://foxi.framer.website/)
+
+## Join the Community
+
+You can join our community on [Discord](https://discord.gg/YC5Eup8ZEx)!
 
 [![Hire Us](https://oxygenna-themes.b-cdn.net/foxi-astro/hireus.png)](mailto:info@oxygenna.com,christos@oxygenna.com)
