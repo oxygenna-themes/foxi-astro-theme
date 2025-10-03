@@ -203,12 +203,32 @@ If you need to enforce a specific theme, you can set the class above as **`mode-
 
 ## License
 
-Copyright © 2024 - Designed & Developed by [Oxygenna](http://www.oxygenna.com/)
+Copyright © 2025 - Designed & Developed by [Oxygenna](http://www.oxygenna.com/)
 
 Released under the MIT license.
 
 ## Join the Community
 
 You can join our community on [Discord](https://discord.gg/YC5Eup8ZEx)!
+
+## Want more themes?
+
+### Toki
+
+Check out **Toki**, a standout agency template with striking design, blazing speed, built for modern agencies and creatives.
+
+![toki-theme](https://oxygenna-themes.b-cdn.net/toki-astro/promo/toki-theme-promo.png)
+
+[![Get Toki](https://oxygenna-themes.b-cdn.net/toki-astro/promo/primary-button-get-toki.svg)](https://astro.build/themes/details/toki/)
+[![View live Demo](https://oxygenna-themes.b-cdn.net/toki-astro/promo/secondary-button-toki-demo.svg)](https://toki-theme.netlify.app/)
+
+### Foxi Framer
+
+Check out **Foxi Framer**, our premium Astro website template with fully responsive, customizable Tailwind CSS components.
+
+![foxi-framer](https://oxygenna-themes.b-cdn.net/foxi-astro/foxi.png)
+
+[![Get Foxi Framer](https://oxygenna-themes.b-cdn.net/foxi-astro/primary-button-get-foxi-framer.svg)](https://framer.com/remix/83IKsO4mvnbEpUyUXtwD)
+[![View live Demo](https://oxygenna-themes.b-cdn.net/foxi-astro/secondary-button-foxi-framer-demo.svg)](https://foxi.framer.website/)
 
 [![Hire Us](https://oxygenna-themes.b-cdn.net/foxi-astro/hireus.png)](mailto:info@oxygenna.com,christos@oxygenna.com)
