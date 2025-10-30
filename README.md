@@ -231,4 +231,4 @@ Check out **Foxi Framer**, our premium Astro website template with fully respons
 
 You can join our community on [Discord](https://discord.gg/YC5Eup8ZEx)!
 
-[![Hire Us](https://oxygenna-themes.b-cdn.net/foxi-astro/hireus.png)](mailto:info@oxygenna.com,christos@oxygenna.com)
+[![Hire Us](https://oxygenna-themes.b-cdn.net/foxi-astro/hireus.png)](mailto:themes@oxygenna.com,christos@oxygenna.com)
