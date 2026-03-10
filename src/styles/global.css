@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 /* Layout rules */
 html {
 	@apply scroll-smooth antialiased;
