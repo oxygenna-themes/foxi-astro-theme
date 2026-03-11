@@ -42,7 +42,7 @@ Foxi is a free, highly customizable, and production-ready template for Astro, ut
 | Mobile Responsive         | ✅                         | ✅                                                               |
 | SEO-Friendly              | ✅                         | ✅                                                               |
 | i18n Multilingual Support | ❌                         | ✅                                                               |
-| Keystatic CMS             | ❌                         | ✅                                                               |
+| Sitepins CMS              | ❌                         | ✅                                                               |
 | Content Collections       | ✅                         | ✅                                                               |
 | Mega Menu                 | ❌                         | ✅                                                               |
 | Video Popup               | ❌                         | ✅                                                               |

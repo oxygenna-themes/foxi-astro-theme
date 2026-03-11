@@ -1,5 +1,8 @@
 /** @type {import('tailwindcss').Config} */
 import defaultTheme from "tailwindcss/defaultTheme";
+import plugin from "tailwindcss/plugin";
+import typography from "@tailwindcss/typography";
+
 export default {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   darkMode: ["selector"],
@@ -100,8 +103,8 @@ export default {
     animation: ["responsive"],
   },
   plugins: [
-    require("@tailwindcss/typography"),
-    require("tailwindcss/plugin")(function ({ addVariant }) {
+    typography,
+    plugin(function ({ addVariant }) {
       addVariant("dark-me", ".dark_&");
     }),
   ],
