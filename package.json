@@ -24,7 +24,6 @@
     "typescript": "^5.4.5"
   },
   "devDependencies": {
-    "@astrojs/partytown": "^2.1.5",
     "@tailwindcss/typography": "^0.5.13",
     "autoprefixer": "^10.4.21",
     "postcss": "^8.5.3"
