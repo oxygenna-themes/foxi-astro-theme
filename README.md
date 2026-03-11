@@ -17,6 +17,7 @@ Foxi is a free, highly customizable, and production-ready template for Astro, ut
 
 ### Features
 
+- **Astro v6:** Built with the latest version of Astro for optimal performance and features.
 - **Built with Tailwind CSS:** Powered by Tailwind CSS for rapid UI development and responsive design.
 - **Perfect Scores in PageSpeed Insights:** Achieve perfect 100s for both desktop and mobile performance.
 - **Light & Dark Mode Support:** Seamlessly switch between light and dark themes to suit user preferences.
@@ -79,13 +80,13 @@ Foxi is a free, highly customizable, and production-ready template for Astro, ut
 
 After downloading the template, you'll need to install some dependencies. Once that's done, you can run it on your local server. Check out the package.json file to see what scripts are available.
 
-| Command           | Action                                                                                                   |
-| :---------------- | :------------------------------------------------------------------------------------------------------- |
-| `nvm use ...`     | [Install node js](https://nodejs.org/en/download/) You will need to use Node.js version 20.3.0 or later. |
-| `npm install`     | Installs dependencies                                                                                    |
-| `npm run dev`     | Starts local dev server at `localhost:4321`                                                              |
-| `npm run build`   | Build your production site to `./dist/`                                                                  |
-| `npm run preview` | Preview your build locally, before deploying                                                             |
+| Command           | Action                                                                                                    |
+| :---------------- | :-------------------------------------------------------------------------------------------------------- |
+| `nvm use ...`     | [Install node js](https://nodejs.org/en/download/) You will need to use Node.js version 22.12.0 or later. |
+| `npm install`     | Installs dependencies                                                                                     |
+| `npm run dev`     | Starts local dev server at `localhost:4321`                                                               |
+| `npm run build`   | Build your production site to `./dist/`                                                                   |
+| `npm run preview` | Preview your build locally, before deploying                                                              |
 
 ### Folder structure
 
@@ -203,11 +204,20 @@ If you need to enforce a specific theme, you can set the class above as **`mode-
 
 ## License
 
-Copyright © 2025 - Designed & Developed by [Oxygenna](http://www.oxygenna.com/)
+Copyright © 2026 - Designed & Developed by [Oxygenna](http://www.oxygenna.com/)
 
 Released under the MIT license.
 
 ## Want more themes?
+
+### Mizu
+
+Check out **Mizu**, a product launch template designed for modern SaaS companies, digital products, and ambitious startups.
+
+![mizu](https://oxygenna-themes.b-cdn.net/mizu-astro/mizu-theme.png)
+
+[![Get Mizu](https://oxygenna-themes.b-cdn.net/mizu-astro/primary-button-get-mizu.svg)](https://astro.build/themes/details/mizu/)
+[![View live Demo](https://oxygenna-themes.b-cdn.net/mizu-astro/secondary-button-mizu-demo.svg)](https://mizu-theme.netlify.app/)
 
 ### Toki
 
