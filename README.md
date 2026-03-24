@@ -234,7 +234,7 @@ Check out **Foxi Framer**, our premium Astro website template with fully respons
 
 ![foxi-framer](https://oxygenna-themes.b-cdn.net/foxi-astro/foxi.png)
 
-[![Get Foxi Framer](https://oxygenna-themes.b-cdn.net/foxi-astro/primary-button-get-foxi-framer.svg)](https://framer.com/remix/83IKsO4mvnbEpUyUXtwD)
+[![Get Foxi Framer](https://oxygenna-themes.b-cdn.net/foxi-astro/primary-button-get-foxi-framer.svg)](https://framer.link/daY9kpl)
 [![View live Demo](https://oxygenna-themes.b-cdn.net/foxi-astro/secondary-button-foxi-framer-demo.svg)](https://foxi.framer.website/)
 
 ## Join the Community
